@@ -77,40 +77,7 @@ class AuthController extends BaseController
 	}
 
 
-	public function register()
-	{
-		$data = [
-			'title' => 'Form Register'
-		];
-		return view('/auth/register', $data);
-	}
 
-	public function saveRegister()
-	{
-		helper(['form']);
-		$rules = [
-			'nama_lengkap'  => 'required|min_length[3]|max_length[20]',
-			'username'      => 'required|min_length[6]|max_length[50]|is_unique[admin.username]',
-			'email'      => 'required|min_length[6]|max_length[50]|valid_email|is_unique[admin.email]',
-			'password'      => 'required|min_length[6]|max_length[200]',
-			'confpassword'  => 'matches[password]'
-		];
-
-		if ($this->validate($rules)) {
-			$model = new AuthModel();
-			$data = [
-				'nama_lengkap'     	=> $this->request->getVar('nama_lengkap'),
-				'email'     	=> $this->request->getVar('email'),
-				'username'    		=> $this->request->getVar('username'),
-				'password' 			=> password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
-			];
-			$model->save($data);
-			return redirect()->to('/auth/login');
-		} else {
-			$data['validation'] = $this->validator;
-			return view('/auth/register', $data);
-		}
-	}
 
 	public function logout()
 	{

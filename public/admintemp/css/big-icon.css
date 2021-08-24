@@ -63,21 +63,25 @@
 }
 
 .bg-satu {
-  background-color: #207dff !important;
+  background-color: #086bf7 !important;
 }
 
 .bg-dua {
-  background-color: #3e64ff !important;
+  background-color: #0765e7 !important;
 }
 
 .bg-tiga {
-  background-color: #0e49b5 !important;
+  background-color: #075fda !important;
 }
 
 .bg-empat {
-  background-color: #323edd !important;
+  background-color: #0559ce !important;
 }
 
 .bg-lima {
-  background-color: #15037a !important;
+  background-color: #0653bf !important;
+}
+
+.bg-enam {
+  background-color: #044cb1 !important;
 }

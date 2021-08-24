@@ -58,5 +58,12 @@ class BaseController extends Controller
 		$this->db = \Config\Database::connect();
 		$this->session = \config\services::session();
 		$this->validation =  \Config\Services::validation();
+
+		// $this->pegawai = new \App\Models\PegawaiModel;
+		// $this->jabatan = new \App\Models\JabatanModel;
+		// $this->opddtl = new \App\Models\OpddtlModel;
+		// $this->master = new \App\Models\MasterModel;
+		// $this->user = new \App\Models\UserModel;
+		// $this->token = new \App\Models\TokenModel;
 	}
 }

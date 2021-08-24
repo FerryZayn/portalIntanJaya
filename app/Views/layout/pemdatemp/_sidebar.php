@@ -62,15 +62,15 @@
                     </a>
                     <div class="collapse" id="forms">
                         <ul class="nav nav-collapse">
-                            <li><a href="/administrator/portal-pemda/visi"><i class="fas fas fa-angle-right"></i> Visi Pemerintah</a></li>
-                            <li><a href="/administrator/portal-pemda/misi"><i class="fas fas fa-angle-right"></i> Misi Pemerintah</a></li>
+                            <li><a href="/administrator/portal-pemda/visi/v_visi"><i class="fas fas fa-angle-right"></i> Visi Pemerintah</a></li>
+                            <li><a href="/administrator/portal-pemda/misi/v_misi"><i class="fas fas fa-angle-right"></i> Misi Pemerintah</a></li>
                         </ul>
                     </div>
                 </li>
 
 
                 <li class="nav-item">
-                    <a href="/administrator/portal-pemda/pejabat">
+                    <a href="/administrator/portal-pemda/pejabat/v_pejabat">
                         <i class="fas fas fa-user-tie"></i>
                         <p>Profil Pejabat</p>
                     </a>
@@ -84,7 +84,7 @@
                     <div class="collapse" id="artikel">
                         <ul class="nav nav-collapse">
                             <li><a href="/administrator/portal-pemda/berita/home"><i class="fas fas fa-angle-right"></i> Berita</a></li>
-                            <li><a href="#"><i class="fas fas fa-angle-right"></i> Informasi</a></li>
+                            <li><a href="/administrator/portal-pemda/informasi/home"><i class="fas fas fa-angle-right"></i> Informasi</a></li>
                         </ul>
                     </div>
                 </li>

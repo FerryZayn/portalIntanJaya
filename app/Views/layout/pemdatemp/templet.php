@@ -3,9 +3,9 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>MASTER | Portal Kab. Intan Jaya</title>
+    <title>ADMINISTRATOR PORTAL PEMDA</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="<?= base_url(); ?>/admintemp/img/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="<?= base_url(); ?>/admintemp/img/logo/icon.ico" type="image/x-icon" />
 
     <!-- Fonts and icons -->
     <script src="<?= base_url(); ?>/admintemp/js/plugin/webfont/webfont.min.js"></script>
@@ -42,13 +42,6 @@
 </head>
 
 <body>
-
-
-
-
-
-
-
 
     <div class="wrapper">
         <!-- Header Star -->
@@ -174,7 +167,35 @@
         }
     </script>
 
+    <script>
+        $('#displayNotif').on('click', function() {
+            var placementFrom = $('#notify_placement_from option:selected').val();
+            var placementAlign = $('#notify_placement_align option:selected').val();
+            var state = $('#notify_state option:selected').val();
+            var style = $('#notify_style option:selected').val();
+            var content = {};
 
+            content.message = 'Terima kasih, Artikel anda berhasil diupload ke database...';
+            content.title = 'NOTIFIKASI SISTEM';
+            if (style == "withicon") {
+                content.icon = 'fa fa-bell';
+            } else {
+                content.icon = 'none';
+            }
+            content.url = '#';
+            content.target = '_blank';
+
+            $.notify(content, {
+                type: state,
+                placement: {
+                    from: placementFrom,
+                    align: placementAlign
+                },
+                time: 100,
+                delay: 0,
+            });
+        });
+    </script>
 </body>
 
 </html>

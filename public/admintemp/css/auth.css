@@ -1,0 +1,47 @@
+body {
+  background-image: url("https://d8it4huxumps7.cloudfront.net/uploads/images/opportunity/mobile_banner/5ea7081697ac7_lavakidneys_800x4002x-2db5e5a0c944e2b16a11a18674570f76.jpg");
+}
+
+h2 {
+  text-align: center;
+  margin-top: 5px;
+  color: #ff577f;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.form-active {
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  padding-top: 30px;
+  width: 350px;
+  margin: 150px auto;
+  box-shadow: 10px 10px 0px rgba(14, 2, 2, 0.1);
+}
+
+input {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 1px 1px 0px rgba(64, 8, 8, 0.3);
+}
+
+span {
+  font-weight: 200;
+}
+
+.btn {
+  position: relative;
+  width: 100%;
+  border-radius: 6px;
+  border: 0;
+  background: #ff577f;
+  font-size: 1.2em;
+  color: #fff;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 0px #c1524e;
+}
+
+.btn:active {
+  top: 3px;
+  box-shadow: none;
+}

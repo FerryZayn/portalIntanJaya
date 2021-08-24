@@ -26,8 +26,6 @@
                                             <div class="entry-meta post-atribute mb-3 small fw-normal text-muted">
                                                 <span class="byline me-2 me-md-3"><i class="far fa-user"></i> by <span class="author vcard"><a class="url fn n fw-bold" href="#"> User Created</a></span></span>
                                                 <span class="posted-on me-2 me-md-3"><i class="far fa-edit"></i><time class="entry-date published"> Agustus 03, 2021</time></span>
-                                                <span class="me-2 me-md-3 text-muted d-none d-md-inline-block"><i class="far fa-comment-dots"></i> 0 Komentar</span>
-                                                <span class="me-2 me-md-3 text-muted d-md-none"><i class="far fa-comment-dots"></i> 0 Komentar</span>
                                                 <span class="me-2 me-md-3"><i class="far fa-eye"></i> Views 1268234 (Sangat Banyak Epribadiiiii)</span>
                                             </div>
                                             <div class="social-share mb-3">

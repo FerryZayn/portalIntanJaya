@@ -18,75 +18,184 @@ class PemdaController extends BaseController
 
     public function index()
     {
-        return view('/administrator/portal-pemda/dashboard');
-    }
-    public function visipemda()
-    {
-        return view('/administrator/portal-pemda/visi');
-    }
-    public function misipemda()
-    {
-        return view('/administrator/portal-pemda/misi');
-    }
-    public function pejabatpemda()
-    {
-        return view('/administrator/portal-pemda/pejabat');
+        $data = [
+            'j_berita' => $this->pemdaModel->jumlahBerita(),
+            'j_informasi' => $this->pemdaModel->jumlahInformasi(),
+            'j_visi' => $this->pemdaModel->jumlahVisi(),
+            'j_misi' => $this->pemdaModel->jumlahMisi(),
+            'j_foto' => $this->pemdaModel->jumlahFoto(),
+            'j_video' => $this->pemdaModel->jumlahVideo()
+        ];
+        return view('/administrator/portal-pemda/dashboard', $data);
     }
 
-    public function berita()
+    //VisiPemda
+    public function visipemda()
     {
-        return view('/administrator/portal-pemda/berita/home');
+        $data = [
+            'v_visi' => $this->pemdaModel->tampilVisi()
+        ];
+        return view('/administrator/portal-pemda/visi/v_visi', $data);
     }
-    public function tambahberita()
+    public function hapusVisi($id)
+    {
+        $this->pemdaModel->delete($id);
+        session()->setFlashdata('info', 'Data sudah di hapus...');
+        return redirect()->to('/administrator/portal-pemda/visi/v_visi');
+    }
+
+    //Misi Pemda
+    public function misipemda()
+    {
+        $data = [
+            'v_misi' => $this->pemdaModel->tampilMisi()
+        ];
+        return view('/administrator/portal-pemda/misi/v_misi', $data);
+    }
+    public function hapusMisi($id)
+    {
+        $this->pemdaModel->delete($id);
+        session()->setFlashdata('info', 'Data sudah di hapus...');
+        return redirect()->to('/administrator/portal-pemda/misi/v_misi');
+    }
+
+
+    //Tambah Artikel
+    public function tambahArtikel()
     {
         $data = [
             'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
             'validation' => \Config\Services::validation()
         ];
-        return view('/administrator/portal-pemda/berita/tambah', $data);
+        return view('/administrator/portal-pemda/tambah-artikel', $data);
+    }
+
+
+    //Berita......
+    public function berita()
+    {
+        $data = [
+            'title' => 'Master Data Berita',
+            'v_berita' => $this->pemdaModel->tampilBerita()
+        ];
+        return view('/administrator/portal-pemda/berita/home', $data);
     }
 
     public function simpanBerita()
     {
-        if (!$this->validate([
-            'judul' => [
-                'rules' => 'required|is_unique[artikel.judul]',
-                'errors' => [
-                    'required' => 'Judul harus diisi',
-                    'is_unique' => 'Judul sudah terdaftar.'
-                ]
-            ],
-            'file_gambar' => [
-                'rules' => 'max_size[file_gambar,1024]|is_image[file_gambar]|mime_in[file_gambar,image/jpg,image/jpeg,image/png]',
-                'errors' => [
-                    'max_size' => 'Ukuran file terlalu besar',
-                    'is_image' => 'Error Gambar File Gambar => Ini bukan file gambar',
-                    'mime_in' => 'Error Mime File Gambar => Ini bukan file gambar',
-                ]
-            ]
-        ])) {
-            return redirect()->to('/administrator/portal-pemda/berita/tambah')->withInput();
-        }
+        $fileSampul = $this->request->getFile('file_gambar');
 
-        $fileGambar = $this->request->getFile('file_gambar');
-
-        if ($fileGambar->getError() == 4) {
-            $namaGambar = 'user.jpg';
+        if ($fileSampul->getError() == 4) {
+            $namaSampul = 'default.jpg';
         } else {
-            $namaGambar = $fileGambar->getRandomName();
-            $fileGambar->move('templet/gambar-berita', $namaGambar);
+            $namaSampul = $fileSampul->getRandomName();
+            $fileSampul->move('templet/gambar-berita', $namaSampul);
         }
 
-        $id_pegawai = session()->get('id');
-        $this->pemdaModel->save([
-            'judul' => $this->request->getVar('judul'),
-            'isi_artikel' => $this->request->getVar('isi_artikel'),
-            'nama_pengarang' => $this->request->getVar('nama_pengarang'),
-            'file_gambar' => $namaGambar,
-            'id_pegawai' => $id_pegawai,
-            'tipe_artikel_id' => $this->request->getVar('tipe_artikel_id'),
-        ]);
-        session()->setFlashdata('info', 'Data sudah di simpan...');
+        $judul = $this->request->getVar('judul');
+        $file_gambar = $namaSampul;
+        $path_file_gambar = $this->request->getVar('path_file_gambar');
+        $isi_artikel = $this->request->getVar('isi_artikel');
+        $opd_hdr_id = $this->request->getVar('opd_hdr_id');
+        $tipe_artikel_id = $this->request->getVar('tipe_artikel_id');
+        $nama_pengarang = $this->request->getVar('nama_pengarang');
+
+        $this->db->query("CALL artikel_insert('$judul', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$tipe_artikel_id', '$nama_pengarang')");
+
+        session()->setFlashdata('info', 'add berita/informasi');
+
+        return redirect()->to('/administrator/portal-pemda/dashboard');
+    }
+
+    public function detailBerita($judul)
+    {
+        $data = [
+            'title' => 'Detail Data Berita',
+            'v_berita' => $this->pemdaModel->getBeritaDetail($judul)
+        ];
+        if (empty($data['v_berita'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('judul Berita ' . $judul . ' tidak ditemukan');
+        }
+        return view('/administrator/portal-pemda/berita/detail', $data);
+    }
+
+    public function hapusBerita($id)
+    {
+        $v_berita = $this->pemdaModel->find($id);
+        if ($v_berita['file_gambar'] != 'default.png') {
+            unlink('templet/gambar-berita/' . $v_berita['file_gambar']);
+        }
+        $this->pemdaModel->delete($id);
+        session()->setFlashdata('info', 'Data sudah di hapus...');
         return redirect()->to('/administrator/portal-pemda/berita/home');
+    }
+
+    public function editBerita($judul)
+    {
+        $data = [
+            'title' => 'Form Edit Data Berita',
+            'validation' => \Config\Services::validation(),
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
+            'v_berita' => $this->pemdaModel->getBeritaDetail($judul),
+        ];
+        return view('/administrator/portal-pemda/berita/edit', $data);
+    }
+
+    public function updateBerita()
+    {
+        $fileSampul = $this->request->getFile('file_gambar');
+
+        if ($fileSampul->getError() == 4) {
+            $namaSampul = 'default.jpg';
+        } else {
+            $namaSampul = $fileSampul->getRandomName();
+            $fileSampul->move('templet/gambar-berita', $namaSampul);
+        }
+
+        $judul = $this->request->getVar('judul');
+        $file_gambar = $namaSampul;
+        $path_file_gambar = $this->request->getVar('path_file_gambar');
+        $isi_artikel = $this->request->getVar('isi_artikel');
+        $opd_hdr_id = $this->request->getVar('opd_hdr_id');
+        $tipe_artikel_id = $this->request->getVar('tipe_artikel_id');
+        $nama_pengarang = $this->request->getVar('nama_pengarang');
+
+        $this->db->query("CALL artikel_update('$judul', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$tipe_artikel_id', '$nama_pengarang')");
+
+        session()->setFlashdata('info', 'add berita/informasi');
+
+        return redirect()->to('/administrator/portal-pemda/berita/home');
+    }
+
+    //Informasi......
+    public function informasi()
+    {
+        $data = [
+            'title' => 'Master Data Informasi',
+            'v_informasi' => $this->pemdaModel->tampilInformasi()
+        ];
+        return view('/administrator/portal-pemda/informasi/home', $data);
+    }
+    public function detailInformasi($judul)
+    {
+        $data = [
+            'title' => 'Detail Data Informasi',
+            'v_informasi' => $this->pemdaModel->getInformasiDetail($judul)
+        ];
+        if (empty($data['v_informasi'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Judul Informasi ' . $judul . ' tidak ditemukan');
+        }
+        return view('/administrator/portal-pemda/informasi/detail', $data);
+    }
+
+    public function hapusInformasi($id)
+    {
+        $v_informasi = $this->pemdaModel->find($id);
+        if ($v_informasi['file_gambar'] != 'default.png') {
+            unlink('templet/gambar-berita/' . $v_informasi['file_gambar']);
+        }
+        $this->pemdaModel->delete($id);
+        session()->setFlashdata('info', 'Data sudah di hapus...');
+        return redirect()->to('/administrator/portal-pemda/informasi/home');
     }
 }
