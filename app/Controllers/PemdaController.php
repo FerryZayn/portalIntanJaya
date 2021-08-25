@@ -91,8 +91,10 @@ class PemdaController extends BaseController
             $namaSampul = $fileSampul->getRandomName();
             $fileSampul->move('templet/gambar-berita', $namaSampul);
         }
+        $slug = url_title($this->request->getVar('judul'), '-', true);
 
         $judul = $this->request->getVar('judul');
+        $slug_artikel = $slug;
         $file_gambar = $namaSampul;
         $path_file_gambar = $this->request->getVar('path_file_gambar');
         $isi_artikel = $this->request->getVar('isi_artikel');
@@ -100,7 +102,7 @@ class PemdaController extends BaseController
         $tipe_artikel_id = $this->request->getVar('tipe_artikel_id');
         $nama_pengarang = $this->request->getVar('nama_pengarang');
 
-        $this->db->query("CALL artikel_insert('$judul', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$tipe_artikel_id', '$nama_pengarang')");
+        $this->db->query("CALL artikel_insert('$judul', '$slug_artikel', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$tipe_artikel_id', '$nama_pengarang')");
 
         session()->setFlashdata('info', 'add berita/informasi');
 

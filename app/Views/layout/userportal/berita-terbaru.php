@@ -67,7 +67,7 @@
                                             <div class="col-3 col-md-4 pe-2 pe-md-0">
                                                 <div class="ratio_115-80 image-wrapper">
                                                     <a href="<?= base_url(); ?>/content/<?= $informasi['slug_artikel']; ?>">
-                                                        <img width="115" height="80" src="wp-content/themes/bootnews/assets/img/assets/lazy-empty.png" class="img-fluid lazy wp-post-image" alt="Mir has winning mindset, &#8216;same calibre as Vinales, Rins&#8217;" loading="lazy" data-src="https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-115x80.jpg" srcset="https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-115x80.jpg 115w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-180x123.jpg 180w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-99x68.jpg 99w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-110x77.jpg 110w" sizes="(max-width: 115px) 100vw, 115px" /> <!-- post type -->
+                                                        <img width="115" height="80" src="<?= base_url() ?><?= $informasi['path_file_gambar']; ?>/<?= $informasi['file_gambar']; ?>" class="img-fluid lazy wp-post-image" alt="Mir has winning mindset, &#8216;same calibre as Vinales, Rins&#8217;" loading="lazy" data-src="https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-115x80.jpg" srcset="https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-115x80.jpg 115w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-180x123.jpg 180w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-99x68.jpg 99w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-110x77.jpg 110w" sizes="(max-width: 115px) 100vw, 115px" /> <!-- post type -->
                                                     </a>
                                                 </div>
                                             </div>
@@ -78,7 +78,7 @@
                                                         ...
                                                         <?php
                                                         $kalimat = $informasi['isi_artikel'];
-                                                        $potong_kalimat = substr($kalimat, 835, 30);
+                                                        $potong_kalimat = substr($kalimat, 3, 30);
                                                         echo $potong_kalimat;
                                                         ?>
                                                         ...
@@ -112,7 +112,7 @@
                                             <div class="col-3 col-md-4 pe-2 pe-md-0">
                                                 <div class="ratio_115-80 image-wrapper">
                                                     <a href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>">
-                                                        <img width="115" height="80" src="wp-content/themes/bootnews/assets/img/assets/lazy-empty.png" class="img-fluid lazy wp-post-image" alt="Mir has winning mindset, &#8216;same calibre as Vinales, Rins&#8217;" loading="lazy" data-src="https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-115x80.jpg" srcset="https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-115x80.jpg 115w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-180x123.jpg 180w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-99x68.jpg 99w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-110x77.jpg 110w" sizes="(max-width: 115px) 100vw, 115px" /> <!-- post type -->
+                                                        <img width="115" height="80" src="<?= base_url() ?><?= $berita['path_file_gambar']; ?>/<?= $berita['file_gambar']; ?>" class="img-fluid lazy wp-post-image" alt="Mir has winning mindset, &#8216;same calibre as Vinales, Rins&#8217;" loading="lazy" data-src="https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-115x80.jpg" srcset="https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-115x80.jpg 115w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-180x123.jpg 180w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-99x68.jpg 99w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-110x77.jpg 110w" sizes="(max-width: 115px) 100vw, 115px" /> <!-- post type -->
                                                     </a>
                                                 </div>
                                             </div>

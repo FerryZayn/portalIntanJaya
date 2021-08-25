@@ -38,7 +38,9 @@ class ContentController extends BaseController
 
 			'v_beritaa' => $this->pemdaModel->contentBerita(),
 			'v_informasii' => $this->pemdaModel->contentInformasi(),
+
 			'v_notif' => $this->pemdaModel->bacaIni(),
+
 			'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
 			'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
 		];
@@ -69,7 +71,13 @@ class ContentController extends BaseController
 	{
 		$data = [
 			'v_visi' => $this->pemdaModel->tampilVisi(),
-			'v_misi' => $this->pemdaModel->tampilMisi()
+			'v_misi' => $this->pemdaModel->tampilMisi(),
+			'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
+			'v_informasirelasi' => $this->pemdaModel->tampilBerita(),
+			'v_beritaa' => $this->pemdaModel->contentBerita(),
+			'v_informasii' => $this->pemdaModel->contentInformasi(),
+			'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
+			'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
 		];
 		return view('/content/visi-misi', $data);
 	}

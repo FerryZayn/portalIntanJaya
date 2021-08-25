@@ -6,13 +6,13 @@
         <?php foreach ($v_latestpostbox as $beritaa) : ?>
             <article class="card card-full hover-a mb-4">
                 <div class="ratio_360-202 image-wrapper">
-                    <a href="#">
+                    <a href="<?= base_url(); ?>/content/<?= $beritaa['slug_artikel']; ?>">
                         <img width="360" height="202" src="<?= base_url() ?><?= $beritaa['path_file_gambar']; ?>/<?= $beritaa['file_gambar']; ?>" class="img-fluid lazy wp-post-image" sizes="(max-width: 360px) 100vw, 360px" />
                     </a>
                 </div>
                 <div class="card-body">
                     <h2 class="card-title h1-sm h3-md">
-                        <a href="#"><?= $beritaa['judul']; ?></a>
+                        <a href="<?= base_url(); ?>/content/<?= $beritaa['slug_artikel']; ?>"><?= $beritaa['judul']; ?></a>
                     </h2>
                     <div class="card-text text-muted small mb-2">
                         <span class="d-none d-sm-inline fw-bold me-1">
