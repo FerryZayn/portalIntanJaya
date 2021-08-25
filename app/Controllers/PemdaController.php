@@ -198,4 +198,32 @@ class PemdaController extends BaseController
         session()->setFlashdata('info', 'Data sudah di hapus...');
         return redirect()->to('/administrator/portal-pemda/informasi/home');
     }
+
+
+    //SlideShow......
+    public function slideShow()
+    {
+        $data = [
+            'v_slideshow' => $this->pemdaModel->tampilSlideshow()
+        ];
+        return view('/administrator/portal-pemda/slideshow/home', $data);
+    }
+
+    //Album Foto......
+    public function Albumfoto()
+    {
+        $data = [
+            'v_albumfoto' => $this->pemdaModel->tampilAlbumfoto()
+        ];
+        return view('/administrator/portal-pemda/album-foto/home', $data);
+    }
+
+    //Album Video......
+    public function Albumvideo()
+    {
+        $data = [
+            'v_albumvideo' => $this->pemdaModel->tampilAlbumvideo()
+        ];
+        return view('/administrator/portal-pemda/album-video/home', $data);
+    }
 }

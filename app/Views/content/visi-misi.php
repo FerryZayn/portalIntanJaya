@@ -11,17 +11,13 @@
                     <span class="d-none d-md-inline">Visi dan Misi PEMDA Kabupaten Intan Jaya</span>
                 </div>
             </div>
-
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <article>
                     <div class="block-area">
                         <div class="block-title-6">
                             <h4 class="h5 border-primary"><span class="bg-primary text-white"><i class="fab fa-ioxhost"></i> Visi dan Misi PEMDA Kabupaten Intan Jaya</span></h4>
                         </div>
-
                         <div class="border-bottom-last-0 first-pt-0">
-
-
                             <div class="card text-dark mb-3 text-center">
                                 <div class="card-header bg-primary text-white">Visi Kabupaten</div>
                                 <div class="card-body">
@@ -32,7 +28,6 @@
                                     </h5>
                                 </div>
                             </div>
-
                             <div class="card text-dark bg-light mb-3 text-center">
                                 <div class="card-header text-white" style="background-color: #6930C3;">Misi Kabupaten</div>
                                 <div class="card-body">
@@ -49,13 +44,7 @@
             </div>
 
             <aside class="col-md-4 widget-area end-sidebar-lg" id="right-sidebar">
-                <div class="sticky">
-                    <?= $this->include('layout/userportal/sosial-network'); ?>
-                    <?= $this->include('layout/userportal/informasi-lain'); ?>
-                    <!-- Latest Post 1 Star -->
-                    <?= $this->include('layout/userportal/latest-post'); ?>
-                    <!-- Latest Post 1 End -->
-                </div>
+                &nbsp;
             </aside>
 
 

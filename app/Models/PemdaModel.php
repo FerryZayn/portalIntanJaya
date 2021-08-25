@@ -135,18 +135,40 @@ class PemdaModel extends Model
             ->get()->getRow();
     }
 
-    //Get album Foto
+    //Get jumlah album Foto
+    public function tampilAlbumfoto()
+    {
+        return $this->db->table('artikel')
+            ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
+            ->get()->getResultArray();
+    }
     public function jumlahFoto()
     {
         return $this->db->table('artikel')
             ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
             ->countAllResults();
     }
-    //Get album Video
+
+
+    //Get jumlah album Video
+    public function tampilAlbumvideo()
+    {
+        return $this->db->table('artikel')
+            ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
+            ->get()->getResultArray();
+    }
     public function jumlahVideo()
     {
         return $this->db->table('artikel')
             ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
             ->countAllResults();
+    }
+
+    //Get Slide Show
+    public function tampilSlideshow()
+    {
+        return $this->db->table('artikel')
+            ->where(['tipe_artikel_id' => 7, 'is_active' => 1])
+            ->get()->getResultArray();
     }
 }

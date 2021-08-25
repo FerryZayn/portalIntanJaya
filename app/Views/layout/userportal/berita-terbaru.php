@@ -10,13 +10,13 @@
                     <article class="col-12 col-sm-6 col-lg-4 me-2">
                         <div class="card card-full text-white overflow zoom mb-4">
                             <div class="height-ratio image-wrapper">
-                                <a href="/content/<?= $berita['slug_artikel']; ?>">
+                                <a href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>">
                                     <img width="400" height="340" src="<?= base_url() ?><?= $berita['path_file_gambar']; ?>/<?= $berita['file_gambar']; ?>" class="img-fluid" sizes="(max-width: 400px) 100vw, 400px" />
                                 </a>
                             </div>
                             <div class="position-absolute px-3 pb-3 pt-0 b-0 w-100 bg-shadow">
                                 <h3 class="h3 h5-sm h3-md my-1 text-center">
-                                    <a class="text-white" href="/content/<?= $berita['slug_artikel']; ?>">
+                                    <a class="text-white" href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>">
                                         <?= $berita['judul']; ?>
                                     </a>
                                 </h3>

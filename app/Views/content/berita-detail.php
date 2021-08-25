@@ -85,9 +85,17 @@
 						<img src="<?= base_url(); ?>/templet/logo/author.jpeg" class="avatar avatar-100 photo" height="100" width="100" loading='lazy' />
 					</div>
 					<div class="ms-sm-3 media-body">
-						<h4 class="mb-2 font-weight-bold">User Created</h4>
-						<a class="author-website mb-1" target="_blank" rel="noopener" href="http://localhost:8080/content/berita-detail">http://localhost:8080/content/berita-detail</a>
-						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a...</p>
+						<h4 class="mb-2 font-weight-bold"><?= $v_berita->nama_pengarang; ?></h4>
+						<a class="author-website mb-1" href="<?= base_url(); ?>/content/<?= $v_berita->slug_artikel; ?>"><?= base_url(); ?>/content/<?= $v_berita->judul; ?></a>
+						<p>
+							...
+							<?php
+							$kalimat = $v_berita->isi_artikel;
+							$potong_kalimat = substr($kalimat, 20, 90);
+							echo $potong_kalimat;
+							?>
+							...
+						</p>
 					</div>
 				</div>
 				<hr>
