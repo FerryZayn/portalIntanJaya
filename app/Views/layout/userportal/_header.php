@@ -68,7 +68,7 @@
                     <div class="date-area d-none d-lg-block">
                         <time class="navbar-text me-2" datetime="2021-08-03">Tuesday, August 3, 2021</time>
                     </div>
-                    <div class="col-9 ps-1 ps-md-2">
+                    <!-- <div class="col-9 ps-1 ps-md-2">
                         <div class="breaking-box position-relative py-2">
                             <div class="box-carousel" data-flickity='{ "cellAlign": "left", "wrapAround": true, "adaptiveHeight": true, "prevNextButtons": true , "autoPlay": 5000, "pageDots": false, "imagesLoaded": true }'>
                                 <div class="col-12 active aribudin">
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <ul class="navbar-nav ms-auto text-center">
                         <li class="nav-item">

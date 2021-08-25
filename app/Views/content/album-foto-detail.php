@@ -113,12 +113,12 @@
                     </div>
                 </article>
             </div>
-            <aside class="col-md-4 widget-area end-sidebar-lg" id="right-sidebar">
+            <!-- <aside class="col-md-4 widget-area end-sidebar-lg" id="right-sidebar">
                 <div class="sticky">
                     <?= $this->include('layout/userportal/sosial-network'); ?>
                     <?= $this->include('layout/userportal/informasi-lain'); ?>
                 </div>
-            </aside>
+            </aside> -->
         </div>
     </div>
 </main>

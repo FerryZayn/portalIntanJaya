@@ -31,7 +31,11 @@ class ContentController extends BaseController
 		$data = [
 			'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
 			'v_informasirelasi' => $this->pemdaModel->tampilBerita(),
+
+
 			'v_berita' => $this->pemdaModel->getBeritaDetail($slug_artikel),
+
+
 			'v_beritaa' => $this->pemdaModel->contentBerita(),
 			'v_informasii' => $this->pemdaModel->contentInformasi(),
 			'v_notif' => $this->pemdaModel->bacaIni(),
