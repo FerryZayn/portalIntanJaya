@@ -33,7 +33,8 @@ $routes->setAutoRoute(true);
 
 //PortalBerita
 $routes->get('/content/berita-detail', 'ContentController::detail');
-$routes->get('/content/semua-berita-informasi', 'ContentController::semuaberitainformasi');
+$routes->get('/content/semua-informasi', 'ContentController::semuaInformasi');
+$routes->get('/content/semua-berita', 'ContentController::semuaBerita');
 
 //Visi Misi
 $routes->get('/content/visi-misi', 'ContentController::visiMisi');
