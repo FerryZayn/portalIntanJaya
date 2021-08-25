@@ -62,17 +62,10 @@
 
 					<p>&nbsp;</p>
 					<footer class="entry-footer">
-						<div class="tags-links mb-3"><span class="fw-bold me-2">Kategori Berita</span>
-							<a href="#" rel="category tag">Kategori 1</a>
-							<a href="#" rel="category tag">Kategori 2</a>
-							<a href="#" rel="category tag">Kategori Lainnya</a> <!-- jika ada relasi dari berita yang tayang -->
-						</div>
-
 						<div class="tags-links tagcloud"><span class="fw-bold me-2">Tags</span>
-							<a href="#" rel="tag">Tag 1</a>
-							<a href="#" rel="tag">Tag 2</a>
-							<a href="#" rel="tag">Tag 3</a>
-							<a href="#" rel="tag">Tag Lainnya</a> <!-- jika ada relasi dari berita yang tayang -->
+							<a href="#" rel="tag"><?= $v_berita->kategori; ?></a>
+							<a href="#" rel="tag"><?= $v_berita->tipe; ?></a>
+							<a href="#" rel="tag"><?= $v_berita->nama_status; ?></a>
 						</div>
 					</footer>
 				</article>
