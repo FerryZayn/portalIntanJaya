@@ -38,21 +38,116 @@
 
 
     <div class="col-4">
+
+
         <div class="sticky">
             <aside class="widget">
                 <div class="block-title-4">
-                    <h4 class="h5 title-arrow">
-                        <i class="fas fa-fire"></i> Informasi dan Berita
+                    <h4 class="h5 border-primary">
+                        <span class="bg-primary text-white">Informasi dan Berita</span>
                     </h4>
-                </div>
-                <ul class="post-number list-unstyled border-bottom-last-0 order-6 rounded mb-5">
-                    <?php foreach ($v_informasi as $informasi) : ?>
-                        <li class="hover-a">
-                            <a class="h5 h6-md h5-lg" href="<?= base_url(); ?>/content/<?= $informasi['slug_artikel']; ?>"><?= $informasi['judul']; ?></a>
+                    <ul class="nav nav-tabs nav-block-link1 d-inline" id="cat-tabsone1" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="cat-navione1" data-bs-toggle="tab" href="#block-informasi" role="tab" aria-controls="block-informasi" aria-selected="true">Informasi</a>
                         </li>
-                    <?php endforeach; ?>
-                    <a class="btn btn-primary btn-sm" href="/content/semua-berita-informasi"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
-                </ul>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="cat-navitwo1" data-bs-toggle="tab" href="#block-berita" role="tab" aria-controls="block-berita" aria-selected="false">Berita</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--tabs content block informasi-->
+                <div id="block-load1" class="tab-content ajax-tabs p-0">
+                    <div class="tab-pane fade show active" id="block-informasi" role="tabpanel" aria-labelledby="cat-navione1">
+                        <div class="row animate slideInDown">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <article class="card card-full hover-a mb-4">
+                                    <div class="row">
+                                        <?php foreach ($v_informasi as $informasi) : ?>
+                                            <div class="col-3 col-md-4 pe-2 pe-md-0">
+                                                <div class="ratio_115-80 image-wrapper">
+                                                    <a href="<?= base_url(); ?>/content/<?= $informasi['slug_artikel']; ?>">
+                                                        <img width="115" height="80" src="wp-content/themes/bootnews/assets/img/assets/lazy-empty.png" class="img-fluid lazy wp-post-image" alt="Mir has winning mindset, &#8216;same calibre as Vinales, Rins&#8217;" loading="lazy" data-src="https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-115x80.jpg" srcset="https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-115x80.jpg 115w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-180x123.jpg 180w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-99x68.jpg 99w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-110x77.jpg 110w" sizes="(max-width: 115px) 100vw, 115px" /> <!-- post type -->
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-9 col-md-8">
+                                                <div class="card-body pt-0">
+                                                    <h3 class="card-title h6 h4-md h6-lg">
+                                                        <a href="<?= base_url(); ?>/content/<?= $informasi['slug_artikel']; ?>"><?= $informasi['judul']; ?></a><br />
+                                                        ...
+                                                        <?php
+                                                        $kalimat = $informasi['isi_artikel'];
+                                                        $potong_kalimat = substr($kalimat, 835, 30);
+                                                        echo $potong_kalimat;
+                                                        ?>
+                                                        ...
+                                                    </h3>
+                                                    <div class="card-text small text-muted">
+                                                        <time class="news-date" datetime="2019-06-16T02:12:03+00:00">
+                                                            <?php
+                                                            $date = $informasi['created_date'];
+                                                            echo date('d M Y', strtotime($date));
+                                                            ?>
+                                                        </time>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <a class="btn btn-primary btn-sm" href="/content/semua-berita-informasi"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--tabs content block berita-->
+                    <div class="tab-pane fade" id="block-berita" role="tabpanel" aria-labelledby="cat-navitwo1">
+                        <div class="row animate slideInDown">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <article class="card card-full hover-a mb-4">
+                                    <div class="row">
+                                        <?php foreach ($v_berita as $berita) : ?>
+                                            <div class="col-3 col-md-4 pe-2 pe-md-0">
+                                                <div class="ratio_115-80 image-wrapper">
+                                                    <a href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>">
+                                                        <img width="115" height="80" src="wp-content/themes/bootnews/assets/img/assets/lazy-empty.png" class="img-fluid lazy wp-post-image" alt="Mir has winning mindset, &#8216;same calibre as Vinales, Rins&#8217;" loading="lazy" data-src="https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-115x80.jpg" srcset="https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-115x80.jpg 115w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-180x123.jpg 180w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-99x68.jpg 99w, https://demo.bootstrap.news/default/wp-content/uploads/2019/06/motorcycle-racer-597913_1920-110x77.jpg 110w" sizes="(max-width: 115px) 100vw, 115px" /> <!-- post type -->
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-9 col-md-8">
+                                                <div class="card-body pt-0">
+                                                    <h3 class="card-title h6 h4-md h6-lg">
+                                                        <a href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>">
+                                                            <?= $berita['judul']; ?>
+                                                        </a><br />
+                                                        ...
+                                                        <?php
+                                                        $kalimat = $berita['isi_artikel'];
+                                                        $potong_kalimat = substr($kalimat, 235, 30);
+                                                        echo $potong_kalimat;
+                                                        ?>
+                                                        ...
+                                                    </h3>
+                                                    <div class="card-text small text-muted">
+                                                        <time class="news-date" datetime="2019-06-16T02:12:03+00:00">
+                                                            <?php
+                                                            $date = $berita['created_date'];
+                                                            echo date('d M Y', strtotime($date));
+                                                            ?>
+                                                        </time>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <a class="btn btn-primary btn-sm" href="/content/semua-berita-berita"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </aside>
         </div>
     </div>

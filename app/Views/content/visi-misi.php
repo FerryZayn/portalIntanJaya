@@ -1,6 +1,7 @@
 <?= $this->extend('/layout/userportal/portal') ?>
 
 <?= $this->section('content') ?>
+
 <main id="content">
     <div class="container">
         <div class="row">
