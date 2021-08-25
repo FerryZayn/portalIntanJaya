@@ -9,7 +9,7 @@
         <li class="menu-item active nav-item">
             <a href="<?= base_url('/'); ?>" class="nav-link">Halaman Depan</a>
         </li>
-        <li><a href="/content/visi-misi" class="nav-link">Visi & Misi</a></li>
+        <li><a href="<?= base_url(); ?>/content/visi-misi" class="nav-link">Visi & Misi</a></li>
         <li><a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">Menu Link 2</a>
             <div id="mega-menu-1356" class="dropdown-menu mega w-100 shadow-lrb-lg px-3 py-0 depth_0">
                 <div class="row mega-hovers">
