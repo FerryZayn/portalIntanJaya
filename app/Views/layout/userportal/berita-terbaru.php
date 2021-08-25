@@ -125,7 +125,7 @@
                                                         ...
                                                         <?php
                                                         $kalimat = $berita['isi_artikel'];
-                                                        $potong_kalimat = substr($kalimat, 235, 30);
+                                                        $potong_kalimat = substr($kalimat, 25, 30);
                                                         echo $potong_kalimat;
                                                         ?>
                                                         ...
