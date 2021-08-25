@@ -68,27 +68,28 @@
                     <div class="date-area d-none d-lg-block">
                         <time class="navbar-text me-2" datetime="2021-08-03">Tuesday, August 3, 2021</time>
                     </div>
-                    <!-- <div class="col-9 ps-1 ps-md-2">
+
+                    <div class="col-9 ps-1 ps-md-2">
                         <div class="breaking-box position-relative py-2">
                             <div class="box-carousel" data-flickity='{ "cellAlign": "left", "wrapAround": true, "adaptiveHeight": true, "prevNextButtons": true , "autoPlay": 5000, "pageDots": false, "imagesLoaded": true }'>
-                                <div class="col-12 active aribudin">
-                                    <a class="h6 fw-normal text-white" href="#">Animasi Slide Text Judul Berita 1</a>
-                                </div>
-                                <div class="col-12  aribudin">
-                                    <a class="h6 fw-normal text-white" href="#">Animasi Slide Text Judul Berita 2</a>
-                                </div>
-                                <div class="col-12  aribudin">
-                                    <a class="h6 fw-normal text-white" href="#">Animasi Slide Text Judul Berita 3</a>
-                                </div>
-                                <div class="col-12  aribudin">
-                                    <a class="h6 fw-normal text-white" href="#">Animasi Slide Text Judul Berita 4</a>
-                                </div>
-                                <div class="col-12  aribudin">
-                                    <a class="h6 fw-normal text-white" href="#">Animasi Slide Text Judul Berita 5</a>
-                                </div>
+                                <?php foreach ($v_beritaheader as $berita) : ?>
+                                    <div class="col-12 active aribudin">
+                                        <a class="h6 fw-normal text-white" href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>">
+                                            <?= $berita['judul']; ?>
+                                        </a>
+                                    </div>
+                                <?php endforeach; ?>
+                                <?php foreach ($v_informasiheader as $informasi) : ?>
+                                    <div class="col-12 active aribudin">
+                                        <a class="h6 fw-normal text-white" href="<?= base_url(); ?>/content/<?= $informasi['slug_artikel']; ?>">
+                                            <?= $informasi['judul']; ?>
+                                        </a>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+
 
                     <ul class="navbar-nav ms-auto text-center">
                         <li class="nav-item">

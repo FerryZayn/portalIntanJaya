@@ -78,7 +78,7 @@
                                                         ...
                                                         <?php
                                                         $kalimat = $informasi['isi_artikel'];
-                                                        $potong_kalimat = substr($kalimat, 3, 30);
+                                                        $potong_kalimat = substr($kalimat, 60, 30);
                                                         echo $potong_kalimat;
                                                         ?>
                                                         ...
@@ -95,7 +95,7 @@
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
-                                    <a class="btn btn-primary btn-sm" href="/content/semua-informasi"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
+                                    <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
                                 </article>
                             </div>
                         </div>
@@ -142,7 +142,7 @@
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
-                                    <a class="btn btn-primary btn-sm" href="/content/semua-berita"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
+                                    <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-berita"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
                                 </article>
                             </div>
                         </div>

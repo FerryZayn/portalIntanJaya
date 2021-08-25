@@ -112,13 +112,17 @@
                         </div>
                     </div>
                 </article>
+                <?= $this->include('/layout/userportal/relasi-berita-detail'); ?>
             </div>
-            <!-- <aside class="col-md-4 widget-area end-sidebar-lg" id="right-sidebar">
+            <aside class="col-md-4 widget-area end-sidebar-lg" id="right-sidebar">
                 <div class="sticky">
                     <?= $this->include('layout/userportal/sosial-network'); ?>
                     <?= $this->include('layout/userportal/informasi-lain'); ?>
+                    <!-- Latest Post 1 Star -->
+                    <?= $this->include('layout/userportal/latest-post'); ?>
+                    <!-- Latest Post 1 End -->
                 </div>
-            </aside> -->
+            </aside>
         </div>
     </div>
 </main>
