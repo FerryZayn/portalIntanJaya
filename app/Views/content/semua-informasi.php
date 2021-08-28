@@ -40,50 +40,48 @@
                                                     ...
                                                     <?php
                                                     $kalimat = $informasi['isi_artikel'];
-                                                    $potong_kalimat = substr($kalimat, 35, 230);
+                                                    $potong_kalimat = substr($kalimat, 35, 240);
                                                     echo $potong_kalimat;
                                                     ?>
                                                     ...
                                                 </p>
-                                                <div class="card-text mb-2 text-muted small">
-                                                    <span class="fw-bold d-none d-sm-inline me-1">
-                                                        <a href="#" rel="author"><?= $informasi['nama_pengarang']; ?></a> </span>
-                                                    <time class="news-date">
-                                                        <?php
-                                                        $date = $informasi['created_date'];
-                                                        echo date('d M Y', strtotime($date));
-                                                        ?>
-                                                    </time>
+                                                <div class="card-text mb-2 text-muted small" style="font-size: 11px;">
+                                                    <a href="#" rel="author"><i class="fas fa-user-edit"></i> <?= $informasi['nama_pengarang']; ?></a>
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                    <?php
+                                                    $date = $informasi['created_date'];
+                                                    echo date('d M Y', strtotime($date));
+                                                    ?>
                                                 </div>
+                                                <a href="<?= base_url(); ?>/content/<?= $informasi['slug']; ?>" class="btn btn-primary btn-sm mt-3">Baca Selengkapnya <i class="fa fa-arrow-circle-right"></i> </a>
                                             </div>
-                                            <a href="<?= base_url(); ?>/content/<?= $informasi['slug']; ?>" class="btn btn-primary btn-sm mt-3">Baca Selengkapnya <i class="fa fa-arrow-circle-right"></i> </a>
                                         </div>
                                     </div>
                                 </article>
                             <?php endforeach; ?>
+                            <div class="clearfix my-4">
+                                <nav class="float-start" aria-label="Posts navigation">
+                                    <ul class="pagination">
+                                        <li class="page-item active">
+                                            <span aria-current="page" class="page-link current">1</span>
+                                        </li>
+                                        <li class="page-item ">
+                                            <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item ">
+                                            <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item ">
+                                            <a class="page-link" href="#">6</a>
+                                        </li>
+                                        <li class="page-item ">
+                                            <a class="next page-link" href="#">&raquo;</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <span class="py-2 float-end"></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="clearfix my-4">
-                        <nav class="float-start" aria-label="Posts navigation">
-                            <ul class="pagination">
-                                <li class="page-item active">
-                                    <span aria-current="page" class="page-link current">1</span>
-                                </li>
-                                <li class="page-item ">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item ">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item ">
-                                    <a class="page-link" href="#">6</a>
-                                </li>
-                                <li class="page-item ">
-                                    <a class="next page-link" href="#">&raquo;</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <span class="py-2 float-end"></span>
                     </div>
                 </article>
             </div>

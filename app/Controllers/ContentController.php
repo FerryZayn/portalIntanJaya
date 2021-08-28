@@ -7,7 +7,6 @@ use \App\Models\TipeArtikelModel;
 
 class ContentController extends BaseController
 {
-
 	protected $pemdaModel;
 	protected $tipertikelModel;
 	public function __construct()
@@ -49,8 +48,6 @@ class ContentController extends BaseController
 		];
 		return view('/content/berita-detail', $data);
 	}
-
-
 
 
 	public function semuaInformasi()
