@@ -95,8 +95,8 @@
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
-                                    <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
                                 </article>
+                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
                             </div>
                         </div>
                     </div>
@@ -142,8 +142,8 @@
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
-                                    <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-berita"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
                                 </article>
+                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-berita"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
                             </div>
                         </div>
                     </div>

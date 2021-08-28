@@ -56,14 +56,18 @@ class ContentController extends BaseController
 	public function semuaInformasi()
 	{
 		$data = [
-			'v_informasi' => $this->pemdaModel->tampilInformasi()
+			'v_informasi' => $this->pemdaModel->tampilInformasi(),
+			'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
+			'v_beritaheader' => $this->pemdaModel->tampilBerita(),
 		];
 		return view('/content/semua-informasi', $data);
 	}
 	public function semuaBerita()
 	{
 		$data = [
-			'v_berita' => $this->pemdaModel->tampilBerita()
+			'v_berita' => $this->pemdaModel->tampilBerita(),
+			'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
+			'v_beritaheader' => $this->pemdaModel->tampilBerita(),
 		];
 		return view('/content/semua-berita', $data);
 	}
