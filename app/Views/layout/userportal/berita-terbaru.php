@@ -10,13 +10,13 @@
                     <article class="col-12 col-sm-6 col-lg-4 me-2">
                         <div class="card card-full text-white overflow zoom mb-4">
                             <div class="height-ratio image-wrapper">
-                                <a href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>">
+                                <a href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>">
                                     <img width="400" height="340" src="<?= base_url() ?><?= $berita['path_file_gambar']; ?>/<?= $berita['file_gambar']; ?>" class="img-fluid" sizes="(max-width: 400px) 100vw, 400px" />
                                 </a>
                             </div>
                             <div class="position-absolute px-3 pb-3 pt-0 b-0 w-100 bg-shadow">
                                 <h3 class="h3 h5-sm h3-md my-1 text-center">
-                                    <a class="text-white" href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>">
+                                    <a class="text-white" href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>">
                                         <?= $berita['judul']; ?>
                                     </a>
                                 </h3>
@@ -66,7 +66,7 @@
                                         <?php foreach ($v_informasi as $informasi) : ?>
                                             <div class="col-3 col-md-4 pe-2 pe-md-0">
                                                 <div class="ratio_115-80 image-wrapper">
-                                                    <a href="<?= base_url(); ?>/content/<?= $informasi['slug_artikel']; ?>">
+                                                    <a href="<?= base_url(); ?>/content/<?= $informasi['slug']; ?>">
                                                         <img width="115" height="80" src="<?= base_url() ?><?= $informasi['path_file_gambar']; ?>/<?= $informasi['file_gambar']; ?>" class="img-fluid lazy wp-post-image" loading="lazy" sizes="(max-width: 115px) 100vw, 115px" /> <!-- post type -->
                                                     </a>
                                                 </div>
@@ -74,7 +74,7 @@
                                             <div class="col-9 col-md-8">
                                                 <div class="card-body pt-0">
                                                     <h3 class="card-title h6 h4-md h6-lg">
-                                                        <a href="<?= base_url(); ?>/content/<?= $informasi['slug_artikel']; ?>"><?= $informasi['judul']; ?></a><br />
+                                                        <a href="<?= base_url(); ?>/content/<?= $informasi['slug']; ?>"><?= $informasi['judul']; ?></a><br />
                                                         ...
                                                         <?php
                                                         $kalimat = $informasi['isi_artikel'];
@@ -111,7 +111,7 @@
                                         <?php foreach ($v_berita as $berita) : ?>
                                             <div class="col-3 col-md-4 pe-2 pe-md-0">
                                                 <div class="ratio_115-80 image-wrapper">
-                                                    <a href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>">
+                                                    <a href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>">
                                                         <img width="115" height="80" src="<?= base_url() ?><?= $berita['path_file_gambar']; ?>/<?= $berita['file_gambar']; ?>" class="img-fluid lazy wp-post-image" loading="lazy" sizes="(max-width: 115px) 100vw, 115px" /> <!-- post type -->
                                                     </a>
                                                 </div>
@@ -119,7 +119,7 @@
                                             <div class="col-9 col-md-8">
                                                 <div class="card-body pt-0">
                                                     <h3 class="card-title h6 h4-md h6-lg">
-                                                        <a href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>">
+                                                        <a href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>">
                                                             <?= $berita['judul']; ?>
                                                         </a><br />
                                                         ...

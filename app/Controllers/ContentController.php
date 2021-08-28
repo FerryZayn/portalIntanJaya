@@ -28,14 +28,13 @@ class ContentController extends BaseController
 		];
 		return view('/content/home', $data);
 	}
-	public function detailBerita($slug_artikel)
+	public function detailBerita($slug)
 	{
 		$data = [
 			'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
-			'v_informasirelasi' => $this->pemdaModel->tampilBerita(),
+			'v_informasirelasi' => $this->pemdaModel->tampilInformasi(),
 
-
-			'v_berita' => $this->pemdaModel->getBeritaDetail($slug_artikel),
+			'v_berita' => $this->pemdaModel->getBeritaDetail($slug),
 
 			'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
 			'v_beritaheader' => $this->pemdaModel->tampilBerita(),
@@ -50,8 +49,6 @@ class ContentController extends BaseController
 		];
 		return view('/content/berita-detail', $data);
 	}
-
-
 
 
 

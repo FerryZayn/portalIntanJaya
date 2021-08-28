@@ -107,13 +107,13 @@
 					<div class="card card-full u-hover hover-a mb-2">
 						<?php foreach ($v_notif as $berita) : ?>
 							<div class="ratio_251-141 image-wrapper">
-								<a href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>">
+								<a href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>">
 									<img width="300" height="200" src="<?= base_url() ?><?= $berita['path_file_gambar']; ?>/<?= $berita['file_gambar']; ?>" class="attachment-medium size-medium wp-post-image" sizes="(max-width: 300px) 100vw, 300px" />
 								</a>
 							</div>
 							<div class="card-body">
 								<h3 class="card-title mb-2 h5 h4-md">
-									<a href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>"><?= $berita['judul']; ?></a>
+									<a href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>"><?= $berita['judul']; ?></a>
 								</h3>
 								<div class="mb-2 text-muted small">
 									<?php

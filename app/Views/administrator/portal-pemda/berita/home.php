@@ -60,10 +60,10 @@
                                                     ...
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <a href="/administrator/portal-pemda/berita/<?= $berita['judul']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
+                                                        <a href="/administrator/portal-pemda/berita/<?= $berita['slug']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
-                                                        <a href="/administrator/portal-pemda/berita/edit/<?= $berita['judul']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
+                                                        <a href="/administrator/portal-pemda/berita/edit/<?= $berita['slug']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
                                                             <i class="fa fa-edit"></i>
                                                         </a> &nbsp;
                                                         <form action="<?= base_url() ?>/administrator/portal-pemda/berita/<?= $berita['id'] ?>" method="POST" class="d-inline">

@@ -10,7 +10,7 @@ class PemdaModel extends Model
     protected $primaryKey = 'id';
     protected $useTimestamps = true;
     protected $allowedFields = [
-        'id', 'judul', 'slug_artikel', 'file_gambar', 'path_file_gambar', 'isi_artikel', 'created_date', 'last_modified_date', 'nama_pengarang', 'user_created', 'user_updated',
+        'id', 'judul', 'slug', 'file_gambar', 'path_file_gambar', 'isi_artikel', 'created_date', 'last_modified_date', 'nama_pengarang', 'user_created', 'user_updated',
         'notes', 'opd_hdr_id', 'is_active', 'tipe_artikel_id', 'status_sistem_id'
     ];
 
@@ -97,12 +97,12 @@ class PemdaModel extends Model
             ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
             ->get()->getResultArray();
     }
-    public function getBeritaDetail($slug_artikel)
+    public function getBeritaDetail($slug)
     {
         return $this->db->table('artikel')
             ->join('tipe_artikel', 'tipe_artikel.id=artikel.tipe_artikel_id')
             ->join('status_sistem', 'status_sistem.id=artikel.status_sistem_id')
-            ->where('slug_artikel', $slug_artikel)
+            ->where('slug', $slug)
             ->get()->getRow();
     }
 
