@@ -27,6 +27,7 @@ class PejabatController extends BaseController
             $namaSampul = $fileSampul->getRandomName();
             $fileSampul->move('foto-pejabat', $namaSampul);
         }
+
         $pegawai_id = $this->request->getVar('pegawai_id');
         $file_foto = $namaSampul;
         $path_file_foto = $this->request->getVar('path_file_foto');

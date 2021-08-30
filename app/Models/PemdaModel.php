@@ -19,7 +19,7 @@ class PemdaModel extends Model
     public function contentInformasi()
     {
         return $this->db->table('artikel')
-            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
+            ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
             ->orderBy('id', 'DESC')
             ->limit('10')
             ->get()->getResultArray();
