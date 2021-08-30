@@ -16,9 +16,6 @@
                     <a href="#">
                         <h5 class="card-title h3 h4-sm h3-md text-white my-1">MENGENAL INTAN JAYA</h5>
                     </a>
-                    <!-- <span class="fw-bold white d-inline d-sm-none d-md-inline me-1">
-                        <a href="#" rel="author">User Created</a> </span>
-                    <time class="d-sm-none d-md-inline m-0 text-white">Agustus 03, 2021</time> -->
                 </div>
             </div>
         </article>
@@ -34,9 +31,6 @@
                     <a href="<?= base_url(); ?>/content/visi-misi">
                         <h5 class="card-title h3 h4-sm h3-md text-white my-1">VISI dan MISI</h5>
                     </a>
-                    <!-- <span class="fw-bold white d-inline d-sm-none d-md-inline me-1">
-                        <a href="#" rel="author">User Created</a> </span>
-                    <time class="d-sm-none d-md-inline m-0 text-white">Agustus 03, 2021</time> -->
                 </div>
             </div>
         </article>
@@ -52,14 +46,9 @@
                     <a href="#">
                         <h5 class="card-title h3 h4-sm h3-md text-white my-1">INFORMASI PUBLIK</h5>
                     </a>
-                    <!-- <span class="fw-bold white d-inline d-sm-none d-md-inline me-1">
-                        <a href="#" rel="author">User Created</a> </span>
-                    <time class="d-sm-none d-md-inline m-0 text-white">Agustus 03, 2021</time> -->
                 </div>
             </div>
         </article>
-
-
 
         <article class="col-sm-4 col-md-12 col-lg-4">
             <div class="card card-full hover-a mb-4">
@@ -73,9 +62,6 @@
                     <a href="#">
                         <h5 class="card-title h3 h4-sm h3-md text-white my-1">STRUKTUR ORGANISASI</h5>
                     </a>
-                    <!-- <span class="fw-bold white d-inline d-sm-none d-md-inline me-1">
-                        <a href="#" rel="author">User Created</a> </span>
-                    <time class="d-sm-none d-md-inline m-0 text-white">Agustus 03, 2021</time> -->
                 </div>
             </div>
         </article>
@@ -91,9 +77,6 @@
                     <a href="#">
                         <h5 class="card-title h3 h4-sm h3-md text-white my-1">PROFIL PEJABAT</h5>
                     </a>
-                    <!-- <span class="fw-bold white d-inline d-sm-none d-md-inline me-1">
-                        <a href="#" rel="author">User Created</a> </span>
-                    <time class="d-sm-none d-md-inline m-0 text-white">Agustus 03, 2021</time> -->
                 </div>
             </div>
         </article>

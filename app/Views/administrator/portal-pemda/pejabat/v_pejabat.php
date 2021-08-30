@@ -78,25 +78,21 @@
             </div>
             <form method="POST" action="/PejabatController/simpanPejabat" enctype="multipart/form-data">
                 <div class="modal-body">
+
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-6">
+                            <img src="/admintemp/img/logo/user.png" class="img-thumbnail img-preview">
+                        </div>
+                        <div class="col-6">
+                            <label for="fileFotoLabel" class="fileFotoLabel">File Foto</label>
+                            <input type="file" class="form-control" name="file_foto" id="file_foto" onchange="previewImg()">
                             <div class="mb-3">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <img src="/admintemp/img/logo/user.png" class="img-thumbnail img-preview">
-                                    </div>
-                                    <div class="col-6">
-                                        <label for="fileFotoLabel" class="fileFotoLabel">File Foto</label>
-                                        <input type="file" class="form-control" name="file_foto" id="file_foto" onchange="previewImg()">
-                                        <div class="mb-3">
-                                            <input type="hidden" name="pegawai_id" value="<?= session()->get('id'); ?>" class="form-control">
-                                            <input type="hidden" name="path_file_foto" class="form-control" value="/foto-pejabat">
-                                        </div>
-                                    </div>
-                                </div>
+                                <input type="text" name="pegawai_id" value="<?= session()->get('id'); ?>" class="form-control">
+                                <input type="text" name="path_file_foto" class="form-control" value="/foto-pejabat">
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="modal-footer no-bd">
                     <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Simpan Data...</button>
