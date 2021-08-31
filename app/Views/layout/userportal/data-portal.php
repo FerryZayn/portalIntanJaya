@@ -41,7 +41,7 @@
                         <img width="360" height="202" src="<?= base_url() ?>/templet/gambar-berita/16.jpg" class="img-fluid lazy wp-post-image" sizes="(max-width: 360px) 100vw, 360px" />
                     </a>
                 </div>
-                <a class="bg-full-shadow" href="#" aria-label="background shadow"></a>
+                <a class="bg-full-shadow" href="<?= base_url(); ?>/content/semua-artikel" aria-label="background shadow"></a>
                 <div class="position-absolute px-5 bottom-4 w-100 z-index-5 text-center">
                     <a href="<?= base_url(); ?>/content/semua-artikel">
                         <h5 class="card-title h3 h4-sm h3-md text-white my-1">INFORMASI PUBLIK</h5>

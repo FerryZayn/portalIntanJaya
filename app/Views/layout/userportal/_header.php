@@ -139,7 +139,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div id="main-logo" class="main-logo text-center-md-down">
-                        <a href="#" class="navbar-brand custom-logo-link" rel="home" aria-current="page">
+                        <a href="<?= base_url(); ?>/" class="navbar-brand custom-logo-link" rel="home" aria-current="page">
                             <img src="<?= base_url() ?>/templet/logo/logo-bootnews.png" class="img-fluid" style="height: 60px;" />
                         </a>
                     </div>

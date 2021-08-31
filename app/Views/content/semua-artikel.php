@@ -26,6 +26,7 @@
                             <?php foreach ($v_informasi as $informasi) : ?>
                                 <article class="card card-full hover-a py-4 post-1305 post type-post status-publish format-video has-post-thumbnail hentry category-video tag-science tag-starvation post_format-post-format-video" id="post-1305">
                                     <div class="row">
+
                                         <div class="col-sm-3 col-md-12 col-lg-3">
                                             <div class="ratio_360-202 image-wrapper">
                                                 <a href="<?= base_url(); ?>/content/<?= $informasi['slug']; ?>">
