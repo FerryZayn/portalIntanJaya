@@ -12,7 +12,7 @@
                     </a>
                 </div>
                 <a class="bg-full-shadow" href="#" aria-label="background shadow"></a>
-                <div class="position-absolute px-3 bottom-4 w-100 z-index-5 text-center">
+                <div class="position-absolute px-3 bottom-5 w-100 z-index-5 text-center">
                     <a href="#">
                         <h5 class="card-title h3 h4-sm h3-md text-white my-1">MENGENAL INTAN JAYA</h5>
                     </a>
@@ -27,7 +27,7 @@
                     </a>
                 </div>
                 <a class="bg-full-shadow" href="#" aria-label="background shadow"></a>
-                <div class="position-absolute px-3 bottom-4 w-100 z-index-5 text-center">
+                <div class="position-absolute px-3 bottom-5 w-100 z-index-5 text-center">
                     <a href="<?= base_url(); ?>/content/visi-misi">
                         <h5 class="card-title h3 h4-sm h3-md text-white my-1">VISI dan MISI</h5>
                     </a>
@@ -37,13 +37,13 @@
         <article class="col-sm-4 col-md-12 col-lg-4">
             <div class="card card-full hover-a mb-4">
                 <div class="ratio_360-202 image-wrapper">
-                    <a href="<?= base_url(); ?>/content/semua-artikel">
+                    <a href="#">
                         <img width="360" height="202" src="<?= base_url() ?>/templet/gambar-berita/16.jpg" class="img-fluid lazy wp-post-image" sizes="(max-width: 360px) 100vw, 360px" />
                     </a>
                 </div>
                 <a class="bg-full-shadow" href="#" aria-label="background shadow"></a>
-                <div class="position-absolute px-5 bottom-4 w-100 z-index-5 text-center">
-                    <a href="<?= base_url(); ?>/content/semua-artikel">
+                <div class="position-absolute px-5 bottom-5 w-100 z-index-5 text-center">
+                    <a href="#">
                         <h5 class="card-title h3 h4-sm h3-md text-white my-1">INFORMASI PUBLIK</h5>
                     </a>
                 </div>
@@ -58,7 +58,7 @@
                     </a>
                 </div>
                 <a class="bg-full-shadow" href="#" aria-label="background shadow"></a>
-                <div class="position-absolute px-3 bottom-4 w-100 z-index-5 text-center">
+                <div class="position-absolute px-3 bottom-5 w-100 z-index-5 text-center">
                     <a href="#">
                         <h5 class="card-title h3 h4-sm h3-md text-white my-1">STRUKTUR ORGANISASI</h5>
                     </a>
@@ -73,7 +73,7 @@
                     </a>
                 </div>
                 <a class="bg-full-shadow" href="#" aria-label="background shadow"></a>
-                <div class="position-absolute px-3 bottom-4 w-100 z-index-5 text-center">
+                <div class="position-absolute px-3 bottom-5 w-100 z-index-5 text-center">
                     <a href="#">
                         <h5 class="card-title h3 h4-sm h3-md text-white my-1">PROFIL PEJABAT</h5>
                     </a>
@@ -88,7 +88,7 @@
                     </a>
                 </div>
                 <a class="bg-full-shadow" href="#" aria-label="background shadow"></a>
-                <div class="position-absolute px-3 bottom-4 w-100 z-index-5 text-center">
+                <div class="position-absolute px-3 bottom-5 w-100 z-index-5 text-center">
                     <a href="#">
                         <h5 class="card-title h3 h4-sm h3-md text-white my-1">PORTAL PERANGKAT DAERAH</h5>
                     </a>

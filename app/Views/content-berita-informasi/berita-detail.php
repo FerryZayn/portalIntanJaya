@@ -7,7 +7,7 @@
 			<!--breadcrumb-->
 			<div class="col-12">
 				<div class="breadcrumb u-breadcrumb  pt-3 px-0 mb-0 bg-transparent small">
-					<a class="breadcrumb-item" href="<?php base_url(); ?>/">Home</a> &nbsp;&nbsp;&#187;&nbsp;&nbsp;
+					<a class="breadcrumb-item" href="#">Home</a> &nbsp;&nbsp;&#187;&nbsp;&nbsp;
 					<span class="d-none d-md-inline"><?= $v_berita->judul; ?></span>
 				</div>
 			</div>

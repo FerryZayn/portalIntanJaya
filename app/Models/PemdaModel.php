@@ -33,7 +33,7 @@ class PemdaModel extends Model
             ->get()->getResultArray();
     }
 
-
+    //Get Konten File Latest Post
     public function contentLatestpostList()
     {
         return $this->db->table('artikel')
@@ -105,7 +105,6 @@ class PemdaModel extends Model
             ->where('slug', $slug)
             ->get()->getRow();
     }
-
     public function jumlahBerita()
     {
         return $this->db->table('artikel')

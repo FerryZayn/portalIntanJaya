@@ -21,8 +21,6 @@
                         </div>
                         <!--output-->
                         <div class="border-bottom-last-0 first-pt-0">
-
-
                             <?php foreach ($v_informasi as $informasi) : ?>
                                 <article class="card card-full hover-a py-4 post-1305 post type-post status-publish format-video has-post-thumbnail hentry category-video tag-science tag-starvation post_format-post-format-video" id="post-1305">
                                     <div class="row">
@@ -61,7 +59,28 @@
                                     </div>
                                 </article>
                             <?php endforeach; ?>
-
+                            <div class="clearfix my-4">
+                                <nav class="float-start" aria-label="Posts navigation">
+                                    <ul class="pagination">
+                                        <li class="page-item active">
+                                            <span aria-current="page" class="page-link current">1</span>
+                                        </li>
+                                        <li class="page-item ">
+                                            <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item ">
+                                            <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item ">
+                                            <a class="page-link" href="#">6</a>
+                                        </li>
+                                        <li class="page-item ">
+                                            <a class="next page-link" href="#">&raquo;</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <span class="py-2 float-end"></span>
+                            </div>
                         </div>
                     </div>
                 </article>

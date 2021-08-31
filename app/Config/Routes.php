@@ -35,6 +35,7 @@ $routes->setAutoRoute(true);
 $routes->get('/content/berita-detail', 'ContentController::detail');
 $routes->get('/content/semua-informasi', 'ContentController::semuaInformasi');
 $routes->get('/content/semua-berita', 'ContentController::semuaBerita');
+$routes->get('/content/semua-artikel', 'ContentController::semuaArtikel');
 
 //Visi Misi
 $routes->get('/content/visi-misi', 'ContentController::visiMisi');

@@ -26,9 +26,15 @@
 	<?= $this->include('/layout/userportal/schema'); ?>
 
 	<!-- / Yoast SEO plugin. -->
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+	<link rel='dns-prefetch' href='http://s.w.org/' />
+	<link rel="alternate" type="application/rss+xml" title="Portal Intan Jaya &raquo; Feed" href="<?= base_url() ?>/templet/feed/index.html" />
+	<link rel="alternate" type="application/rss+xml" title="Portal Intan Jaya &raquo; Comments Feed" href="<?= base_url() ?>/templet/comments/feed/index.html" />
 	<link rel='stylesheet' id='wp-block-library-css' href='<?= base_url() ?>/templet/css/style.min9f31.css?ver=5.7.2' media='all' />
 	<link rel='stylesheet' id='bn_fonts-css' href='http://fonts.googleapis.com/css?family=Roboto%3Aregular%2Citalic%2C500%2C700%26subset%3Dlatin%2C' media='screen' />
 	<link rel='stylesheet' id='bootnews-styles-css' href='<?= base_url() ?>/templet/css/bundle.min0079.css?ver=2.0.4.1623558256' media='all' />
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="<?= base_url() ?>/templet/js/wlwmanifest.xml" />
 
 
 	<!--load all styles fontawesome-->
@@ -73,7 +79,15 @@
 	</a>
 	<div class="bg-image"></div>
 	<div class="wrapper">
-		<?= $this->include('layout/userportal/_header-portal'); ?>
+		<?= $this->include('layout/userportal/_header');
+		?>
+		<div id="showbacktop" class="showbacktop full-nav bg-white border-lg-1 border-bottom shadow-b-sm border-none py-0">
+			<div class="container">
+				<nav id="main-menu" class="main-menu navbar navbar-expand-lg navbar-light px-2 px-lg-0 py-0">
+					<?= $this->include('layout/userportal/navbar-menu'); ?>
+				</nav>
+			</div>
+		</div>
 		<?php // $this->include('layout/userportal/_slide_header.php');
 		?>
 		<?= $this->include('layout/userportal/mobile-menu'); ?>
@@ -89,7 +103,7 @@
 
 
 		<footer>
-			<?= $this->include('layout/userportal/footer-portal'); ?>
+			<?= $this->include('layout/userportal/footer'); ?>
 			<div class="footer-copyright bg-secondary">
 				<div class="container text-center text-white">
 					Copyright Portal Intan Jaya News - All rights reserved

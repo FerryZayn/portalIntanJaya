@@ -62,6 +62,9 @@
                                 </article>
                             <?php endforeach; ?>
 
+                            <!-- pagerGroup -->
+                            <?= $pager->links('artikel', 'pagin_informsai') ?>
+
                         </div>
                     </div>
                 </article>
