@@ -66,7 +66,7 @@
                 <!--Top Navbar-->
                 <div id="navbarTogglerDemo" class="collapse navbar-collapse">
                     <div class="date-area d-none d-lg-block">
-                        <time class="navbar-text me-2" datetime="2021-08-03">Tuesday, August 3, 2021</time>
+                        <time class="navbar-text me-2"><?php echo date("l, M d, Y") ?></time>
                     </div>
 
                     <div class="col-9 ps-1 ps-md-2">

@@ -64,7 +64,7 @@
                             <?php endforeach; ?>
 
                             <!-- pagerGroup -->
-                            <?= $pager->links('artikel', 'pagin_informsai') ?>
+                            <?= $pager->links('artikel', 'pagin_informasi') ?>
 
                         </div>
                     </div>
