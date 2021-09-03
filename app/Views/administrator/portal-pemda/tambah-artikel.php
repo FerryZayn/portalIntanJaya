@@ -6,7 +6,7 @@
             <div class="page-inner py-5">
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                     <div>
-                        <h2 class="text-white pb-2 fw-bold">BERITA PORTAL</h2>
+                        <h2 class="text-white pb-2 fw-bold">ARTIKEL PORTAL</h2>
                         <h5 class="text-white op-7 mb-2">Kabupaten Intan Jaya...</h5>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Form Input Berita</h4>
+                                <h4 class="card-title">Form Input Artikel</h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -32,7 +32,7 @@
                                                 <input type="text" name="judul" class="form-control" placeholder="Judul Artikel">
                                             </div>
                                             <div class="mb-3">
-                                                <textarea name="isi_artikel" class="form-control" id="deskberita" placeholder="Isi Artikel"></textarea>
+                                                <textarea name="isi_artikel" class="form-control" id="deskberita"></textarea>
                                             </div>
                                             <div class="mb-3">
                                                 <div class="row">
