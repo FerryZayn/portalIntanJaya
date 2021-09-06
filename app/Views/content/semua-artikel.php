@@ -11,7 +11,6 @@
                     <span class="d-none d-md-inline">Data Lengkap Informasi</span>
                 </div>
             </div>
-
             <!--Main content-->
             <div class="col-md-12">
                 <article>
@@ -21,8 +20,6 @@
                         </div>
                         <!--output-->
                         <div class="border-bottom-last-0 first-pt-0">
-
-
                             <?php foreach ($v_informasi as $informasi) : ?>
                                 <article class="card card-full hover-a py-4 post-1305 post type-post status-publish format-video has-post-thumbnail hentry category-video tag-science tag-starvation post_format-post-format-video" id="post-1305">
                                     <div class="row">

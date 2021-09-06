@@ -105,6 +105,9 @@
 						<i class="fas fa-times-circle"></i>
 					</div>
 					<div class="card card-full u-hover hover-a mb-2">
+
+
+
 						<?php foreach ($v_notif as $berita) : ?>
 							<div class="ratio_251-141 image-wrapper">
 								<a href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>">
@@ -123,8 +126,11 @@
 								</div>
 							</div>
 						<?php endforeach; ?>
+
 					</div>
 				</div>
+
+
 				<!-- Berita Sugesti box Notifikasi End -->
 			</div>
 			<aside class="col-md-4 widget-area end-sidebar-lg" id="right-sidebar">

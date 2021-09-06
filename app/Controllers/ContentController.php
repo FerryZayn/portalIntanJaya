@@ -35,7 +35,6 @@ class ContentController extends BaseController
 	{
 		$data = [
 			'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
-
 			'v_berita' => $this->pemdaModel->getBeritaDetail($slug),
 			'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
 			'v_beritaheader' => $this->pemdaModel->tampilBerita(),
@@ -56,7 +55,7 @@ class ContentController extends BaseController
 			'v_beritaheader' => $this->pemdaModel->tampilBerita(),
 
 			//Pagin
-			'v_informasi' => $this->pemdaModel->paginate(3, 'artikel'),
+			'v_informasi' => $this->pemdaModel->paginate(4, 'artikel'),
 			'pager' => $this->pemdaModel->pager,
 		];
 		return view('/content/semua-artikel', $data);
@@ -87,7 +86,6 @@ class ContentController extends BaseController
 			'v_visi' => $this->pemdaModel->tampilVisi(),
 			'v_misi' => $this->pemdaModel->tampilMisi(),
 			'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
-
 			'v_beritaa' => $this->pemdaModel->contentBerita(),
 			'v_informasii' => $this->pemdaModel->contentInformasi(),
 			'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
@@ -105,7 +103,6 @@ class ContentController extends BaseController
 			'v_visi' => $this->pemdaModel->tampilVisi(),
 			'v_misi' => $this->pemdaModel->tampilMisi(),
 			'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
-
 			'v_beritaa' => $this->pemdaModel->contentBerita(),
 			'v_informasii' => $this->pemdaModel->contentInformasi(),
 			'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
@@ -119,7 +116,6 @@ class ContentController extends BaseController
 	{
 		$data = [
 			'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
-
 			'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
 			'v_beritaheader' => $this->pemdaModel->tampilBerita(),
 			'v_beritaa' => $this->pemdaModel->contentBerita(),
