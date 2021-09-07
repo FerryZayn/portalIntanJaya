@@ -1,11 +1,13 @@
-<?php $pager->setSurroundCount(2) ?>
+<?php $pager->setSurroundCount(2); ?>
 <div class="clearfix my-4">
     <nav class="float-start" aria-label="Posts navigation">
         <ul class="pagination">
-            <?php if ($pager->hasPrevious()) : ?>
+            <?php if ($pager->hasPrevious()): ?>
                 <li class="page-item">
-                    <a class="page-link" href="<?= $pager->getFirst() ?>" aria-label="<?= lang('Pager.first') ?>">
-                        <span aria-hidden="true"><?= lang('Pager.first') ?></span>
+                    <a class="page-link" href="<?= $pager->getFirst() ?>" aria-label="<?= lang("Pager.first") ?>">
+                        <span aria-hidden="true"><?= lang(
+                            'Pager.first'
+                        ) ?></span>
                     </a>
                 </li>
                 <li class="page-item">
@@ -13,17 +15,17 @@
                         <span aria-hidden="true"><?= lang('Pager.previous') ?></span>
                     </a>
                 </li>
-            <?php endif ?>
+            <?php endif; ?>
 
-            <?php foreach ($pager->links() as $link) : ?>
+            <?php foreach ($pager->links() as $link): ?>
                 <li class="page-item <?= $link['active'] ? 'active' : '' ?>">
                     <a class="page-link" href="<?= $link['uri'] ?>">
                         <?= $link['title'] ?>
                     </a>
                 </li>
-            <?php endforeach ?>
+            <?php endforeach; ?>
 
-            <?php if ($pager->hasNext()) : ?>
+            <?php if ($pager->hasNext()): ?>
                 <li class="page-item">
                     <a class="next page-link" href="<?= $pager->getNext() ?>" aria-label="<?= lang('Pager.next') ?>">
                         <span aria-hidden="true"><?= lang('Pager.next') ?></span>
@@ -34,7 +36,7 @@
                         <span aria-hidden="true"><?= lang('Pager.last') ?></span>
                     </a>
                 </li>
-            <?php endif ?>
+            <?php endif; ?>
         </ul>
     </nav>
     <span class="py-2 float-end"></span>

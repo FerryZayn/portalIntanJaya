@@ -25,7 +25,9 @@
 									$date = $berita['created_date'];
 									echo date('d M Y', strtotime($date));
 									?></time></span>
-							<span class="me-2 me-md-3"><i class="far fa-eye"></i> Views 1268234 (Cooming Soon)</span>
+							<span class="me-2 me-md-3">
+								<i class="far fa-eye"></i> Views 1268234 (Cooming Soon)
+							</span>
 						</div>
 
 						<!--social share-->
@@ -75,7 +77,7 @@
 				<!--author-->
 				<div class="media author-box">
 					<div class="media-figure mb-3">
-						<img src="<?= base_url(); ?>/templet/logo/author.jpeg" class="avatar avatar-100 photo" height="100" width="100" loading='lazy' />
+					<img src="<?= base_url(); ?>/templet/logo/author.jpeg" class="avatar avatar-100 photo" height="100" width="100" loading='lazy' />
 					</div>
 					<div class="ms-sm-3 media-body">
 						<h4 class="mb-2 font-weight-bold"><?= $v_berita->nama_pengarang; ?></h4>

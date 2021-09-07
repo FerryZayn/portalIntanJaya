@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-use \App\Models\PemdaModel;
-use \App\Models\TipeArtikelModel;
+use App\Models\PemdaModel;
+use App\Models\TipeArtikelModel;
 
 class PemdaController extends BaseController
 {
@@ -24,7 +24,7 @@ class PemdaController extends BaseController
             'j_visi' => $this->pemdaModel->jumlahVisi(),
             'j_misi' => $this->pemdaModel->jumlahMisi(),
             'j_foto' => $this->pemdaModel->jumlahFoto(),
-            'j_video' => $this->pemdaModel->jumlahVideo()
+            'j_video' => $this->pemdaModel->jumlahVideo(),
         ];
         return view('/administrator/portal-pemda/dashboard', $data);
     }
@@ -33,7 +33,7 @@ class PemdaController extends BaseController
     public function visipemda()
     {
         $data = [
-            'v_visi' => $this->pemdaModel->tampilVisi()
+            'v_visi' => $this->pemdaModel->tampilVisi(),
         ];
         return view('/administrator/portal-pemda/visi/v_visi', $data);
     }
@@ -48,7 +48,7 @@ class PemdaController extends BaseController
     public function misipemda()
     {
         $data = [
-            'v_misi' => $this->pemdaModel->tampilMisi()
+            'v_misi' => $this->pemdaModel->tampilMisi(),
         ];
         return view('/administrator/portal-pemda/misi/v_misi', $data);
     }
@@ -59,24 +59,22 @@ class PemdaController extends BaseController
         return redirect()->to('/administrator/portal-pemda/misi/v_misi');
     }
 
-
     //Tambah Artikel
     public function tambahArtikel()
     {
         $data = [
             'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
-            'validation' => \Config\Services::validation()
+            'validation' => \Config\Services::validation(),
         ];
         return view('/administrator/portal-pemda/tambah-artikel', $data);
     }
-
 
     //Berita......
     public function berita()
     {
         $data = [
             'title' => 'Master Data Berita',
-            'v_berita' => $this->pemdaModel->tampilBerita()
+            'v_berita' => $this->pemdaModel->tampilBerita(),
         ];
         return view('/administrator/portal-pemda/berita/home', $data);
     }
@@ -101,7 +99,9 @@ class PemdaController extends BaseController
         $tipe_artikel_id = $this->request->getVar('tipe_artikel_id');
         $nama_pengarang = $this->request->getVar('nama_pengarang');
 
-        $this->db->query("CALL artikel_insert('$judul', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$tipe_artikel_id', '$nama_pengarang', '$slug')");
+        $this->db->query(
+            "CALL artikel_insert('$judul', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$tipe_artikel_id', '$nama_pengarang', '$slug')"
+        );
 
         session()->setFlashdata('info', 'add berita/informasi');
 
@@ -112,10 +112,12 @@ class PemdaController extends BaseController
     {
         $data = [
             'title' => 'Detail Data Berita',
-            'v_berita' => $this->pemdaModel->getBeritaDetail($slug)
+            'v_berita' => $this->pemdaModel->getBeritaDetail($slug),
         ];
         if (empty($data['v_berita'])) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('Judul Berita ' . $slug . ' tidak ditemukan');
+            throw new \CodeIgniter\Exceptions\PageNotFoundException(
+                'Judul Berita ' . $slug . ' tidak ditemukan'
+            );
         }
         return view('/administrator/portal-pemda/berita/detail', $data);
     }
@@ -163,10 +165,11 @@ class PemdaController extends BaseController
         $tipe_artikel_id = $this->request->getVar('tipe_artikel_id');
         $nama_pengarang = $this->request->getVar('nama_pengarang');
 
-        $this->db->query("CALL artikel_update('$judul', '$slug', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$tipe_artikel_id', '$nama_pengarang')");
+        $this->db->query(
+            "CALL artikel_update('$judul', '$slug', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$tipe_artikel_id', '$nama_pengarang')"
+        );
 
         session()->setFlashdata('info', 'add berita/informasi');
-
         return redirect()->to('/administrator/portal-pemda/berita/home');
     }
 
@@ -175,7 +178,7 @@ class PemdaController extends BaseController
     {
         $data = [
             'title' => 'Master Data Informasi',
-            'v_informasi' => $this->pemdaModel->tampilInformasi()
+            'v_informasi' => $this->pemdaModel->tampilInformasi(),
         ];
         return view('/administrator/portal-pemda/informasi/home', $data);
     }
@@ -183,10 +186,12 @@ class PemdaController extends BaseController
     {
         $data = [
             'title' => 'Detail Data Informasi',
-            'v_informasi' => $this->pemdaModel->getInformasiDetail($judul)
+            'v_informasi' => $this->pemdaModel->getInformasiDetail($judul),
         ];
         if (empty($data['v_informasi'])) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('Judul Informasi ' . $judul . ' tidak ditemukan');
+            throw new \CodeIgniter\Exceptions\PageNotFoundException(
+                'Judul Informasi ' . $judul . ' tidak ditemukan'
+            );
         }
         return view('/administrator/portal-pemda/informasi/detail', $data);
     }
@@ -202,12 +207,11 @@ class PemdaController extends BaseController
         return redirect()->to('/administrator/portal-pemda/informasi/home');
     }
 
-
     //SlideShow......
     public function slideShow()
     {
         $data = [
-            'v_slideshow' => $this->pemdaModel->tampilSlideshow()
+            'v_slideshow' => $this->pemdaModel->tampilSlideshow(),
         ];
         return view('/administrator/portal-pemda/slideshow/home', $data);
     }
@@ -216,7 +220,7 @@ class PemdaController extends BaseController
     public function Albumfoto()
     {
         $data = [
-            'v_albumfoto' => $this->pemdaModel->tampilAlbumfoto()
+            'v_albumfoto' => $this->pemdaModel->tampilAlbumfoto(),
         ];
         return view('/administrator/portal-pemda/album-foto/home', $data);
     }
@@ -225,7 +229,7 @@ class PemdaController extends BaseController
     public function Albumvideo()
     {
         $data = [
-            'v_albumvideo' => $this->pemdaModel->tampilAlbumvideo()
+            'v_albumvideo' => $this->pemdaModel->tampilAlbumvideo(),
         ];
         return view('/administrator/portal-pemda/album-video/home', $data);
     }
