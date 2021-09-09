@@ -15,7 +15,7 @@
             <!--logo-->
             <div class="logo-sidenav p-2">
                 <a href="#" class="navbar-brand custom-logo-link" rel="home" aria-current="page">
-                    <img src="<?= base_url() ?>/templet/logo/logo-bootnews.png" class="img-fluid" sizes="(max-width: 452px) 100vw, 452px" />
+                    <img src="<?= base_url() ?>/templet/logo/intanjaya-big.png" class="img-fluid" sizes="(max-width: 452px) 100vw, 452px" />
                 </a>
             </div>
 

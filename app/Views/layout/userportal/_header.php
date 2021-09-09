@@ -55,7 +55,7 @@
 
                 <!-- Mobile logo -->
                 <a href="#">
-                    <img class="mobile-logo img-fluid d-lg-none mx-auto" alt="mobile logo" src="<?= base_url() ?>/templet/logo/logo-bootnews-light.png">
+                    <img class="mobile-logo img-fluid d-lg-none mx-auto" alt="mobile logo" src="<?= base_url() ?>/templet/logo/intanjaya.png">
                 </a>
 
                 <!--Right Toggle Button Search-->
@@ -136,14 +136,14 @@
     <div class="second-header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2">
+                <div class="col-lg-1">
                     <div id="main-logo" class="main-logo text-center-md-down">
                         <a href="<?= base_url(); ?>/" class="navbar-brand custom-logo-link" rel="home" aria-current="page">
-                            <img src="<?= base_url() ?>/templet/logo/logo-bootnews.png" class="img-fluid" style="height: 60px;" />
+                            <img src="<?= base_url() ?>/templet/logo/intanjaya-big.png" class="img-fluid" style="height: 90px;" />
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div id="main-logo" class="main-logo text-center-md-down">
                         <h2 class="entry-title display-2 display-2-lg mt-2" style="font-weight: bold; color: #2E279D;">
                             PORTAL RESMI <br />

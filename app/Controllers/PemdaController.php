@@ -104,7 +104,6 @@ class PemdaController extends BaseController
         );
 
         session()->setFlashdata('info', 'add berita/informasi');
-
         return redirect()->to('/administrator/portal-pemda/dashboard');
     }
 

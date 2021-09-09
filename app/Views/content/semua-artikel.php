@@ -20,14 +20,14 @@
                         </div>
                         <!--output-->
                         <div class="border-bottom-last-0 first-pt-0">
-                            <?php foreach ($v_informasi as $informasi): ?>
+                            <?php foreach ($v_informasi as $informasi) : ?>
                                 <article class="card card-full hover-a py-4 post-1305 post type-post status-publish format-video has-post-thumbnail hentry category-video tag-science tag-starvation post_format-post-format-video" id="post-1305">
                                     <div class="row">
 
-                                     <div class="col-sm-3 col-md-12 col-lg-3">
+                                        <div class="col-sm-3 col-md-12 col-lg-3">
                                             <div class="ratio_360-202 image-wrapper">
                                                 <a href="<?= base_url() ?>/content/<?= $informasi['slug'] ?>">
-                                                    <img style="border-radius:5px;" src="<?=base_url()?><?=$informasi['path_file_gambar']?>/<?= $informasi['file_gambar'] ?>" class="img-fluid lazy wp-post-image" sizes="(max-width: 360px) 100vw, 360px" />
+                                                    <img style="border-radius:5px;" src="<?= base_url() ?><?= $informasi['path_file_gambar'] ?>/<?= $informasi['file_gambar'] ?>" class="img-fluid lazy wp-post-image" sizes="(max-width: 360px) 100vw, 360px" />
                                                 </a>
                                             </div>
                                         </div>
@@ -39,7 +39,7 @@
                                                 <p class="card-text">
                                                     ...
                                                     <?php
-                                                    $kalimat =$informasi['isi_artikel'];
+                                                    $kalimat = $informasi['isi_artikel'];
                                                     $potong_kalimat = substr($kalimat, 35, 240);
                                                     echo $potong_kalimat;
                                                     ?>
@@ -49,8 +49,10 @@
                                                     <a href="#" rel="author"><i class="fas fa-user-edit"></i> <?= $informasi['nama_pengarang'] ?></a>
                                                     <i class="fas fa-calendar-alt"></i>
                                                     <?php
-                                                    $date =$informasi['created_date'];
-                                                    echo date('d M Y',strtotime($date)
+                                                    $date = $informasi['created_date'];
+                                                    echo date(
+                                                        'd M Y',
+                                                        strtotime($date)
                                                     );
                                                     ?>
                                                 </div>
@@ -62,7 +64,7 @@
                             <?php endforeach; ?>
 
                             <!-- pagerGroup -->
-                            <?= $pager->links('artikel', 'pagin_informasi') ?>
+                            <?= $pager->links('artikel', 'pagin_artikel') ?>
 
                         </div>
                     </div>
@@ -70,9 +72,12 @@
             </div>
             <!-- <aside class="col-md-4 widget-area end-sidebar-lg" id="right-sidebar">
                 <div class="sticky">
-                    <?php // $this->include('layout/userportal/sosial-network');?>
-                    <?php // $this->include('layout/userportal/informasi-lain');?>
-                    <?php // $this->include('layout/userportal/latest-post');?>
+                    <?php // $this->include('layout/userportal/sosial-network');
+                    ?>
+                    <?php // $this->include('layout/userportal/informasi-lain');
+                    ?>
+                    <?php // $this->include('layout/userportal/latest-post');
+                    ?>
                 </div>
             </aside> -->
         </div>

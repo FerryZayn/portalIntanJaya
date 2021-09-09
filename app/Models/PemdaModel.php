@@ -124,6 +124,7 @@ class PemdaModel extends Model
         return $this->db
             ->table('artikel')
             ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
+            ->orderBy('RAND ()')
             ->get()
             ->getResultArray();
     }
@@ -151,6 +152,7 @@ class PemdaModel extends Model
         return $this->db
             ->table('artikel')
             ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
+            ->orderBy('RAND ()')
             ->get()
             ->getResultArray();
     }

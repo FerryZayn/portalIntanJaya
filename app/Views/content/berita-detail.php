@@ -32,22 +32,22 @@
 
 						<!--social share-->
 						<div class="social-share mb-3">
-							<a class="btn btn-social btn-facebook text-white btn-sm blank-windows" href="https://www.facebook.com/sharer/sharer.php?u=<?= base_url(); ?>/content/<?= $v_berita->slug_artikel; ?>" target="_blank">
+							<a class="btn btn-social btn-facebook text-white btn-sm blank-windows" href="https://www.facebook.com/sharer/sharer.php?u=<?= base_url(); ?>/content/<?= $v_berita->slug; ?>" target="_blank">
 								<i class="fab fa-facebook"></i><span class="d-none d-sm-inline"> Facebook</span>
 							</a>
-							<a class="btn btn-social btn-twitter text-white btn-sm blank-windows" href="https://www.twitter.com/share?url=<?= base_url(); ?>/content/<?= $v_berita->slug_artikel; ?>" target="_blank">
+							<a class="btn btn-social btn-twitter text-white btn-sm blank-windows" href="https://www.twitter.com/share?url=<?= base_url(); ?>/content/<?= $v_berita->slug; ?>" target="_blank">
 								<i class="fab fa-twitter"></i><span class="d-none d-sm-inline"> Twitter </span>
 							</a>
-							<a class="btn btn-social btn-linkedin text-white btn-sm blank-windows" href="https://www.linkedin.com/shareArticle?mini=true&url=<?= base_url(); ?>/content/<?= $v_berita->slug_artikel; ?>" target="_blank">
+							<a class="btn btn-social btn-linkedin text-white btn-sm blank-windows" href="https://www.linkedin.com/shareArticle?mini=true&url=<?= base_url(); ?>/content/<?= $v_berita->slug; ?>" target="_blank">
 								<i class="fab fa-linkedin"></i><span class="d-none d-sm-inline"> Linkedin</span>
 							</a>
-							<a class="btn btn-social btn-facebook text-white btn-sm blank-windows" href="https://wa.me/6281240784397?text=<?= base_url(); ?>/content/<?= $v_berita->slug_artikel; ?>" data-action="share/whatsapp/share" target="_blank">
+							<a class="btn btn-social btn-facebook text-white btn-sm blank-windows" href="https://wa.me/6281240784397?text=<?= base_url(); ?>/content/<?= $v_berita->slug; ?>" data-action="share/whatsapp/share" target="_blank">
 								<i class="fab fa-whatsapp"></i><span class="d-none d-sm-inline"> Whatsapp</span>
 							</a>
-							<a class="btn btn-social btn-pinterest text-white btn-sm blank-windows" href="http://pinterest.com/pin/create/button/?url=<?= base_url(); ?>/content/<?= $v_berita->slug_artikel; ?>" target="_blank">
+							<a class="btn btn-social btn-pinterest text-white btn-sm blank-windows" href="http://pinterest.com/pin/create/button/?url=<?= base_url(); ?>/content/<?= $v_berita->slug; ?>" target="_blank">
 								<i class="fab fa-pinterest"></i> <span class="d-none d-sm-inline"> Pinterest</span>
 							</a>
-							<a class="btn btn-social btn-envelope text-white btn-sm" href="mailto:?subject=Your post title&body=Read complete article in here <?= base_url(); ?>/content/<?= $v_berita->slug_artikel; ?>" target="_blank">
+							<a class="btn btn-social btn-envelope text-white btn-sm" href="mailto:?subject=Your post title&body=Read complete article in here <?= base_url(); ?>/content/<?= $v_berita->slug; ?>" target="_blank">
 								<i class="far fa-envelope"></i><span class="d-none d-sm-inline"> Email</span>
 							</a>
 						</div><!-- social share -->
@@ -77,7 +77,7 @@
 				<!--author-->
 				<div class="media author-box">
 					<div class="media-figure mb-3">
-					<img src="<?= base_url(); ?>/templet/logo/author.jpeg" class="avatar avatar-100 photo" height="100" width="100" loading='lazy' />
+						<img src="<?= base_url(); ?>/templet/logo/author.jpeg" class="avatar avatar-100 photo" height="100" width="100" loading='lazy' />
 					</div>
 					<div class="ms-sm-3 media-body">
 						<h4 class="mb-2 font-weight-bold"><?= $v_berita->nama_pengarang; ?></h4>

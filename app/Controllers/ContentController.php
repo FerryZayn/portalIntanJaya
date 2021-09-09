@@ -47,7 +47,7 @@ class ContentController extends BaseController
         return view('/content/berita-detail', $data);
     }
 
-    //Tampil Semua Artikel, Berita dan Informasi
+    //Tampil Semua Artikel
     public function semuaArtikel()
     {
         $data = [

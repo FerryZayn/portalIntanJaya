@@ -1,7 +1,9 @@
 <div id="navbarTogglerDemo1" class="collapse navbar-collapse hover-mode">
     <!-- logo in navbar -->
     <div class="logo-showbacktop">
-        <a href="<?= base_url('/'); ?>" class="navbar-brand custom-logo-link"><img src="<?= base_url() ?>/templet/logo/logo-bootnews.png" class="img-fluid" sizes="(max-width: 452px) 100vw, 452px" /></a>
+        <a href="<?= base_url('/'); ?>" class="navbar-brand custom-logo-link">
+            <img src="<?= base_url() ?>/templet/logo/intanjaya.png" class="img-fluid" sizes="(max-width: 452px) 100vw, 452px" />
+        </a>
     </div>
 
     <!--start main menu start-->

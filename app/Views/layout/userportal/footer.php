@@ -5,7 +5,7 @@
                 <div id="bootnews_about-1" class="widget widget_categories widget_categories_custom">
                     <div class="block-area">
                         <h3 class="h5">About Us</h3>
-                        <img class="footer-logo img-fluid mb-2" alt="footer logo" src="<?= base_url() ?>/templet/logo/logo-bootnews-light.png">
+                        <img class="footer-logo img-fluid mb-2" alt="footer logo" src="<?= base_url() ?>/templet/logo/intanjaya.png">
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus corporis rerum optio voluptatum consequatur? Recusandae iste omnis cupiditate non reprehenderit, illum dolorum molestiae deleniti, assumenda aliquid tempore. Maiores, minus reprehenderit?
                         </p>
