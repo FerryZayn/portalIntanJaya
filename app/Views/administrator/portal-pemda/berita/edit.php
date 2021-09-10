@@ -23,8 +23,10 @@
                         </div>
                         <div class="card-body">
 
-                            <form method="POST" action="/PemdaController/updateBerita" enctype="multipart/form-data">
+                            <form method="POST" action="updateberita" enctype="multipart/form-data">
                                 <?= csrf_field(); ?>
+                                <input type="text" name="_method" value="put" class="form-control">
+                                <input type="text" name="id" value="<?= $v_berita->id; ?>" class="form-control">
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -44,25 +46,17 @@
                                                             <input type="text" name="nama_pengarang" value="<?= $v_berita->nama_pengarang; ?>" class="form-control" placeholder="Nama Pengarang">
                                                         </div>
 
-                                                        <div class="mb-3">
-                                                            <select id="basic" name="tipe_artikel_id" class="selectpicker show-tick form-control" data-live-search="true">
-                                                                <option value="<?= $v_berita->id; ?>"><?= $v_berita->tipe; ?></option>
-                                                                <option value="">- Pilih Tipe Artikel -</option>
-                                                                <?php foreach ($v_tipeartikel as $ta) : ?>
-                                                                    <option value="<?= $ta['id']; ?>"><?= $ta['tipe']; ?></option>
-                                                                <?php endforeach; ?>
-                                                            </select>
-                                                        </div>
+
 
                                                         <div class="mb-3">
                                                             <label for="fileFotoLabel" class="fileFotoLabel">File Foto</label>
                                                             <input type="file" class="form-control" name="file_gambar" id="file_foto" onchange="previewImg()">
                                                         </div>
                                                         <div class="mb-3">
-                                                            <input type="hidden" name="opd_hdr_id" value="<?= session()->get('id'); ?>" class="form-control">
+                                                            <input type="text" name="opd_hdr_id" value="<?= $v_berita->opd_hdr_id; ?>" class="form-control">
                                                         </div>
                                                         <div class="mb-3">
-                                                            <input type="hidden" name="path_file_gambar" class="form-control" value="/templet/gambar-berita">
+                                                            <input type="text" name="path_file_gambar" class="form-control" value="/templet/gambar-berita">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -71,7 +65,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer no-bd">
-                                    <button type="button" class="btn btn-primary" id="displayNotif"><i class="fas fa-save"></i> Simpan Perubahan...</button>
+                                    <button type="submit" class="btn btn-primary" id="displayNotif"><i class="fas fa-save"></i> Simpan Perubahan...</button>
                                     <a href="/administrator/portal-pemda/berita/home" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
                                 </div>
                             </form>

@@ -89,7 +89,7 @@
 							<div class="icon">
 								<i class="fa fa-book" aria-hidden="true"></i>
 							</div>
-							<a href="/administrator/master/dashboard" class="card-box-footer">Masuk <i class="fa fa-arrow-circle-right"></i></a>
+							<a href="/administrator/portal-opd/dashboard" class="card-box-footer">Masuk <i class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -106,7 +106,7 @@
 							<div class="icon">
 								<i class="fa fa-building" aria-hidden="true"></i>
 							</div>
-							<a href="/administrator/master/dashboard" class="card-box-footer">Masuk <i class="fa fa-arrow-circle-right"></i></a>
+							<a href="/administrator/e-sakip/dashboard" class="card-box-footer">Masuk <i class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
 				</div>

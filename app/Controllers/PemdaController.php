@@ -81,6 +81,7 @@ class PemdaController extends BaseController
 
     public function simpanBerita()
     {
+
         $fileSampul = $this->request->getFile('file_gambar');
 
         if ($fileSampul->getError() == 4) {
@@ -89,6 +90,7 @@ class PemdaController extends BaseController
             $namaSampul = $fileSampul->getRandomName();
             $fileSampul->move('templet/gambar-berita', $namaSampul);
         }
+
         $ambilJudul = url_title($this->request->getVar('judul'), '-', true);
         $judul = $this->request->getVar('judul');
         $slug = $ambilJudul;
@@ -132,19 +134,25 @@ class PemdaController extends BaseController
         return redirect()->to('/administrator/portal-pemda/berita/home');
     }
 
-    public function editBerita($judul)
+    public function editBerita($slug)
     {
         $data = [
-            'title' => 'Form Edit Data Berita',
             'validation' => \Config\Services::validation(),
             'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
-            'v_berita' => $this->pemdaModel->getBeritaDetail($judul),
+            'v_berita' => $this->pemdaModel->getBeritaUpdate($slug),
         ];
         return view('/administrator/portal-pemda/berita/edit', $data);
     }
 
     public function updateBerita()
     {
+
+
+        echo "Nama anMa";
+
+        echo "<pre>";
+        var_dump($this->request->getVar('id'));
+
         $fileSampul = $this->request->getFile('file_gambar');
 
         if ($fileSampul->getError() == 4) {
@@ -155,20 +163,23 @@ class PemdaController extends BaseController
         }
 
         $ambilJudul = url_title($this->request->getVar('judul'), '-', true);
+
         $judul = $this->request->getVar('judul');
-        $slug = $ambilJudul;
+        $id = $this->request->getVar('id');
+        $file_gambar = $this->request->getVar('file_gambar');
         $file_gambar = $namaSampul;
         $path_file_gambar = $this->request->getVar('path_file_gambar');
         $isi_artikel = $this->request->getVar('isi_artikel');
         $opd_hdr_id = $this->request->getVar('opd_hdr_id');
-        $tipe_artikel_id = $this->request->getVar('tipe_artikel_id');
         $nama_pengarang = $this->request->getVar('nama_pengarang');
 
-        $this->db->query(
-            "CALL artikel_update('$judul', '$slug', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$tipe_artikel_id', '$nama_pengarang')"
-        );
+        $slug = $ambilJudul;
 
-        session()->setFlashdata('info', 'add berita/informasi');
+        // dd($this->request->getVar());
+
+        $this->db->query("CALL artikel_update('$id', '$judul', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$nama_pengarang', '$slug')");
+
+        session()->setFlashdata('info', 'Update berita/informasi berhasil');
         return redirect()->to('/administrator/portal-pemda/berita/home');
     }
 

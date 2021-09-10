@@ -52,57 +52,77 @@ $routes->get('/auth/login', 'AuthController::index');
 //AdminPortal
 $routes->get('/administrator/index', 'AdminController::index', ['filter' => 'auth']);
 
-//AdminMaster
+//AdminPortalMaster_________________________________________________________________________________________________________________
 $routes->get('/administrator/master/dashboard', 'MasterController::index', ['filter' => 'auth']);
 
-//AdminPortalPemda Dashboard
+
+
+//AdminPortal Pemda________________________________________________________________________________________________________________
 $routes->get('/administrator/portal-pemda/dashboard', 'PemdaController::index', ['filter' => 'auth']);
 
-//AdminPortalPemda Visi
+//AdminPortal Pemda Visi
 $routes->get('/administrator/portal-pemda/visi/v_visi', 'PemdaController::visipemda', ['filter' => 'auth']);
 $routes->delete('/administrator/portal-pemda/visi/(:num)', 'PemdaController::hapusVisi/$1', ['filter' => 'auth']);
 
-//AdminPortalPemda MIsi
+//AdminPortal Pemda MIsi
 $routes->get('/administrator/portal-pemda/misi/v_misi', 'PemdaController::misipemda', ['filter' => 'auth']);
 $routes->delete('/administrator/portal-pemda/misi/(:num)', 'PemdaController::hapusMisi/$1', ['filter' => 'auth']);
 
-//AdminPortalPemda Pejabat
+//AdminPortal Pemda Pejabat
 $routes->get('/administrator/portal-pemda/pejabat/v_pejabat', 'PejabatController::pejabatPemda', ['filter' => 'auth']);
 // $routes->get('/administrator/portal-pemda/pejabat/tambah', 'PemdaController::pejabatTambah', ['filter' => 'auth']);
 
-//Tambah Artikel
+//AdminPortal Pemda Tambah Artikel
 $routes->get('/administrator/portal-pemda/tambah-artikel', 'PemdaController::tambahArtikel', ['filter' => 'auth']);
 
-//AdminPortalPemda Berita
+
+//AdminPortal Pemda Berita
 $routes->get('/administrator/portal-pemda/berita/home', 'PemdaController::berita', ['filter' => 'auth']);
+
 $routes->get('/administrator/portal-pemda/berita/edit/(:segment)', 'PemdaController::editBerita/$1', ['filter' => 'auth']);
+
 $routes->delete('/administrator/portal-pemda/berita/(:num)', 'PemdaController::hapusBerita/$1', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/berita/(:any)', 'PemdaController::detailBerita/$1', ['filter' => 'auth']);
 
-//AdminPortalPemda Informasi
+// $routes->put('/administrator/portal-pemda/berita/edit/updateBerita', 'PemdaController::updateBerita', ['filter' => 'auth']);
+
+$routes->post('/coba', 'PemdaController::coba');
+
+
+
+
+//AdminPortal Pemda Informasi
 $routes->get('/administrator/portal-pemda/informasi/home', 'PemdaController::informasi', ['filter' => 'auth']);
 // $routes->get('/administrator/portal-pemda/informasi/tambah', 'PemdaController::tambahinformasi', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/informasi/edit/(:segment)', 'PemdaController::editinformasi/$1', ['filter' => 'auth']);
 $routes->delete('/administrator/portal-pemda/informasi/(:num)', 'PemdaController::hapusInformasi/$1', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/informasi/(:any)', 'PemdaController::detailInformasi/$1', ['filter' => 'auth']);
 
-//AdminPortalPemda Slide Show
+//AdminPortal Pemda Slide Show
 $routes->get('/administrator/portal-pemda/slideshow/home', 'PemdaController::slideShow', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/slideshow/edit/(:segment)', 'PemdaController::editSlideshow/$1', ['filter' => 'auth']);
 $routes->delete('/administrator/portal-pemda/slideshow/(:num)', 'PemdaController::hapusSlideshow/$1', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/slideshow/(:any)', 'PemdaController::detailSlideshow/$1', ['filter' => 'auth']);
 
-//AdminPortalPemda Album Foto
+//AdminPortal Pemda Album Foto
 $routes->get('/administrator/portal-pemda/album-foto/home', 'PemdaController::albumFoto', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/album-foto/edit/(:segment)', 'PemdaController::editAlbumfoto/$1', ['filter' => 'auth']);
 $routes->delete('/administrator/portal-pemda/album-foto/(:num)', 'PemdaController::hapusAbumfoto/$1', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/album-foto/(:any)', 'PemdaController::detailAlbumfoto/$1', ['filter' => 'auth']);
 
-//AdminPortalPemda Album Video
+//AdminPortal Pemda Album Video
 $routes->get('/administrator/portal-pemda/album-video/home', 'PemdaController::albumVideo', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/album-video/edit/(:segment)', 'PemdaController::editAlbumvideo/$1', ['filter' => 'auth']);
 $routes->delete('/administrator/portal-pemda/album-video/(:num)', 'PemdaController::hapusAlbumvideo/$1', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/album-video/(:any)', 'PemdaController::detailAlbumvideo/$1', ['filter' => 'auth']);
+
+
+//AdminPortal OPD_________________________________________________________________________________________________________________________________
+$routes->get('/administrator/portal-opd/dashboard', 'OPDController::index', ['filter' => 'auth']);
+
+//AdminPortal E-SAKIP_________________________________________________________________________________________________________________________________
+$routes->get('/administrator/e-sakip/dashboard', 'OPDController::index', ['filter' => 'auth']);
+
 
 /*
  * --------------------------------------------------------------------

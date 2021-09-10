@@ -128,6 +128,14 @@ class PemdaModel extends Model
             ->get()
             ->getResultArray();
     }
+    public function getBeritaUpdate($slug)
+    {
+        return $this->db
+            ->table('artikel')
+            ->where('slug', $slug)
+            ->get()
+            ->getRow();
+    }
     public function getBeritaDetail($slug)
     {
         return $this->db
