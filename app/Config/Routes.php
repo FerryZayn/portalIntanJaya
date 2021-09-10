@@ -86,8 +86,6 @@ $routes->get('/administrator/portal-pemda/berita/(:any)', 'PemdaController::deta
 
 // $routes->put('/administrator/portal-pemda/berita/edit/updateBerita', 'PemdaController::updateBerita', ['filter' => 'auth']);
 
-$routes->post('/coba', 'PemdaController::coba');
-
 
 
 

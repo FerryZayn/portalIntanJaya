@@ -1,11 +1,7 @@
 <div class="row mt-2">
     <div class="col-12">
         <div class="block-title-6">
-            <h4 class="h5 border-primary">
-                <span class="bg-primary text-white">
-                    <i class="fab fa-slideshare"></i> Slide Show
-                </span>
-            </h4>
+            <h4 class="h5 border-primary"><span class="bg-primary text-white"><i class="fab fa-slideshare"></i> Slide Show</span></h4>
         </div>
     </div>
     <div class="col-lg-8">
@@ -49,6 +45,6 @@
         </div>
     </div>
     <div class="col-lg-4">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d970467.3895955527!2d136.18203268585955!3d-3.407074972569297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6818f38f5037b855%3A0x244b142fe55fd4ff!2sKabupaten%20Intan%20Jaya%2C%20Papua!5e1!3m2!1sid!2sid!4v1628559463365!5m2!1sid!2sid" style="border:0; height: 410px; width: 409px;" allowfullscreen="true" loading="lazy"></iframe>
+        <img src="<?= base_url(); ?>/templet/logo/peta.png" style="border:0; height: 410px; width: 409px;" allowfullscreen="true" loading="lazy">
     </div>
 </div>
