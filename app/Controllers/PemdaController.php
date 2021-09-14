@@ -146,10 +146,6 @@ class PemdaController extends BaseController
 
     public function updateBerita()
     {
-        // dd($this->request->getVar());
-        // echo "<pre>";
-        // var_dump($this->request->getVar());
-
         $fileSampul = $this->request->getFile('file_gambar');
 
         if ($fileSampul->getError() == 4) {
@@ -187,18 +183,56 @@ class PemdaController extends BaseController
         ];
         return view('/administrator/portal-pemda/informasi/home', $data);
     }
-    public function detailInformasi($judul)
+    public function detailInformasi($slug)
     {
         $data = [
             'title' => 'Detail Data Informasi',
-            'v_informasi' => $this->pemdaModel->getInformasiDetail($judul),
+            'v_informasi' => $this->pemdaModel->getInformasiDetail($slug),
         ];
         if (empty($data['v_informasi'])) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException(
-                'Judul Informasi ' . $judul . ' tidak ditemukan'
+                'Judul Informasi ' . $slug . ' tidak ditemukan'
             );
         }
         return view('/administrator/portal-pemda/informasi/detail', $data);
+    }
+    public function editInformasi($slug)
+    {
+        $data = [
+            'validation' => \Config\Services::validation(),
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
+            'v_informasi' => $this->pemdaModel->getInformasiUpdate($slug),
+        ];
+        return view('/administrator/portal-pemda/informasi/edit', $data);
+    }
+    public function updateInformasi()
+    {
+        $fileSampul = $this->request->getFile('file_gambar');
+
+        if ($fileSampul->getError() == 4) {
+            $namaSampul = 'default.jpg';
+        } else {
+            $namaSampul = $fileSampul->getRandomName();
+            $fileSampul->move('templet/gambar-berita', $namaSampul);
+        }
+
+        $ambilJudul = url_title($this->request->getVar('judul'), '-', true);
+
+        $judul = $this->request->getVar('judul');
+        $id = $this->request->getVar('id');
+        $file_gambar = $this->request->getVar('file_gambar');
+        $file_gambar = $namaSampul;
+        $path_file_gambar = $this->request->getVar('path_file_gambar');
+        $isi_artikel = $this->request->getVar('isi_artikel');
+        $opd_hdr_id = $this->request->getVar('opd_hdr_id');
+        $nama_pengarang = $this->request->getVar('nama_pengarang');
+
+        $slug = $ambilJudul;
+
+        $this->db->query("CALL artikel_update('$id', '$judul', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$nama_pengarang', '$slug')");
+
+        session()->setFlashdata('info', 'Update berita/informasi berhasil');
+        return redirect()->to('/administrator/portal-pemda/informasi/home');
     }
 
     public function hapusInformasi($id)
@@ -212,6 +246,10 @@ class PemdaController extends BaseController
         return redirect()->to('/administrator/portal-pemda/informasi/home');
     }
 
+
+
+
+
     //SlideShow......
     public function slideShow()
     {
@@ -220,6 +258,65 @@ class PemdaController extends BaseController
         ];
         return view('/administrator/portal-pemda/slideshow/home', $data);
     }
+
+    public function detailslideshow($slug)
+    {
+        $data = [
+            'v_slideshow' => $this->pemdaModel->getSlideShowDetail($slug),
+        ];
+        if (empty($data['v_slideshow'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException(
+                'Judul Slide Show ' . $slug . ' tidak ditemukan'
+            );
+        }
+        return view('/administrator/portal-pemda/slideshow/detail', $data);
+    }
+    public function editSlideshow($slug)
+    {
+        $data = [
+            'validation' => \Config\Services::validation(),
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
+            'v_slideshow' => $this->pemdaModel->getInformasiUpdate($slug),
+        ];
+        return view('/administrator/portal-pemda/slideshow/edit', $data);
+    }
+    public function updateSlideshow()
+    {
+        $fileSampul = $this->request->getFile('file_gambar');
+
+        if ($fileSampul->getError() == 4) {
+            $namaSampul = 'default.jpg';
+        } else {
+            $namaSampul = $fileSampul->getRandomName();
+            $fileSampul->move('templet/gambar-berita', $namaSampul);
+        }
+
+        $ambilJudul = url_title($this->request->getVar('judul'), '-', true);
+
+        $judul = $this->request->getVar('judul');
+        $id = $this->request->getVar('id');
+        $file_gambar = $this->request->getVar('file_gambar');
+        $file_gambar = $namaSampul;
+        $path_file_gambar = $this->request->getVar('path_file_gambar');
+        $isi_artikel = $this->request->getVar('isi_artikel');
+        $opd_hdr_id = $this->request->getVar('opd_hdr_id');
+        $nama_pengarang = $this->request->getVar('nama_pengarang');
+
+        $slug = $ambilJudul;
+
+        $this->db->query("CALL artikel_update('$id', '$judul', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$nama_pengarang', '$slug')");
+
+        session()->setFlashdata('info', 'Update artikel/slideshow berhasil');
+        return redirect()->to('/administrator/portal-pemda/slideshow/home');
+    }
+
+
+
+
+
+
+
+
 
     //Album Foto......
     public function Albumfoto()

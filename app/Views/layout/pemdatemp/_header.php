@@ -39,7 +39,13 @@
                         <div class="quick-actions-scroll scrollbar-outer">
                             <div class="quick-actions-items">
                                 <div class="row m-0">
-                                    <a class="col-6 col-md-4 p-0" href="#">
+                                    <a class="col-6 col-md-4 p-0" href="/administrator/portal-pemda/tambah-artikel">
+                                        <div class="quick-actions-item">
+                                            <i class="flaticon-pen"></i>
+                                            <span class="text">Create New Post</span>
+                                        </div>
+                                    </a>
+                                    <!-- <a class="col-6 col-md-4 p-0" href="#">
                                         <div class="quick-actions-item">
                                             <i class="flaticon-file-1"></i>
                                             <span class="text">Generated Report</span>
@@ -49,12 +55,6 @@
                                         <div class="quick-actions-item">
                                             <i class="flaticon-database"></i>
                                             <span class="text">Create New Database</span>
-                                        </div>
-                                    </a>
-                                    <a class="col-6 col-md-4 p-0" href="/administrator/portal-pemda/tambah-artikel">
-                                        <div class="quick-actions-item">
-                                            <i class="flaticon-pen"></i>
-                                            <span class="text">Create New Post</span>
                                         </div>
                                     </a>
                                     <a class="col-6 col-md-4 p-0" href="#">
@@ -74,7 +74,7 @@
                                             <i class="flaticon-file"></i>
                                             <span class="text">Create New Invoice</span>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
                         </div>

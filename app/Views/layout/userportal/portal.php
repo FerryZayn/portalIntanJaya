@@ -28,7 +28,7 @@
 	<link rel='stylesheet' id='wp-block-library-css' href='<?= base_url() ?>/templet/css/style.min9f31.css?ver=5.7.2' media='all' />
 	<link rel='stylesheet' id='bn_fonts-css' href='http://fonts.googleapis.com/css?family=Roboto%3Aregular%2Citalic%2C500%2C700%26subset%3Dlatin%2C' media='screen' />
 	<link rel='stylesheet' id='bootnews-styles-css' href='<?= base_url() ?>/templet/css/bundle.min0079.css?ver=2.0.4.1623558256' media='all' />
-
+	<link rel="stylesheet" href="<?= base_url() ?>/templet/css/card-data-portal.css">
 
 	<!--load all styles fontawesome-->
 	<link href="<?= base_url() ?>/templet/fontawesome/css/all.css" rel="stylesheet">

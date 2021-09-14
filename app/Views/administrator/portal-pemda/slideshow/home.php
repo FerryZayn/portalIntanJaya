@@ -45,26 +45,26 @@
                                     </thead>
                                     <tbody>
                                         <?php $i = 1; ?>
-                                        <?php foreach ($v_slideshow as $slide) : ?>
+                                        <?php foreach ($v_slideshow as $data) : ?>
                                             <tr>
                                                 <td><?= $i++; ?></td>
-                                                <td><?= $slide['judul']; ?></td>
-                                                <td><?= $slide['nama_pengarang']; ?></td>
+                                                <td><?= $data['judul']; ?></td>
+                                                <td><?= $data['nama_pengarang']; ?></td>
                                                 <td>
                                                     <?php
-                                                    $kalimat = $slide['isi_artikel'];
+                                                    $kalimat = $data['isi_artikel'];
                                                     $potong_kalimat = substr($kalimat, 0, 130);
                                                     echo $potong_kalimat;
                                                     ?>
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <a href="/administrator/portal-pemda/slideshow/<?= $slide['slug']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
+                                                        <a href="/administrator/portal-pemda/slideshow/<?= $data['slug']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
-                                                        <a href="/administrator/portal-pemda/slideshow/edit/<?= $slide['slug']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
+                                                        <a href="/administrator/portal-pemda/slideshow/edit/<?= $data['slug']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
                                                             <i class="fa fa-edit"></i>
                                                         </a> &nbsp;
-                                                        <form action="<?= base_url() ?>/administrator/portal-pemda/slideshow/<?= $slide['id'] ?>" method="POST" class="d-inline">
+                                                        <form action="<?= base_url() ?>/administrator/portal-pemda/slideshow/<?= $data['id'] ?>" method="POST" class="d-inline">
                                                             <?= csrf_field(); ?>
                                                             <input type="hidden" name="_method" value="DELETE">
                                                             <button type="submit" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Hapus item ini..."><i class="fa fa-trash"></i>

@@ -159,13 +159,21 @@ class PemdaModel extends Model
             ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
             ->countAllResults();
     }
-    public function getInformasiDetail($judul)
+    public function getInformasiUpdate($slug)
+    {
+        return $this->db
+            ->table('artikel')
+            ->where('slug', $slug)
+            ->get()
+            ->getRow();
+    }
+    public function getInformasiDetail($slug)
     {
         return $this->db
             ->table('artikel')
             ->join('tipe_artikel', 'tipe_artikel.id=artikel.tipe_artikel_id')
             ->join('status_sistem', 'status_sistem.id=artikel.status_sistem_id')
-            ->where('judul', $judul)
+            ->where('slug', $slug)
             ->get()
             ->getRow();
     }
@@ -214,17 +222,22 @@ class PemdaModel extends Model
             ->get()
             ->getResultArray();
     }
+    public function getSlideShowDetail($slug)
+    {
+        return $this->db
+            ->table('artikel')
+            ->join('tipe_artikel', 'tipe_artikel.id=artikel.tipe_artikel_id')
+            ->join('status_sistem', 'status_sistem.id=artikel.status_sistem_id')
+            ->where('slug', $slug)
+            ->get()
+            ->getRow();
+    }
+    // public function getSlideshowUpdate($slug)
+    // {
+    //     return $this->db
+    //         ->table('artikel')
+    //         ->where('slug', $slug)
+    //         ->get()
+    //         ->getRow();
+    // }
 }
-
-// class Pagination_model extends CI_Model
-// {
-
-//     public function getAll()
-//     {
-//         $this->db->select('*');
-//         $this->db->from('pengguna');
-//         $this->db->order_by('id', 'ASC');
-
-//         return $this->db->get();
-//     }
-// }

@@ -19,7 +19,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Detail item Berita</h4>
-                                <a href="/administrator/portal-pemda/berita/home" class="btn bg-satu text-white fw-bold btn-round ml-auto">
+                                <a href="/administrator/portal-pemda/slideshow/home" class="btn bg-satu text-white fw-bold btn-round ml-auto">
                                     <i class="fas fa-arrow-circle-left"></i>
                                     Kembali
                                 </a>
@@ -27,20 +27,20 @@
                         </div>
                         <div class="card-body">
                             <div class="card-text">
-                                <h2 class="fw-bold"><?= $v_berita->judul; ?></h2>
+                                <h2 class="fw-bold"><?= $v_slideshow->judul; ?></h2>
                                 <div class="flex-1 ml-3 pt-1">
-                                    <h6 class="text-uppercase fw-bold mb-1"><i class="icon-user"></i> <?= $v_berita->nama_pengarang; ?>
+                                    <h6 class="text-uppercase fw-bold mb-1"><i class="icon-user"></i> <?= $v_slideshow->nama_pengarang; ?>
                                         <span class="text-info pl-3"><i class="icon-clock"></i>
                                             <?php
-                                            echo date('d F Y - H:i:s', strtotime($v_berita->created_date));
+                                            echo date('d F Y - H:i:s', strtotime($v_slideshow->created_date));
                                             ?>
                                         </span>
-                                        <span class="text-success pl-3"><?= $v_berita->tipe; ?></span>
-                                        <span class="text-success pl-3"><?= $v_berita->kategori; ?></span>
-                                        <span class="text-success pl-3"><?= $v_berita->nama_status; ?></span>
+                                        <span class="text-success pl-3"><?= $v_slideshow->tipe; ?></span>
+                                        <span class="text-success pl-3"><?= $v_slideshow->kategori; ?></span>
+                                        <span class="text-success pl-3"><?= $v_slideshow->nama_status; ?></span>
                                     </h6>
                                 </div>
-                                <p><?= $v_berita->isi_artikel; ?></p>
+                                <p><?= $v_slideshow->isi_artikel; ?></p>
                             </div>
                         </div>
                     </div>

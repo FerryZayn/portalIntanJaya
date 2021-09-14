@@ -18,42 +18,33 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Form Edit Berita</h4>
+                                <h4 class="card-title">Form Edit Artikel</h4>
                             </div>
                         </div>
                         <div class="card-body">
 
-                            <form method="POST" action="/PemdaController/updateBerita" enctype="multipart/form-data">
+                            <form method="POST" action="/PemdaController/updateInformasi/" enctype="multipart/form-data">
                                 <?= csrf_field(); ?>
+                                <input type="hidden" name="_method" value="put">
+                                <input type="hidden" name="id" value="<?= $v_informasi->id; ?>">
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="mb-3">
-                                                <input type="text" name="judul" value="<?= $v_berita->judul; ?>" class="form-control" placeholder="Judul Artikel">
+                                                <input type="text" name="judul" value="<?= $v_informasi->judul; ?>" class="form-control" placeholder="Judul Artikel">
                                             </div>
                                             <div class="mb-3">
-                                                <textarea name="isi_artikel" class="form-control" id="deskberita" placeholder="Isi Artikel"><?= $v_berita->isi_artikel; ?></textarea>
+                                                <textarea name="isi_artikel" class="form-control" id="deskberita"><?= $v_informasi->isi_artikel; ?></textarea>
                                             </div>
                                             <div class="mb-3">
                                                 <div class="row">
                                                     <div class="col-2">
-                                                        <img src="<?= base_url(); ?>/templet/gambar-berita/<?= $v_berita->file_gambar; ?>" class="img-thumbnail img-preview">
+                                                        <img src="<?= base_url(); ?>/templet/gambar-berita/<?= $v_informasi->file_gambar; ?>" class="img-thumbnail img-preview">
                                                     </div>
                                                     <div class="col-10">
                                                         <div class="mb-3">
-                                                            <input type="text" name="nama_pengarang" value="<?= $v_berita->nama_pengarang; ?>" class="form-control" placeholder="Nama Pengarang">
+                                                            <input type="text" name="nama_pengarang" value="<?= $v_informasi->nama_pengarang; ?>" class="form-control" placeholder="Nama Pengarang">
                                                         </div>
-
-                                                        <div class="mb-3">
-                                                            <select id="basic" name="tipe_artikel_id" class="selectpicker show-tick form-control" data-live-search="true">
-                                                                <option value="<?= $v_berita->id; ?>"><?= $v_berita->tipe; ?></option>
-                                                                <option value="">- Pilih Tipe Artikel -</option>
-                                                                <?php foreach ($v_tipeartikel as $ta) : ?>
-                                                                    <option value="<?= $ta['id']; ?>"><?= $ta['tipe']; ?></option>
-                                                                <?php endforeach; ?>
-                                                            </select>
-                                                        </div>
-
                                                         <div class="mb-3">
                                                             <label for="fileFotoLabel" class="fileFotoLabel">File Foto</label>
                                                             <input type="file" class="form-control" name="file_gambar" id="file_foto" onchange="previewImg()">
@@ -71,8 +62,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer no-bd">
-                                    <button type="button" class="btn btn-primary" id="displayNotif"><i class="fas fa-save"></i> Simpan Perubahan...</button>
-                                    <a href="/administrator/portal-pemda/berita/home" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
+                                    <button type="submit" class="btn btn-primary" id="displayNotif"><i class="fas fa-save"></i> Simpan Data...</button>
+                                    <a href="/administrator/portal-pemda/informasi/home" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
                                 </div>
                             </form>
                         </div>

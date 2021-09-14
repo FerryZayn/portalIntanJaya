@@ -58,10 +58,10 @@
                                                     ?>
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <a href="/administrator/portal-pemda/informasi/<?= $informasi['judul']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail item ini...">
+                                                        <a href="/administrator/portal-pemda/informasi/<?= $informasi['slug']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail item ini...">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
-                                                        <a href="/administrator/portal-pemda/informasi/edit/<?= $informasi['judul']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit item ini...">
+                                                        <a href="/administrator/portal-pemda/informasi/edit/<?= $informasi['slug']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit item ini...">
                                                             <i class="fa fa-edit"></i>
                                                         </a> &nbsp;
                                                         <form action="<?= base_url() ?>/administrator/portal-pemda/informasi/<?= $informasi['id'] ?>" method="POST" class="d-inline">
