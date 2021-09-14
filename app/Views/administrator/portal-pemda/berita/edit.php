@@ -18,14 +18,15 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Form Edit Berita</h4>
+                                <h4 class="card-title">Form Edit Artikel</h4>
                             </div>
                         </div>
                         <div class="card-body">
 
-                            <form method="POST" action="/PemdaController/updateBerita/<?= $v_berita->id; ?>" enctype="multipart/form-data">
+                            <form method="POST" action="/PemdaController/updateBerita/" enctype="multipart/form-data">
                                 <?= csrf_field(); ?>
-                                <input type="text" name="id" value="<?= $v_berita->id; ?>" class="form-control">
+                                <input type="hidden" name="_method" value="put">
+                                <input type="hidden" name="id" value="<?= $v_berita->id; ?>">
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -33,7 +34,7 @@
                                                 <input type="text" name="judul" value="<?= $v_berita->judul; ?>" class="form-control" placeholder="Judul Artikel">
                                             </div>
                                             <div class="mb-3">
-                                                <textarea name="isi_artikel" class="form-control" id="deskberita" placeholder="Isi Artikel"><?= $v_berita->isi_artikel; ?></textarea>
+                                                <textarea name="isi_artikel" class="form-control" id="deskberita"><?= $v_berita->isi_artikel; ?></textarea>
                                             </div>
                                             <div class="mb-3">
                                                 <div class="row">
@@ -52,10 +53,10 @@
                                                             <input type="file" class="form-control" name="file_gambar" id="file_foto" onchange="previewImg()">
                                                         </div>
                                                         <div class="mb-3">
-                                                            <input type="text" name="opd_hdr_id" value="<?= $v_berita->opd_hdr_id; ?>" class="form-control">
+                                                            <input type="hidden" name="opd_hdr_id" value="<?= session()->get('id'); ?>" class="form-control">
                                                         </div>
                                                         <div class="mb-3">
-                                                            <input type="text" name="path_file_gambar" class="form-control" value="/templet/gambar-berita">
+                                                            <input type="hidden" name="path_file_gambar" class="form-control" value="/templet/gambar-berita">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -64,8 +65,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer no-bd">
-                                    <button type="submit" class="btn btn-primary" id="displayNotif"><i class="fas fa-save"></i> Simpan Perubahan...</button>
-                                    <a href="/administrator/portal-pemda/berita/home" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
+                                    <button type="submit" class="btn btn-primary" id="displayNotif"><i class="fas fa-save"></i> Simpan Data...</button>
+                                    <a href="/administrator/portal-pemda/dashboard" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
                                 </div>
                             </form>
                         </div>

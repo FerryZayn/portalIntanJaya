@@ -22,7 +22,7 @@
 							<span class="byline me-2 me-md-3"><i class="far fa-user"></i> by <span class="author vcard"><a class="url fn n fw-bold" href="#"> <?= $v_berita->nama_pengarang; ?></a></span></span>
 							<span class="posted-on me-2 me-md-3"><i class="far fa-edit"></i><time class="entry-date published">
 									<?php
-									$date = $berita['created_date'];
+									$date = $v_berita->created_date;
 									echo date('d M Y', strtotime($date));
 									?></time></span>
 							<span class="me-2 me-md-3">
@@ -81,15 +81,13 @@
 					</div>
 					<div class="ms-sm-3 media-body">
 						<h4 class="mb-2 font-weight-bold"><?= $v_berita->nama_pengarang; ?></h4>
-						<a class="author-website mb-1" href="<?= base_url(); ?>/content/<?= $v_berita->slug_artikel; ?>"><?= base_url(); ?>/content/<?= $v_berita->judul; ?></a>
+						<a class="author-website mb-1" href="<?= base_url(); ?>/content/<?= $v_berita->slug; ?>"><?= base_url(); ?>/content/<?= $v_berita->judul; ?></a>
 						<p>
-							...
 							<?php
 							$kalimat = $v_berita->isi_artikel;
-							$potong_kalimat = substr($kalimat, 20, 90);
+							$potong_kalimat = substr($kalimat, 0, 170);
 							echo $potong_kalimat;
-							?>
-							...
+							?>...
 						</p>
 					</div>
 				</div>

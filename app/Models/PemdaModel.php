@@ -20,7 +20,7 @@ class PemdaModel extends Model
         return $this->db
             ->table('artikel')
             ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
-            ->orderBy('id', 'DESC')
+            ->orderBy('RAND()')
             ->limit('10')
             ->get()
             ->getResultArray();
@@ -30,7 +30,7 @@ class PemdaModel extends Model
         return $this->db
             ->table('artikel')
             ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
-            ->orderBy('id', 'DESC')
+            ->orderBy('RAND()')
             ->limit('10')
             ->get()
             ->getResultArray();
@@ -42,7 +42,7 @@ class PemdaModel extends Model
         return $this->db
             ->table('artikel')
             ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
-            ->orderBy('id', 'ASC')
+            ->orderBy('RAND()')
             ->limit('10')
             ->get()
             ->getResultArray();
@@ -52,7 +52,7 @@ class PemdaModel extends Model
         return $this->db
             ->table('artikel')
             ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
-            ->orderBy('id', 'DESC')
+            ->orderBy('RAND()')
             ->limit('1')
             ->get()
             ->getResultArray();
@@ -150,6 +150,8 @@ class PemdaModel extends Model
             ->get()
             ->getResultArray();
     }
+
+
     public function jumlahInformasi()
     {
         return $this->db
@@ -208,7 +210,21 @@ class PemdaModel extends Model
         return $this->db
             ->table('artikel')
             ->where(['tipe_artikel_id' => 7, 'is_active' => 1])
+            ->orderBy('RAND ()')
             ->get()
             ->getResultArray();
     }
 }
+
+// class Pagination_model extends CI_Model
+// {
+
+//     public function getAll()
+//     {
+//         $this->db->select('*');
+//         $this->db->from('pengguna');
+//         $this->db->order_by('id', 'ASC');
+
+//         return $this->db->get();
+//     }
+// }

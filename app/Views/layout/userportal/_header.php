@@ -74,14 +74,14 @@
                             <div class="box-carousel" data-flickity='{ "cellAlign": "left", "wrapAround": true, "adaptiveHeight": true, "prevNextButtons": true , "autoPlay": 5000, "pageDots": false, "imagesLoaded": true }'>
                                 <?php foreach ($v_beritaheader as $berita) : ?>
                                     <div class="col-12 active aribudin">
-                                        <a class="h6 fw-normal text-white" href="<?= base_url(); ?>/content/<?= $berita['slug_artikel']; ?>">
+                                        <a class="h6 fw-normal text-white" href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>">
                                             <?= $berita['judul']; ?>
                                         </a>
                                     </div>
                                 <?php endforeach; ?>
                                 <?php foreach ($v_informasiheader as $informasi) : ?>
                                     <div class="col-12 active aribudin">
-                                        <a class="h6 fw-normal text-white" href="<?= base_url(); ?>/content/<?= $informasi['slug_artikel']; ?>">
+                                        <a class="h6 fw-normal text-white" href="<?= base_url(); ?>/content/<?= $informasi['slug']; ?>">
                                             <?= $informasi['judul']; ?>
                                         </a>
                                     </div>

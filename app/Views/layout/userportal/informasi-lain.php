@@ -5,7 +5,7 @@
     <!--style 3-->
     <div id="timeline-post">
         <ul class="timeline-post">
-            <?php foreach ($v_beritaa as $beritaa) : ?>
+            <?php foreach ($v_beritalain as $beritaa) : ?>
                 <li>
                     <a href="<?= base_url(); ?>/content/<?= $beritaa['slug']; ?>">
                         <span class="timeline-date small">
@@ -20,7 +20,7 @@
                     </a>
                 </li>
             <?php endforeach; ?>
-            <?php foreach ($v_informasii as $informasii) : ?>
+            <?php foreach ($v_informasilain as $informasii) : ?>
                 <li>
                     <a href="<?= base_url(); ?>/content/<?= $informasii['slug']; ?>">
                         <span class="timeline-date small">

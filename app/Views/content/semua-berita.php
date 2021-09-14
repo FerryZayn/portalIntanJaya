@@ -21,7 +21,7 @@
                         </div>
                         <!--output-->
                         <div class="border-bottom-last-0 first-pt-0">
-                            <?php foreach ($v_berita as $berita) : ?>
+                            <?php foreach ($v_beritaa as $berita) : ?>
                                 <article class="card card-full hover-a py-4 post-1305 post type-post status-publish format-video has-post-thumbnail hentry category-video tag-science tag-starvation post_format-post-format-video" id="post-1305">
                                     <div class="row">
                                         <div class="col-sm-3 col-md-12 col-lg-3">
@@ -37,13 +37,11 @@
                                                     <a href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>"><?= $berita['judul']; ?></a>
                                                 </h3>
                                                 <p class="card-text">
-                                                    ...
                                                     <?php
                                                     $kalimat = $berita['isi_artikel'];
-                                                    $potong_kalimat = substr($kalimat, 35, 230);
+                                                    $potong_kalimat = substr($kalimat, 0, 230);
                                                     echo $potong_kalimat;
                                                     ?>
-                                                    ...
                                                 </p>
                                                 <div class="card-text mb-2 text-muted small">
                                                     <span class="fw-bold d-none d-sm-inline me-1">
@@ -61,9 +59,10 @@
                                     </div>
                                 </article>
                             <?php endforeach; ?>
+                            <?= $pager->links('berita', 'pagin_berita') ?>
                         </div>
                     </div>
-                    <div class="clearfix my-4">
+                    <!-- <div class="clearfix my-4">
                         <nav class="float-start" aria-label="Posts navigation">
                             <ul class="pagination">
                                 <li class="page-item active">
@@ -84,7 +83,7 @@
                             </ul>
                         </nav>
                         <span class="py-2 float-end"></span>
-                    </div>
+                    </div> -->
                 </article>
             </div>
             <!-- <aside class="col-md-4 widget-area end-sidebar-lg" id="right-sidebar">

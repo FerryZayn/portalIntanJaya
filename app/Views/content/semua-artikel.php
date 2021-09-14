@@ -37,23 +37,18 @@
                                                     <a href="<?= base_url() ?>/content/<?= $informasi['slug'] ?>"><?= $informasi['judul'] ?></a>
                                                 </h3>
                                                 <p class="card-text">
-                                                    ...
                                                     <?php
                                                     $kalimat = $informasi['isi_artikel'];
-                                                    $potong_kalimat = substr($kalimat, 35, 240);
+                                                    $potong_kalimat = substr($kalimat, 0, 240);
                                                     echo $potong_kalimat;
                                                     ?>
-                                                    ...
                                                 </p>
                                                 <div class="card-text mb-2 text-muted small" style="font-size: 11px;">
                                                     <a href="#" rel="author"><i class="fas fa-user-edit"></i> <?= $informasi['nama_pengarang'] ?></a>
                                                     <i class="fas fa-calendar-alt"></i>
                                                     <?php
                                                     $date = $informasi['created_date'];
-                                                    echo date(
-                                                        'd M Y',
-                                                        strtotime($date)
-                                                    );
+                                                    echo date('d M Y', strtotime($date));
                                                     ?>
                                                 </div>
                                                 <a href="<?= base_url() ?>/content/<?= $informasi['slug'] ?>" class="btn btn-primary btn-sm mt-3">Baca Selengkapnya <i class="fa fa-arrow-circle-right"></i> </a>

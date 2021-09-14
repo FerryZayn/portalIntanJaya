@@ -6,12 +6,12 @@ use \App\Models\AuthModel;
 
 class AuthController extends BaseController
 {
-	protected $authModel;
-	public function __construct()
-	{
-		$this->authModel = new AuthModel();
-		// $this->db = \Config\Database::connect();
-	}
+	// protected $authModel;
+	// public function __construct()
+	// {
+	// 	$this->authModel = new AuthModel();
+	// 	// $this->db = \Config\Database::connect();
+	// }
 
 	public function index()
 	{
@@ -54,9 +54,11 @@ class AuthController extends BaseController
 			if ($result->n == 50) {
 
 				$ses_data = [
-					'id'       		=>  $result->usr_name,
-					'nama_pegawai' 	=> $result->usr_name2,
-					'email' 		=> $result->email,
+					'id'       =>  $result->usr_name,
+					'nama_pegawai' => $result->usr_name2,
+					// 'email'         => $result->email,
+					// 'nama_opd' => $result->opd_n,
+					// 'opd_id' => $result->opd_id,
 					'logged_in'     => TRUE
 				];
 				$this->session->set($ses_data);

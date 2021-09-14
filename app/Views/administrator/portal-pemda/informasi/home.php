@@ -51,13 +51,11 @@
                                                 <td><?= $informasi['judul']; ?></td>
                                                 <td><?= $informasi['nama_pengarang']; ?></td>
                                                 <td>
-                                                    ...
                                                     <?php
                                                     $kalimat = $informasi['isi_artikel'];
-                                                    $potong_kalimat = substr($kalimat, 35, 30);
+                                                    $potong_kalimat = substr($kalimat, 0, 120);
                                                     echo $potong_kalimat;
                                                     ?>
-                                                    ...
                                                 <td>
                                                     <div class="form-button-action">
                                                         <a href="/administrator/portal-pemda/informasi/<?= $informasi['judul']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail item ini...">

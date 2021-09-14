@@ -22,10 +22,14 @@ class ContentController extends BaseController
         $data = [
             'v_berita' => $this->pemdaModel->tampilBerita(),
             'v_informasi' => $this->pemdaModel->tampilInformasi(),
+
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+
             'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
+
+            'v_slideshow' => $this->pemdaModel->tampilSlideshow(),
         ];
         return view('/content/home', $data);
     }
@@ -36,10 +40,13 @@ class ContentController extends BaseController
         $data = [
             'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
             'v_berita' => $this->pemdaModel->getBeritaDetail($slug),
+
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
-            'v_beritaa' => $this->pemdaModel->contentBerita(),
-            'v_informasii' => $this->pemdaModel->contentInformasi(),
+
+            'v_beritalain' => $this->pemdaModel->contentBerita(),
+            'v_informasilain' => $this->pemdaModel->contentInformasi(),
+
             'v_notif' => $this->pemdaModel->bacaIni(),
             'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
@@ -51,43 +58,65 @@ class ContentController extends BaseController
     public function semuaArtikel()
     {
         $data = [
+            'v_informasi' => $this->pemdaModel->tampilInformasi(),
+            'v_berita' => $this->pemdaModel->tampilBerita(),
+
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
 
             //Pagin
-            'v_informasi' => $this->pemdaModel->paginate(4, 'artikel'),
+            'v_informasi' => $this->pemdaModel->paginate(10, 'artikel'),
             'pager' => $this->pemdaModel->pager,
         ];
         return view('/content/semua-artikel', $data);
     }
+
+
+    //Tampil Semua Informasi
     public function semuaInformasi()
     {
+        $paginate = 2;
         $data = [
             'v_informasi' => $this->pemdaModel->tampilInformasi(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+
+            //Pagin
+            'v_informasii' => $this->pemdaModel->where('tipe_artikel_id', 2)->paginate($paginate, 'informasi'),
+            'pager' => $this->pemdaModel->pager,
         ];
         return view('/content/semua-informasi', $data);
     }
+
+
+
+    //Tampil Semua Berita
     public function semuaBerita()
     {
+        $paginate = 2;
         $data = [
             'v_berita' => $this->pemdaModel->tampilBerita(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+
+            //Pagin
+            // 'v_beritaa' => $this->pemdaModel->paginate(2, 'berita'),
+            'v_beritaa' => $this->pemdaModel->where('tipe_artikel_id', 1)->paginate($paginate, 'berita'),
+            'pager' => $this->pemdaModel->pager,
         ];
         return view('/content/semua-berita', $data);
     }
-    //Tampil Visi Misi
 
+
+    //Tampil Visi Misi
     public function visiMisi()
     {
         $data = [
             'v_visi' => $this->pemdaModel->tampilVisi(),
             'v_misi' => $this->pemdaModel->tampilMisi(),
             'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
-            'v_beritaa' => $this->pemdaModel->contentBerita(),
-            'v_informasii' => $this->pemdaModel->contentInformasi(),
+            'v_beritalain' => $this->pemdaModel->contentBerita(),
+            'v_informasilain' => $this->pemdaModel->contentInformasi(),
             'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),

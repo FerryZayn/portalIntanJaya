@@ -146,6 +146,10 @@ class PemdaController extends BaseController
 
     public function updateBerita()
     {
+        // dd($this->request->getVar());
+        // echo "<pre>";
+        // var_dump($this->request->getVar());
+
         $fileSampul = $this->request->getFile('file_gambar');
 
         if ($fileSampul->getError() == 4) {
@@ -169,10 +173,9 @@ class PemdaController extends BaseController
         $slug = $ambilJudul;
 
         $this->db->query("CALL artikel_update('$id', '$judul', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$nama_pengarang', '$slug')");
-        echo "<pre>";
-        var_dump($this->request->getVar());
-        // session()->setFlashdata('info', 'Update berita/informasi berhasil');
-        // return redirect()->to('/administrator/portal-pemda/berita/home');
+
+        session()->setFlashdata('info', 'Update berita/informasi berhasil');
+        return redirect()->to('/administrator/portal-pemda/berita/home');
     }
 
     //Informasi......

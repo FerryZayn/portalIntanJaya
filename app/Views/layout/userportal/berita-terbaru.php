@@ -74,14 +74,12 @@
                                             <div class="col-9 col-md-8">
                                                 <div class="card-body pt-0">
                                                     <h3 class="card-title h6 h4-md h6-lg">
-                                                        <a href="<?= base_url(); ?>/content/<?= $informasi['slug']; ?>"><?= $informasi['judul']; ?></a><br />
-                                                        ...
+                                                        <a href="<?= base_url(); ?>/content/<?= $informasi['slug']; ?>"><?= $informasi['judul']; ?></a>
                                                         <?php
                                                         $kalimat = $informasi['isi_artikel'];
-                                                        $potong_kalimat = substr($kalimat, 60, 30);
+                                                        $potong_kalimat = substr($kalimat, 0, 50);
                                                         echo $potong_kalimat;
                                                         ?>
-                                                        ...
                                                     </h3>
                                                     <div class="card-text small text-muted">
                                                         <time class="news-date" datetime="2019-06-16T02:12:03+00:00">
@@ -95,8 +93,18 @@
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
+                                    <?php
+                                    $tA_informasi = $informasi['tipe_artikel_id'];
+                                    if ($tA_informasi == 2) {
+                                    ?>
+                                        <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi"><i class="fas fa-angle-double-right"></i> Lihat Semua Informasi</a>
+                                    <?php
+                                    } else {
+                                        echo "Maaf, Tidak ada informasi...";
+                                    }
+                                    ?>
                                 </article>
-                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
+
                             </div>
                         </div>
                     </div>
@@ -121,17 +129,15 @@
                                                     <h3 class="card-title h6 h4-md h6-lg">
                                                         <a href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>">
                                                             <?= $berita['judul']; ?>
-                                                        </a><br />
-                                                        ...
+                                                        </a>
                                                         <?php
                                                         $kalimat = $berita['isi_artikel'];
-                                                        $potong_kalimat = substr($kalimat, 25, 30);
+                                                        $potong_kalimat = substr($kalimat, 0, 50);
                                                         echo $potong_kalimat;
                                                         ?>
-                                                        ...
                                                     </h3>
                                                     <div class="card-text small text-muted">
-                                                        <time class="news-date" datetime="2019-06-16T02:12:03+00:00">
+                                                        <time class="news-date">
                                                             <?php
                                                             $date = $berita['created_date'];
                                                             echo date('d M Y', strtotime($date));
@@ -142,8 +148,17 @@
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
+                                    <?php
+                                    $tA_berita = $berita['tipe_artikel_id'];
+                                    if ($tA_berita == 1) {
+                                    ?>
+                                        <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-berita"><i class="fas fa-angle-double-right"></i> Lihat Semua Berita</a>
+                                    <?php
+                                    } else {
+                                        echo "Maaf, Tidak ada Berita...";
+                                    }
+                                    ?>
                                 </article>
-                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-berita"><i class="fas fa-angle-double-right"></i> Selengkapnya...</a>
                             </div>
                         </div>
                     </div>

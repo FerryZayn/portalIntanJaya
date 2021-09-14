@@ -51,13 +51,11 @@
                                                 <td><?= $berita['judul']; ?></td>
                                                 <td><?= $berita['nama_pengarang']; ?></td>
                                                 <td>
-                                                    ...
                                                     <?php
                                                     $kalimat = $berita['isi_artikel'];
-                                                    $potong_kalimat = substr($kalimat, 35, 30);
+                                                    $potong_kalimat = substr($kalimat, 0, 120);
                                                     echo $potong_kalimat;
                                                     ?>
-                                                    ...
                                                 <td>
                                                     <div class="form-button-action">
                                                         <a href="/administrator/portal-pemda/berita/<?= $berita['slug']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
