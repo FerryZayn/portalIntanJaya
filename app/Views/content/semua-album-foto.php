@@ -22,132 +22,34 @@
                         </div>
                         <!--output-->
                         <div class="border-bottom-last-0 first-pt-0">
+                            <?php foreach ($v_albumfoto as $albumfoto) : ?>
+                                <article class="card card-full hover-a py-4 post-1305 post type-post status-publish format-video has-post-thumbnail hentry category-video tag-science tag-starvation post_format-post-format-video" id="post-1305">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-12 col-lg-6">
+                                            <div class="ratio_360-202 image-wrapper">
+                                                <a href="<?= base_url(); ?>/content/<?= $albumfoto['slug']; ?>">
+                                                    <img style="border-radius:5px;" src="<?= base_url() ?><?= $albumfoto['path_file_gambar']; ?>/<?= $albumfoto['file_gambar']; ?>" class="img-fluid lazy wp-post-image" sizes="(max-width: 360px) 100vw, 360px" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-12 col-lg-6">
+                                            <div class="card-body pt-3 pt-sm-0 pt-md-3 pt-lg-0">
+                                                <h3 class="card-title h2 h3-sm h2-md">
+                                                    <a href="<?= base_url(); ?>/content/<?= $albumfoto['slug']; ?>"><?= $albumfoto['judul']; ?></a>
+                                                </h3>
+                                                <p class="card-text"><?= $albumfoto['isi_artikel']; ?></p>
+                                                <div class="card-text mb-2 text-muted small">
+                                                    <span class="fw-bold d-none d-sm-inline me-1">
+                                                        <a href="<?= base_url(); ?>/content/<?= $albumfoto['slug']; ?>" rel="author"><?= $albumfoto['user_created']; ?></a> </span>
+                                                    <time class="news-date"><?= $albumfoto['created_date']; ?></time>
+                                                </div>
+                                            </div>
+                                            <a href="<?= base_url(); ?>/content/<?= $albumfoto['slug']; ?>" class="btn btn-primary btn-sm mt-3">Baca Selengkapnya <i class="fa fa-arrow-circle-right"></i> </a>
+                                        </div>
+                                    </div>
+                                </article>
+                            <?php endforeach; ?>
 
-                            <article class="card card-full hover-a py-4 post-1305 post type-post status-publish format-video has-post-thumbnail hentry category-video tag-science tag-starvation post_format-post-format-video" id="post-1305">
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="ratio_360-202 image-wrapper">
-                                            <a href="#">
-                                                <img style="border-radius:5px;" src="<?= base_url() ?>/templet/gambar-berita/4.jfif" class="img-fluid lazy wp-post-image" sizes="(max-width: 360px) 100vw, 360px" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="card-body pt-3 pt-sm-0 pt-md-3 pt-lg-0">
-                                            <h3 class="card-title h2 h3-sm h2-md">
-                                                <a href="#">Judul Berita</a>
-                                            </h3>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis maxime nam recusandae dolore error! Ut reiciendis, nihil earum ipsum iste laborum deserunt dicta quo, eaque possimus cupiditate molestias numquam qui.</p>
-                                            <div class="card-text mb-2 text-muted small">
-                                                <span class="fw-bold d-none d-sm-inline me-1">
-                                                    <a href="#" rel="author">User Created</a> </span>
-                                                <time class="news-date">Agustus 02, 2021</time>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="btn btn-primary btn-sm mt-3">Baca Selengkapnya <i class="fa fa-arrow-circle-right"></i> </a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="card card-full hover-a py-4 post-1304 post type-post status-publish format-image has-post-thumbnail hentry category-science tag-stonehenge post_format-post-format-image" id="post-1304">
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="ratio_360-202 image-wrapper">
-                                            <a href="#">
-                                                <img style="border-radius:5px;" src="<?= base_url() ?>/templet/gambar-berita/5.jpeg" class="img-fluid lazy wp-post-image" sizes="(max-width: 360px) 100vw, 360px" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="card-body pt-3 pt-sm-0 pt-md-3 pt-lg-0">
-                                            <h3 class="card-title h2 h3-sm h2-md">
-                                                <a href="#">Judul Berita</a>
-                                            </h3>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis maxime nam recusandae dolore error! Ut reiciendis, nihil earum ipsum iste laborum deserunt dicta quo, eaque possimus cupiditate molestias numquam qui.</p>
-                                            <div class="card-text mb-2 text-muted small">
-                                                <span class="fw-bold d-none d-sm-inline me-1">
-                                                    <a href="#" rel="author">User Created</a> </span>
-                                                <time class="news-date">Agustus 02, 2021</time>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="btn btn-primary btn-sm mt-3">Baca Selengkapnya <i class="fa fa-arrow-circle-right"></i> </a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="card card-full hover-a py-4 post-1303 post type-post status-publish format-quote has-post-thumbnail hentry category-automotive tag-maps post_format-post-format-quote" id="post-1303">
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="ratio_360-202 image-wrapper">
-                                            <a href="#">
-                                                <img style="border-radius:5px;" src="<?= base_url() ?>/templet/gambar-berita/6.jpeg" class="img-fluid lazy wp-post-image" sizes="(max-width: 360px) 100vw, 360px" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="card-body pt-3 pt-sm-0 pt-md-3 pt-lg-0">
-                                            <h3 class="card-title h2 h3-sm h2-md">
-                                                <a href="#">Judul Berita</a>
-                                            </h3>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis maxime nam recusandae dolore error! Ut reiciendis, nihil earum ipsum iste laborum deserunt dicta quo, eaque possimus cupiditate molestias numquam qui.</p>
-                                            <div class="card-text mb-2 text-muted small">
-                                                <span class="fw-bold d-none d-sm-inline me-1">
-                                                    <a href="#" rel="author">User Created</a> </span>
-                                                <time class="news-date">Agustus 02, 2021</time>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="btn btn-primary btn-sm mt-3">Baca Selengkapnya <i class="fa fa-arrow-circle-right"></i> </a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="card card-full hover-a py-4 post-1306 post type-post status-publish format-gallery has-post-thumbnail hentry category-science tag-monitor tag-science post_format-post-format-gallery" id="post-1306">
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="ratio_360-202 image-wrapper">
-                                            <a href="#">
-                                                <img style="border-radius:5px;" src="<?= base_url() ?>/templet/gambar-berita/7.jpg" class="img-fluid lazy wp-post-image" sizes="(max-width: 360px) 100vw, 360px" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="card-body pt-3 pt-sm-0 pt-md-3 pt-lg-0">
-                                            <h3 class="card-title h2 h3-sm h2-md">
-                                                <a href="#">Judul Berita</a>
-                                            </h3>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis maxime nam recusandae dolore error! Ut reiciendis, nihil earum ipsum iste laborum deserunt dicta quo, eaque possimus cupiditate molestias numquam qui.</p>
-                                            <div class="card-text mb-2 text-muted small">
-                                                <span class="fw-bold d-none d-sm-inline me-1">
-                                                    <a href="#" rel="author">User Created</a> </span>
-                                                <time class="news-date">Agustus 02, 2021</time>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="btn btn-primary btn-sm mt-3">Baca Selengkapnya <i class="fa fa-arrow-circle-right"></i> </a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="card card-full hover-a py-4 post-1291 post type-post status-publish format-link has-post-thumbnail hentry category-health tag-health tag-laboratory post_format-post-format-link" id="post-1291">
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="ratio_360-202 image-wrapper">
-                                            <a href="#">
-                                                <img style="border-radius:5px;" src="<?= base_url() ?>/templet/gambar-berita/8.jpg" class="img-fluid lazy wp-post-image" sizes="(max-width: 360px) 100vw, 360px" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="card-body pt-3 pt-sm-0 pt-md-3 pt-lg-0">
-                                            <h3 class="card-title h2 h3-sm h2-md">
-                                                <a href="#">Judul Berita</a>
-                                            </h3>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis maxime nam recusandae dolore error! Ut reiciendis, nihil earum ipsum iste laborum deserunt dicta quo, eaque possimus cupiditate molestias numquam qui.</p>
-                                            <div class="card-text mb-2 text-muted small">
-                                                <span class="fw-bold d-none d-sm-inline me-1">
-                                                    <a href="#" rel="author">User Created</a> </span>
-                                                <time class="news-date">Agustus 02, 2021</time>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="btn btn-primary btn-sm mt-3">Baca Selengkapnya <i class="fa fa-arrow-circle-right"></i> </a>
-                                    </div>
-                                </div>
-                            </article>
                         </div>
                     </div>
                     <div class="clearfix my-4">

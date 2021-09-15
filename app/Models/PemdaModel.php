@@ -184,6 +184,8 @@ class PemdaModel extends Model
         return $this->db
             ->table('artikel')
             ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
+            ->orderBy('RAND ()')
+            // ->limit(2)
             ->get()
             ->getResultArray();
     }
@@ -194,6 +196,16 @@ class PemdaModel extends Model
             ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
             ->countAllResults();
     }
+
+
+
+
+
+
+
+
+
+
 
     //Get jumlah album Video
     public function tampilAlbumvideo()
@@ -211,6 +223,8 @@ class PemdaModel extends Model
             ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
             ->countAllResults();
     }
+
+
 
     //Get Slide Show
     public function tampilSlideshow()
@@ -232,12 +246,4 @@ class PemdaModel extends Model
             ->get()
             ->getRow();
     }
-    // public function getSlideshowUpdate($slug)
-    // {
-    //     return $this->db
-    //         ->table('artikel')
-    //         ->where('slug', $slug)
-    //         ->get()
-    //         ->getRow();
-    // }
 }

@@ -30,6 +30,10 @@ class ContentController extends BaseController
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
 
             'v_slideshow' => $this->pemdaModel->tampilSlideshow(),
+
+            'v_albumfoto' => $this->pemdaModel->tampilAlbumfoto(),
+
+            'v_albumvideo' => $this->pemdaModel->tampilAlbumvideo()
         ];
         return view('/content/home', $data);
     }
@@ -129,15 +133,15 @@ class ContentController extends BaseController
     public function albumFoto()
     {
         $data = [
-            'v_visi' => $this->pemdaModel->tampilVisi(),
-            'v_misi' => $this->pemdaModel->tampilMisi(),
-            'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
-            'v_beritaa' => $this->pemdaModel->contentBerita(),
-            'v_informasii' => $this->pemdaModel->contentInformasi(),
-            'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
-            'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
+
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+
+            'v_beritalain' => $this->pemdaModel->contentBerita(),
+            'v_informasilain' => $this->pemdaModel->contentInformasi(),
+            'v_albumfoto' => $this->pemdaModel->tampilAlbumfoto(),
+            'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
+            'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
         ];
         return view('/content/semua-album-foto', $data);
     }

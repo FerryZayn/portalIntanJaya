@@ -7,7 +7,7 @@
             <div class="nav-slider-hover nav-dots-top-right light-dots" data-flickity='{ "cellAlign": "left", "wrapAround": true, "adaptiveHeight": true, "prevNextButtons": true , "pageDots": true, "imagesLoaded": true }'>
 
                 <?php foreach ($v_berita as $berita) : ?>
-                    <article class="col-12 col-sm-6 col-lg-4 me-2">
+                    <article class="col-sm-6">
                         <div class="card card-full text-white overflow zoom mb-4">
                             <div class="height-ratio image-wrapper">
                                 <a href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>">
@@ -38,8 +38,6 @@
 
 
     <div class="col-4">
-
-
         <div class="sticky">
             <aside class="widget">
                 <div class="block-title-4">

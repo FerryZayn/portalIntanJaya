@@ -1,3 +1,4 @@
+<!-- Desain Pertama -->
 <div class="block-area">
     <div class="block-title-6">
         <h4 class="h5 border-primary"><span class="bg-primary text-white"><i class="fas fa-city"></i> Portal Kabupaten Intan Jaya</span></h4>
@@ -95,6 +96,137 @@
                     <!-- <span class="fw-bold white d-inline d-sm-none d-md-inline me-1">
                         <a href="#" rel="author">User Created</a> </span>
                     <time class="d-sm-none d-md-inline m-0 text-white">Agustus 03, 2021</time> -->
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+
+
+<!-- Desain Kedua -->
+<div class="block-area">
+    <div class="block-title-6">
+        <h4 class="h5 border-primary"><span class="bg-primary text-white"><i class="fas fa-city"></i> Portal Kabupaten Intan Jaya</span></h4>
+    </div>
+    <div class="row">
+
+        <article class="col-sm-4" style="padding-bottom: 20px;">
+            <div class="cards">
+                <div class="card">
+                    <span class="close"></span>
+                    <span class="arrow"></span>
+                    <article>
+                        <h2>MENGENAL INTAN JAYA</h2>
+                        <div class="title">Kabupaten Intan Jaya</div>
+                        <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
+                        <div class="desc">Keterangan</div>
+                    </article>
+                    <div class="actions">
+                        <button class="btn"><span>like</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/heart.svg"></button>
+                        <button class="btn"><span>trade</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/trade.svg"></button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <article class="col-sm-4" style="padding-bottom: 20px;">
+            <div class="cards">
+                <div class="card">
+                    <span class="close"></span>
+                    <span class="arrow"></span>
+                    <article>
+                        <h2>VISI dan MISI</h2>
+                        <div class="title">Kabupaten Intan Jaya</div>
+                        <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
+
+                        <div class="desc">Keterangan</div>
+                    </article>
+                    <div class="actions">
+                        <button class="btn"><span>like</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/heart.svg"></button>
+                        <button class="btn"><span>trade</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/trade.svg"></button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <article class="col-sm-4" style="padding-bottom: 20px;">
+            <div class="cards">
+                <div class="card">
+                    <span class="close"></span>
+                    <span class="arrow"></span>
+                    <article>
+                        <h2>INFORMASI PUBLIK</h2>
+                        <div class="title">Kabupaten Intan Jaya</div>
+                        <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
+                        <div class="desc">Keterangan</div>
+                    </article>
+                    <div class="actions">
+                        <button class="btn"><span>like</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/heart.svg"></button>
+                        <button class="btn"><span>trade</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/trade.svg"></button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <article class="col-sm-4" style="padding-bottom: 20px;">
+            <div class="cards">
+                <div class="card">
+                    <span class="close"></span>
+                    <span class="arrow"></span>
+                    <article>
+                        <h2>STRUKTUR ORGANISASI</h2>
+                        <div class="title">Kabupaten Intan Jaya</div>
+                        <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
+                        <div class="desc">Keterangan</div>
+                    </article>
+                    <div class="actions">
+                        <button class="btn"><span>like</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/heart.svg"></button>
+                        <button class="btn"><span>trade</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/trade.svg"></button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <article class="col-sm-4" style="padding-bottom: 20px;">
+            <div class="cards">
+                <div class="card">
+                    <span class="close"></span>
+                    <span class="arrow"></span>
+                    <article>
+                        <h2>PROFIL PEJABAT</h2>
+                        <div class="title">Kabupaten Intan Jaya</div>
+                        <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
+                        <div class="desc">Keterangan</div>
+                    </article>
+                    <div class="actions">
+                        <button class="btn"><span>like</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/heart.svg"></button>
+                        <button class="btn"><span>trade</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/trade.svg"></button>
+
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <article class="col-sm-4" style="padding-bottom: 20px;">
+            <div class="cards">
+                <div class="card">
+                    <span class="close"></span>
+                    <span class="arrow"></span>
+                    <article>
+                        <h2>PORTAL PERANGKAT DAERAH</h2>
+                        <div class="title">Kabupaten Intan Jaya</div>
+                        <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
+                        <div class="desc">Keterangan</div>
+                    </article>
+                    <div class="actions">
+                        <button class="btn"><span>like</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/heart.svg"></button>
+                        <button class="btn"><span>trade</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/trade.svg"></button>
+                    </div>
                 </div>
             </div>
         </article>

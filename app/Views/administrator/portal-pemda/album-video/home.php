@@ -6,7 +6,7 @@
             <div class="page-inner py-5">
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                     <div>
-                        <h2 class="text-white pb-2 fw-bold">ALBUM VIDEO PEMDA</h2>
+                        <h2 class="text-white pb-2 fw-bold">ALBUM FOTO PEMDA</h2>
                         <h5 class="text-white op-7 mb-2">Kabupaten Intan Jaya...</h5>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Daftar Album Video</h4>
+                                <h4 class="card-title">Daftar Album Foto</h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -51,16 +51,14 @@
                                                 <td><?= $video['judul']; ?></td>
                                                 <td><?= $video['nama_pengarang']; ?></td>
                                                 <td>
-                                                    ...
                                                     <?php
                                                     $kalimat = $video['isi_artikel'];
-                                                    $potong_kalimat = substr($kalimat, 35, 30);
+                                                    $potong_kalimat = substr($kalimat, 0, 150);
                                                     echo $potong_kalimat;
                                                     ?>
-                                                    ...
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <a href="/administrator/portal-pemda/album-video/<?= $foto['judul']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
+                                                        <a href="/administrator/portal-pemda/album-video/<?= $video['judul']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
                                                         <a href="/administrator/portal-pemda/album-video/edit/<?= $video['judul']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
