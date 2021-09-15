@@ -34,7 +34,7 @@
                     <span class="close"></span>
                     <span class="arrow"></span>
                     <article>
-                        <h2>VISI dan MISI</h2>
+                        <h2>VISI DAN MISI</h2>
                         <div class="title">Kabupaten Intan Jaya</div>
                         <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
                         <div class="desc">Keterangan</div>
@@ -122,7 +122,7 @@
                     <span class="close"></span>
                     <span class="arrow"></span>
                     <article>
-                        <h2>PORTAL PERDA</h2>
+                        <h2>PORTAL PERANGKAT DAERAH</h2>
                         <div class="title">Kabupaten Intan Jaya</div>
                         <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
                         <div class="desc">Keterangan</div>
