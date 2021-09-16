@@ -15,7 +15,7 @@ class PemdaModel extends Model
     ];
 
     // Details Artikel
-    public function getDetails($slug)
+    public function getDetailsArtikel($slug)
     {
         return $this->db
             ->table('artikel')
@@ -25,6 +25,77 @@ class PemdaModel extends Model
             ->get()
             ->getRow();
     }
+    public function getUpdateArtikel($slug)
+    {
+        return $this->db
+            ->table('artikel')
+            ->where('slug', $slug)
+            ->get()
+            ->getRow();
+    }
+
+
+
+
+    //GET Visi_________________________________________________________________________________________________
+    public function tampilVisi()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 5, 'is_active' => 1])
+            ->get()
+            ->getResultArray();
+    }
+    public function jumlahVisi()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 5, 'is_active' => 1])
+            ->countAllResults();
+    }
+
+
+
+
+
+
+
+
+    //GET Misi_____________________________________________________________________________________________________
+    public function tampilMisi()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 6, 'is_active' => 1])
+            ->get()
+            ->getResultArray();
+    }
+    public function jumlahMisi()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 6, 'is_active' => 1])
+            ->countAllResults();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -83,60 +154,6 @@ class PemdaModel extends Model
             ->get()
             ->getResultArray();
     }
-
-
-
-
-    //GET Visi_________________________________________________________________________________________________
-    public function tampilVisi()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 5, 'is_active' => 1])
-            ->get()
-            ->getResultArray();
-    }
-    public function jumlahVisi()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 5, 'is_active' => 1])
-            ->countAllResults();
-    }
-
-
-
-
-
-
-
-
-    //GET Misi_____________________________________________________________________________________________________
-    public function tampilMisi()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 6, 'is_active' => 1])
-            ->get()
-            ->getResultArray();
-    }
-    public function getMisiUpdate($slug)
-    {
-        return $this->db
-            ->table('artikel')
-            ->where('slug', $slug)
-            ->get()
-            ->getRow();
-    }
-    public function jumlahMisi()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 6, 'is_active' => 1])
-            ->countAllResults();
-    }
-
-
 
 
     //GET Berita__________________________________________________________________________________________________________

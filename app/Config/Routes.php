@@ -59,14 +59,14 @@ $routes->get('/administrator/portal-pemda/dashboard', 'PemdaController::index', 
 
 //AdminPortal Pemda Visi___________________________________________________________________________________________________________
 $routes->get('/administrator/portal-pemda/visi/v_visi', 'PemdaController::visipemda', ['filter' => 'auth']);
-$routes->get('/administrator/portal-pemda/visi/edit/(:segment)', 'PemdaController::editVisi/$1', ['filter' => 'auth']);
-$routes->delete('/administrator/portal-pemda/visi/(:num)', 'PemdaController::hapusVisi/$1', ['filter' => 'auth']);
+$routes->get('/administrator/portal-pemda/visi/edit/(:segment)', 'PemdaController::visiEdit/$1', ['filter' => 'auth']);
+$routes->delete('/administrator/portal-pemda/visi/(:num)', 'PemdaController::visiHapus/$1', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/visi/(:any)', 'PemdaController::visiDetail/$1', ['filter' => 'auth']);
 
 //Admin Portal Pemda Misi__________________________________________________________________________________________________________
 $routes->get('/administrator/portal-pemda/misi/v_misi', 'PemdaController::misipemda', ['filter' => 'auth']);
-$routes->get('/administrator/portal-pemda/misi/edit/(:segment)', 'PemdaController::editMisi/$1', ['filter' => 'auth']);
-$routes->delete('/administrator/portal-pemda/misi/(:num)', 'PemdaController::hapusMisi/$1', ['filter' => 'auth']);
+$routes->get('/administrator/portal-pemda/misi/edit/(:segment)', 'PemdaController::misiEdit/$1', ['filter' => 'auth']);
+$routes->delete('/administrator/portal-pemda/misi/(:num)', 'PemdaController::misiHapus/$1', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/misi/(:any)', 'PemdaController::misiDetail/$1', ['filter' => 'auth']);
 
 

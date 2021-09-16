@@ -23,7 +23,7 @@
                         </div>
                         <div class="card-body">
 
-                            <form method="POST" action="/PemdaController/updateBerita/" enctype="multipart/form-data">
+                            <form method="POST" action="/PemdaController/updateArtikel/" enctype="multipart/form-data">
                                 <?= csrf_field(); ?>
                                 <input type="hidden" name="_method" value="put">
                                 <input type="hidden" name="id" value="<?= $v_berita->id; ?>">

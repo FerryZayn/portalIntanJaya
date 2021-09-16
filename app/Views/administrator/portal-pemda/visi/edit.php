@@ -23,7 +23,7 @@
                         </div>
                         <div class="card-body">
 
-                            <form method="POST" action="/PemdaController/updateVisi/" enctype="multipart/form-data">
+                            <form method="POST" action="/PemdaController/updateArtikel/" enctype="multipart/form-data">
                                 <?= csrf_field(); ?>
                                 <input type="hidden" name="_method" value="put">
                                 <input type="hidden" name="id" value="<?= $v_visi->id; ?>">
@@ -45,9 +45,6 @@
                                                         <div class="mb-3">
                                                             <input type="text" name="nama_pengarang" value="<?= $v_visi->nama_pengarang; ?>" class="form-control" placeholder="Nama Pengarang">
                                                         </div>
-
-
-
                                                         <div class="mb-3">
                                                             <label for="fileFotoLabel" class="fileFotoLabel">File Foto</label>
                                                             <input type="file" class="form-control" name="file_gambar" id="file_foto" onchange="previewImg()">
@@ -58,7 +55,6 @@
                                                         <div class="mb-3">
                                                             <input type="hidden" name="path_file_gambar" class="form-control" value="/templet/gambar-berita">
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>
