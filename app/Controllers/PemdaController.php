@@ -29,11 +29,22 @@ class PemdaController extends BaseController
         return view('/administrator/portal-pemda/dashboard', $data);
     }
 
-    //VisiPemda
+
+
+
+
+    //Visi Pemda
     public function visipemda()
     {
         $data = [
             'v_visi' => $this->pemdaModel->tampilVisi(),
+        ];
+        return view('/administrator/portal-pemda/visi/v_visi', $data);
+    }
+    public function visiDetail($slug)
+    {
+        $data = [
+            'v_visi' => $this->pemdaModel->getDetails($slug),
         ];
         return view('/administrator/portal-pemda/visi/v_visi', $data);
     }
@@ -43,6 +54,19 @@ class PemdaController extends BaseController
         session()->setFlashdata('info', 'Data sudah di hapus...');
         return redirect()->to('/administrator/portal-pemda/visi/v_visi');
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //Misi Pemda
     public function misipemda()

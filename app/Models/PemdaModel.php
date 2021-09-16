@@ -14,6 +14,20 @@ class PemdaModel extends Model
         'notes', 'opd_hdr_id', 'is_active', 'tipe_artikel_id', 'status_sistem_id'
     ];
 
+    // Details Artikel
+    public function getDetails($slug)
+    {
+        return $this->db
+            ->table('artikel')
+            ->join('tipe_artikel', 'tipe_artikel.id=artikel.tipe_artikel_id')
+            ->join('status_sistem', 'status_sistem.id=artikel.status_sistem_id')
+            ->where('slug', $slug)
+            ->get()
+            ->getRow();
+    }
+
+
+
     //GET Order informasi & Berita pada Content
     public function contentInformasi()
     {
@@ -70,7 +84,10 @@ class PemdaModel extends Model
             ->getResultArray();
     }
 
-    //GET Visi
+
+
+
+    //GET Visi_________________________________________________________________________________________________
     public function tampilVisi()
     {
         return $this->db
@@ -87,7 +104,14 @@ class PemdaModel extends Model
             ->countAllResults();
     }
 
-    //GET Misi
+
+
+
+
+
+
+
+    //GET Misi_____________________________________________________________________________________________________
     public function tampilMisi()
     {
         return $this->db
