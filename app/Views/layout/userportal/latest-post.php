@@ -26,13 +26,11 @@
                         </time>
                     </div>
                     <p class="card-text">
-                        ...
                         <?php
                         $kalimat = $beritaa['isi_artikel'];
-                        $potong_kalimat = substr($kalimat, 400, 90);
+                        $potong_kalimat = substr($kalimat, 0, 200);
                         echo $potong_kalimat;
-                        ?>
-                        ...
+                        ?>...
                     </p>
                 </div>
             </article>

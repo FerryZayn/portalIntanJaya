@@ -28,7 +28,7 @@ class PemdaModel extends Model
 
 
 
-    //GET Order informasi & Berita pada Content
+    //GET Order informasi & Berita pada Content_______________________________________________________________________
     public function contentInformasi()
     {
         return $this->db
@@ -50,7 +50,7 @@ class PemdaModel extends Model
             ->getResultArray();
     }
 
-    //Get Konten File Latest Post
+    //Get Konten File Latest Post________________________________________________________________________________________
     public function contentLatestpostList()
     {
         return $this->db
@@ -72,7 +72,7 @@ class PemdaModel extends Model
             ->getResultArray();
     }
 
-    //Notifikasi Berita Kanan
+    //Notifikasi Berita Kanan_____________________________________________________________________________________
     public function bacaIni()
     {
         return $this->db
@@ -120,6 +120,14 @@ class PemdaModel extends Model
             ->get()
             ->getResultArray();
     }
+    public function getMisiUpdate($slug)
+    {
+        return $this->db
+            ->table('artikel')
+            ->where('slug', $slug)
+            ->get()
+            ->getRow();
+    }
     public function jumlahMisi()
     {
         return $this->db
@@ -128,7 +136,10 @@ class PemdaModel extends Model
             ->countAllResults();
     }
 
-    //GET Berita
+
+
+
+    //GET Berita__________________________________________________________________________________________________________
     public function tampilBerita()
     {
         return $this->db
@@ -163,6 +174,19 @@ class PemdaModel extends Model
             ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
             ->countAllResults();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //GET Informasi
     public function tampilInformasi()

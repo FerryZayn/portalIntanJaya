@@ -6,7 +6,7 @@
             <div class="page-inner py-5">
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                     <div>
-                        <h2 class="text-white pb-2 fw-bold">DETAIL ITEM BERITA PORTAL</h2>
+                        <h2 class="text-white pb-2 fw-bold">DETAIL ITEM MISI PORTAL</h2>
                         <h5 class="text-white op-7 mb-2">Kabupaten Intan Jaya...</h5>
                     </div>
                 </div>
@@ -18,8 +18,8 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Detail item Berita</h4>
-                                <a href="/administrator/portal-pemda/visi/v_visi" class="btn bg-satu text-white fw-bold btn-round ml-auto">
+                                <h4 class="card-title">Detail item Misi</h4>
+                                <a href="/administrator/portal-pemda/misi/v_misi" class="btn bg-satu text-white fw-bold btn-round ml-auto">
                                     <i class="fas fa-arrow-circle-left"></i>
                                     Kembali
                                 </a>
@@ -27,20 +27,20 @@
                         </div>
                         <div class="card-body">
                             <div class="card-text">
-                                <h2 class="fw-bold"><?= $v_visi->judul; ?></h2>
+                                <h2 class="fw-bold"><?= $v_misi->judul; ?></h2>
                                 <div class="flex-1 ml-3 pt-1">
-                                    <h6 class="text-uppercase fw-bold mb-1"><i class="icon-user"></i> <?= $v_visi->nama_pengarang; ?>
+                                    <h6 class="text-uppercase fw-bold mb-1"><i class="icon-user"></i> <?= $v_misi->nama_pengarang; ?>
                                         <span class="text-info pl-3"><i class="icon-clock"></i>
                                             <?php
-                                            echo date('d F Y - H:i:s', strtotime($v_visi->created_date));
+                                            echo date('d F Y - H:i:s', strtotime($v_misi->created_date));
                                             ?>
                                         </span>
-                                        <span class="text-success pl-3"><?= $v_visi->tipe; ?></span>
-                                        <span class="text-success pl-3"><?= $v_visi->kategori; ?></span>
-                                        <span class="text-success pl-3"><?= $v_visi->nama_status; ?></span>
+                                        <span class="text-success pl-3"><?= $v_misi->tipe; ?></span>
+                                        <span class="text-success pl-3"><?= $v_misi->kategori; ?></span>
+                                        <span class="text-success pl-3"><?= $v_misi->nama_status; ?></span>
                                     </h6>
                                 </div>
-                                <p><?= $v_visi->isi_artikel; ?></p>
+                                <p><?= $v_misi->isi_artikel; ?></p>
                             </div>
                         </div>
                     </div>

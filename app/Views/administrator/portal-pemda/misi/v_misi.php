@@ -51,19 +51,17 @@
                                                 <td><?= $m['judul']; ?></td>
                                                 <td><?= $m['nama_pengarang']; ?></td>
                                                 <td>
-                                                    ...
                                                     <?php
                                                     $kalimat = $m['isi_artikel'];
-                                                    $potong_kalimat = substr($kalimat, 5, 30);
+                                                    $potong_kalimat = substr($kalimat, 0, 130);
                                                     echo $potong_kalimat;
                                                     ?>
-                                                    ...
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <a href="/administrator/portal-pemda/informasi/<?= $m['judul']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail item ini...">
+                                                        <a href="/administrator/portal-pemda/misi/<?= $m['slug']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail item ini...">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
-                                                        <a href="/administrator/portal-pemda/informasi/edit/<?= $m['judul']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit item ini...">
+                                                        <a href="/administrator/portal-pemda/misi/edit/<?= $m['slug']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit item ini...">
                                                             <i class="fa fa-edit"></i>
                                                         </a> &nbsp;
                                                         <form action="<?= base_url() ?>/administrator/portal-pemda/misi/<?= $m['id'] ?>" method="POST" class="d-inline">

@@ -31,42 +31,50 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-//PortalBerita
+//Portal Berita Content___________________________________________________________________________________________________________
 $routes->get('/content/berita-detail', 'ContentController::detail');
 $routes->get('/content/semua-informasi', 'ContentController::semuaInformasi');
 $routes->get('/content/semua-berita', 'ContentController::semuaBerita');
 $routes->get('/content/semua-artikel', 'ContentController::semuaArtikel');
-
-//Visi Misi
 $routes->get('/content/visi-misi', 'ContentController::visiMisi');
-
-
 $routes->get('/content/semua-album-foto', 'ContentController::albumFoto');
 $routes->get('/content/album-foto-detail', 'ContentController::albumFotodetail');
-//Detail Berita
 $routes->get('/content/(:any)', 'ContentController::detailBerita/$1');
 
-//UserPortal
+
+
+
+
+//Administrator Portal Login_______________________________________________________________________________________________________
 $routes->get('/auth/login', 'AuthController::index');
 
-//AdminPortal
+//Admin Portal
 $routes->get('/administrator/index', 'AdminController::index', ['filter' => 'auth']);
 
-//AdminPortalMaster_________________________________________________________________________________________________________________
+//AdminPortalMaster________________________________________________________________________________________________________________
 $routes->get('/administrator/master/dashboard', 'MasterController::index', ['filter' => 'auth']);
-
-
 
 //AdminPortal Pemda________________________________________________________________________________________________________________
 $routes->get('/administrator/portal-pemda/dashboard', 'PemdaController::index', ['filter' => 'auth']);
 
-//AdminPortal Pemda Visi
+//AdminPortal Pemda Visi___________________________________________________________________________________________________________
 $routes->get('/administrator/portal-pemda/visi/v_visi', 'PemdaController::visipemda', ['filter' => 'auth']);
+$routes->get('/administrator/portal-pemda/visi/edit/(:segment)', 'PemdaController::editVisi/$1', ['filter' => 'auth']);
 $routes->delete('/administrator/portal-pemda/visi/(:num)', 'PemdaController::hapusVisi/$1', ['filter' => 'auth']);
+$routes->get('/administrator/portal-pemda/visi/(:any)', 'PemdaController::visiDetail/$1', ['filter' => 'auth']);
 
-//AdminPortal Pemda MIsi
+//Admin Portal Pemda Misi__________________________________________________________________________________________________________
 $routes->get('/administrator/portal-pemda/misi/v_misi', 'PemdaController::misipemda', ['filter' => 'auth']);
+$routes->get('/administrator/portal-pemda/misi/edit/(:segment)', 'PemdaController::editMisi/$1', ['filter' => 'auth']);
 $routes->delete('/administrator/portal-pemda/misi/(:num)', 'PemdaController::hapusMisi/$1', ['filter' => 'auth']);
+$routes->get('/administrator/portal-pemda/misi/(:any)', 'PemdaController::misiDetail/$1', ['filter' => 'auth']);
+
+
+
+
+
+
+
 
 //AdminPortal Pemda Pejabat
 $routes->get('/administrator/portal-pemda/pejabat/v_pejabat', 'PejabatController::pejabatPemda', ['filter' => 'auth']);
