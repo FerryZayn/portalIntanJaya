@@ -19,7 +19,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Detail item Album Foto</h4>
-                                <a href="/administrator/portal-pemda/album-foto/home" class="btn bg-satu text-white fw-bold btn-round ml-auto">
+                                <a href="/administrator/portal-pemda/album-video/home" class="btn bg-satu text-white fw-bold btn-round ml-auto">
                                     <i class="fas fa-arrow-circle-left"></i>
                                     Kembali
                                 </a>
