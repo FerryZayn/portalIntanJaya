@@ -14,7 +14,7 @@ class PemdaModel extends Model
         'notes', 'opd_hdr_id', 'is_active', 'tipe_artikel_id', 'status_sistem_id'
     ];
 
-    // Details Artikel
+    // Details Artikel________________________________________________________________________________________________________
     public function getDetailsArtikel($slug)
     {
         return $this->db
@@ -25,6 +25,7 @@ class PemdaModel extends Model
             ->get()
             ->getRow();
     }
+    // Update Artikel___________________________________________________________________________________________________________
     public function getUpdateArtikel($slug)
     {
         return $this->db
@@ -33,11 +34,7 @@ class PemdaModel extends Model
             ->get()
             ->getRow();
     }
-
-
-
-
-    //GET Visi_________________________________________________________________________________________________
+    //GET Tampil dan Jumlah Visi_________________________________________________________________________________________________
     public function tampilVisi()
     {
         return $this->db
@@ -54,14 +51,7 @@ class PemdaModel extends Model
             ->countAllResults();
     }
 
-
-
-
-
-
-
-
-    //GET Misi_____________________________________________________________________________________________________
+    //GET Tampil dan Jumlah Misi___________________________________________________________________________________________________
     public function tampilMisi()
     {
         return $this->db
@@ -78,28 +68,95 @@ class PemdaModel extends Model
             ->countAllResults();
     }
 
+    //GET Tampil dan Jumlah Berita___________________________________________________________________________________________________
+    public function tampilBerita()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
+            ->orderBy('RAND ()')
+            ->get()
+            ->getResultArray();
+    }
+    public function jumlahBerita()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
+            ->countAllResults();
+    }
 
 
 
+    //GET Tampil dan Jumlah Informasi_______________________________________________________________________________________________
+    public function tampilInformasi()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
+            ->orderBy('RAND ()')
+            ->get()
+            ->getResultArray();
+    }
+    public function jumlahInformasi()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
+            ->countAllResults();
+    }
+
+    //Get Tampil dan jumlah Album Foto________________________________________________________________________________________________
+    public function tampilAlbumfoto()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
+            ->orderBy('RAND ()')
+            // ->limit(2)
+            ->get()
+            ->getResultArray();
+    }
+    public function jumlahFoto()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
+            ->countAllResults();
+    }
+
+
+    //Get Tampil dan jumlah Album Video_______________________________________________________________________________________________
+    public function tampilAlbumvideo()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
+            ->get()
+            ->getResultArray();
+    }
+    public function jumlahVideo()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
+            ->countAllResults();
+    }
 
 
 
+    //Get Tampil Slide Show______________________________________________________________________________________________________
+    public function tampilSlideshow()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 7, 'is_active' => 1])
+            ->orderBy('RAND ()')
+            ->get()
+            ->getResultArray();
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //GET Order informasi & Berita pada Content_______________________________________________________________________
+    //GET Order informasi & Berita pada Content___________________________________________________________________________________
     public function contentInformasi()
     {
         return $this->db
@@ -121,7 +178,7 @@ class PemdaModel extends Model
             ->getResultArray();
     }
 
-    //Get Konten File Latest Post________________________________________________________________________________________
+    //Get Konten File Latest Post__________________________________________________________________________________________________
     public function contentLatestpostList()
     {
         return $this->db
@@ -143,7 +200,7 @@ class PemdaModel extends Model
             ->getResultArray();
     }
 
-    //Notifikasi Berita Kanan_____________________________________________________________________________________
+    //Notifikasi Berita Kanan_____________________________________________________________________________________________________
     public function bacaIni()
     {
         return $this->db
@@ -153,162 +210,5 @@ class PemdaModel extends Model
             ->limit(1, 0)
             ->get()
             ->getResultArray();
-    }
-
-
-    //GET Berita__________________________________________________________________________________________________________
-    public function tampilBerita()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
-            ->orderBy('RAND ()')
-            ->get()
-            ->getResultArray();
-    }
-    public function getBeritaUpdate($slug)
-    {
-        return $this->db
-            ->table('artikel')
-            ->where('slug', $slug)
-            ->get()
-            ->getRow();
-    }
-    public function getBeritaDetail($slug)
-    {
-        return $this->db
-            ->table('artikel')
-            ->join('tipe_artikel', 'tipe_artikel.id=artikel.tipe_artikel_id')
-            ->join('status_sistem', 'status_sistem.id=artikel.status_sistem_id')
-            ->where('slug', $slug)
-            ->get()
-            ->getRow();
-    }
-    public function jumlahBerita()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
-            ->countAllResults();
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //GET Informasi
-    public function tampilInformasi()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
-            ->orderBy('RAND ()')
-            ->get()
-            ->getResultArray();
-    }
-
-
-    public function jumlahInformasi()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
-            ->countAllResults();
-    }
-    public function getInformasiUpdate($slug)
-    {
-        return $this->db
-            ->table('artikel')
-            ->where('slug', $slug)
-            ->get()
-            ->getRow();
-    }
-    public function getInformasiDetail($slug)
-    {
-        return $this->db
-            ->table('artikel')
-            ->join('tipe_artikel', 'tipe_artikel.id=artikel.tipe_artikel_id')
-            ->join('status_sistem', 'status_sistem.id=artikel.status_sistem_id')
-            ->where('slug', $slug)
-            ->get()
-            ->getRow();
-    }
-
-    //Get jumlah album Foto
-    public function tampilAlbumfoto()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
-            ->orderBy('RAND ()')
-            // ->limit(2)
-            ->get()
-            ->getResultArray();
-    }
-    public function jumlahFoto()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
-            ->countAllResults();
-    }
-
-
-
-
-
-
-
-
-
-
-
-    //Get jumlah album Video
-    public function tampilAlbumvideo()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
-            ->get()
-            ->getResultArray();
-    }
-    public function jumlahVideo()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
-            ->countAllResults();
-    }
-
-
-
-    //Get Slide Show
-    public function tampilSlideshow()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 7, 'is_active' => 1])
-            ->orderBy('RAND ()')
-            ->get()
-            ->getResultArray();
-    }
-    public function getSlideShowDetail($slug)
-    {
-        return $this->db
-            ->table('artikel')
-            ->join('tipe_artikel', 'tipe_artikel.id=artikel.tipe_artikel_id')
-            ->join('status_sistem', 'status_sistem.id=artikel.status_sistem_id')
-            ->where('slug', $slug)
-            ->get()
-            ->getRow();
     }
 }

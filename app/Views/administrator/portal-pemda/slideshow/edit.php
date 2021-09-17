@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="modal-footer no-bd">
                                     <button type="submit" class="btn btn-primary" id="displayNotif"><i class="fas fa-save"></i> Simpan Data...</button>
-                                    <a href="/administrator/portal-pemda/informasi/home" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
+                                    <a href="/administrator/portal-pemda/slideshow/home" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
                                 </div>
                             </form>
                         </div>

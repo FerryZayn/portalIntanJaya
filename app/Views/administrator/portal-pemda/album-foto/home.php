@@ -51,19 +51,17 @@
                                                 <td><?= $foto['judul']; ?></td>
                                                 <td><?= $foto['nama_pengarang']; ?></td>
                                                 <td>
-                                                    ...
                                                     <?php
                                                     $kalimat = $foto['isi_artikel'];
-                                                    $potong_kalimat = substr($kalimat, 35, 30);
+                                                    $potong_kalimat = substr($kalimat, 0, 130);
                                                     echo $potong_kalimat;
                                                     ?>
-                                                    ...
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <a href="/administrator/portal-pemda/album-foto/<?= $foto['judul']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
+                                                        <a href="/administrator/portal-pemda/album-foto/<?= $foto['slug']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
-                                                        <a href="/administrator/portal-pemda/album-foto/edit/<?= $foto['judul']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
+                                                        <a href="/administrator/portal-pemda/album-foto/edit/<?= $foto['slug']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
                                                             <i class="fa fa-edit"></i>
                                                         </a> &nbsp;
                                                         <form action="<?= base_url() ?>/administrator/portal-pemda/album-foto/<?= $foto['id'] ?>" method="POST" class="d-inline">
