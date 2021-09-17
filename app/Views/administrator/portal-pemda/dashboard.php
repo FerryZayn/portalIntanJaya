@@ -19,7 +19,7 @@
 						<div class="card-box bg-satu">
 							<div class="inner">
 								<h3><?= $j_berita; ?> Data</h3>
-								<p> DATA BERITA </p>
+								<p>DATA BERITA </p>
 							</div>
 							<div class="icon">
 								<i class="fab fa-accusoft" aria-hidden="true"></i>
@@ -33,7 +33,7 @@
 						<div class="card-box bg-dua">
 							<div class="inner">
 								<h3> <?= $j_informasi; ?> Data </h3>
-								<p> JUMLAH DATA INFORMASI </p>
+								<p>DATA INFORMASI </p>
 							</div>
 							<div class="icon">
 								<i class="fab fa-black-tie" aria-hidden="true"></i>
@@ -47,7 +47,7 @@
 						<div class="card-box bg-tiga">
 							<div class="inner">
 								<h3> <?= $j_visi; ?> Data </h3>
-								<p> JUMLAH DATA VISI PEMDA </p>
+								<p>DATA VISI PEMDA </p>
 							</div>
 							<div class="icon">
 								<i class="fas fa-allergies" aria-hidden="true"></i>
@@ -64,12 +64,12 @@
 						<div class="card-box bg-empat">
 							<div class="inner">
 								<h3> <?= $j_foto; ?> Data </h3>
-								<p>JUMLAH DATA ALBUM FOTO</p>
+								<p>DATA ALBUM FOTO</p>
 							</div>
 							<div class="icon">
 								<i class="fa fa-building" aria-hidden="true"></i>
 							</div>
-							<a href="#" class="card-box-footer">Jumlah Data Album Foto <i class="fa fa-building"></i></a>
+							<a href="/administrator/portal-pemda/album-foto/home" class="card-box-footer">Lihat Data Album Foto <i class="fa fa-building"></i></a>
 						</div>
 					</div>
 				</div>
@@ -78,12 +78,12 @@
 						<div class="card-box bg-lima">
 							<div class="inner">
 								<h3> <?= $j_video; ?> Data </h3>
-								<p> JUMLAH DATA ALBUM VIDEO</p>
+								<p>DATA ALBUM VIDEO</p>
 							</div>
 							<div class="icon">
 								<i class="far fa-envelope" aria-hidden="true"></i>
 							</div>
-							<a href="#" class="card-box-footer">Jumlah Data Album Video <i class="far fa-envelope"></i></a>
+							<a href="/administrator/portal-pemda/album-video/home" class="card-box-footer">Lihat Data Album Video <i class="far fa-envelope"></i></a>
 						</div>
 					</div>
 				</div>
@@ -92,7 +92,7 @@
 						<div class="card-box bg-enam">
 							<div class="inner">
 								<h3> <?= $j_misi; ?> Data </h3>
-								<p> JUMLAH DATA MISI PEMDA </p>
+								<p>DATA MISI PEMDA </p>
 							</div>
 							<div class="icon">
 								<i class="fas fa-american-sign-language-interpreting" aria-hidden="true"></i>

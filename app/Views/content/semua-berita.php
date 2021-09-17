@@ -4,22 +4,18 @@
 <main id="content">
     <div class="container">
         <div class="row">
-            <!--breadcrumb-->
             <div class="col-12">
                 <div class="breadcrumb u-breadcrumb  pt-3 px-0 mb-0 bg-transparent small">
                     <a class="breadcrumb-item" href="#">Home</a> &nbsp;&nbsp;&#187;&nbsp;&nbsp;
                     <span class="d-none d-md-inline">Data Lengkap Berita</span>
                 </div>
             </div>
-
-            <!--Main content-->
             <div class="col-md-12">
                 <article>
                     <div class="block-area">
                         <div class="block-title-6">
                             <h4 class="h5 border-primary"><span class="bg-primary text-white"><i class="fab fa-ioxhost"></i> Semua Data Berita</span></h4>
                         </div>
-                        <!--output-->
                         <div class="border-bottom-last-0 first-pt-0">
                             <?php foreach ($v_beritaa as $berita) : ?>
                                 <article class="card card-full hover-a py-4 post-1305 post type-post status-publish format-video has-post-thumbnail hentry category-video tag-science tag-starvation post_format-post-format-video" id="post-1305">
@@ -62,42 +58,9 @@
                             <?= $pager->links('berita', 'pagin_berita') ?>
                         </div>
                     </div>
-                    <!-- <div class="clearfix my-4">
-                        <nav class="float-start" aria-label="Posts navigation">
-                            <ul class="pagination">
-                                <li class="page-item active">
-                                    <span aria-current="page" class="page-link current">1</span>
-                                </li>
-                                <li class="page-item ">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item ">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item ">
-                                    <a class="page-link" href="#">6</a>
-                                </li>
-                                <li class="page-item ">
-                                    <a class="next page-link" href="#">&raquo;</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <span class="py-2 float-end"></span>
-                    </div> -->
                 </article>
             </div>
-            <!-- <aside class="col-md-4 widget-area end-sidebar-lg" id="right-sidebar">
-                <div class="sticky">
-                    <?php // $this->include('layout/userportal/sosial-network'); 
-                    ?>
-                    <?php // $this->include('layout/userportal/informasi-lain'); 
-                    ?>
-                    <?php // $this->include('layout/userportal/latest-post'); 
-                    ?>
-                </div>
-            </aside> -->
         </div>
     </div>
 </main>
-
 <?= $this->endSection() ?>

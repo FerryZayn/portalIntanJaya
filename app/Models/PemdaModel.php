@@ -14,7 +14,7 @@ class PemdaModel extends Model
         'notes', 'opd_hdr_id', 'is_active', 'tipe_artikel_id', 'status_sistem_id'
     ];
 
-    // Details Artikel________________________________________________________________________________________________________
+    // GET Details Artikel________________________________________________________________________________________________________
     public function getDetailsArtikel($slug)
     {
         return $this->db
@@ -25,7 +25,8 @@ class PemdaModel extends Model
             ->get()
             ->getRow();
     }
-    // Update Artikel___________________________________________________________________________________________________________
+
+    // GET Update Artikel___________________________________________________________________________________________________________
     public function getUpdateArtikel($slug)
     {
         return $this->db
@@ -34,6 +35,7 @@ class PemdaModel extends Model
             ->get()
             ->getRow();
     }
+
     //GET Tampil dan Jumlah Visi_________________________________________________________________________________________________
     public function tampilVisi()
     {
@@ -86,8 +88,6 @@ class PemdaModel extends Model
             ->countAllResults();
     }
 
-
-
     //GET Tampil dan Jumlah Informasi_______________________________________________________________________________________________
     public function tampilInformasi()
     {
@@ -125,7 +125,6 @@ class PemdaModel extends Model
             ->countAllResults();
     }
 
-
     //Get Tampil dan jumlah Album Video_______________________________________________________________________________________________
     public function tampilAlbumvideo()
     {
@@ -142,8 +141,6 @@ class PemdaModel extends Model
             ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
             ->countAllResults();
     }
-
-
 
     //Get Tampil Slide Show______________________________________________________________________________________________________
     public function tampilSlideshow()
@@ -200,7 +197,7 @@ class PemdaModel extends Model
             ->getResultArray();
     }
 
-    //Notifikasi Berita Kanan_____________________________________________________________________________________________________
+    //Notifikasi Berita Kanan Content______________________________________________________________________________________________
     public function bacaIni()
     {
         return $this->db

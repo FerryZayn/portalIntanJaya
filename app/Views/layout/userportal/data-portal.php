@@ -13,7 +13,9 @@
                         <h2>MENGENAL INTAN JAYA</h2>
                         <div class="title">Kabupaten Intan Jaya</div>
                         <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
-                        <div class="desc">Keterangan</div>
+                        <div class="desc">
+                            Kabupaten Intan Jaya Jaya terbentuk pada tanggal 29 Oktober 2008 Kabupaten Intan Jaya diresmikan oleh Menteri Dalam Negeri Mardiyanto berdasarkan Undang-Undang Republik Indonesia nomor 54 tahun 2008.
+                        </div>
                     </article>
                     <div class="actions">
                         <a href="#" class="btn">
@@ -34,10 +36,15 @@
                     <span class="close"></span>
                     <span class="arrow"></span>
                     <article>
-                        <h2>VISI DAN MISI</h2>
+                        <a href="<?= base_url(); ?>/content/visi-misi" class="btn">
+                            <h2>VISI DAN MISI</h2>
+                        </a>
                         <div class="title">Kabupaten Intan Jaya</div>
                         <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
-                        <div class="desc">Keterangan</div>
+                        <div class="desc">
+                            “TERWUJUDNYA MASYARAKAT INTAN JAYA YANG PINTAR, SEHAT DAN SEJAHTERA, LANJUTKAN” <br />
+                            <b>Rumusan Visi</b> adalah Pintar, Sehat, Sejahtera dan Lanjutkan
+                        </div>
                     </article>
                     <div class="actions">
                         <a href="<?= base_url(); ?>/content/visi-misi" class="btn">
@@ -56,10 +63,15 @@
                     <span class="close"></span>
                     <span class="arrow"></span>
                     <article>
-                        <h2>INFORMASI PUBLIK</h2>
+                        <a href="<?= base_url(); ?>/content/semua-artikel" class="btn">
+                            <h2>INFORMASI PUBLIK</h2>
+                        </a>
                         <div class="title">Kabupaten Intan Jaya</div>
                         <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
-                        <div class="desc">Keterangan</div>
+                        <div class="desc">
+                            Informasi publik ini berkaitan dengan penyelenggara badan negara dan penyelenggara publik yang sesuai dengan Undang-Undang ini
+                            serta informasi lain yang berkaitan dengan kepentingan publik.
+                        </div>
                     </article>
                     <div class="actions">
                         <a href="<?= base_url(); ?>/content/semua-artikel" class="btn">
@@ -81,7 +93,10 @@
                         <h2>STRUKTUR ORGANISASI</h2>
                         <div class="title">Kabupaten Intan Jaya</div>
                         <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
-                        <div class="desc">Keterangan</div>
+                        <div class="desc">
+                            Struktur Organisasi merupakan deskripsi bagaimana organisasi membagi tugas dan pekerjaannya dalam rangka mencapai
+                            tujuan serta mengatur siapa yang mengerjakan tugas dan pekerjaan.
+                        </div>
                     </article>
                     <div class="actions">
                         <a href="#" class="btn">
@@ -103,7 +118,9 @@
                         <h2>PROFIL PEJABAT</h2>
                         <div class="title">Kabupaten Intan Jaya</div>
                         <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
-                        <div class="desc">Keterangan</div>
+                        <div class="desc">
+                            Pejabat adalah seseorang yang menduduki jabatan dalam suatu organisasi atau pemerintahan dan berpartisipasi dalam pelaksanaan wewenang.
+                        </div>
                     </article>
                     <div class="actions">
                         <a href="#" class="btn">
@@ -125,7 +142,10 @@
                         <h2>PORTAL PERANGKAT DAERAH</h2>
                         <div class="title">Kabupaten Intan Jaya</div>
                         <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
-                        <div class="desc">Keterangan</div>
+                        <div class="desc">
+                            Situs web ini yang dibuat sedemikian rupa mencoba menuruti selera para pengunjungnya.
+                            Kemampuan portal yang lebih spesifik adalah penyediaan kandungan informasi yang dapat diakses menggunakan beragam perangkat.
+                        </div>
                     </article>
                     <div class="actions">
                         <a href="#" class="btn">

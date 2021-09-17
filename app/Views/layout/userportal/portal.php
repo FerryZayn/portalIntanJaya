@@ -98,7 +98,7 @@
 			<?= $this->include('layout/userportal/footer'); ?>
 			<div class="footer-copyright bg-secondary">
 				<div class="container text-center text-white">
-					Copyright Portal Intan Jaya News - All rights reserved
+					2021-<?php echo date("Y") ?> Copyright Portal Intan Jaya News - All rights reserved
 				</div>
 			</div>
 		</footer>
