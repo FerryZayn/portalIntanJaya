@@ -20,19 +20,19 @@
                             <h4 class="h5 border-primary"><span class="bg-primary text-white"><i class="fas fa-city"></i> Kumpulan Artikel Portal Intan Jaya</span></h4>
                         </div>
                         <div class="row">
-                            <?php foreach ($v_informasi as $informasi) : ?>
+                            <?php foreach ($v_semuaArtikel as $artikel) : ?>
                                 <article class="col-sm-3" style="padding-bottom: 20px;">
                                     <div class="cards">
                                         <div class="card">
                                             <article>
-                                                <img src="<?= base_url() ?><?= $informasi['path_file_gambar'] ?>/<?= $informasi['file_gambar'] ?>" class="card-img-top" alt="...">
+                                                <img src="<?= base_url() ?><?= $artikel['path_file_gambar'] ?>/<?= $artikel['file_gambar'] ?>" class="card-img-top" alt="...">
                                                 <div class="card-body" style="padding: 5px;">
-                                                    <a href="<?= base_url() ?>/content/<?= $informasi['slug'] ?>" class="btn fw-bold">
-                                                        <?= $informasi['judul'] ?>
+                                                    <a href="<?= base_url() ?>/content/<?= $artikel['slug'] ?>" class="btn fw-bold">
+                                                        <?= $artikel['judul'] ?>
                                                     </a>
                                                     <div class="desc">
                                                         <?php
-                                                        $kalimat = $informasi['isi_artikel'];
+                                                        $kalimat = $artikel['isi_artikel'];
                                                         $potong_kalimat = substr($kalimat, 0, 120);
                                                         echo $potong_kalimat;
                                                         ?>...
@@ -40,7 +40,7 @@
                                                 </div>
                                             </article>
                                             <div class="actions">
-                                                <a href="<?= base_url() ?>/content/<?= $informasi['slug'] ?>" class="btn">
+                                                <a href="<?= base_url() ?>/content/<?= $artikel['slug'] ?>" class="btn">
                                                     <span><i class="fas fa-eye"></i> LIHAT SELENGKAPNYA</span>
                                                     <img class="icon" src="https://rafaelavlucas.github.io/assets/icons/black/icon-18.svg">
                                                 </a>

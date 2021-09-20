@@ -26,7 +26,7 @@
             </ul>
         </nav>
         <div class="copyright ml-auto">
-            Portal Intan Jaya 2021-<?php echo date('Y'); ?> <i class="fa fa-heart heart text-danger"></i>
+            2021-<?php echo date('Y'); ?> &copy; Portal Intan Jaya <i class="fa fa-heart heart text-danger"></i>
         </div>
     </div>
 </footer>

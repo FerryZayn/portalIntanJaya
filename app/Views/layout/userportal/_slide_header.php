@@ -50,6 +50,6 @@
         </div>
     </div>
     <div class="col-lg-4">
-        <img src="<?= base_url(); ?>/templet/logo/peta.png" style="border:0; height: 410px; width: 409px;" allowfullscreen="true" loading="lazy">
+        <img src="<?= base_url(); ?>/templet/logo/peta-inan-jaya.png" style="border:0; height: 410px; width: 409px;" allowfullscreen="true" loading="lazy">
     </div>
 </div>

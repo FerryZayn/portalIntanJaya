@@ -14,6 +14,27 @@ class PemdaModel extends Model
         'notes', 'opd_hdr_id', 'is_active', 'tipe_artikel_id', 'status_sistem_id'
     ];
 
+
+    public function gantiGambar($id)
+    {
+        $query = $this->getWhere(['id' => $id]);
+        return $query;
+    }
+
+
+    //GET Tampil Semua Artikel___________________________________________________________________________________________________
+    public function getSemuaartikel()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['is_active' => 1])
+            // ->orderBy('RAND ()')
+            // ->orderBy('id')
+            ->get()
+            ->getResultArray();
+    }
+
+
     // GET Details Artikel________________________________________________________________________________________________________
     public function getDetailsArtikel($slug)
     {
@@ -151,6 +172,13 @@ class PemdaModel extends Model
             ->orderBy('RAND ()')
             ->get()
             ->getResultArray();
+    }
+    public function jumlahSlideshow()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 7, 'is_active' => 1])
+            ->countAllResults();
     }
 
     //GET Order informasi & Berita pada Content___________________________________________________________________________________

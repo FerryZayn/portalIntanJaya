@@ -28,8 +28,6 @@
         </article>
 
 
-
-
         <article class="col-sm-4" style="padding-bottom: 20px;">
             <div class="cards">
                 <div class="card">

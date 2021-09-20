@@ -62,14 +62,14 @@ class ContentController extends BaseController
     public function semuaArtikel()
     {
         $data = [
-            'v_informasi' => $this->pemdaModel->tampilInformasi(),
-            'v_berita' => $this->pemdaModel->tampilBerita(),
+            // 'v_informasi' => $this->pemdaModel->tampilInformasi(),
+            // 'v_semuaArtikel' => $this->pemdaModel->getSemuaartikel(),
 
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
 
             //Pagin
-            'v_informasi' => $this->pemdaModel->paginate(10, 'artikel'),
+            'v_semuaArtikel' => $this->pemdaModel->paginate(12, 'artikel'),
             'pager' => $this->pemdaModel->pager,
         ];
         return view('/content/semua-artikel', $data);

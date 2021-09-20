@@ -102,6 +102,38 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="card full-height bg-satu">
+						<div class="card-box bg-satu">
+							<div class="inner">
+								<h3> <?php // echo $j_foto; 
+										?>0 Data </h3>
+								<p>DATA PROFIL PEJABAT</p>
+							</div>
+							<div class="icon">
+								<i class="fa fa-building" aria-hidden="true"></i>
+							</div>
+							<a href="/administrator/portal-pemda/pejabat/v_pejabat" class="card-box-footer">Lihat Data Profil Pejabat <i class="fa fa-building"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="card full-height bg-dua">
+						<div class="card-box bg-dua">
+							<div class="inner">
+								<h3> <?= $j_slideshow; ?> Data </h3>
+								<p>DATA SLIDE SHOW</p>
+							</div>
+							<div class="icon">
+								<i class="far fa-envelope" aria-hidden="true"></i>
+							</div>
+							<a href="/administrator/portal-pemda/slideshow/home" class="card-box-footer">Lihat Data Slide Show <i class="far fa-envelope"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<?= $this->include('/layout/mastertemp/_footer');  ?>

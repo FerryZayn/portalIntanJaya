@@ -25,6 +25,7 @@ class PemdaController extends BaseController
             'j_misi' => $this->pemdaModel->jumlahMisi(),
             'j_foto' => $this->pemdaModel->jumlahFoto(),
             'j_video' => $this->pemdaModel->jumlahVideo(),
+            'j_slideshow' => $this->pemdaModel->jumlahSlideshow(),
         ];
         return view('/administrator/portal-pemda/dashboard', $data);
     }
@@ -66,15 +67,26 @@ class PemdaController extends BaseController
     //Update Artikel___________________________________________________________________________________________________________
     public function updateArtikel()
     {
+
         $fileSampul = $this->request->getFile('file_gambar');
         if ($fileSampul->getError() == 4) {
             $namaSampul = 'default.jpg';
         } else {
+            //Hapus File Gambar Lama
+            $id = $this->request->getVar('id');
+            $dt = $this->pemdaModel->gantiGambar($id)->getRow();
+            $gambar = $dt->file_gambar;
+            $path = 'templet/gambar-berita/';
+            @unlink($path . $gambar);
+
+            // Upload File Gambar Baru dan Pindahkan ke direktori berita
             $namaSampul = $fileSampul->getRandomName();
             $fileSampul->move('templet/gambar-berita', $namaSampul);
         }
+
         $ambilJudul = url_title($this->request->getVar('judul'), '-', true);
         $judul = $this->request->getVar('judul');
+
         $id = $this->request->getVar('id');
         $file_gambar = $this->request->getVar('file_gambar');
         $file_gambar = $namaSampul;
@@ -83,8 +95,10 @@ class PemdaController extends BaseController
         $opd_hdr_id = $this->request->getVar('opd_hdr_id');
         $nama_pengarang = $this->request->getVar('nama_pengarang');
         $slug = $ambilJudul;
+
         $this->db->query("CALL artikel_update('$id', '$judul', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$nama_pengarang', '$slug')");
         session()->setFlashdata('info', 'Update Artikel berhasil');
+
         return redirect()->to('/administrator/portal-pemda/dashboard');
     }
 
@@ -213,6 +227,7 @@ class PemdaController extends BaseController
         ];
         return view('/administrator/portal-pemda/informasi/home', $data);
     }
+
     public function detailInformasi($slug)
     {
         $data = [
@@ -226,6 +241,7 @@ class PemdaController extends BaseController
         }
         return view('/administrator/portal-pemda/informasi/detail', $data);
     }
+
     public function editInformasi($slug)
     {
         $data = [

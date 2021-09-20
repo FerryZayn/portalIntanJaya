@@ -54,9 +54,8 @@
 				<div class="col-sm-4">
 					<div class="card full-height bg-satu">
 						<div class="card-box bg-satu">
-							<div class="inner">
-								<h3> 12345 Data </h3>
-								<p> MASTER </p>
+							<div class="inner" style="padding-bottom: 30px;">
+								<h3> MASTER</h3>
 							</div>
 							<div class="icon">
 								<i class="fab fa-accusoft" aria-hidden="true"></i>
@@ -68,9 +67,8 @@
 				<div class="col-sm-4">
 					<div class="card full-height bg-dua">
 						<div class="card-box bg-dua">
-							<div class="inner">
-								<h3> 12345 Data </h3>
-								<p> ADMINISTRATOR PORTAL PEMDA </p>
+							<div class="inner" style="padding-bottom: 30px;">
+								<h3> ADMINISTRATOR PORTAL PEMDA </h3>
 							</div>
 							<div class="icon">
 								<i class="fab fa-black-tie" aria-hidden="true"></i>
@@ -82,9 +80,8 @@
 				<div class="col-sm-4">
 					<div class="card full-height bg-tiga">
 						<div class="card-box bg-tiga">
-							<div class="inner">
-								<h3> 12345 Data </h3>
-								<p> ADMINISTRATOR PORTAL OPD </p>
+							<div class="inner" style="padding-bottom: 30px;">
+								<h3> ADMINISTRATOR PORTAL OPD </h3>
 							</div>
 							<div class="icon">
 								<i class="fa fa-book" aria-hidden="true"></i>
@@ -99,9 +96,8 @@
 				<div class="col-sm-4">
 					<div class="card full-height bg-empat">
 						<div class="card-box bg-empat">
-							<div class="inner">
-								<h3> 12345 Data </h3>
-								<p> E-SAKIP </p>
+							<div class="inner" style="padding-bottom: 30px;">
+								<h3> E-SAKIP </h3>
 							</div>
 							<div class="icon">
 								<i class="fa fa-building" aria-hidden="true"></i>
@@ -113,9 +109,8 @@
 				<div class="col-sm-4">
 					<div class="card full-height bg-lima">
 						<div class="card-box bg-lima">
-							<div class="inner">
-								<h3> 12345 Data </h3>
-								<p> E-SURAT</p>
+							<div class="inner" style="padding-bottom: 30px;">
+								<h3> E-SURAT</h3>
 							</div>
 							<div class="icon">
 								<i class="far fa-envelope" aria-hidden="true"></i>
