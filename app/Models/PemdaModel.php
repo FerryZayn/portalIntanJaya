@@ -14,7 +14,25 @@ class PemdaModel extends Model
         'notes', 'opd_hdr_id', 'is_active', 'tipe_artikel_id', 'status_sistem_id'
     ];
 
+    //Pencarian Artikel________________________________________________________________________________________________________
+    public function search($keyword)
+    {
+        // $builder = $this->table('artikel');
+        // $builder->like('judul', $keyword);
+        // return $builder;
+        // return $this->table('artikel')->like('judul', $keyword);
 
+        return $this->db
+            ->table('artikel')
+            ->where(['is_active' => 1])
+            ->like('judul', $keyword)
+            // ->orderBy('RAND ()')
+            // ->orderBy('id')
+            ->get()
+            ->getResultArray();
+    }
+
+    //Ganti FIle Gambar saat update________________________________________________________________________________________________
     public function gantiGambar($id)
     {
         $query = $this->getWhere(['id' => $id]);

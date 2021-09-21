@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\PemdaModel;
 use App\Models\TipeArtikelModel;
+use phpDocumentor\Reflection\Types\This;
 
 class ContentController extends BaseController
 {
@@ -22,17 +23,12 @@ class ContentController extends BaseController
         $data = [
             'v_berita' => $this->pemdaModel->tampilBerita(),
             'v_informasi' => $this->pemdaModel->tampilInformasi(),
-
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
-
             'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
-
             'v_slideshow' => $this->pemdaModel->tampilSlideshow(),
-
             'v_albumfoto' => $this->pemdaModel->tampilAlbumfoto(),
-
             'v_albumvideo' => $this->pemdaModel->tampilAlbumvideo()
         ];
         return view('/content/home', $data);
@@ -44,13 +40,10 @@ class ContentController extends BaseController
         $data = [
             'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
             'v_berita' => $this->pemdaModel->getDetailsArtikel($slug),
-
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
-
             'v_beritalain' => $this->pemdaModel->contentBerita(),
             'v_informasilain' => $this->pemdaModel->contentInformasi(),
-
             'v_notif' => $this->pemdaModel->bacaIni(),
             'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
@@ -64,10 +57,8 @@ class ContentController extends BaseController
         $data = [
             // 'v_informasi' => $this->pemdaModel->tampilInformasi(),
             // 'v_semuaArtikel' => $this->pemdaModel->getSemuaartikel(),
-
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
-
             //Pagin
             'v_semuaArtikel' => $this->pemdaModel->paginate(12, 'artikel'),
             'pager' => $this->pemdaModel->pager,
@@ -84,7 +75,6 @@ class ContentController extends BaseController
             'v_informasi' => $this->pemdaModel->tampilInformasi(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
-
             //Pagin
             'v_informasii' => $this->pemdaModel->where('tipe_artikel_id', 2)->paginate($paginate, 'informasi'),
             'pager' => $this->pemdaModel->pager,
@@ -102,7 +92,6 @@ class ContentController extends BaseController
             'v_berita' => $this->pemdaModel->tampilBerita(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
-
             //Pagin
             // 'v_beritaa' => $this->pemdaModel->paginate(2, 'berita'),
             'v_beritaa' => $this->pemdaModel->where('tipe_artikel_id', 1)->paginate($paginate, 'berita'),
@@ -133,10 +122,8 @@ class ContentController extends BaseController
     public function albumFoto()
     {
         $data = [
-
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
-
             'v_beritalain' => $this->pemdaModel->contentBerita(),
             'v_informasilain' => $this->pemdaModel->contentInformasi(),
             'v_albumfoto' => $this->pemdaModel->tampilAlbumfoto(),
@@ -157,5 +144,24 @@ class ContentController extends BaseController
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
         ];
         return view('/content/album-foto-detail', $data);
+    }
+
+    //Pencarian Artikel
+    public function searchArtikel()
+    {
+
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $ambil = $this->pemdaModel->search($keyword);
+        } else {
+            $ambil = "Tidak ada data"; //$this->pemdaModel->getSemuaartikel();
+        }
+
+        $data = [
+            'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
+            'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+            'v_ambil' => $ambil,
+        ];
+        return view('/content/search-article', $data);
     }
 }

@@ -33,6 +33,9 @@ $routes->setAutoRoute(true);
 
 //Portal Berita Content___________________________________________________________________________________________________________
 $routes->get('/content/berita-detail', 'ContentController::detail');
+
+$routes->post('/content/search-article', 'ContentController::searchArtikel');
+
 $routes->get('/content/semua-informasi', 'ContentController::semuaInformasi');
 $routes->get('/content/semua-berita', 'ContentController::semuaBerita');
 $routes->get('/content/semua-artikel', 'ContentController::semuaArtikel');

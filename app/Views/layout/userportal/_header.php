@@ -154,14 +154,19 @@
 
                 <div class="col-lg-4">
                     <div id="custom_html-1" class="widget_text my-2 my-md-3 my-lg-4 d-none d-md-block text-center">
-                        <form class="form-inline" method="get" action="#" role="search">
+
+
+                        <form class="form-inline" method="post" action="<?= base_url(); ?>/content/search-article" role="search">
+                            <?= csrf_field(); ?>
                             <div class="input-group w-100">
-                                <input class="form-control border border-right-0" name="s" type="text" placeholder="Search &hellip;" value="">
+                                <input class="form-control border border-right-0" name="keyword" type="text" placeholder="Search...">
                                 <span class="input-group-prepend bg-light-dark">
-                                    <input class="submit btn btn-primary" id="searchmobile" name="submit" type="submit" value="Search">
+                                    <input class="submit btn btn-primary" name="submit" type="submit" value="Search">
                                 </span>
                             </div>
                         </form>
+
+
                     </div>
                 </div>
             </div>
