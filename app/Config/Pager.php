@@ -21,14 +21,15 @@ class Pager extends BaseConfig
 	 * @var array<string, string>
 	 */
 	public $templates = [
-		'default_full'   => 'CodeIgniter\Pager\Views\default_full',
-		'default_simple' => 'CodeIgniter\Pager\Views\default_simple',
-		'default_head'   => 'CodeIgniter\Pager\Views\default_head',
-		'pagin_informasi' => 'App\Views\Pager\pagin_informasi',
-		'pagin_artikel' => 'App\Views\Pager\pagin_artikel',
-		'pagin_berita' => 'App\Views\Pager\pagin_berita',
-		'pagin_albumfoto' => 'App\Views\Pager\pagin_albumfoto',
-		'pagin_albumvideo' => 'App\Views\Pager\pagin_albumvideo',
+		'default_full'   	=> 'CodeIgniter\Pager\Views\default_full',
+		'default_simple' 	=> 'CodeIgniter\Pager\Views\default_simple',
+		'default_head'   	=> 'CodeIgniter\Pager\Views\default_head',
+
+		'pagin_informasi' 	=> 'App\Views\Pager\pagin_informasi',
+		'pagin_artikel' 	=> 'App\Views\Pager\pagin_artikel',
+		'pagin_berita' 		=> 'App\Views\Pager\pagin_berita',
+		'pagin_albumfoto' 	=> 'App\Views\Pager\pagin_albumfoto',
+		'pagin_albumvideo' 	=> 'App\Views\Pager\pagin_albumvideo',
 	];
 
 	/**
