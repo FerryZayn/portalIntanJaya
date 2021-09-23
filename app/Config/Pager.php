@@ -27,6 +27,8 @@ class Pager extends BaseConfig
 		'pagin_informasi' => 'App\Views\Pager\pagin_informasi',
 		'pagin_artikel' => 'App\Views\Pager\pagin_artikel',
 		'pagin_berita' => 'App\Views\Pager\pagin_berita',
+		'pagin_albumfoto' => 'App\Views\Pager\pagin_albumfoto',
+		'pagin_albumvideo' => 'App\Views\Pager\pagin_albumvideo',
 	];
 
 	/**

@@ -15,14 +15,11 @@
                 <?php endforeach; ?>
             </div>
 
-
             <div class="carousel-inner">
-                <?php
-                foreach ($v_slideshow as $key => $value) :
-                ?>
+                <?php foreach ($v_slideshow as $key => $value) : ?>
                     <?php $active = ($key == 0) ? 'active' : ''; ?>
                     <div class="carousel-item <?= $active; ?>">
-                        <img src="<?= base_url() ?><?= $value['path_file_gambar'] ?>/<?= $value['file_gambar'] ?>" class="d-block w-100" alt="...">
+                        <img height="410" src="<?= base_url() ?><?= $value['path_file_gambar'] ?>/<?= $value['file_gambar'] ?>" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h2 class="text-white"><?= $value['judul']; ?></h2>
 
@@ -36,8 +33,8 @@
 
                         </div>
                     </div>
-
                 <?php endforeach; ?>
+
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -50,6 +47,6 @@
         </div>
     </div>
     <div class="col-lg-4">
-        <img src="<?= base_url(); ?>/templet/logo/peta-inan-jaya.png" style="border:0; height: 410px; width: 409px;" allowfullscreen="true" loading="lazy">
+        <img src="<?= base_url(); ?>/templet/logo/peta-inan-jaya.png" class="img-thumbnail" style="border:0; height: 410px; width: 409px;" allowfullscreen="true" loading="lazy">
     </div>
 </div>

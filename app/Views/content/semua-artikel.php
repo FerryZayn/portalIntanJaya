@@ -7,14 +7,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="breadcrumb u-breadcrumb  pt-3 px-0 mb-0 bg-transparent small">
-                    <a class="breadcrumb-item" href="#">Home</a> &nbsp;&nbsp;&#187;&nbsp;&nbsp;
+                    <a class="breadcrumb-item" href="<?= base_url("/"); ?>">Home</a> &nbsp;&nbsp;&#187;&nbsp;&nbsp;
                     <span class="d-none d-md-inline">Kumpulan Artikel Portal Intan Jaya</span>
                 </div>
             </div>
             <div class="col-md-12">
                 <article>
-
-
                     <div class="block-area">
                         <div class="block-title-6">
                             <h4 class="h5 border-primary"><span class="bg-primary text-white"><i class="fas fa-city"></i> Kumpulan Artikel Portal Intan Jaya</span></h4>
@@ -51,11 +49,7 @@
                             <?php endforeach; ?>
                         </div>
                     </div>
-
-
                     <?= $pager->links('artikel', 'pagin_artikel') ?>
-
-
                 </article>
             </div>
         </div>

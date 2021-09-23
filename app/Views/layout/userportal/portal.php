@@ -73,13 +73,14 @@
 	<div class="bg-image"></div>
 	<div class="wrapper">
 		<?= $this->include('layout/userportal/_header'); ?>
-		<div id="showbacktop" class="showbacktop full-nav bg-white border-lg-1 border-bottom shadow-b-sm border-none py-0">
+		<!-- <div id="showbacktop" class="showbacktop full-nav bg-white border-lg-1 border-bottom shadow-b-sm border-none py-0">
 			<div class="container">
 				<nav id="main-menu" class="main-menu navbar navbar-expand-lg navbar-light px-2 px-lg-0 py-0">
-					<?= $this->include('layout/userportal/navbar-menu'); ?>
+					<?php // $this->include('layout/userportal/navbar-menu'); 
+					?>
 				</nav>
 			</div>
-		</div>
+		</div> -->
 		<?php // $this->include('layout/userportal/_slide_header.php');
 		?>
 		<?= $this->include('layout/userportal/mobile-menu'); ?>

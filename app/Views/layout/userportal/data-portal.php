@@ -4,13 +4,13 @@
     </div>
     <div class="row">
 
-        <article class="col-sm-4" style="padding-bottom: 20px;">
+        <article class="col-sm-6" style="padding-bottom: 20px;">
             <div class="cards">
                 <div class="card">
                     <span class="close"></span>
                     <span class="arrow"></span>
                     <article>
-                        <h2>MENGENAL INTAN JAYA</h2>
+                        <h2>MENGENAL OPD</h2>
                         <div class="title">Kabupaten Intan Jaya</div>
                         <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
                         <div class="desc">
@@ -28,34 +28,7 @@
         </article>
 
 
-        <article class="col-sm-4" style="padding-bottom: 20px;">
-            <div class="cards">
-                <div class="card">
-                    <span class="close"></span>
-                    <span class="arrow"></span>
-                    <article>
-                        <a href="<?= base_url(); ?>/content/visi-misi" class="btn">
-                            <h2>VISI DAN MISI</h2>
-                        </a>
-                        <div class="title">Kabupaten Intan Jaya</div>
-                        <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
-                        <div class="desc">
-                            “TERWUJUDNYA MASYARAKAT INTAN JAYA YANG PINTAR, SEHAT DAN SEJAHTERA, LANJUTKAN” <br />
-                            <b>Rumusan Visi</b> adalah Pintar, Sehat, Sejahtera dan Lanjutkan
-                        </div>
-                    </article>
-                    <div class="actions">
-                        <a href="<?= base_url(); ?>/content/visi-misi" class="btn">
-                            <span><i class="fas fa-eye"></i> LIHAT SELENGKAPNYA</span>
-                            <img class="icon" src="https://rafaelavlucas.github.io/assets/icons/black/icon-18.svg">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-
-        <article class="col-sm-4" style="padding-bottom: 20px;">
+        <article class="col-sm-6" style="padding-bottom: 20px;">
             <div class="cards">
                 <div class="card">
                     <span class="close"></span>
@@ -82,7 +55,7 @@
         </article>
 
 
-        <article class="col-sm-4" style="padding-bottom: 20px;">
+        <article class="col-sm-6" style="padding-bottom: 20px;">
             <div class="cards">
                 <div class="card">
                     <span class="close"></span>
@@ -107,7 +80,7 @@
         </article>
 
 
-        <article class="col-sm-4" style="padding-bottom: 20px;">
+        <article class="col-sm-6" style="padding-bottom: 20px;">
             <div class="cards">
                 <div class="card">
                     <span class="close"></span>
@@ -118,31 +91,6 @@
                         <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
                         <div class="desc">
                             Pejabat adalah seseorang yang menduduki jabatan dalam suatu organisasi atau pemerintahan dan berpartisipasi dalam pelaksanaan wewenang.
-                        </div>
-                    </article>
-                    <div class="actions">
-                        <a href="#" class="btn">
-                            <span><i class="fas fa-eye"></i> LIHAT SELENGKAPNYA</span>
-                            <img class="icon" src="https://rafaelavlucas.github.io/assets/icons/black/icon-18.svg">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-
-        <article class="col-sm-4" style="padding-bottom: 20px;">
-            <div class="cards">
-                <div class="card">
-                    <span class="close"></span>
-                    <span class="arrow"></span>
-                    <article>
-                        <h2>PORTAL PERANGKAT DAERAH</h2>
-                        <div class="title">Kabupaten Intan Jaya</div>
-                        <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
-                        <div class="desc">
-                            Situs web ini yang dibuat sedemikian rupa mencoba menuruti selera para pengunjungnya.
-                            Kemampuan portal yang lebih spesifik adalah penyediaan kandungan informasi yang dapat diakses menggunakan beragam perangkat.
                         </div>
                     </article>
                     <div class="actions">

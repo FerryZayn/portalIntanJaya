@@ -26,11 +26,9 @@
                     </article>
                 <?php endforeach; ?>
 
-
-
             </div>
             <p align="right">
-                <a class="btn btn-primary text-white" href="#">
+                <a class="btn btn-primary text-white" href="/content/semua-album-video">
                     <i class="fas fa-angle-double-right"></i> Lihat Selengkapnya...
                 </a>
             </p>

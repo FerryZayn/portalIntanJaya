@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Models\PemdaModel;
 use App\Models\TipeArtikelModel;
-use phpDocumentor\Reflection\Types\This;
 
 class ContentController extends BaseController
 {
@@ -17,7 +16,7 @@ class ContentController extends BaseController
         $this->db = \Config\Database::connect();
     }
 
-    //Halaman Depan Portal
+    //Halaman Depan Portal_______________________________________________________________________________________________________________
     public function index()
     {
         $data = [
@@ -34,7 +33,7 @@ class ContentController extends BaseController
         return view('/content/home', $data);
     }
 
-    //Tampil Detail Berita dan Informasi
+    //Tampil Detail Berita dan Informasi________________________________________________________________________________________________
     public function detailBerita($slug)
     {
         $data = [
@@ -51,26 +50,24 @@ class ContentController extends BaseController
         return view('/content/berita-detail', $data);
     }
 
-    //Tampil Semua Artikel
+    //Tampil Semua Artikel______________________________________________________________________________________________________________________
     public function semuaArtikel()
     {
         $data = [
-            // 'v_informasi' => $this->pemdaModel->tampilInformasi(),
-            // 'v_semuaArtikel' => $this->pemdaModel->getSemuaartikel(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
             //Pagin
-            'v_semuaArtikel' => $this->pemdaModel->paginate(12, 'artikel'),
+            'v_semuaArtikel' => $this->pemdaModel->paginate(20, 'artikel'),
             'pager' => $this->pemdaModel->pager,
         ];
         return view('/content/semua-artikel', $data);
     }
 
 
-    //Tampil Semua Informasi
+    //Tampil Semua Informasi______________________________________________________________________________________________________________
     public function semuaInformasi()
     {
-        $paginate = 2;
+        $paginate = 20;
         $data = [
             'v_informasi' => $this->pemdaModel->tampilInformasi(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
@@ -82,12 +79,10 @@ class ContentController extends BaseController
         return view('/content/semua-informasi', $data);
     }
 
-
-
-    //Tampil Semua Berita
+    //Tampil Semua Berita______________________________________________________________________________________________________________
     public function semuaBerita()
     {
-        $paginate = 2;
+        $paginate = 20;
         $data = [
             'v_berita' => $this->pemdaModel->tampilBerita(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
@@ -101,7 +96,7 @@ class ContentController extends BaseController
     }
 
 
-    //Tampil Visi Misi
+    //Tampil Visi Misi______________________________________________________________________________________________________________
     public function visiMisi()
     {
         $data = [
@@ -118,7 +113,7 @@ class ContentController extends BaseController
         return view('/content/visi-misi', $data);
     }
 
-    //Album Foto
+    //Album Foto______________________________________________________________________________________________________________________________________
     public function albumFoto()
     {
         $data = [
@@ -129,27 +124,51 @@ class ContentController extends BaseController
             'v_albumfoto' => $this->pemdaModel->tampilAlbumfoto(),
             'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
+
+            //Pagin
+            'v_albumfoto' => $this->pemdaModel->where('tipe_artikel_id', 3)->paginate(20, 'albumfoto'),
+            'pager' => $this->pemdaModel->pager,
         ];
         return view('/content/semua-album-foto', $data);
     }
-    public function albumFotodetail()
+    // public function albumFotodetail()
+    // {
+    //     $data = [
+    //         'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
+    //         'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
+    //         'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+    //         'v_beritaa' => $this->pemdaModel->contentBerita(),
+    //         'v_informasii' => $this->pemdaModel->contentInformasi(),
+    //         'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
+    //         'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
+    //     ];
+    //     return view('/content/album-foto-detail', $data);
+    // }
+
+
+    //Album Video______________________________________________________________________________________________________________________________________
+    public function albumVideo()
     {
         $data = [
-            'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
-            'v_beritaa' => $this->pemdaModel->contentBerita(),
-            'v_informasii' => $this->pemdaModel->contentInformasi(),
+            'v_beritalain' => $this->pemdaModel->contentBerita(),
+            'v_informasilain' => $this->pemdaModel->contentInformasi(),
+            'v_albumvideo' => $this->pemdaModel->tampilAlbumvideo(),
             'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
+
+            //Pagin
+            'v_albumvideo' => $this->pemdaModel->where('tipe_artikel_id', 4)->paginate(20, 'albumvideo'),
+            'pager' => $this->pemdaModel->pager,
         ];
-        return view('/content/album-foto-detail', $data);
+        return view('/content/semua-album-video', $data);
     }
 
-    //Pencarian Artikel
+
+    //Pencarian Artikel______________________________________________________________________________________________________________
     public function searchArtikel()
     {
-
         $keyword = $this->request->getVar('keyword');
         if ($keyword) {
             $ambil = $this->pemdaModel->search($keyword);

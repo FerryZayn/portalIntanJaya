@@ -119,11 +119,12 @@
             <!--search mobile-->
             <div class="collapse navbar-collapse  col-12 py-2" id="navbarTogglerDemo2">
                 <!--search form-->
-                <form class="form-inline" method="get" action="#" role="search">
+                <form class="form-inline" method="post" action="<?= base_url(); ?>/content/search-article" role="search">
+                    <?= csrf_field(); ?>
                     <div class="input-group w-100">
-                        <input class="form-control border border-right-0" name="s" type="text" placeholder="Search &hellip;" value="">
+                        <input class="form-control border border-right-0" name="keyword" type="text" placeholder="Search...">
                         <span class="input-group-prepend bg-light-dark">
-                            <input class="submit btn btn-primary" id="searchmobile" name="submit" type="submit" value="Search">
+                            <input class="submit btn btn-primary" name="submit" type="submit" value="Search">
                         </span>
                     </div>
                 </form>

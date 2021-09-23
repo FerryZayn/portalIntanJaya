@@ -7,17 +7,16 @@
 			<div class="col-12">
 				<div class="breadcrumb u-breadcrumb  pt-3 px-0 mb-0 bg-transparent small">
 					<a class="breadcrumb-item" href="#">Home</a> &nbsp;&nbsp;&#187;&nbsp;&nbsp;
-					<span class="d-none d-md-inline">Data Lengkap Pencarian</span>
+					<span class="d-none d-md-inline">Data Lengkap Hasil Pencarian</span>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<article>
 					<div class="block-area">
 						<div class="block-title-6">
-							<h4 class="h5 border-primary"><span class="bg-primary text-white"><i class="fab fa-ioxhost"></i> Semua Data Informasi</span></h4>
+							<h4 class="h5 border-primary"><span class="bg-primary text-white"><i class="fab fa-ioxhost"></i> Hasil Pencarian</span></h4>
 						</div>
 						<div class="border-bottom-last-0 first-pt-0">
-
 
 							<?php foreach ($v_ambil as $tampil) : ?>
 								<article class="card card-full hover-a py-4 post-1305 post type-post status-publish format-video has-post-thumbnail hentry category-video tag-science tag-starvation post_format-post-format-video" id="post-1305">

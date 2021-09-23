@@ -17,17 +17,11 @@ class PemdaModel extends Model
     //Pencarian Artikel________________________________________________________________________________________________________
     public function search($keyword)
     {
-        // $builder = $this->table('artikel');
-        // $builder->like('judul', $keyword);
-        // return $builder;
-        // return $this->table('artikel')->like('judul', $keyword);
-
         return $this->db
             ->table('artikel')
             ->where(['is_active' => 1])
             ->like('judul', $keyword)
             // ->orderBy('RAND ()')
-            // ->orderBy('id')
             ->get()
             ->getResultArray();
     }
@@ -46,12 +40,9 @@ class PemdaModel extends Model
         return $this->db
             ->table('artikel')
             ->where(['is_active' => 1])
-            // ->orderBy('RAND ()')
-            // ->orderBy('id')
             ->get()
             ->getResultArray();
     }
-
 
     // GET Details Artikel________________________________________________________________________________________________________
     public function getDetailsArtikel($slug)
@@ -221,7 +212,7 @@ class PemdaModel extends Model
             ->getResultArray();
     }
 
-    //Get Konten File Latest Post__________________________________________________________________________________________________
+    //Get Konten File Latest Post________________________________________________________________________________________________________
     public function contentLatestpostList()
     {
         return $this->db
@@ -243,12 +234,11 @@ class PemdaModel extends Model
             ->getResultArray();
     }
 
-    //Notifikasi Berita Kanan Content______________________________________________________________________________________________
+    //Notifikasi Berita Kanan Content_______________________________________________________________________________________________________
     public function bacaIni()
     {
         return $this->db
             ->table('artikel')
-            // ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
             ->orderBy('RAND ()')
             ->limit(1, 0)
             ->get()
