@@ -23,7 +23,7 @@
 							<span class="posted-on me-2 me-md-3"><i class="far fa-edit"></i><time class="entry-date published">
 									<?php
 									$date = $v_berita->created_date;
-									echo date('d M Y', strtotime($date));
+									echo date('d F Y', strtotime($date));
 									?></time></span>
 							<span class="me-2 me-md-3">
 								<i class="far fa-eye"></i> Views 1268234 (Cooming Soon)
@@ -105,9 +105,6 @@
 						<i class="fas fa-times-circle"></i>
 					</div>
 					<div class="card card-full u-hover hover-a mb-2">
-
-
-
 						<?php foreach ($v_notif as $berita) : ?>
 							<div class="ratio_251-141 image-wrapper">
 								<a href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>">
@@ -121,7 +118,7 @@
 								<div class="mb-2 text-muted small">
 									<?php
 									$date = $berita['created_date'];
-									echo date('d M Y', strtotime($date));
+									echo date('d F Y', strtotime($date));
 									?>
 								</div>
 							</div>

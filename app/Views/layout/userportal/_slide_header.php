@@ -1,7 +1,11 @@
 <div class="row mt-2">
     <div class="col-12">
         <div class="block-title-6">
-            <h4 class="h5 border-primary"><span class="bg-primary text-white"><i class="fab fa-slideshare"></i> Slide Show</span></h4>
+            <h4 class="h5 border-primary">
+                <span class="bg-primary text-white">
+                    <i class="fab fa-slideshare"></i> Slide Show dan Peta Intan Jaya
+                </span>
+            </h4>
         </div>
     </div>
     <div class="col-lg-8">

@@ -1,5 +1,4 @@
 <div class="related-post mb-4">
-
     <div class="block-title-6">
         <h4 class="h5 border-primary"><span class="bg-primary text-white">Berita Terkait</span></h4>
     </div>
@@ -19,13 +18,12 @@
                         <div class="card-text my-2 dark small text-light">
                             <?php
                             $date = $relasiberita['created_date'];
-                            echo date('d M Y', strtotime($date));
+                            echo date('d F Y', strtotime($date));
                             ?>
                         </div>
                     </div>
                 </div>
             </article>
         <?php endforeach; ?>
-
     </div>
 </div>

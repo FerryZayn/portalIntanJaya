@@ -12,7 +12,7 @@
                             <time class="news-date">
                                 <?php
                                 $date = $beritaa['created_date'];
-                                echo date('d M Y', strtotime($date));
+                                echo date('d F Y', strtotime($date));
                                 ?>
                             </time>
                         </span>
@@ -27,7 +27,7 @@
                             <time class="news-date">
                                 <?php
                                 $date = $informasii['created_date'];
-                                echo date('d M Y', strtotime($date));
+                                echo date('d F Y', strtotime($date));
                                 ?>
                             </time>
                         </span>

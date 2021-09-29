@@ -66,40 +66,6 @@ class PemdaModel extends Model
             ->getRow();
     }
 
-    //GET Tampil dan Jumlah Visi_________________________________________________________________________________________________
-    public function tampilVisi()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 5, 'is_active' => 1])
-            ->get()
-            ->getResultArray();
-    }
-    public function jumlahVisi()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 5, 'is_active' => 1])
-            ->countAllResults();
-    }
-
-    //GET Tampil dan Jumlah Misi___________________________________________________________________________________________________
-    public function tampilMisi()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 6, 'is_active' => 1])
-            ->get()
-            ->getResultArray();
-    }
-    public function jumlahMisi()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 6, 'is_active' => 1])
-            ->countAllResults();
-    }
-
     //GET Tampil dan Jumlah Berita___________________________________________________________________________________________________
     public function tampilBerita()
     {
@@ -116,6 +82,36 @@ class PemdaModel extends Model
             ->table('artikel')
             ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
             ->countAllResults();
+    }
+    public function contentBerita()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
+            ->orderBy('RAND()')
+            ->limit('10')
+            ->get()
+            ->getResultArray();
+    }
+    public function contentLatestpostList()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
+            ->orderBy('RAND()')
+            ->limit('10')
+            ->get()
+            ->getResultArray();
+    }
+    public function contentLatestpostBox()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
+            ->orderBy('RAND()')
+            ->limit('1')
+            ->get()
+            ->getResultArray();
     }
 
     //GET Tampil dan Jumlah Informasi_______________________________________________________________________________________________
@@ -134,6 +130,16 @@ class PemdaModel extends Model
             ->table('artikel')
             ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
             ->countAllResults();
+    }
+    public function contentInformasi()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
+            ->orderBy('RAND()')
+            ->limit('10')
+            ->get()
+            ->getResultArray();
     }
 
     //Get Tampil dan jumlah Album Foto________________________________________________________________________________________________
@@ -172,6 +178,40 @@ class PemdaModel extends Model
             ->countAllResults();
     }
 
+    //GET Tampil dan Jumlah Visi_________________________________________________________________________________________________
+    public function tampilVisi()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 5, 'is_active' => 1])
+            ->get()
+            ->getResultArray();
+    }
+    public function jumlahVisi()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 5, 'is_active' => 1])
+            ->countAllResults();
+    }
+
+    //GET Tampil dan Jumlah Misi___________________________________________________________________________________________________
+    public function tampilMisi()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 6, 'is_active' => 1])
+            ->get()
+            ->getResultArray();
+    }
+    public function jumlahMisi()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 6, 'is_active' => 1])
+            ->countAllResults();
+    }
+
     //Get Tampil Slide Show______________________________________________________________________________________________________
     public function tampilSlideshow()
     {
@@ -190,49 +230,10 @@ class PemdaModel extends Model
             ->countAllResults();
     }
 
-    //GET Order informasi & Berita pada Content___________________________________________________________________________________
-    public function contentInformasi()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
-            ->orderBy('RAND()')
-            ->limit('10')
-            ->get()
-            ->getResultArray();
-    }
-    public function contentBerita()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
-            ->orderBy('RAND()')
-            ->limit('10')
-            ->get()
-            ->getResultArray();
-    }
 
-    //Get Konten File Latest Post________________________________________________________________________________________________________
-    public function contentLatestpostList()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
-            ->orderBy('RAND()')
-            ->limit('10')
-            ->get()
-            ->getResultArray();
-    }
-    public function contentLatestpostBox()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
-            ->orderBy('RAND()')
-            ->limit('1')
-            ->get()
-            ->getResultArray();
-    }
+
+
+
 
     //Notifikasi Berita Kanan Content_______________________________________________________________________________________________________
     public function bacaIni()

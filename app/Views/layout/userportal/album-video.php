@@ -19,7 +19,11 @@
                                     <a class="text-white" href="<?= base_url(); ?>/content/<?= $albumvideo['slug']; ?>"><?= $albumvideo['judul']; ?></a>
                                 </h3>
                                 <div class="text-muted small text-center">
-                                    <time class="news-date text-white"><?= $albumvideo['created_date']; ?></time>
+                                    <time class="news-date text-white">
+                                        <?php
+                                        $date = $albumvideo['created_date'];
+                                        echo date('d F Y', strtotime($date));
+                                        ?>
                                 </div>
                             </div>
                         </div>

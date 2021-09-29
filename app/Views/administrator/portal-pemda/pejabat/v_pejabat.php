@@ -32,28 +32,31 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Pejabat</th>
-                                            <th>Jabatan</th>
-                                            <th>Status</th>
+                                            <th>Deskripsi</th>
+                                            <th>User Created</th>
                                             <th style="width: 10%">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Software Engineer</td>
-                                            <td>Edinburgh</td>
-                                            <td>Edinburgh</td>
-                                            <td>
-                                                <div class="form-button-action">
-                                                    <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        <?php $i = 1; ?>
+                                        <?php foreach ($p_tampil as $pejabat) : ?>
+                                            <tr>
+                                                <td><?= $i++; ?></td>
+                                                <td><?= $pejabat['pegawai_id']; ?></td>
+                                                <td><?= $pejabat['deskripsi']; ?></td>
+                                                <td><?= $pejabat['user_created']; ?></td>
+                                                <td>
+                                                    <div class="form-button-action">
+                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button>
+                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -81,14 +84,24 @@
 
                     <div class="row">
                         <div class="col-6">
+                            <select class="form-control" name="p_id">
+                                <option value="">- PILIH PEGAWAI -</option>
+                                <?php foreach ($pegawai as $data) : ?>
+                                    <option value="<?= $data->id; ?>"><?= $data->nama_pegawai; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                            <br />
                             <img src="/admintemp/img/logo/user.png" class="img-thumbnail img-preview">
                         </div>
                         <div class="col-6">
                             <label for="fileFotoLabel" class="fileFotoLabel">File Foto</label>
                             <input type="file" class="form-control" name="file_foto" id="file_foto" onchange="previewImg()">
                             <div class="mb-3">
-                                <input type="text" name="pegawai_id" value="<?= session()->get('id'); ?>" class="form-control">
-                                <input type="text" name="path_file_foto" class="form-control" value="/foto-pejabat">
+                                <input type="hidden" name="pegawai_id" value="<?= session()->get('id'); ?>" class="form-control">
+                                <input type="hidden" name="path_file_foto" class="form-control" value="/foto-pejabat">
+                            </div>
+                            <div class="mb-3">
+                                <textarea name="deskripsi" class="form-control" placeholder="Deskripsi"></textarea>
                             </div>
                         </div>
                     </div>

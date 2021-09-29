@@ -19,7 +19,12 @@
                                     <a class="text-white" href="<?= base_url(); ?>/content/<?= $albumfoto['slug']; ?>"><?= $albumfoto['judul']; ?></a>
                                 </h3>
                                 <div class="text-muted small text-center">
-                                    <time class="news-date text-white"><?= $albumfoto['created_date']; ?></time>
+                                    <time class="news-date text-white">
+                                        <?php
+                                        $date = $albumfoto['created_date'];
+                                        echo date('d F Y', strtotime($date));
+                                        ?>
+                                    </time>
                                 </div>
                             </div>
                         </div>

@@ -39,6 +39,15 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="Portal Templet">
 	<style>
+		body.custom-background {
+			/* background-image: url("<?= base_url() ?>/templet/logo/bgg-1.png"); */
+			background-image: url('<?= base_url(); ?>/templet/logo/bgg-1.png');
+			background-position: left top;
+			background-size: auto;
+			background-repeat: repeat;
+			background-attachment: fixed;
+		}
+
 		.recentcomments a {
 			display: inline !important;
 			padding: 0 !important;
@@ -46,22 +55,16 @@
 		}
 	</style>
 	<style id="custom-background-css">
-		body.custom-background {
-			background-image: url("<?= base_url() ?>/logo/bgg-1.png");
-			background-position: left top;
-			background-size: auto;
-			background-repeat: repeat;
-			background-attachment: fixed;
-		}
+
 	</style>
 
 	<!-- Begin Custom CSS -->
 	<?= $this->include('layout/userportal/custom'); ?>
 
 	<!-- End Custom CSS -->
-	<link rel="icon" href="<?= base_url() ?>/templet/logo/android-icon-96x96-1-96x92.png" sizes="32x32" />
-	<link rel="icon" href="<?= base_url() ?>/templet/logo/android-icon-96x96-1.png" sizes="192x192" />
-	<link rel="apple-touch-icon" href="<?= base_url() ?>/templet/logo/android-icon-96x96-1.png" />
+	<link rel="icon" href="<?= base_url() ?>/templet/logo/intanjaya.png" sizes="32x32" />
+	<link rel="icon" href="<?= base_url() ?>/templet/logo/intanjaya.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="<?= base_url() ?>/templet/logo/intanjaya.png" />
 </head>
 
 <body class="home blog custom-background wp-custom-logo full-width font-family hfeed">
@@ -73,14 +76,14 @@
 	<div class="bg-image"></div>
 	<div class="wrapper">
 		<?= $this->include('layout/userportal/_header'); ?>
-		<!-- <div id="showbacktop" class="showbacktop full-nav bg-white border-lg-1 border-bottom shadow-b-sm border-none py-0">
+		<div id="showbacktop" class="showbacktop full-nav bg-white border-lg-1 border-bottom shadow-b-sm border-none py-0">
 			<div class="container">
 				<nav id="main-menu" class="main-menu navbar navbar-expand-lg navbar-light px-2 px-lg-0 py-0">
-					<?php // $this->include('layout/userportal/navbar-menu'); 
+					<?= $this->include('layout/userportal/navbar-menu');
 					?>
 				</nav>
 			</div>
-		</div> -->
+		</div>
 		<?php // $this->include('layout/userportal/_slide_header.php');
 		?>
 		<?= $this->include('layout/userportal/mobile-menu'); ?>

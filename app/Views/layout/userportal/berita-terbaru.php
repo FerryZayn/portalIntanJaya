@@ -24,7 +24,7 @@
                                     <time class="news-date text-white">
                                         <?php
                                         $date = $berita['created_date'];
-                                        echo date('d M Y', strtotime($date));
+                                        echo date('d F Y', strtotime($date));
                                         ?>
                                     </time>
                                 </div>
@@ -80,10 +80,10 @@
                                                         ?>
                                                     </h3>
                                                     <div class="card-text small text-muted">
-                                                        <time class="news-date" datetime="2019-06-16T02:12:03+00:00">
+                                                        <time class="news-date">
                                                             <?php
                                                             $date = $informasi['created_date'];
-                                                            echo date('d M Y', strtotime($date));
+                                                            echo date('d F Y', strtotime($date));
                                                             ?>
                                                         </time>
                                                     </div>
@@ -138,7 +138,7 @@
                                                         <time class="news-date">
                                                             <?php
                                                             $date = $berita['created_date'];
-                                                            echo date('d M Y', strtotime($date));
+                                                            echo date('d F Y', strtotime($date));
                                                             ?>
                                                         </time>
                                                     </div>

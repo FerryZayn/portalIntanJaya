@@ -63,7 +63,6 @@ class ContentController extends BaseController
         return view('/content/semua-artikel', $data);
     }
 
-
     //Tampil Semua Informasi______________________________________________________________________________________________________________
     public function semuaInformasi()
     {
@@ -94,7 +93,6 @@ class ContentController extends BaseController
         ];
         return view('/content/semua-berita', $data);
     }
-
 
     //Tampil Visi Misi______________________________________________________________________________________________________________
     public function visiMisi()
@@ -145,7 +143,6 @@ class ContentController extends BaseController
     //     return view('/content/album-foto-detail', $data);
     // }
 
-
     //Album Video______________________________________________________________________________________________________________________________________
     public function albumVideo()
     {
@@ -164,7 +161,6 @@ class ContentController extends BaseController
         ];
         return view('/content/semua-album-video', $data);
     }
-
 
     //Pencarian Artikel______________________________________________________________________________________________________________
     public function searchArtikel()
