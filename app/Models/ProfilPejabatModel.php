@@ -29,4 +29,21 @@ class ProfilPejabatModel extends Model
         $results = $query->getResult();
         return $results;
     }
+
+    public function getDetailpPejabat($id)
+    {
+        return $this->db
+            ->table('profil_pejabat')
+            ->where('id', $id)
+            ->get()
+            ->getRow();
+    }
+    public function getUpdatePpejabat($pegawai_id)
+    {
+        return $this->db
+            ->table('profil_pejabat')
+            ->where('pegawai_id', $pegawai_id)
+            ->get()
+            ->getRow();
+    }
 }

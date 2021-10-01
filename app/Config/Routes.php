@@ -68,6 +68,9 @@ $routes->get('/administrator/portal-pemda/misi/(:any)', 'PemdaController::misiDe
 
 //Admin Portal Pemda Pejabat
 $routes->get('/administrator/portal-pemda/pejabat/v_pejabat', 'PejabatController::pejabatPemda', ['filter' => 'auth']);
+$routes->delete('/administrator/portal-pemda/pejabat/(:num)', 'PejabatController::hapusPpejabat/$1', ['filter' => 'auth']);
+$routes->get('/administrator/portal-pemda/pejabat/(:any)', 'PejabatController::detailPpejabat/$1', ['filter' => 'auth']);
+
 
 //AdminPortal Pemda Tambah Artikel
 $routes->get('/administrator/portal-pemda/tambah-artikel', 'PemdaController::tambahArtikel', ['filter' => 'auth']);

@@ -48,4 +48,41 @@ class PejabatController extends BaseController
         session()->setFlashdata('info', 'Profile Pejabat berhasil di upload...');
         return redirect()->to('/administrator/portal-pemda/pejabat/v_pejabat');
     }
+
+
+    public function detailPpejabat($id)
+    {
+        $data = [
+            'title' => 'Detail Data Informasi',
+            'v_pejabat' => $this->pejabatModel->getDetailpPejabat($id),
+        ];
+        if (empty($data['v_pejabat'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException(
+                'Profil Pejabat tidak ditemukan'
+            );
+        }
+        return view('/administrator/portal-pemda/pejabat/detail', $data);
+    }
+
+    public function editPpejabat($pegawai_id)
+    {
+        $data = [
+            'validation' => \Config\Services::validation(),
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
+            'v_informasi' => $this->pemdaModel->getUpdateArtikel($pegawai_id),
+        ];
+        return view('/administrator/portal-pemda/pejabat/edit', $data);
+    }
+
+
+    public function hapusPpejabat($id)
+    {
+        $delppejabat = $this->pejabatModel->find($id);
+        if ($delppejabat['file_foto'] != 'default.png') {
+            unlink('templet/foto-pejabat/' . $delppejabat['file_foto']);
+        }
+        $this->pejabatModel->delete($id);
+        session()->setFlashdata('info', 'Data sudah di hapus...');
+        return redirect()->to('/administrator/portal-pemda/pejabat/v_pejabat');
+    }
 }

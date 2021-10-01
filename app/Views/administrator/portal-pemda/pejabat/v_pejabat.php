@@ -47,7 +47,7 @@
                                                 <td><?= $pejabat->user_created; ?></td>
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <a href="/administrator/portal-pemda/pejabat/<?= $pejabat->pegawai_id; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
+                                                        <a href="/administrator/portal-pemda/pejabat/<?= $pejabat->id; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
                                                         <a href="/administrator/portal-pemda/pejabat/edit/<?= $pejabat->pegawai_id; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">

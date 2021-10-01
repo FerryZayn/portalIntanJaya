@@ -231,10 +231,6 @@ class PemdaModel extends Model
     }
 
 
-
-
-
-
     //Notifikasi Berita Kanan Content_______________________________________________________________________________________________________
     public function bacaIni()
     {
