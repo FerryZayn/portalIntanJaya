@@ -42,17 +42,22 @@
                                         <?php foreach ($p_tampil as $pejabat) : ?>
                                             <tr>
                                                 <td><?= $i++; ?></td>
-                                                <td><?= $pejabat['pegawai_id']; ?></td>
-                                                <td><?= $pejabat['deskripsi']; ?></td>
-                                                <td><?= $pejabat['user_created']; ?></td>
+                                                <td><?= $pejabat->pegawai_id; ?></td>
+                                                <td><?= $pejabat->deskripsi; ?></td>
+                                                <td><?= $pejabat->user_created; ?></td>
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+                                                        <a href="/administrator/portal-pemda/pejabat/<?= $pejabat->pegawai_id; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
+                                                            <i class="fa fa-eye"></i>
+                                                        </a> &nbsp;
+                                                        <a href="/administrator/portal-pemda/pejabat/edit/<?= $pejabat->pegawai_id; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
                                                             <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
+                                                        </a> &nbsp;
+                                                        <form action="<?= base_url() ?>/administrator/portal-pemda/pejabat/<?= $pejabat->id; ?>" method="POST" class="d-inline">
+                                                            <?= csrf_field(); ?>
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <button type="submit" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Hapus item ini..."><i class="fa fa-trash"></i>
+                                                        </form>
                                                     </div>
                                                 </td>
                                             </tr>

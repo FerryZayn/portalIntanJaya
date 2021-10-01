@@ -15,12 +15,12 @@ class ProfilPejabatModel extends Model
     ];
 
 
-    public function getTampilpejabat($id = false)
+    public function getTampilpejabat($p_input_id)
     {
-        if ($id == false) {
-            return $this->findAll();
-        }
-        return $this->where(['id' => $id])->first();
+        $query = $this->db->query("call profil_pejabat_view('$p_input_id')");
+        // $query = $this->db->table->join('pegawai, pegawai.id=profil_pejabat.pegawai_id');
+        $results = $query->getResult();
+        return $results;
     }
 
     public function getPegawai()
