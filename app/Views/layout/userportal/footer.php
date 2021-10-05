@@ -42,7 +42,7 @@
                                     <div class="col-9 col-md-8">
                                         <div class="card-body pt-0">
                                             <h3 class="card-title">
-                                                <a href="<?= base_url(); ?>/content/<?= $costumpost['slug']; ?>">Judul Berita</a>
+                                                <a href="<?= base_url(); ?>/content/<?= $costumpost['slug']; ?>"><?= $costumpost['judul']; ?></a>
                                             </h3>
                                             <div class="card-text small text-muted">
                                                 <time class="news-date">
