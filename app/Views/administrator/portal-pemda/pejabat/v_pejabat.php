@@ -34,7 +34,7 @@
                                             <th>Nama Pejabat</th>
                                             <th>Deskripsi</th>
                                             <th>User Created</th>
-                                            <th style="width: 10%">Action</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>

@@ -22,7 +22,6 @@
                             </div>
                         </div>
                         <div class="card-body">
-
                             <form method="POST" action="/PemdaController/updateArtikel/" enctype="multipart/form-data">
                                 <?= csrf_field(); ?>
                                 <input type="hidden" name="_method" value="put">

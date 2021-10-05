@@ -15,6 +15,7 @@ class ProfilPejabatModel extends Model
     ];
 
 
+
     public function getTampilpejabat($p_input_id)
     {
         $query = $this->db->query("call profil_pejabat_view('$p_input_id')");

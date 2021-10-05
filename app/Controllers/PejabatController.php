@@ -75,6 +75,7 @@ class PejabatController extends BaseController
     }
 
 
+
     public function hapusPpejabat($id)
     {
         $delppejabat = $this->pejabatModel->find($id);

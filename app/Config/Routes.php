@@ -48,7 +48,7 @@ $routes->get('/auth/login', 'AuthController::index');
 //Admin Portal
 $routes->get('/administrator/index', 'AdminController::index', ['filter' => 'auth']);
 
-//Admin Portal Master________________________________________________________________________________________________________________
+//Admin Portal Master_____________________________________________________________________________________________________________
 $routes->get('/administrator/master/dashboard', 'MasterController::index', ['filter' => 'auth']);
 
 //AdminPortal Pemda________________________________________________________________________________________________________________

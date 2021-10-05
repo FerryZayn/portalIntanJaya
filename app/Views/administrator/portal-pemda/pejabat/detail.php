@@ -43,7 +43,6 @@
                                             <li><?= $v_pejabat->user_updated; ?></li>
                                             <li><?= $v_pejabat->deskripsi; ?></li>
                                         </ul>
-                                        <!-- <a href="#" class="btn btn-primary btn-border btn-lg w-75 fw-bold mb-3">Sign up</a> -->
                                     </div>
                                 </div>
                             </div>

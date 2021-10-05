@@ -40,11 +40,33 @@ class PemdaModel extends Model
         return $this->db
             ->table('artikel')
             ->where(['is_active' => 1])
+            ->orderBy('RAND ()')
             ->get()
             ->getResultArray();
     }
 
-    // GET Details Artikel________________________________________________________________________________________________________
+    public function getFotofooter()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['is_active' => 1])
+            ->orderBy('RAND ()')
+            ->limit('9')
+            ->get()
+            ->getResultArray();
+    }
+    public function getCostumpost()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['is_active' => 1])
+            ->orderBy('RAND ()')
+            ->limit('3')
+            ->get()
+            ->getResultArray();
+    }
+
+    // GET Details Artikel________________________________________________________________________________________________
     public function getDetailsArtikel($slug)
     {
         return $this->db
@@ -113,6 +135,16 @@ class PemdaModel extends Model
             ->get()
             ->getResultArray();
     }
+    public function contentBeritaMenu()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
+            ->orderBy('RAND()')
+            ->limit('4')
+            ->get()
+            ->getResultArray();
+    }
 
     //GET Tampil dan Jumlah Informasi_______________________________________________________________________________________________
     public function tampilInformasi()
@@ -141,6 +173,16 @@ class PemdaModel extends Model
             ->get()
             ->getResultArray();
     }
+    public function contentInformasiMenu()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
+            ->orderBy('RAND()')
+            ->limit('4')
+            ->get()
+            ->getResultArray();
+    }
 
     //Get Tampil dan jumlah Album Foto________________________________________________________________________________________________
     public function tampilAlbumfoto()
@@ -160,6 +202,16 @@ class PemdaModel extends Model
             ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
             ->countAllResults();
     }
+    public function contentAlbumfotoMenu()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
+            ->orderBy('RAND()')
+            ->limit('4')
+            ->get()
+            ->getResultArray();
+    }
 
     //Get Tampil dan jumlah Album Video_______________________________________________________________________________________________
     public function tampilAlbumvideo()
@@ -176,6 +228,16 @@ class PemdaModel extends Model
             ->table('artikel')
             ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
             ->countAllResults();
+    }
+    public function contentAlbumvideoMenu()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
+            ->orderBy('RAND()')
+            ->limit('4')
+            ->get()
+            ->getResultArray();
     }
 
     //GET Tampil dan Jumlah Visi_________________________________________________________________________________________________

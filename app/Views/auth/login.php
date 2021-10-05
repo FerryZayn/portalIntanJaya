@@ -24,6 +24,7 @@
                 <hr>
                 <form action="/AuthController/loginProses" method="POST">
                     <?= csrf_field(); ?>
+
                     <?php if (session()->getFlashdata('message')) : ?>
                         <?= session()->getFlashdata('message') ?>
                     <?php endif; ?>

@@ -28,7 +28,15 @@ class ContentController extends BaseController
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
             'v_slideshow' => $this->pemdaModel->tampilSlideshow(),
             'v_albumfoto' => $this->pemdaModel->tampilAlbumfoto(),
-            'v_albumvideo' => $this->pemdaModel->tampilAlbumvideo()
+            'v_albumvideo' => $this->pemdaModel->tampilAlbumvideo(),
+
+            'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
+            'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
+            'v_contentmenualbumfoto' => $this->pemdaModel->contentAlbumfotoMenu(),
+            'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
+
+            'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
+            'v_costumpost' => $this->pemdaModel->getCostumpost(),
         ];
         return view('/content/home', $data);
     }
@@ -46,6 +54,14 @@ class ContentController extends BaseController
             'v_notif' => $this->pemdaModel->bacaIni(),
             'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
+
+            'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
+            'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
+            'v_contentmenualbumfoto' => $this->pemdaModel->contentAlbumfotoMenu(),
+            'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
+
+            'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
+            'v_costumpost' => $this->pemdaModel->getCostumpost(),
         ];
         return view('/content/berita-detail', $data);
     }
@@ -54,6 +70,13 @@ class ContentController extends BaseController
     public function semuaArtikel()
     {
         $data = [
+            'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
+            'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
+            'v_contentmenualbumfoto' => $this->pemdaModel->contentAlbumfotoMenu(),
+            'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
+            'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
+            'v_costumpost' => $this->pemdaModel->getCostumpost(),
+
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
             //Pagin
@@ -68,6 +91,13 @@ class ContentController extends BaseController
     {
         $paginate = 20;
         $data = [
+            'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
+            'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
+            'v_contentmenualbumfoto' => $this->pemdaModel->contentAlbumfotoMenu(),
+            'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
+            'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
+            'v_costumpost' => $this->pemdaModel->getCostumpost(),
+
             'v_informasi' => $this->pemdaModel->tampilInformasi(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
@@ -83,6 +113,13 @@ class ContentController extends BaseController
     {
         $paginate = 20;
         $data = [
+            'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
+            'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
+            'v_contentmenualbumfoto' => $this->pemdaModel->contentAlbumfotoMenu(),
+            'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
+            'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
+            'v_costumpost' => $this->pemdaModel->getCostumpost(),
+
             'v_berita' => $this->pemdaModel->tampilBerita(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
@@ -107,6 +144,13 @@ class ContentController extends BaseController
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+
+            'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
+            'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
+            'v_contentmenualbumfoto' => $this->pemdaModel->contentAlbumfotoMenu(),
+            'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
+            'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
+            'v_costumpost' => $this->pemdaModel->getCostumpost(),
         ];
         return view('/content/visi-misi', $data);
     }
@@ -115,6 +159,13 @@ class ContentController extends BaseController
     public function albumFoto()
     {
         $data = [
+            'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
+            'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
+            'v_contentmenualbumfoto' => $this->pemdaModel->contentAlbumfotoMenu(),
+            'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
+            'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
+            'v_costumpost' => $this->pemdaModel->getCostumpost(),
+
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
             'v_beritalain' => $this->pemdaModel->contentBerita(),
@@ -147,6 +198,13 @@ class ContentController extends BaseController
     public function albumVideo()
     {
         $data = [
+            'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
+            'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
+            'v_contentmenualbumfoto' => $this->pemdaModel->contentAlbumfotoMenu(),
+            'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
+            'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
+            'v_costumpost' => $this->pemdaModel->getCostumpost(),
+
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
             'v_beritalain' => $this->pemdaModel->contentBerita(),
@@ -176,6 +234,13 @@ class ContentController extends BaseController
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
             'v_ambil' => $ambil,
+
+            'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
+            'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
+            'v_contentmenualbumfoto' => $this->pemdaModel->contentAlbumfotoMenu(),
+            'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
+            'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
+            'v_costumpost' => $this->pemdaModel->getCostumpost(),
         ];
         return view('/content/search-article', $data);
     }
