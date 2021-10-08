@@ -38,7 +38,7 @@
         <div class="col-12">
           <nav class="main-nav">
             <a href="<?= base_url('/') ?>" class="logo">
-              <h4><img src="<?= base_url() ?>/templet/logo/intanjaya-big.png" height="70" width="1420" alt=""> PORTAL RESMI INTAN JAYA </h4>
+              <h4><img src="<?= base_url() ?>/templet/logo/intanjaya-big.png" height="70" width="1420" alt=""> PORTAL RESMI KAB. INTAN JAYA </h4>
             </a>
           </nav>
         </div>
