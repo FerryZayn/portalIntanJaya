@@ -91,14 +91,13 @@
 
 		<main id="content">
 			<div class="container">
-				<!-- Content Star -->
 				<?= $this->renderSection('content'); ?>
-				<!-- Content End -->
 			</div>
 		</main>
 
-
+		<?= $this->include('layout/userportal/map'); ?>
 		<footer>
+
 			<?= $this->include('layout/userportal/footer'); ?>
 			<div class="footer-copyright bg-secondary">
 				<div class="container text-center text-white">

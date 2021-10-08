@@ -26,7 +26,7 @@ class PemdaModel extends Model
             ->getResultArray();
     }
 
-    //Ganti FIle Gambar saat update________________________________________________________________________________________________
+    //Ganti FIle Gambar saat update____________________________________________________________________________________________
     public function gantiGambar($id)
     {
         $query = $this->getWhere(['id' => $id]);
@@ -34,7 +34,7 @@ class PemdaModel extends Model
     }
 
 
-    //GET Tampil Semua Artikel___________________________________________________________________________________________________
+    //GET Tampil Semua Artikel_______________________________________________________________________________________________
     public function getSemuaartikel()
     {
         return $this->db

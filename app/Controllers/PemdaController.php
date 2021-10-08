@@ -150,7 +150,7 @@ class PemdaController extends BaseController
     public function misiDetail($slug)
     {
         $data = [
-            'v_misi' => $this->pemdaModel->getDetails($slug),
+            'v_misi' => $this->pemdaModel->getDetailsArtikel($slug),
         ];
         return view('/administrator/portal-pemda/misi/detail', $data);
     }

@@ -32,6 +32,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 //Portal Berita Content___________________________________________________________________________________________________________
+$routes->get('/content/home', 'ContentController::dashboardPortal');
 $routes->get('/content/berita-detail', 'ContentController::detail');
 $routes->post('/content/search-article', 'ContentController::searchArtikel');
 $routes->get('/content/semua-informasi', 'ContentController::semuaInformasi');
@@ -81,11 +82,9 @@ $routes->get('/administrator/portal-pemda/berita/edit/(:segment)', 'PemdaControl
 $routes->delete('/administrator/portal-pemda/berita/(:num)', 'PemdaController::hapusBerita/$1', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/berita/(:any)', 'PemdaController::detailBerita/$1', ['filter' => 'auth']);
 
-// $routes->put('/administrator/portal-pemda/berita/edit/updateBerita', 'PemdaController::updateBerita', ['filter' => 'auth']);
 
 //AdminPortal Pemda Informasi
 $routes->get('/administrator/portal-pemda/informasi/home', 'PemdaController::informasi', ['filter' => 'auth']);
-// $routes->get('/administrator/portal-pemda/informasi/tambah', 'PemdaController::tambahinformasi', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/informasi/edit/(:segment)', 'PemdaController::editInformasi/$1', ['filter' => 'auth']);
 $routes->delete('/administrator/portal-pemda/informasi/(:num)', 'PemdaController::hapusInformasi/$1', ['filter' => 'auth']);
 $routes->get('/administrator/portal-pemda/informasi/(:any)', 'PemdaController::detailInformasi/$1', ['filter' => 'auth']);

@@ -3,7 +3,6 @@
         <h4 class="h5 border-primary"><span class="bg-primary text-white"><i class="fas fa-city"></i> Portal Kabupaten Intan Jaya</span></h4>
     </div>
     <div class="row">
-
         <article class="col-sm-6" style="padding-bottom: 20px;">
             <div class="cards">
                 <div class="card">
@@ -26,7 +25,6 @@
                 </div>
             </div>
         </article>
-
 
         <article class="col-sm-6" style="padding-bottom: 20px;">
             <div class="cards">
@@ -79,7 +77,6 @@
             </div>
         </article>
 
-
         <article class="col-sm-6" style="padding-bottom: 20px;">
             <div class="cards">
                 <div class="card">
@@ -102,6 +99,5 @@
                 </div>
             </div>
         </article>
-
     </div>
 </div>

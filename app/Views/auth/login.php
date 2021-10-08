@@ -9,11 +9,13 @@
 
     <link rel="stylesheet" href="<?= base_url(); ?>/admintemp/css/fonts.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>/admintemp/css/bootstrap.min.css">
+
     <style>
         body {
             background-image: url("https://d8it4huxumps7.cloudfront.net/uploads/images/opportunity/mobile_banner/5ea7081697ac7_lavakidneys_800x4002x-2db5e5a0c944e2b16a11a18674570f76.jpg");
         }
     </style>
+
 </head>
 
 <body>

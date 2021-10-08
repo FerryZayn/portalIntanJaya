@@ -107,7 +107,6 @@
                         </div>
                     </div>
 
-
                     <!--tabs content block berita-->
                     <div class="tab-pane fade" id="block-berita" role="tabpanel" aria-labelledby="cat-navitwo1">
                         <div class="row animate slideInDown">

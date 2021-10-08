@@ -20,6 +20,17 @@ class ContentController extends BaseController
     public function index()
     {
         $data = [
+            'title' => 'DASHBOARD PORTAL'
+        ];
+        return view('/content/dashboard', $data);
+    }
+
+
+
+    //Halaman Depan Artikel Portal_______________________________________________________________________________________________________________
+    public function dashboardPortal()
+    {
+        $data = [
             'v_berita' => $this->pemdaModel->tampilBerita(),
             'v_informasi' => $this->pemdaModel->tampilInformasi(),
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
@@ -66,7 +77,7 @@ class ContentController extends BaseController
         return view('/content/berita-detail', $data);
     }
 
-    //Tampil Semua Artikel______________________________________________________________________________________________________________________
+    //Tampil Semua Artikel_________________________________________________________________________________________________________________
     public function semuaArtikel()
     {
         $data = [
@@ -80,7 +91,7 @@ class ContentController extends BaseController
             'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
             'v_beritaheader' => $this->pemdaModel->tampilBerita(),
             //Pagin
-            'v_semuaArtikel' => $this->pemdaModel->paginate(20, 'artikel'),
+            'v_semuaArtikel' => $this->pemdaModel->orderBy('RAND()')->paginate(20, 'artikel'),
             'pager' => $this->pemdaModel->pager,
         ];
         return view('/content/semua-artikel', $data);
@@ -155,7 +166,7 @@ class ContentController extends BaseController
         return view('/content/visi-misi', $data);
     }
 
-    //Album Foto______________________________________________________________________________________________________________________________________
+    //Album Foto____________________________________________________________________________________________________________________
     public function albumFoto()
     {
         $data = [
@@ -194,7 +205,7 @@ class ContentController extends BaseController
     //     return view('/content/album-foto-detail', $data);
     // }
 
-    //Album Video______________________________________________________________________________________________________________________________________
+    //Album Video__________________________________________________________________________________________________________________
     public function albumVideo()
     {
         $data = [
@@ -220,14 +231,14 @@ class ContentController extends BaseController
         return view('/content/semua-album-video', $data);
     }
 
-    //Pencarian Artikel______________________________________________________________________________________________________________
+    //Pencarian Artikel_______________________________________________________________________________________________
     public function searchArtikel()
     {
         $keyword = $this->request->getVar('keyword');
         if ($keyword) {
             $ambil = $this->pemdaModel->search($keyword);
         } else {
-            $ambil = "Tidak ada data"; //$this->pemdaModel->getSemuaartikel();
+            $ambil = "Tidak ada data";
         }
 
         $data = [

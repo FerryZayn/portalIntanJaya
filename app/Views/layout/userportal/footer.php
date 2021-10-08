@@ -6,14 +6,14 @@
                     <div class="block-area">
                         <h3 class="h5">About Us</h3>
                         <img class="footer-logo img-fluid mb-2" alt="footer logo" src="<?= base_url() ?>/templet/logo/intanjaya.png">
-                        <p>
+                        <!-- <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus corporis rerum optio voluptatum consequatur? Recusandae iste omnis cupiditate non reprehenderit, illum dolorum molestiae deleniti, assumenda aliquid tempore. Maiores, minus reprehenderit?
-                        </p>
+                        </p> -->
                         <address>
                             <i class="fas fa-street-view"></i> Alamat Kantor
                         </address>
                         <p class="footer-info">
-                            <i class="fas fa-phone-alt"></i> +(123) 456-7890
+                            <i class="fas fa-phone-alt"></i> +(123) 456-7891
                         </p>
                         <p class="footer-info">
                             <i class="fas fa-fax"></i> +(123) 456-7890
@@ -41,9 +41,9 @@
 
                                     <div class="col-9 col-md-8">
                                         <div class="card-body pt-0">
-                                            <h3 class="card-title">
+                                            <h4 class="card-title">
                                                 <a href="<?= base_url(); ?>/content/<?= $costumpost['slug']; ?>"><?= $costumpost['judul']; ?></a>
-                                            </h3>
+                                            </h4>
                                             <div class="card-text small text-muted">
                                                 <time class="news-date">
                                                     <?php

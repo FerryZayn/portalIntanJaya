@@ -1,5 +1,5 @@
 <div id="navbarTogglerDemo1" class="collapse navbar-collapse hover-mode">
-    <!-- logo in navbar -->
+    <!-- logo navbar -->
     <div class="logo-showbacktop">
         <a href="<?= base_url('/'); ?>" class="navbar-brand custom-logo-link">
             <img src="<?= base_url() ?>/templet/logo/intanjaya.png" class="img-fluid" sizes="(max-width: 452px) 100vw, 452px" />
@@ -9,7 +9,7 @@
     <!--start main menu start-->
     <ul id="start-main" class="navbar-nav main-nav navbar-uppercase first-start-lg-0">
         <li class="menu-item active nav-item">
-            <a href="<?= base_url('/'); ?>" class="nav-link">Halaman Depan</a>
+            <a href="<?= base_url('/content/home'); ?>" class="nav-link">Halaman Depan</a>
         </li>
         <li class="menu-item menu-item-has-children dropdown">
             <a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link">Profil Daerah</a>
@@ -63,6 +63,9 @@
                             <li class="nav-item">
                                 <a id="nav-four3" class="nav-link font-weight-normal" href="#berita-empat" role="tab" data-bs-toggle="tab" aria-controls="berita-empat" aria-selected="false">Album Video</a>
                             </li>
+                            <li class="nav-item">
+                                <a id="nav-four3" class="nav-link font-weight-normal" href="<?= base_url(); ?>/content/semua-artikel">Semua Artikel Portal</a>
+                            </li>
                         </ul>
                         <!--end navigation tabs-->
                     </div>
@@ -96,8 +99,8 @@
                                             </article>
                                         </div>
                                     <?php endforeach; ?>
-
                                 </div>
+                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi"><i class="fas fa-angle-double-right"></i> Lihat Semua Informasi Publik</a>
                             </div>
 
 
@@ -128,6 +131,7 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
+                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-berita"><i class="fas fa-angle-double-right"></i> Lihat Semua Berita Publik</a>
                             </div>
 
                             <div id="berita-tiga" class="tab-pane" role="tabpanel" aria-labelledby="nav-three3">
@@ -157,6 +161,7 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
+                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-album-foto"><i class="fas fa-angle-double-right"></i> Lihat Semua Album Foto</a>
                             </div>
 
                             <div id="berita-empat" class="tab-pane" role="tabpanel" aria-labelledby="nav-four3">
@@ -186,6 +191,7 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
+                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-album-video"><i class="fas fa-angle-double-right"></i> Lihat Semua Album Video</a>
                             </div>
                         </div>
                     </div>

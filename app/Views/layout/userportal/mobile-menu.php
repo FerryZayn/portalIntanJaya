@@ -15,7 +15,7 @@
             <!--logo-->
             <div class="logo-sidenav p-2">
                 <a href="#" class="navbar-brand custom-logo-link" rel="home" aria-current="page">
-                    <img src="<?= base_url() ?>/templet/logo/intanjaya-big.png" class="img-fluid" sizes="(max-width: 452px) 100vw, 452px" />
+                    <img src="<?= base_url() ?>/templet/logo/intanjaya-big.png" class="img-fluid" />
                 </a>
             </div>
 
@@ -27,48 +27,59 @@
                             <a href="<?= base_url("/"); ?>" class="nav-link">Home</a>
                         </li>
                         <li class="menu-item nav-item">
-                            <a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link">Menu</a>
+                            <a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link">Profil Daerah</a>
                             <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-1513" role="menu">
-                                <li class="menu-item nav-item">
-                                    <a href="#" class="dropdown-item">Link</a>
-                                </li>
+                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Sejarah Singkat</a></li>
+                                <li class="menu-item nav-item"><a href="<?= base_url(); ?>/content/visi-misi" class="dropdown-item">Visi & Misi</a></li>
+                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Landasan Hukum</a></li>
+                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Pemerintah</a></li>
+                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Keadaan Geografis</a></li>
+                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Keadaan Demografis</a></li>
+
+
                             </ul>
                         </li>
+
                         <li class="menu-item nav-item">
-                            <a href="#" class="nav-link">Menu</a>
-                        </li>
-                        <li class="menu-item nav-item">
-                            <a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link">Menu</a>
+                            <a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link">Potensi Daerah</a>
                             <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-1514" role="menu">
                                 <li class="menu-item menu-item-1504 nav-item">
-                                    <a href="#" class="dropdown-item">Link</a>
+                                    <a href="#" class="dropdown-item">Pertanian dan Perkebunan</a>
                                 </li>
-                                <li class="menu-item nav-item">
-                                    <a title="Travel" href="#" class="dropdown-item dropdown-toggle">Menu</a>
-                                    <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-1503" role="menu">
-                                        <li class="menu-item nav-item">
-                                            <a href="#" class="dropdown-item">Link 1</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item nav-item">
-                                    <a title="Science" href="#" class="dropdown-item dropdown-toggle">Menu</a>
-                                    <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-1511" role="menu">
-                                        <li class="menu-item nav-item"><a href="#" class="dropdown-item">Link 1</a></li>
-                                    </ul>
+                                <li class="menu-item menu-item-1504 nav-item">
+                                    <a href="#" class="dropdown-item">Pertambangan dan Energi</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="menu-item nav-item">
-                            <a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link">Menu</a>
+                            <a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link">OPD</a>
                             <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-1515" role="menu">
-                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Link 1</a></li>
-                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Link 2</a></li>
-                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Link 3</a></li>
-                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Link 4</a></li>
+
+                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Bappeda Intan Jaya</a></li>
+                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">BPKAD Intan Jaya</a></li>
+                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Inspektorat Intan Jaya</a></li>
+                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Kominfo Intan Jaya</a></li>
+                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">LPSE Intan Jaya</a></li>
+                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">PU Intan Jaya</a></li>
+                                <li class="menu-item nav-item"><a href="#" class="dropdown-item">Setda</a></li>
+
                             </ul>
                         </li>
-                        <li class="menu-item nav-item"><a href="#" class="nav-link">International</a></li>
+                        <li class="menu-item nav-item">
+                            <a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link">Artikel Publish</a>
+                            <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-1515" role="menu">
+
+                                <li class="menu-item nav-item"><a href="<?= base_url(); ?>/content/semua-informasi" class="dropdown-item">Informasi Publik</a></li>
+                                <li class="menu-item nav-item"><a href="<?= base_url(); ?>/content/semua-berita" class="dropdown-item">Berita Publik</a></li>
+                                <li class="menu-item nav-item"><a href="<?= base_url(); ?>/content/semua-album-foto" class="dropdown-item">Album Foto</a></li>
+                                <li class="menu-item nav-item"><a href="<?= base_url(); ?>/content/semua-album-video" class="dropdown-item">Album Video</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item nav-item"><a href="#" class="nav-link">Kegiatan</a></li>
+                        <li class="menu-item nav-item"><a href="#" class="nav-link">Pengumuman</a></li>
+                        <li class="menu-item nav-item"><a href="#" class="nav-link">Kontak</a></li>
+                        <li class="menu-item nav-item"><a href="#" class="nav-link">Tim Development</a></li>
                     </ul>
                 </nav>
             </div>
@@ -76,7 +87,7 @@
 
         <!-- copyright mobile sidebar menu -->
         <div class="mobile-copyright mt-5 text-center">
-            <p>News - Portal Intan Jaya.</p>
+            <p>Portal Intan Jaya.</p>
         </div>
     </nav>
 </div>
