@@ -38,7 +38,7 @@
         <div class="col-12">
           <nav class="main-nav">
             <a href="<?= base_url('/') ?>" class="logo">
-              <h4><img src="<?= base_url() ?>/templet/logo/intanjaya-big.png" height="70" width="1420" alt=""> PORTAL RESMI KAB. INTAN JAYA </h4>
+              <h4><img src="<?= base_url() ?>/templet/logo/intanjaya-big.png" height="70" width="1420" alt=""> KAB. INTAN JAYA </h4>
             </a>
           </nav>
         </div>
@@ -223,6 +223,7 @@
                   <h4>Berita Covid-19</h4>
                   <p>Kawal informasi seputar COVID-19 secara tepat dan akurat.</p>
                 </div>
+                <div class="main-green-button"><a href="#">Masuk Website <i class="fa fa-arrow-circle-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -240,6 +241,7 @@
                   <h4>Peraturan Aduan</h4>
                   <p>Dalam hukum Indonesia, delik aduan adalah delik yang hanya dapat diproses apabila diadukan oleh orang yang merasa dirugikan atau telah menjadi korban. </p>
                 </div>
+                <div class="main-green-button"><a href="#">Masuk Website <i class="fa fa-arrow-circle-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -257,6 +259,7 @@
                   <h4>E-SAKIP Review</h4>
                   <p>E-SAKIP adalah aplikasi Sistem Akuntabilitas Kinerja Instansi Pemerintah yang bertujuan untuk memudahkan proses pemantauan dan pengendalian kinerja dalam rangka meningkatkan akuntabilitas dan kinerja unit kerja.</p>
                 </div>
+                <div class="main-green-button"><a href="#">Masuk Website <i class="fa fa-arrow-circle-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -274,6 +277,7 @@
                   <h4>LHKPN</h4>
                   <p>Laporan Harta Kekayaan Penyelenggara Negara adalah daftar seluruh harta kekayaan Penyelenggara Negara yang dituangkan di dalam formulir LHKPN yang ditetapkan oleh Komisi Pemberantasan Korupsi.</p>
                 </div>
+                <div class="main-green-button"><a href="#">Masuk Website <i class="fa fa-arrow-circle-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -291,6 +295,7 @@
                   <h4>SiMAYA</h4>
                   <p>SIMAYA adalah layanan internet yang dihadirkan untuk memenuhi berbagai kebutuhan koneksi internet residensial maupun kawasan bisnis.</p>
                 </div>
+                <div class="main-green-button"><a href="#">Masuk Website <i class="fa fa-arrow-circle-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -308,6 +313,7 @@
                   <h4>LPSE</h4>
                   <p>Layanan Pengadaan Secara Elektronik adalah layanan pengelolaan teknologi informasi untuk memfasilitasi pelaksanaan Pengadaan Barang/Jasa secara elektronik.</p>
                 </div>
+                <div class="main-green-button"><a href="#">Masuk Website <i class="fa fa-arrow-circle-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -324,8 +330,10 @@
                 <div class="right-content">
                   <h4>SIMPEG</h4>
                   <p> Sistem Informasi Manajemen Kepegawaian
-                    Sistem pengelolaan data dan informasi kepegawaian Kementerian Agama RI.</p>
+                    Sistem pengelolaan data dan informasi kepegawaian Kementerian Agama RI.
+                  </p>
                 </div>
+                <div class="main-green-button"><a href="#">Masuk Website <i class="fa fa-arrow-circle-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -343,6 +351,7 @@
                   <h4>PELAYANAN PERIJINAN</h4>
                   <p>Transparansi keuangan adalah memberikan informasi keuangan yang terbuka dan jujur kepada masyarakat berdasarkan pertimbangan bahwa masyarakat memiliki hak untuk mengetahui secara terbuka.</p>
                 </div>
+                <div class="main-green-button"><a href="#">Masuk Website <i class="fa fa-arrow-circle-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -358,8 +367,9 @@
               <div class="col-lg-8">
                 <div class="right-content">
                   <h4>TRANSPARANSI KEUANGAN</h4>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
+                  <p>Transparansi keuangan adalah memberikan informasi keuangan yang terbuka dan jujur kepada masyarakat berdasarkan pertimbangan bahwa masyarakat memiliki hak untuk mengetahui secara terbuka.</p>
                 </div>
+                <div class="main-green-button"><a href="#">Masuk Website <i class="fa fa-arrow-circle-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -377,6 +387,7 @@
                   <h4>ORGANISASI PERANGKAT DAERAH</h4>
                   <p>Perangkat Daerah adalah organisasi atau lembaga pada Pemerintah Daerah yang bertanggung jawab kepada Kepala Daerah dalam rangka penyelenggaraan pemerintahan di daerah.</p>
                 </div>
+                <div class="main-green-button"><a href="#">Masuk Website <i class="fa fa-arrow-circle-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -398,6 +409,7 @@
                     Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi
                   </p>
                 </div>
+                <div class="main-green-button"><a href="#">Masuk Website <i class="fa fa-arrow-circle-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -415,6 +427,7 @@
                   <h4>OSS Republik Indonesia</h4>
                   <p>Penyelenggaraan Perizinan Berusaha Berbasis Risiko melalui Sistem Online Single Submission (OSS) merupakan pelaksanaan Undang-Undang Nomor 11 Tahun 2020 Tentang Cipta Kerja.</p>
                 </div>
+                <div class="main-green-button"><a href="#">Masuk Website <i class="fa fa-arrow-circle-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -432,7 +445,6 @@
       <div class="row">
         <div class="col-lg-12">
           <p>Copyright © <?php echo date("Y") ?> Portal Resmi Pemerintah Kabupaten Intanjaya, Ltd. All Rights Reserved.
-
             <br>Web Designed by <a rel="nofollow" href="<?= base_url("/") ?>" title="Portal templates">TIM IT Pemerintah Kabupaten Intanjaya </a>
           </p>
         </div>
