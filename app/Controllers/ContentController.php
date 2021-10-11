@@ -53,6 +53,23 @@ class ContentController extends BaseController
     }
 
     //Tampil Detail Berita dan Informasi________________________________________________________________________________________________
+    public function opd()
+    {
+        $data = [
+            'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
+            'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+            'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
+            'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
+            'v_contentmenualbumfoto' => $this->pemdaModel->contentAlbumfotoMenu(),
+            'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
+            'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
+            'v_costumpost' => $this->pemdaModel->getCostumpost(),
+        ];
+        return view('/content/opd', $data);
+    }
+
+
+    //Tampil Detail Berita dan Informasi________________________________________________________________________________________________
     public function detailBerita($slug)
     {
         $data = [

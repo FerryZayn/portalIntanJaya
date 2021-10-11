@@ -550,10 +550,23 @@ Features Style
 
 .features-item:hover h4 {
   color: #fff;
+  text-shadow: 1px 1px 4px rgb(235, 15, 251);
 }
+
+
+
+.features-item:hover a {
+  color: #fff;
+  text-shadow: 1px 1px 4px rgb(104, 59, 218);
+}
+
+
+
+
 
 .features-item:hover p {
   color: #fff;
+  text-shadow: 1px 1px 4px rgb(104, 59, 218);
 }
 
 .features-item:hover .line-dec {
@@ -820,17 +833,17 @@ Footer Style
 --------------------------------------------- 
 */
 
-footer p {
+.footer p {
   text-align: center;
   margin: 30px 0px;
 }
 
-footer p a {
+.footer p a {
   color: #33ccc5;
   transition: all .5s;
 }
 
-footer p a:hover {
+.footer p a:hover {
   color: #4771cb;
 }
 

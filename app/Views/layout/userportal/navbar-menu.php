@@ -2,7 +2,7 @@
     <!-- logo navbar -->
     <div class="logo-showbacktop">
         <a href="<?= base_url('/'); ?>" class="navbar-brand custom-logo-link">
-            <img src="<?= base_url() ?>/templet/logo/intanjaya.png" class="img-fluid" sizes="(max-width: 452px) 100vw, 452px" />
+            <img src="<?= base_url() ?>/templet/logo/intanjaya.png" class="img-fluid" style="width: 35px;" />
         </a>
     </div>
 
@@ -34,13 +34,7 @@
         <li class="menu-item menu-item-has-children dropdown">
             <a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link">OPD</a>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="#" class="dropdown-item">Bappeda Intan Jaya</a></li>
-                <li><a href="#" class="dropdown-item">BPKAD Intan Jaya</a></li>
-                <li><a href="#" class="dropdown-item">Inspektorat Intan Jaya</a></li>
-                <li><a href="#" class="dropdown-item">Kominfo Intan Jaya</a></li>
-                <li><a href="#" class="dropdown-item">LPSE Intan Jaya</a></li>
-                <li><a href="#" class="dropdown-item">PU Intan Jaya</a></li>
-                <li><a href="#" class="dropdown-item">Setda</a></li>
+                <li><a href="<?= base_url("content/opd") ?>" class="dropdown-item">Organisasi Pemerintah Daerah</a></li>
             </ul>
         </li>
 

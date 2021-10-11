@@ -73,12 +73,10 @@
                     </div>
                   </div>
                   <div class="col-lg-12">
-                    <h2>PORTAL RESMI PEMERINTAH KABUPATEN INTAN JAYA</h2>
+                    <h2>PORTAL RESMI PEMERINTAH KABUPATEN INTAN JAYA PAPUA</h2>
                   </div>
                   <div class="col-lg-12">
-                    <div class="main-green-button scroll-to-section">
-                      <a href="<?= base_url() ?>/content/home">Masuk Website</a>
-                    </div>
+                    <div class="main-green-button"><a href="<?= base_url("content/home") ?>">Masuk ke Website <i class="fa fa-arrow-circle-right"></i></a></div>
                   </div>
                 </div>
               </div>
@@ -215,7 +213,7 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="icon">
-                  <img src="<?= base_url() ?>/landing/assets/images/service-icon-01.png" alt="">
+                  <img src="<?= base_url() ?>/landing/assets/images/icons8-covid-19-64.png" alt="">
                 </div>
               </div>
               <div class="col-lg-8">
@@ -361,7 +359,7 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="icon">
-                  <img src="<?= base_url() ?>/landing/assets/images/service-icon-02.png" alt="">
+                  <img src="<?= base_url() ?>/landing/assets/images/icons8-request-money-64.png" alt="">
                 </div>
               </div>
               <div class="col-lg-8">
@@ -379,7 +377,7 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="icon">
-                  <img src="<?= base_url() ?>/landing/assets/images/service-icon-02.png" alt="">
+                  <img src="<?= base_url() ?>/landing/assets/images/icons8-myspace-64.png" alt="">
                 </div>
               </div>
               <div class="col-lg-8">
@@ -397,7 +395,7 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="icon">
-                  <img src="<?= base_url() ?>/landing/assets/images/service-icon-02.png" alt="">
+                  <img src="<?= base_url() ?>/landing/assets/images/icons8-info-64.png" alt="">
                 </div>
               </div>
               <div class="col-lg-8">
@@ -419,7 +417,7 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="icon">
-                  <img src="<?= base_url() ?>/landing/assets/images/service-icon-02.png" alt="">
+                  <img src="<?= base_url() ?>/landing/assets/images/icons8-idea-64.png" alt="">
                 </div>
               </div>
               <div class="col-lg-8">
@@ -440,7 +438,7 @@
 
 
 
-  <footer>
+  <footer class="footer">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">

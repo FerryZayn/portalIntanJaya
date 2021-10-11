@@ -54,9 +54,7 @@
 			margin: 0 !important;
 		}
 	</style>
-	<style id="custom-background-css">
-
-	</style>
+	<style id="custom-background-css"></style>
 
 	<!-- Begin Custom CSS -->
 	<?= $this->include('layout/userportal/custom'); ?>
@@ -65,6 +63,8 @@
 	<link rel="icon" href="<?= base_url() ?>/templet/logo/intanjaya.png" sizes="32x32" />
 	<link rel="icon" href="<?= base_url() ?>/templet/logo/intanjaya.png" sizes="192x192" />
 	<link rel="apple-touch-icon" href="<?= base_url() ?>/templet/logo/intanjaya.png" />
+
+	<link rel="stylesheet" href="<?= base_url() ?>/landing/assets/css/templatemo-seo-dream.css">
 </head>
 
 <body class="home blog custom-background wp-custom-logo full-width font-family hfeed">

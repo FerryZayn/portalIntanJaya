@@ -9,7 +9,9 @@
                     <span class="close"></span>
                     <span class="arrow"></span>
                     <article>
-                        <h2>MENGENAL OPD</h2>
+                        <a href="<?= base_url(); ?>/content/opd" class="btn">
+                            <h2>MENGENAL OPD</h2>
+                        </a>
                         <div class="title">Kabupaten Intan Jaya</div>
                         <div class="pic"><img src="<?= base_url() ?>/templet/gambar-berita/gambar.jpg"></div>
                         <div class="desc">
@@ -17,7 +19,7 @@
                         </div>
                     </article>
                     <div class="actions">
-                        <a href="#" class="btn">
+                        <a href="<?= base_url(); ?>/content/opd" class="btn">
                             <span><i class="fas fa-eye"></i> LIHAT SELENGKAPNYA</span>
                             <img class="icon" src="https://rafaelavlucas.github.io/assets/icons/black/icon-18.svg">
                         </a>

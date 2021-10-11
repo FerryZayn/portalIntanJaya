@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 
 //Portal Berita Content___________________________________________________________________________________________________________
 $routes->get('/content/home', 'ContentController::dashboardPortal');
+$routes->get('/content/opd', 'ContentController::opd');
 $routes->get('/content/berita-detail', 'ContentController::detail');
 $routes->post('/content/search-article', 'ContentController::searchArtikel');
 $routes->get('/content/semua-informasi', 'ContentController::semuaInformasi');

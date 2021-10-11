@@ -4,15 +4,12 @@
 <main id="content">
 	<div class="container">
 		<div class="row">
-			<!--breadcrumb-->
 			<div class="col-12">
 				<div class="breadcrumb u-breadcrumb  pt-3 px-0 mb-0 bg-transparent small">
 					<a class="breadcrumb-item" href="<?php base_url(); ?>/">Home</a> &nbsp;&nbsp;&#187;&nbsp;&nbsp;
 					<span class="d-none d-md-inline"><?= $v_berita->judul; ?></span>
 				</div>
 			</div>
-
-			<!--Main content-->
 			<div class="col-md-8">
 				<article>
 					<header class="entry-header post-title">
@@ -20,17 +17,18 @@
 						<div class="entry-meta post-atribute mb-3 small fw-normal text-muted">
 
 							<span class="byline me-2 me-md-3"><i class="far fa-user"></i> by <span class="author vcard"><a class="url fn n fw-bold" href="#"> <?= $v_berita->nama_pengarang; ?></a></span></span>
-							<span class="posted-on me-2 me-md-3"><i class="far fa-edit"></i><time class="entry-date published">
+							<span class="posted-on me-2 me-md-3"><i class="far fa-edit"></i>
+								<time class="entry-date published">
 									<?php
 									$date = $v_berita->created_date;
 									echo date('d F Y', strtotime($date));
-									?></time></span>
-							<span class="me-2 me-md-3">
-								<i class="far fa-eye"></i> Views 1268234 (Cooming Soon)
+									?>
+								</time>
 							</span>
+							<!-- <span class="me-2 me-md-3">
+								<i class="far fa-eye"></i> Views 1268234 (Cooming Soon)
+							</span> -->
 						</div>
-
-						<!--social share-->
 						<div class="social-share mb-3">
 							<a class="btn btn-social btn-facebook text-white btn-sm blank-windows" href="https://www.facebook.com/sharer/sharer.php?u=<?= base_url(); ?>/content/<?= $v_berita->slug; ?>" target="_blank">
 								<i class="fab fa-facebook"></i><span class="d-none d-sm-inline"> Facebook</span>
@@ -50,7 +48,7 @@
 							<a class="btn btn-social btn-envelope text-white btn-sm" href="mailto:?subject=Your post title&body=Read complete article in here <?= base_url(); ?>/content/<?= $v_berita->slug; ?>" target="_blank">
 								<i class="far fa-envelope"></i><span class="d-none d-sm-inline"> Email</span>
 							</a>
-						</div><!-- social share -->
+						</div>
 					</header>
 
 					<div class="entry-content post-content">
@@ -60,8 +58,6 @@
 						</figure>
 						<p><?= $v_berita->isi_artikel; ?></p>
 					</div>
-					<!-- Entry Content Details End-->
-
 					<p>&nbsp;</p>
 					<footer class="entry-footer">
 						<div class="tags-links tagcloud"><span class="fw-bold me-2">Tags</span>
@@ -71,10 +67,7 @@
 						</div>
 					</footer>
 				</article>
-
 				<hr>
-
-				<!--author-->
 				<div class="media author-box">
 					<div class="media-figure mb-3">
 						<img src="<?= base_url(); ?>/templet/logo/author.jpeg" class="avatar avatar-100 photo" height="100" width="100" loading='lazy' />
@@ -92,13 +85,7 @@
 					</div>
 				</div>
 				<hr>
-
-				<!--related-->
 				<?= $this->include('/layout/userportal/relasi-berita-detail'); ?>
-				<!--End Related Posts-->
-
-
-				<!-- Berita Sugesti box Notifikasi Star -->
 				<div class="suggestion-box bg-themes">
 					<h4 class="text-center">Kamu Harus Baca Ini</h4>
 					<div id="close-suggestion" class="close-suggestion">
@@ -126,17 +113,12 @@
 
 					</div>
 				</div>
-
-
-				<!-- Berita Sugesti box Notifikasi End -->
 			</div>
 			<aside class="col-md-4 widget-area end-sidebar-lg" id="right-sidebar">
 				<div class="sticky">
 					<?= $this->include('layout/userportal/sosial-network'); ?>
 					<?= $this->include('layout/userportal/informasi-lain'); ?>
-					<!-- Latest Post 1 Star -->
 					<?= $this->include('layout/userportal/latest-post'); ?>
-					<!-- Latest Post 1 End -->
 				</div>
 			</aside>
 		</div>
