@@ -12,7 +12,7 @@
 
   <title>PORTAL RESMI PEMERINTAH</title>
   <link rel="icon" href="<?= base_url() ?>/templet/logo/intanjaya.png" sizes="32x32" />
-  <link href="<?= base_url() ?>/landing/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?= base_url() ?>/landing/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="<?= base_url() ?>/landing/assets/css/fontawesome.css">
   <link rel="stylesheet" href="<?= base_url() ?>/landing/assets/css/templatemo-seo-dream.css">
@@ -451,8 +451,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="<?= base_url() ?>/landing/vendor/jquery/jquery.min.js"></script>
-  <script src="<?= base_url() ?>/landing/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?= base_url() ?>/landing/jquery/jquery/jquery.min.js"></script>
+  <script src="<?= base_url() ?>/landing/jquery/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="<?= base_url() ?>/landing/assets/js/owl-carousel.js"></script>
   <script src="<?= base_url() ?>/landing/assets/js/animation.js"></script>
   <script src="<?= base_url() ?>/landing/assets/js/imagesloaded.js"></script>
