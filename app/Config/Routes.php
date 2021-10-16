@@ -31,9 +31,9 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-//Portal Berita Content___________________________________________________________________________________________________________
+//Portal Berita Content_________________________________________________________________________________________________________
 $routes->get('/content/home', 'ContentController::dashboardPortal');
-$routes->get('/content/opd', 'ContentController::opd');
+$routes->get('/content/opd', 'OPDController::index');
 $routes->get('/content/berita-detail', 'ContentController::detail');
 $routes->post('/content/search-article', 'ContentController::searchArtikel');
 $routes->get('/content/semua-informasi', 'ContentController::semuaInformasi');
@@ -44,7 +44,7 @@ $routes->get('/content/semua-album-foto', 'ContentController::albumFoto');
 $routes->get('/content/semua-album-video', 'ContentController::albumVideo');
 $routes->get('/content/(:any)', 'ContentController::detailBerita/$1');
 
-//Administrator Portal Login_______________________________________________________________________________________________________
+//Administrator Portal Login_____________________________________________________________________________________________________
 $routes->get('/auth/login', 'AuthController::index');
 
 //Admin Portal
@@ -109,10 +109,15 @@ $routes->delete('/administrator/portal-pemda/album-video/(:num)', 'PemdaControll
 $routes->get('/administrator/portal-pemda/album-video/(:any)', 'PemdaController::detailAlbumvideo/$1', ['filter' => 'auth']);
 
 //AdminPortal OPD_________________________________________________________________________________________________________________________________
-$routes->get('/administrator/portal-opd/dashboard', 'OPDController::index', ['filter' => 'auth']);
+$routes->get('/administrator/portal-opd/dashboard', 'OPDController::indexAdmin', ['filter' => 'auth']);
+$routes->get('/administrator/portal-opd/v_opd', 'OPDController::vOPD', ['filter' => 'auth']);
+$routes->get('/administrator/portal-opd/v_edit/(:segment)', 'OPDController::opdEdit/$1', ['filter' => 'auth']);
+$routes->delete('/administrator/portal-opd/(:num)', 'OPDController::opdHapus/$1', ['filter' => 'auth']);
+$routes->get('/administrator/portal-opd/(:any)', 'OPDController::opdDetail/$1', ['filter' => 'auth']);
+
 
 //AdminPortal E-SAKIP_________________________________________________________________________________________________________________________________
-$routes->get('/administrator/e-sakip/dashboard', 'OPDController::index', ['filter' => 'auth']);
+$routes->get('/administrator/e-sakip/dashboard', 'EsakipController::index', ['filter' => 'auth']);
 
 
 /*

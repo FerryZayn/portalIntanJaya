@@ -31,14 +31,14 @@ class AuthController extends BaseController
 			'email' => [
 				'rules' => 'required',
 				'errors' => [
-					'required' => 'Email Harus diisi !'
+					'required' => 'Email Harus diisi!'
 				]
 			],
 
 			'password' => [
 				'rules' => 'required',
 				'errors' => [
-					'required' => 'Password Harus diisi !'
+					'required' => 'Password Harus diisi!'
 				]
 			],
 

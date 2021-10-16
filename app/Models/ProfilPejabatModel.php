@@ -14,12 +14,9 @@ class ProfilPejabatModel extends Model
         'created_date', 'last_modified_date', 'is_active', 'status_sistem_id', 'deskripsi', 'slug'
     ];
 
-
-
     public function getTampilpejabat($p_input_id)
     {
         $query = $this->db->query("call profil_pejabat_view('$p_input_id')");
-        // $query = $this->db->table->join('pegawai, pegawai.id=profil_pejabat.pegawai_id');
         $results = $query->getResult();
         return $results;
     }

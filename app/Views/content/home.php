@@ -9,6 +9,8 @@
         <?= $this->include('layout/userportal/album-foto'); ?>
         <?= $this->include('layout/userportal/album-video'); ?>
         <?= $this->include('layout/userportal/data-portal'); ?>
+        <?php // $this->include('layout/userportal/map'); 
+        ?>
     </div>
 </div>
 <?= $this->endSection() ?>

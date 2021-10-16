@@ -72,17 +72,10 @@
                     <div class="col-9 ps-1 ps-md-2">
                         <div class="breaking-box position-relative py-2">
                             <div class="box-carousel" data-flickity='{ "cellAlign": "left", "wrapAround": true, "adaptiveHeight": true, "prevNextButtons": true , "autoPlay": 5000, "pageDots": false, "imagesLoaded": true }'>
-                                <?php foreach ($v_beritaheader as $berita) : ?>
+                                <?php foreach ($v_artikelheader as $artikelheader) : ?>
                                     <div class="col-12 active aribudin">
-                                        <a class="h6 fw-normal text-white" href="<?= base_url(); ?>/content/<?= $berita['slug']; ?>">
-                                            <?= $berita['judul']; ?>
-                                        </a>
-                                    </div>
-                                <?php endforeach; ?>
-                                <?php foreach ($v_informasiheader as $informasi) : ?>
-                                    <div class="col-12 active aribudin">
-                                        <a class="h6 fw-normal text-white" href="<?= base_url(); ?>/content/<?= $informasi['slug']; ?>">
-                                            <?= $informasi['judul']; ?>
+                                        <a class="h6 fw-normal text-white" href="<?= base_url(); ?>/content/<?= $artikelheader['slug']; ?>">
+                                            <?= $artikelheader['judul']; ?>
                                         </a>
                                     </div>
                                 <?php endforeach; ?>

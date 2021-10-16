@@ -17,7 +17,6 @@ class PejabatController extends BaseController
     public function pejabatPemda()
     {
         $p_input_id = $this->session->id;
-        // $pegawai = $this->db->query("call profil_pejabat_view('$p_input_id')")->getResult();
 
         $data = [
             'p_tampil' => $this->pejabatModel->getTampilpejabat($p_input_id),

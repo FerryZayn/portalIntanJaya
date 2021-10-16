@@ -33,8 +33,9 @@ class ContentController extends BaseController
         $data = [
             'v_berita' => $this->pemdaModel->tampilBerita(),
             'v_informasi' => $this->pemdaModel->tampilInformasi(),
-            'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
-            'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+
+            'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
+
             'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
             'v_slideshow' => $this->pemdaModel->tampilSlideshow(),
@@ -52,31 +53,29 @@ class ContentController extends BaseController
         return view('/content/home', $data);
     }
 
-    //Tampil Detail Berita dan Informasi________________________________________________________________________________________________
-    public function opd()
-    {
-        $data = [
-            'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
-            'v_beritaheader' => $this->pemdaModel->tampilBerita(),
-            'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
-            'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
-            'v_contentmenualbumfoto' => $this->pemdaModel->contentAlbumfotoMenu(),
-            'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
-            'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
-            'v_costumpost' => $this->pemdaModel->getCostumpost(),
-        ];
-        return view('/content/opd', $data);
-    }
+    //Tampil Detail Berita dan Informasi______________________________________________________________________________________________
+    // public function opd()
+    // {
+    //     $data = [
+    //         'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
+    //         'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
+    //         'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
+    //         'v_contentmenualbumfoto' => $this->pemdaModel->contentAlbumfotoMenu(),
+    //         'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
+    //         'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
+    //         'v_costumpost' => $this->pemdaModel->getCostumpost(),
+    //     ];
+    //     return view('/content/opd', $data);
+    // }
 
 
-    //Tampil Detail Berita dan Informasi________________________________________________________________________________________________
+    //Tampil Detail Berita dan Informasi______________________________________________________________________________________________
     public function detailBerita($slug)
     {
         $data = [
             'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
             'v_berita' => $this->pemdaModel->getDetailsArtikel($slug),
-            'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
-            'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+            'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             'v_beritalain' => $this->pemdaModel->contentBerita(),
             'v_informasilain' => $this->pemdaModel->contentInformasi(),
             'v_notif' => $this->pemdaModel->bacaIni(),
@@ -105,8 +104,7 @@ class ContentController extends BaseController
             'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
             'v_costumpost' => $this->pemdaModel->getCostumpost(),
 
-            'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
-            'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+            'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             //Pagin
             'v_semuaArtikel' => $this->pemdaModel->orderBy('RAND()')->paginate(20, 'artikel'),
             'pager' => $this->pemdaModel->pager,
@@ -127,8 +125,7 @@ class ContentController extends BaseController
             'v_costumpost' => $this->pemdaModel->getCostumpost(),
 
             'v_informasi' => $this->pemdaModel->tampilInformasi(),
-            'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
-            'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+            'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             //Pagin
             'v_informasii' => $this->pemdaModel->where('tipe_artikel_id', 2)->paginate($paginate, 'informasi'),
             'pager' => $this->pemdaModel->pager,
@@ -149,8 +146,7 @@ class ContentController extends BaseController
             'v_costumpost' => $this->pemdaModel->getCostumpost(),
 
             'v_berita' => $this->pemdaModel->tampilBerita(),
-            'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
-            'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+            'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             //Pagin
             // 'v_beritaa' => $this->pemdaModel->paginate(2, 'berita'),
             'v_beritaa' => $this->pemdaModel->where('tipe_artikel_id', 1)->paginate($paginate, 'berita'),
@@ -170,8 +166,7 @@ class ContentController extends BaseController
             'v_informasilain' => $this->pemdaModel->contentInformasi(),
             'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
-            'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
-            'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+            'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
 
             'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
             'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
@@ -194,8 +189,7 @@ class ContentController extends BaseController
             'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
             'v_costumpost' => $this->pemdaModel->getCostumpost(),
 
-            'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
-            'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+            'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             'v_beritalain' => $this->pemdaModel->contentBerita(),
             'v_informasilain' => $this->pemdaModel->contentInformasi(),
             'v_albumfoto' => $this->pemdaModel->tampilAlbumfoto(),
@@ -233,8 +227,7 @@ class ContentController extends BaseController
             'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
             'v_costumpost' => $this->pemdaModel->getCostumpost(),
 
-            'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
-            'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+            'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             'v_beritalain' => $this->pemdaModel->contentBerita(),
             'v_informasilain' => $this->pemdaModel->contentInformasi(),
             'v_albumvideo' => $this->pemdaModel->tampilAlbumvideo(),
@@ -259,8 +252,7 @@ class ContentController extends BaseController
         }
 
         $data = [
-            'v_informasiheader' => $this->pemdaModel->tampilInformasi(),
-            'v_beritaheader' => $this->pemdaModel->tampilBerita(),
+            'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             'v_ambil' => $ambil,
 
             'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),

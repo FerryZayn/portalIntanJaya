@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="breadcrumb u-breadcrumb  pt-3 px-0 mb-0 bg-transparent small">
-                    <a class="breadcrumb-item" href="<?= base_url("/") ?>">Home</a> &nbsp;&nbsp;&#187;&nbsp;&nbsp;
+                    <a class="breadcrumb-item" href="<?= base_url("/") ?>">Home</a> &nbsp; &#187; &nbsp;
                     <span class="d-none d-md-inline">Data Lengkap Berita</span>
                 </div>
             </div>
@@ -41,7 +41,8 @@
                                                 </p>
                                                 <div class="card-text mb-2 text-muted small">
                                                     <span class="fw-bold d-none d-sm-inline me-1">
-                                                        <a href="#" rel="author"><?= $berita['nama_pengarang']; ?></a> </span>
+                                                        <a href="#" rel="author"><?= $berita['nama_pengarang']; ?></a>
+                                                    </span>
                                                     <time class="news-date">
                                                         <?php
                                                         $date = $berita['created_date'];
@@ -55,7 +56,10 @@
                                     </div>
                                 </article>
                             <?php endforeach; ?>
+
+                            <!-- Pagination -->
                             <?= $pager->links('berita', 'pagin_berita') ?>
+
                         </div>
                     </div>
                 </article>

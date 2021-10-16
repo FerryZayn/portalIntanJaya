@@ -21,7 +21,6 @@ class PemdaModel extends Model
             ->table('artikel')
             ->where(['is_active' => 1])
             ->like('judul', $keyword)
-            // ->orderBy('RAND ()')
             ->get()
             ->getResultArray();
     }
@@ -240,7 +239,7 @@ class PemdaModel extends Model
             ->getResultArray();
     }
 
-    //GET Tampil dan Jumlah Visi_________________________________________________________________________________________________
+    //GET Tampil dan Jumlah Visi______________________________________________________________________________________________
     public function tampilVisi()
     {
         return $this->db
@@ -257,7 +256,7 @@ class PemdaModel extends Model
             ->countAllResults();
     }
 
-    //GET Tampil dan Jumlah Misi___________________________________________________________________________________________________
+    //GET Tampil dan Jumlah Misi________________________________________________________________________________________________
     public function tampilMisi()
     {
         return $this->db

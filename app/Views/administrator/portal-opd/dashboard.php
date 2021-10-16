@@ -24,7 +24,7 @@
 							<div class="icon">
 								<i class="fab fa-accusoft" aria-hidden="true"></i>
 							</div>
-							<a href="#" class="card-box-footer">
+							<a href="/administrator/portal-opd/v_opd" class="card-box-footer">
 								Data PEMDA OPD <i class="fab fa-accusoft"></i>
 							</a>
 						</div>

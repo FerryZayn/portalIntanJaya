@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>MASTER | Portal Kab. Intan Jaya</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="<?= base_url(); ?>/admintemp/img/logo/logo.png" type="image/x-icon" />
+    <link rel="icon" href="<?= base_url(); ?>/admintemp/img/icon.ico" type="image/x-icon" />
 
     <!-- Fonts and icons -->
     <script src="<?= base_url(); ?>/admintemp/js/plugin/webfont/webfont.min.js"></script>
@@ -53,11 +53,11 @@
 
     <div class="wrapper">
         <!-- Header Star -->
-        <?= $this->include('/layout/opdtemp/_header'); ?>
+        <?= $this->include('/layout/esakiptemp/_header'); ?>
         <!-- Header End -->
 
         <!-- Sidebar Star -->
-        <?= $this->include('/layout/opdtemp/_sidebar'); ?>
+        <?= $this->include('/layout/esakiptemp/_sidebar'); ?>
         <!-- End Sidebar -->
 
         <!-- Content Srat -->

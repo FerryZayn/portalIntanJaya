@@ -95,7 +95,8 @@
 			</div>
 		</main>
 
-		<?= $this->include('layout/userportal/map'); ?>
+		<?= $this->include('layout/userportal/map');
+		?>
 		<footer>
 
 			<?= $this->include('layout/userportal/footer'); ?>

@@ -166,19 +166,19 @@
           <div class="row">
             <div class="col-lg-4 col-sm-4">
               <div class="about-item">
-                <h4>750+</h4>
+                <h4>100+</h4>
                 <h6>Jumlah Dinas</h6>
               </div>
             </div>
             <div class="col-lg-4 col-sm-4">
               <div class="about-item">
-                <h4>340+</h4>
+                <h4>50+</h4>
                 <h6>Jumlah OPD</h6>
               </div>
             </div>
             <div class="col-lg-4 col-sm-4">
               <div class="about-item">
-                <h4>128+</h4>
+                <h4>100+</h4>
                 <h6>Jumlah Kantor</h6>
               </div>
             </div>

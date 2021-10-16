@@ -10,12 +10,12 @@
                         <span>
                             <?= session()->get('nama_pegawai'); ?>
                             <span class="user-level">Administrator</span>
-                            <!-- <span class="caret"></span> -->
+                            <span class="caret"></span>
                         </span>
                     </a>
                     <div class="clearfix"></div>
 
-                    <!-- <div class="collapse in" id="collapseExample">
+                    <div class="collapse in" id="collapseExample">
                         <ul class="nav">
                             <li>
                                 <a href="#profile">
@@ -33,7 +33,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </div> -->
+                    </div>
                 </div>
             </div>
             <ul class="nav nav-primary">
@@ -55,24 +55,24 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                     <a href="#">
                         <i class="fas fa-layer-group"></i>
                         <p>Hak Akses</p>
                     </a>
-                </li> -->
+                </li>
                 <li class="nav-item">
-                    <a href="/administrator/portal-opd/v_opd">
+                    <a href="#">
                         <i class="fas fa-desktop"></i>
-                        <p>OPD</p>
+                        <p>E-Sakip</p>
                     </a>
                 </li>
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                     <a href="#">
                         <i class="fas fa-th-list"></i>
                         <p>Pegawai</p>
                     </a>
-                </li> -->
+                </li>
                 <!-- 
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#forms">

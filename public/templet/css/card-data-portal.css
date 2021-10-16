@@ -233,6 +233,9 @@
     .cards .card:hover .desc {
         color: white;
     }
+    .card .card:hover .desc p{
+        color: white;
+    }
 
     .cards .card:hover .pic {
         box-shadow: 0px 0px 0px 8px rgba(255, 255, 255, 0.3);
