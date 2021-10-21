@@ -56,7 +56,11 @@
                                             </li>
                                             <li>
                                                 <span class="name-specification">URL Website</span>
-                                                <span class="status-specification"><?= $v_opddetail->website; ?></span>
+                                                <span class="status-specification">
+                                                    <a href="<?= $v_opddetail->website; ?>" target="_blank" class="text-warning" style="text-decoration: none;">
+                                                        <?= $v_opddetail->website; ?>
+                                                    </a>
+                                                </span>
                                             </li>
                                             <li>
                                                 <span class="name-specification">Level OPD</span>

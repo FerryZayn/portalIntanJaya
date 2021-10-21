@@ -86,9 +86,4 @@
     <?= $this->include('/layout/adminportal/_footer');  ?>
 </div>
 
-
-<script src="<?= base_url() ?>/admintemp/ckeditor/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('deskberita');
-</script>
 <?= $this->endSection() ?>
