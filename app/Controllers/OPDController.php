@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\PemdaModel;
-// use App\Models\TipeArtikelModel;
+use App\Models\TipeArtikelModel;
 use App\Models\OPDModel;
 
 class OPDController extends BaseController
@@ -15,7 +15,7 @@ class OPDController extends BaseController
     {
         $this->pemdaModel = new PemdaModel();
         $this->opdModel = new OPDModel();
-        // $this->tipeArtikelModel = new TipeArtikelModel();
+        $this->tipeArtikelModel = new TipeArtikelModel();
         $this->db = \Config\Database::connect();
     }
 
@@ -34,6 +34,20 @@ class OPDController extends BaseController
         ];
         return view('/content/opd', $data);
     }
+    // Content Website OPD_____________________________________________________________________________________________
+    public function websiteOPD()
+    {
+        $id = $this->session->id;
+        $tipe_artikel_id = 1;
+
+        $vartikel = $this->db->query("call artikel_view('$id', '$tipe_artikel_id')")->getResultArray();
+        $data = [
+            'v_artikel' => $vartikel,
+        ];
+        return view('website-opd', $data);
+    }
+
+
 
     // Admin Dashboard________________________________________________________________________________________________
     public function indexAdmin()
@@ -54,9 +68,7 @@ class OPDController extends BaseController
     public function opdDetail($id)
     {
         $data = [
-            // 'validation' => \Config\Services::validation(),
             'v_opddetail' => $this->opdModel->getDetailsOPD($id),
-            // 'level_opd' => $this->opdModel->getLevelopd()
         ];
         return view('/administrator/portal-opd/detail', $data);
     }
@@ -104,5 +116,127 @@ class OPDController extends BaseController
         $this->opdModel->delete($id);
         session()->setFlashdata('info', 'Data sudah di hapus...');
         return redirect()->to('/administrator/portal-opd/v_opd');
+    }
+
+    public function vBerita()
+    {
+        $id = $this->session->id;
+        $tipe_artikel_id = 1;
+
+        $vartikel = $this->db->query("call artikel_view('$id', '$tipe_artikel_id')")->getResultArray();
+        $data = [
+            'v_artikel' => $vartikel,
+        ];
+        return view('/administrator/portal-opd/berita', $data);
+    }
+
+    public function tambahArtikel()
+    {
+        $data = [
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
+            'validation' => \Config\Services::validation(),
+        ];
+        return view('/administrator/portal-opd/artikel-tambah', $data);
+    }
+    //Insert/Simpan Artikel___________________________________________________________________________________________________________
+    public function simpanBerita()
+    {
+        $fileSampul = $this->request->getFile('file_gambar');
+        if ($fileSampul->getError() == 4) {
+            $namaSampul = 'default.jpg';
+        } else {
+            $namaSampul = $fileSampul->getRandomName();
+            $fileSampul->move('templet/img-opd-post', $namaSampul);
+        }
+        $ambilJudul = url_title($this->request->getVar('judul'), '-', true);
+        $judul = $this->request->getVar('judul');
+        $slug = $ambilJudul;
+        $file_gambar = $namaSampul;
+        $path_file_gambar = $this->request->getVar('path_file_gambar');
+        $isi_artikel = $this->request->getVar('isi_artikel');
+        $opd_hdr_id = $this->request->getVar('opd_hdr_id');
+        $tipe_artikel_id = $this->request->getVar('tipe_artikel_id');
+        $nama_pengarang = $this->request->getVar('nama_pengarang');
+        $this->db->query("CALL artikel_insert('$judul', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$tipe_artikel_id', '$nama_pengarang', '$slug')");
+        session()->setFlashdata('info', 'Proses simpan artikel berhasil');
+        return redirect()->to('/administrator/portal-opd/dashboard');
+    }
+
+    public function artikelEdit($id)
+    {
+        $data = [
+            'validation' => \Config\Services::validation(),
+            'artikel_edit' => $this->opdModel->getUpdateArtikel($id),
+            'level_opd' => $this->opdModel->getLevelopd()
+        ];
+        return view('/administrator/portal-opd/artikel-edit', $data);
+    }
+
+    public function updateArtikel()
+    {
+
+        $fileSampul = $this->request->getFile('file_gambar');
+        if ($fileSampul->getError() == 4) {
+            $namaSampul = 'default.jpg';
+        } else {
+            //Hapus File Gambar Lama
+            $id = $this->request->getVar('id');
+            $dt = $this->pemdaModel->gantiGambar($id)->getRow();
+            $gambar = $dt->file_gambar;
+            $path = 'templet/img-opd-post/';
+            @unlink($path . $gambar);
+
+            // Upload File Gambar Baru dan Pindahkan ke direktori berita
+            $namaSampul = $fileSampul->getRandomName();
+            $fileSampul->move('templet/img-opd-post', $namaSampul);
+        }
+
+        $ambilJudul = url_title($this->request->getVar('judul'), '-', true);
+        $judul = $this->request->getVar('judul');
+
+        $id = $this->request->getVar('id');
+        $file_gambar = $this->request->getVar('file_gambar');
+        $file_gambar = $namaSampul;
+        $path_file_gambar = $this->request->getVar('path_file_gambar');
+        $isi_artikel = $this->request->getVar('isi_artikel');
+        $opd_hdr_id = $this->request->getVar('opd_hdr_id');
+        $nama_pengarang = $this->request->getVar('nama_pengarang');
+        $slug = $ambilJudul;
+
+        $this->db->query("CALL artikel_update('$id', '$judul', '$file_gambar', '$path_file_gambar', '$isi_artikel', '$opd_hdr_id', '$nama_pengarang', '$slug')");
+        session()->setFlashdata('info', 'Update Artikel berhasil');
+
+        return redirect()->to('/administrator/portal-opd/dashboard');
+    }
+
+    // GET Hapus OPD________________________________________________________________________________________________
+    public function hapusOpdArtikel($id)
+    {
+        $this->opdModel->delete($id);
+        session()->setFlashdata('info', 'Data sudah di hapus...');
+        return redirect()->to('/administrator/portal-opd/dashboard');
+    }
+
+    public function vInformasi()
+    {
+        $id = $this->session->id;
+        $tipe_artikel_id = 2;
+
+        $vinformasi = $this->db->query("call artikel_view('$id', '$tipe_artikel_id')")->getResultArray();
+        $data = [
+            'v_informasi' => $vinformasi,
+        ];
+        return view('/administrator/portal-opd/informasi', $data);
+    }
+    public function vAlbumfoto()
+    {
+        $id = $this->session->id;
+        $tipe_artikel_id = 3;
+
+        $albumfoto = $this->db->query("call artikel_view('$id', '$tipe_artikel_id')")->getResultArray();
+        $data = [
+            'v_albumfoto' => $albumfoto,
+        ];
+        return view('/administrator/portal-opd/album-foto', $data);
     }
 }

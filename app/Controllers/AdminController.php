@@ -8,4 +8,8 @@ class AdminController extends BaseController
 	{
 		return view('/administrator/index');
 	}
+	public function hakAkses()
+	{
+		return view('/administrator/hak-akses');
+	}
 }

@@ -67,30 +67,23 @@
                         <p>OPD</p>
                     </a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a href="#">
-                        <i class="fas fa-th-list"></i>
-                        <p>Pegawai</p>
-                    </a>
-                </li> -->
-                <!-- 
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#forms">
-                        <i class="fas fa-pen-square"></i>
-                        <p>Forms</p>
-                        <span class="caret"></span>
+                        <i class="fas fa-layer-group"></i>
+                        <p>Artikel OPD</p> <span class="caret"></span>
                     </a>
                     <div class="collapse" id="forms">
                         <ul class="nav nav-collapse">
-                            <li>
-                                <a href="forms/forms.html">
-                                    <span class="sub-item">Basic Form</span>
-                                </a>
-                            </li>
+                            <li><a href="/administrator/portal-opd/berita"><i class="fas fas fa-angle-right"></i> Berita</a></li>
+                            <li><a href="/administrator/portal-opd/informasi"><i class="fas fas fa-angle-right"></i> Informasi</a></li>
+                            <li><a href="/administrator/portal-opd/album-foto"><i class="fas fas fa-angle-right"></i> Album Foto</a></li>
+                            <li><a href="/administrator/portal-opd/album-video"><i class="fas fas fa-angle-right"></i> Album Video</a></li>
+                            <li><a href="/administrator/portal-opd/visi"><i class="fas fas fa-angle-right"></i> Visi</a></li>
+                            <li><a href="/administrator/portal-opd/misi"><i class="fas fas fa-angle-right"></i> Misi</a></li>
+                            <li><a href="/administrator/portal-opd/slide-show"><i class="fas fas fa-angle-right"></i> Slide Show</a></li>
                         </ul>
                     </div>
                 </li>
-                 -->
             </ul>
         </div>
     </div>

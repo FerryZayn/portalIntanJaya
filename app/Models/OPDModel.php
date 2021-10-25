@@ -20,8 +20,7 @@ class OPDModel extends Model
         return $this->db
             ->table('opd_hdr')
             ->where(['is_active' => 1])
-            ->orderBy('RAND ()')
-            // ->limit('5')
+            // ->orderBy('RA
             ->get()
             ->getResultArray();
     }
@@ -31,8 +30,6 @@ class OPDModel extends Model
     {
         return $this->db
             ->table('opd_hdr')
-            // ->join('tipe_artikel', 'tipe_artikel.id=artikel.tipe_artikel_id')
-            // ->join('status_sistem', 'status_sistem.id=artikel.status_sistem_id')
             ->where('id', $id)
             ->get()
             ->getRow();
@@ -42,7 +39,6 @@ class OPDModel extends Model
     {
         return $this->db
             ->table('opd_hdr')
-            // ->join('level_opd', 'level_opd.kode=opd_hdr.level')
             ->where('id', $id)
             ->get()
             ->getRow();
@@ -54,4 +50,24 @@ class OPDModel extends Model
             ->get()
             ->getResultArray();
     }
+
+    //GET Artikel_______________________________________________________________________________________________
+    public function getUpdateArtikel($id)
+    {
+        return $this->db
+            ->table('artikel')
+            ->where('id', $id)
+            ->get()
+            ->getRow();
+    }
+
+    // GET Details Artikel________________________________________________________________________________________________
+    // public function getArtikelDetailsOPD($id)
+    // {
+    //     return $this->db
+    //         ->table('opd_hdr')
+    //         ->where('id', $id)
+    //         ->get()
+    //         ->getRow();
+    // }
 }

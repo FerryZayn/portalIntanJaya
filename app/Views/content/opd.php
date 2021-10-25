@@ -33,47 +33,11 @@
 															<p align="left">
 																<?php $i = 1; ?>
 																<?php foreach ($v_contentopd as $opd) : ?>
-																	<a href="<?= $opd['website']; ?>" target="_blank"><?= $i++; ?>. <?= $opd['nama_opd']; ?></a><br />
+																	<a href="<?= base_url("website-opd") ?>" target="_blank"><?= $i++; ?>. <?= $opd['nama_opd']; ?></a><br />
 																<?php endforeach; ?>
 															</p>
 														</div>
 													</div>
-													<!-- <div class="col-lg-4">
-														<div class="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-															<div class="first-number number">
-																<h6>02</h6>
-															</div>
-															<h4>BPKAD</h4>
-															<p align="left">
-																<a href="#">1. Nama 1</a> <br />
-																<a href="#">2. Nama 2</a> <br />
-																<a href="#">3. Nama 3</a> <br />
-																<a href="#">4. Nama 4</a> <br />
-																<a href="#">5. Nama 5</a> <br />
-																<a href="#">6. Nama 6</a> <br />
-																<a href="#">7. Nama 7</a> <br />
-																<a href="#">8. Nama 8</a>
-															</p>
-														</div>
-													</div>
-													<div class="col-lg-4">
-														<div class="features-item second-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-															<div class="second-number number">
-																<h6>03</h6>
-															</div>
-															<h4>INSPEKTORAT</h4>
-															<p align="left">
-																<a href="#">1. Nama 1</a> <br />
-																<a href="#">2. Nama 2</a> <br />
-																<a href="#">3. Nama 3</a> <br />
-																<a href="#">4. Nama 4</a> <br />
-																<a href="#">5. Nama 5</a> <br />
-																<a href="#">6. Nama 6</a> <br />
-																<a href="#">7. Nama 7</a> <br />
-																<a href="#">8. Nama 8</a>
-															</p>
-														</div>
-													</div> -->
 												</div>
 											</div>
 										</div>

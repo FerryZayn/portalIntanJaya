@@ -119,6 +119,19 @@
 						</div>
 					</div>
 				</div>
+				<div class="col-sm-4">
+					<div class="card full-height bg-lima">
+						<div class="card-box bg-lima">
+							<div class="inner" style="padding-bottom: 30px;">
+								<h3>HAK AKSES</h3>
+							</div>
+							<div class="icon">
+								<i class="far fa-envelope" aria-hidden="true"></i>
+							</div>
+							<a href="/administrator/hak-akses" class="card-box-footer">Setting <i class="fas fa-users-cog"></i></a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
