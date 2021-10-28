@@ -145,7 +145,7 @@ $routes->get('/administrator/portal-opd/(:any)', 'OPDController::opdDetail/$1', 
 
 
 // Content OPD
-$routes->get('website-opd', 'OPDController::websiteOPD', ['filter' => 'auth']);
+$routes->get('website-opd', 'OPDController::websiteOPD');
 // $routes->get('(:any)', 'OPDController::callOPDname/$1', ['filter' => 'auth']);
 
 
