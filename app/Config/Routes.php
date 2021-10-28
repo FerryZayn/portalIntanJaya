@@ -47,9 +47,10 @@ $routes->get('/content/(:any)', 'ContentController::detailBerita/$1');
 //Administrator Portal Login_____________________________________________________________________________________________________
 $routes->get('/auth/login', 'AuthController::index');
 
-//Admin Portal
+//Admin Portal dan Hak Akses
 $routes->get('/administrator/index', 'AdminController::index', ['filter' => 'auth']);
 $routes->get('/administrator/hak-akses', 'AdminController::hakAkses', ['filter' => 'auth']);
+$routes->get('jsonakses/(:any)', 'AdminController::jsonhakaksesview/$1/$2', ['filter' => 'auth']);
 
 //Admin Portal Master_____________________________________________________________________________________________________________
 $routes->get('/administrator/master/dashboard', 'MasterController::index', ['filter' => 'auth']);
@@ -151,6 +152,8 @@ $routes->get('website-opd', 'OPDController::websiteOPD', ['filter' => 'auth']);
 
 //AdminPortal E-SAKIP_________________________________________________________________________________________________________________________________
 $routes->get('/administrator/e-sakip/dashboard', 'EsakipController::index', ['filter' => 'auth']);
+
+
 
 
 /*

@@ -61,7 +61,7 @@
                                                             <input type="hidden" name="opd_hdr_id" value="<?= session()->get('id'); ?>" class="form-control">
                                                         </div>
                                                         <div class="mb-3">
-                                                            <input type="hidden" name="path_file_gambar" class="form-control" value="/templet/gambar-berita">
+                                                            <input type="hidden" name="path_file_gambar" class="form-control" value="/templet/img-opd-post">
                                                         </div>
                                                     </div>
                                                 </div>

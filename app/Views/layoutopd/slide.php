@@ -9,63 +9,27 @@
                                 <div data-controls="{dot_nav_show:, slider_dot_show:yes, auto_nav_slide:, item_count:3, widget_id:c7ca90f}" class="main-slider">
                                     <div class="swiper-container">
                                         <div class="swiper-wrapper">
-                                            <div class="swiper-slide ts-overlay-style featured-post  post-361 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion tag-food">
-                                                <div data-bg="<?= base_url(); ?>/websiteopd/img/1.jpg" class="item item-before rocket-lazyload">
-                                                    <a class="img-link" href="#">Judul Berita ada disini 1</a>
-                                                    <div class="post-content">
-                                                        <a class="post-cat" href="#" style="background-color:#da1793;color:#ffffff">Kategori Berita</a>
-                                                        <h3 class="post-title">
-                                                            <a href="#">Judul Berita ada disini 1</a>
-                                                        </h3>
-                                                        <ul class="post-meta-info">
-                                                            <li class="author">
-                                                                <i class="far fa-user"></i> <a href="#">User</a>
-                                                            </li>
-                                                            <li>
-                                                                <i class="far fa-clock"></i> July 10, 2019
-                                                            </li>
-                                                        </ul>
+                                            <?php foreach ($v_artikel as $opd) : ?>
+                                                <div class="swiper-slide ts-overlay-style featured-post  post-361 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion tag-food">
+                                                    <div data-bg="websiteopd/img/1.jpg" class="item item-before rocket-lazyload">
+                                                        <a class="img-link" href="#"><?= $opd['judul']; ?></a>
+                                                        <div class="post-content">
+                                                            <a class="post-cat" href="#" style="background-color:#da1793;color:#ffffff">Kategori Berita</a>
+                                                            <h3 class="post-title">
+                                                                <a href="#"><?= $opd['judul']; ?></a>
+                                                            </h3>
+                                                            <ul class="post-meta-info">
+                                                                <li class="author">
+                                                                    <i class="far fa-user"></i> <a href="#">User</a>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="far fa-clock"></i> July 10, 2019
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="swiper-slide ts-overlay-style featured-post  post-109 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion tag-bitcoin tag-canada tag-cricket tag-football tag-litcoin tag-sketing tag-sports tag-surfing">
-                                                <div data-bg="<?= base_url(); ?>/websiteopd/img/1.jpg" class="item item-before rocket-lazyload">
-                                                    <a class="img-link" href="#">Judul berita ada disini 2</a>
-                                                    <div class="post-content">
-                                                        <a class="post-cat" href="#" style="background-color:#da1793;color:#ffffff">Kategori Berita</a>
-                                                        <h3 class="post-title">
-                                                            <a href="#">Judul berita ada disini 2</a>
-                                                        </h3>
-                                                        <ul class="post-meta-info">
-                                                            <li class="author">
-                                                                <i class="far fa-user"></i> <a href="#">User</a>
-                                                            </li>
-                                                            <li>
-                                                                <i class="far fa-clock"></i> July 10, 2019
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide ts-overlay-style featured-post  post-105 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle category-sports category-travel tag-sports">
-                                                <div data-bg="<?= base_url(); ?>/websiteopd/img/1.jpg" class="item item-before rocket-lazyload">
-                                                    <a class="img-link" href="#">Judul berita ada disini 3</a>
-                                                    <div class="post-content">
-                                                        <a class="post-cat" href="#" style="background-color:#da1793;color:#ffffff">Kategori Berita</a>
-                                                        <h3 class="post-title">
-                                                            <a href="#">Judul berita ada disini 3</a>
-                                                        </h3>
-                                                        <ul class="post-meta-info">
-                                                            <li class="author">
-                                                                <i class="far fa-user"></i> <a href="#">User</a>
-                                                            </li>
-                                                            <li>
-                                                                <i class="far fa-clock"></i> July 10, 2019
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <?php endforeach; ?>
                                         </div>
                                         <div class="main-pagination"></div>
                                     </div>
@@ -75,6 +39,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-04b8ef4" data-id="04b8ef4" data-element_type="column">
                 <div class="elementor-column-wrap elementor-element-populated">
                     <div class="elementor-widget-wrap">

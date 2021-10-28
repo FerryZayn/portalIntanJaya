@@ -61,13 +61,13 @@ class OPDModel extends Model
             ->getRow();
     }
 
-    // GET Details Artikel________________________________________________________________________________________________
-    // public function getArtikelDetailsOPD($id)
-    // {
-    //     return $this->db
-    //         ->table('opd_hdr')
-    //         ->where('id', $id)
-    //         ->get()
-    //         ->getRow();
-    // }
+
+
+    // Query menampilkan Hak Akses Hdr
+    public function hakakseshdr()
+    {
+        $query = $this->db->query("CALL hak_akses_hdr_view()");
+        $results = $query->getResult();
+        return $results;
+    }
 }

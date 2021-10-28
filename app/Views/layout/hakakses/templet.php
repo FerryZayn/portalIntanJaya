@@ -58,7 +58,7 @@
 
     </div>
 
-
+    <script src="<?= base_url(); ?>/admintemp/js/jquery.min.js"></script>
 
     <!--   Core JS Files   -->
     <script src="<?= base_url(); ?>/admintemp/js/core/jquery.3.2.1.min.js"></script>

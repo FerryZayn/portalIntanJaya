@@ -23,263 +23,45 @@
                         </div>
                         <div class="card-body">
 
-
                             <div class="row">
-                                <div class="col-5 col-md-2">
+                                <div class="col-5 col-md-3">
                                     <div class="nav flex-column nav-pills nav-secondary nav-pills-no-bd nav-pills-icons" id="v-pills-tab-with-icon" role="tablist" aria-orientation="vertical">
-                                        <a class="nav-link active" id="v-pills-super-user-tab-icons" data-toggle="pill" href="#super-user" role="tab" aria-controls="super-user" aria-selected="true">
-                                            <!-- <i class="flaticon-home"></i> -->
-                                            <i class="fas fa-user-lock"></i>
-                                            Super User
-                                        </a>
-                                        <a class="nav-link" id="v-pills-admin-pemda-tab-icons" data-toggle="pill" href="#admin-pemda" role="tab" aria-controls="admin-pemda" aria-selected="false">
-                                            <i class="flaticon-home"></i>
-                                            Admin Pemda
-                                        </a>
-                                        <a class="nav-link" id="v-pills-user-tab-icons" data-toggle="pill" href="#user" role="tab" aria-controls="user" aria-selected="false">
-                                            <i class="flaticon-user-4"></i>
-                                            User
-                                        </a>
-                                        <a class="nav-link" id="v-pills-admin-opd-tab-icons" data-toggle="pill" href="#admin-opd" role="tab" aria-controls="admin-opd" aria-selected="false">
-                                            <i class="flaticon-home"></i>
-                                            Admin OPD
-                                        </a>
+
+                                        <ul class="nav nav-pills flex-column">
+
+                                            <?php foreach ($data as $item) : ?>
+                                                <li class="nav-item click-modul" data-modul="<?= $item->id; ?>">
+                                                    <a class="nav-link">
+                                                        <i class="fas fa-user-lock"></i> <?= $item->nama_hak_akses; ?>
+                                                    </a>
+                                                </li>
+                                            <?php endforeach ?>
+
+
+                                        </ul>
                                     </div>
                                 </div>
+                                <div class="col-5 col-md-9">
 
+                                    <table class="table table-striped" id="tabel">
+                                        <thead>
+                                            <tr>
+                                                <th>MODUL AKSES</th>
+                                                <th><i class="fa fa-eye"></i></th>
+                                                <th><i class="fas fa-pencil-alt"></i></th>
+                                                <th><i class="fa fa-edit"></i></th>
+                                                <th><i class="fa fa-trash"></i></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="datasuratmasuk">
 
-                                <div class="col-7 col-md-10">
-                                    <div class="tab-content" id="v-pills-with-icon-tabContent">
-                                        <div class="tab-pane fade show active" id="super-user" role="tabpanel" aria-labelledby="v-pills-super-user-tab-icons">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <h3 class="card-title">MODUL HAK AKSES SUPER USER</h3>
-                                                </div>
-                                                <table class="table table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>MODUL AKSES</th>
-                                                            <th><i class="fa fa-eye"></i></th>
-                                                            <th><i class="fas fa-pencil-alt"></i></th>
-                                                            <th><i class="fa fa-edit"></i></th>
-                                                            <th><i class="fa fa-trash"></i></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>MENU SETTING</td>
-                                                            <td><input type="checkbox" class="view11" id="11" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert11" id="11" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update11" id="11" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete11" id="11" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view12" id="12" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert12" id="12" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update12" id="12" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete12" id="12" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view13" id="13" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert13" id="13" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update13" id="13" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete13" id="13" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view14" id="14" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert14" id="14" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update14" id="14" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete14" id="14" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view15" id="15" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert15" id="15" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update15" id="15" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete15" id="15" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
+                                        </tbody>
+                                    </table>
 
-
-                                        <div class="tab-pane fade" id="admin-pemda" role="tabpanel" aria-labelledby="v-pills-admin-pemda-tab-icons">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <h3 class="card-title">MODUL HAK AKSES ADMIN PEMDA</h3>
-                                                </div>
-
-
-                                                <table class="table table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>MODUL AKSES</th>
-                                                            <th><i class="fa fa-eye"></i></th>
-                                                            <th><i class="fas fa-pencil-alt"></i></th>
-                                                            <th><i class="fa fa-edit"></i></th>
-                                                            <th><i class="fa fa-trash"></i></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>MENU SETTING</td>
-                                                            <td><input type="checkbox" class="view11" id="11" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert11" id="11" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update11" id="11" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete11" id="11" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view12" id="12" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert12" id="12" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update12" id="12" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete12" id="12" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view13" id="13" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert13" id="13" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update13" id="13" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete13" id="13" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view14" id="14" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert14" id="14" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update14" id="14" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete14" id="14" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view15" id="15" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert15" id="15" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update15" id="15" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete15" id="15" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="v-pills-user-tab-icons">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <h3 class="card-title">MODUL HAK AKSES USER</h3>
-                                                </div>
-                                                <table class="table table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>MODUL AKSES</th>
-                                                            <th><i class="fa fa-eye"></i></th>
-                                                            <th><i class="fas fa-pencil-alt"></i></th>
-                                                            <th><i class="fa fa-edit"></i></th>
-                                                            <th><i class="fa fa-trash"></i></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>MENU SETTING</td>
-                                                            <td><input type="checkbox" class="view11" id="11" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert11" id="11" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update11" id="11" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete11" id="11" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view12" id="12" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert12" id="12" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update12" id="12" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete12" id="12" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view13" id="13" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert13" id="13" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update13" id="13" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete13" id="13" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view14" id="14" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert14" id="14" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update14" id="14" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete14" id="14" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view15" id="15" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert15" id="15" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update15" id="15" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete15" id="15" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-
-                                        <div class="tab-pane fade" id="admin-opd" role="tabpanel" aria-labelledby="v-pills-admin-opd-tab-icons">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <h3 class="card-title">MODUL HAK AKSES ADMIN OPD</h3>
-                                                </div>
-                                                <table class="table table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>MODUL AKSES</th>
-                                                            <th><i class="fa fa-eye"></i></th>
-                                                            <th><i class="fas fa-pencil-alt"></i></th>
-                                                            <th><i class="fa fa-edit"></i></th>
-                                                            <th><i class="fa fa-trash"></i></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>MENU SETTING</td>
-                                                            <td><input type="checkbox" class="view11" id="11" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert11" id="11" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update11" id="11" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete11" id="11" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view12" id="12" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert12" id="12" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update12" id="12" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete12" id="12" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view13" id="13" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert13" id="13" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update13" id="13" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete13" id="13" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view14" id="14" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert14" id="14" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update14" id="14" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete14" id="14" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MENU SETTING </td>
-                                                            <td><input type="checkbox" class="view15" id="15" name="is_view" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="insert15" id="15" name="is_insert" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="update15" id="15" name="is_update" value="1" checked=""></td>
-                                                            <td><input type="checkbox" class="delete15" id="15" name="is_delete" value="1" checked=""></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -288,12 +70,18 @@
     </div>
     <?= $this->include('/layout/hakakses/_footer');  ?>
 </div>
+<style type="text/css">
+    a:hover {
+        cursor: pointer;
+    }
+</style>
 
+<script src="<?= base_url(); ?>/admintemp/js/jquery.min.js"></script>
 
-<script>
+<script type="text/javascript">
     $(document).ready(function() {
 
-        dataportal()
+        dataesurat()
 
         $('#tabel');
 
@@ -302,7 +90,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: 'http://localhost:8080/administrator/hak-akses/jsonakses/' + modul,
+                url: '<?php echo base_url() ?>/jsonakses/' + modul,
                 async: true,
                 dataType: 'json',
                 success: function(data) {
@@ -333,10 +121,10 @@
             });
         });
 
-        function dataportal() {
+        function dataesurat() {
             $.ajax({
                 type: 'GET',
-                url: 'http://localhost:8080/administrator/hak-akses/jsonakses/1',
+                url: '<?php echo base_url() ?>/jsonakses/1',
                 async: false,
                 dataType: 'json',
                 success: function(data) {
@@ -374,8 +162,12 @@
         }
 
     });
+</script>
 
 
+
+
+<script>
     function crudView(data) {
 
         for (let i = 0; i < data.length; i++) {
@@ -383,6 +175,8 @@
                 var id = $(this).attr('id');
                 var name = $(this).attr('name');
                 var value = $(this).attr('value');
+                //console.log('Posting the following View: ', id, name, value);
+
                 $.ajax({
                     type: 'GET',
                     url: '/crudupdate/',
@@ -407,6 +201,8 @@
                 var id = $(this).attr('id');
                 var name = $(this).attr('name');
                 var value = $(this).attr('value');
+                //console.log('Posting the following Insert: ', id, name, value);
+
                 $.ajax({
                     type: 'GET',
                     url: '/crudupdate/',
@@ -430,6 +226,8 @@
                 var id = $(this).attr('id');
                 var name = $(this).attr('name');
                 var value = $(this).attr('value');
+                //console.log('Posting the following Insert: ', id, name, value);
+
                 $.ajax({
                     type: 'GET',
                     url: '/crudupdate/',
@@ -453,100 +251,8 @@
                 var id = $(this).attr('id');
                 var name = $(this).attr('name');
                 var value = $(this).attr('value');
-                $.ajax({
-                    type: 'GET',
-                    url: '/crudupdate/',
-                    dataType: 'json',
-                    data: {
-                        'id': id,
-                        'name': name,
-                        'value': value,
-                    },
-                });
+                //console.log('Posting the following Insert: ', id, name, value);
 
-            });
-
-        }
-    }
-
-
-    function crudView(data) {
-
-        for (let i = 0; i < data.length; i++) {
-            $('.view' + data[i].id).click(function() {
-                var id = $(this).attr('id');
-                var name = $(this).attr('name');
-                var value = $(this).attr('value');
-                $.ajax({
-                    type: 'GET',
-                    url: '/crudupdate/',
-                    dataType: 'json',
-                    data: {
-                        'id': id,
-                        'name': name,
-                        'value': value,
-                    },
-                });
-
-            });
-
-        }
-    }
-
-
-    function crudInsert(data) {
-
-        for (let i = 0; i < data.length; i++) {
-            $('.insert' + data[i].id).click(function() {
-                var id = $(this).attr('id');
-                var name = $(this).attr('name');
-                var value = $(this).attr('value');
-                $.ajax({
-                    type: 'GET',
-                    url: '/crudupdate/',
-                    dataType: 'json',
-                    data: {
-                        'id': id,
-                        'name': name,
-                        'value': value,
-                    },
-                });
-
-            });
-
-        }
-    }
-
-    function crudUpdate(data) {
-
-        for (let i = 0; i < data.length; i++) {
-            $('.update' + data[i].id).click(function() {
-                var id = $(this).attr('id');
-                var name = $(this).attr('name');
-                var value = $(this).attr('value');
-                $.ajax({
-                    type: 'GET',
-                    url: '/crudupdate/',
-                    dataType: 'json',
-                    data: {
-                        'id': id,
-                        'name': name,
-                        'value': value,
-                    },
-                });
-
-            });
-
-        }
-    }
-
-    function crudDelete(data) {
-
-        for (let i = 0; i < data.length; i++) {
-            $('.delete' + data[i].id).click(function() {
-                var id = $(this).attr('id');
-                var name = $(this).attr('name');
-                var value = $(this).attr('value');
                 $.ajax({
                     type: 'GET',
                     url: '/crudupdate/',
@@ -563,4 +269,7 @@
         }
     }
 </script>
-<?= $this->endSection() ?>
+
+
+
+<?= $this->endSection(); ?>
