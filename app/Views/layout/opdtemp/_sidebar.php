@@ -74,8 +74,8 @@
                     </a>
                     <div class="collapse" id="forms">
                         <ul class="nav nav-collapse">
-                            <li><a href="/administrator/portal-opd/berita"><i class="fas fas fa-angle-right"></i> Berita</a></li>
-                            <li><a href="/administrator/portal-opd/informasi"><i class="fas fas fa-angle-right"></i> Informasi</a></li>
+                            <li><a href="/administrator/portal-opd/berita/v_berita"><i class="fas fas fa-angle-right"></i> Berita</a></li>
+                            <li><a href="/administrator/portal-opd/informasi/v_informasi"><i class="fas fas fa-angle-right"></i> Informasi</a></li>
                             <li><a href="/administrator/portal-opd/album-foto"><i class="fas fas fa-angle-right"></i> Album Foto</a></li>
                             <li><a href="/administrator/portal-opd/album-video"><i class="fas fas fa-angle-right"></i> Album Video</a></li>
                             <li><a href="/administrator/portal-opd/visi"><i class="fas fas fa-angle-right"></i> Visi</a></li>

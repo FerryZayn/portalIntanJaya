@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title fw-bold"><i class="fas fa-key"></i> HAK AKSES </h4>
+                                <h4 class="card-title fw-bold"><i class="fas fa-key"></i> SETTING HAK AKSES </h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -26,40 +26,40 @@
                             <div class="row">
                                 <div class="col-5 col-md-3">
                                     <div class="nav flex-column nav-pills nav-secondary nav-pills-no-bd nav-pills-icons" id="v-pills-tab-with-icon" role="tablist" aria-orientation="vertical">
-
-                                        <ul class="nav nav-pills flex-column">
-
-                                            <?php foreach ($data as $item) : ?>
+                                        <?php foreach ($data as $item) : ?>
+                                            <ul class="nav nav-pills flex-column">
                                                 <li class="nav-item click-modul" data-modul="<?= $item->id; ?>">
-                                                    <a class="nav-link">
+                                                    <a class="nav-link bg-danger text-white">
                                                         <i class="fas fa-user-lock"></i> <?= $item->nama_hak_akses; ?>
                                                     </a>
                                                 </li>
-                                            <?php endforeach ?>
-
-
-                                        </ul>
+                                            </ul>
+                                        <?php endforeach ?>
                                     </div>
                                 </div>
                                 <div class="col-5 col-md-9">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-head-bg-danger mt-4">
+                                            <thead>
+                                                <tr>
+                                                    <th>MODUL AKSES</th>
+                                                    <th><i class="fa fa-eye"></i></th>
+                                                    <th><i class="fas fa-pencil-alt"></i></th>
+                                                    <th><i class="fa fa-edit"></i></th>
+                                                    <th><i class="fa fa-trash"></i></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="settings">
 
-                                    <table class="table table-striped" id="tabel">
-                                        <thead>
-                                            <tr>
-                                                <th>MODUL AKSES</th>
-                                                <th><i class="fa fa-eye"></i></th>
-                                                <th><i class="fas fa-pencil-alt"></i></th>
-                                                <th><i class="fa fa-edit"></i></th>
-                                                <th><i class="fa fa-trash"></i></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="datasuratmasuk">
-
-                                        </tbody>
-                                    </table>
-
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
+
+
+
+
 
 
                         </div>
@@ -90,7 +90,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: '<?php echo base_url() ?>/jsonakses/' + modul,
+                url: '<?php echo base_url() ?>/ambilakses/' + modul,
                 async: true,
                 dataType: 'json',
                 success: function(data) {
@@ -111,7 +111,7 @@
                             '<td><input type = "checkbox" class="delete' + data[i].id + '" id="' + data[i].id + '"  name="is_delete"  value ="' + data[i].is_delete + '"  ' + is_delete + '></td>' +
                             '</tr>';
                     }
-                    $('#datasuratmasuk').html(html);
+                    $('#settings').html(html);
                     crudView(data);
                     crudInsert(data);
                     crudUpdate(data);
@@ -124,7 +124,7 @@
         function dataesurat() {
             $.ajax({
                 type: 'GET',
-                url: '<?php echo base_url() ?>/jsonakses/1',
+                url: '<?php echo base_url() ?>/ambilakses/1',
                 async: false,
                 dataType: 'json',
                 success: function(data) {
@@ -148,7 +148,7 @@
 
 
                     }
-                    $('#datasuratmasuk').html(html);
+                    $('#settings').html(html);
                     crudView(data);
                     crudInsert(data);
                     crudUpdate(data);
@@ -169,17 +169,14 @@
 
 <script>
     function crudView(data) {
-
         for (let i = 0; i < data.length; i++) {
             $('.view' + data[i].id).click(function() {
                 var id = $(this).attr('id');
                 var name = $(this).attr('name');
                 var value = $(this).attr('value');
-                //console.log('Posting the following View: ', id, name, value);
-
                 $.ajax({
                     type: 'GET',
-                    url: '/crudupdate/',
+                    url: '/AdminController/crudupdate/',
                     dataType: 'json',
                     data: {
                         'id': id,
@@ -201,11 +198,9 @@
                 var id = $(this).attr('id');
                 var name = $(this).attr('name');
                 var value = $(this).attr('value');
-                //console.log('Posting the following Insert: ', id, name, value);
-
                 $.ajax({
                     type: 'GET',
-                    url: '/crudupdate/',
+                    url: '/AdminController/crudupdate/',
                     dataType: 'json',
                     data: {
                         'id': id,
@@ -226,11 +221,9 @@
                 var id = $(this).attr('id');
                 var name = $(this).attr('name');
                 var value = $(this).attr('value');
-                //console.log('Posting the following Insert: ', id, name, value);
-
                 $.ajax({
                     type: 'GET',
-                    url: '/crudupdate/',
+                    url: '/AdminController/crudupdate/',
                     dataType: 'json',
                     data: {
                         'id': id,
@@ -251,11 +244,9 @@
                 var id = $(this).attr('id');
                 var name = $(this).attr('name');
                 var value = $(this).attr('value');
-                //console.log('Posting the following Insert: ', id, name, value);
-
                 $.ajax({
                     type: 'GET',
-                    url: '/crudupdate/',
+                    url: '/AdminController/crudupdate/',
                     dataType: 'json',
                     data: {
                         'id': id,
@@ -269,7 +260,4 @@
         }
     }
 </script>
-
-
-
 <?= $this->endSection(); ?>

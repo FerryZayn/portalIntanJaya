@@ -46,23 +46,23 @@
                                     <tbody>
                                         <?php
                                         $i = 1;
-                                        foreach ($v_informasi as $v_informasi) :
+                                        foreach ($v_informasi as $informasi) :
                                         ?>
 
                                             <tr>
                                                 <td><?= $i++; ?></td>
-                                                <td><?= $v_informasi['judul']; ?></td>
-                                                <td><?= $v_informasi['nama_pengarang']; ?></td>
-                                                <td><?= $v_informasi['file_gambar']; ?></td>
+                                                <td><?= $informasi['judul']; ?></td>
+                                                <td><?= $informasi['nama_pengarang']; ?></td>
+                                                <td><?= $informasi['file_gambar']; ?></td>
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <a href="/administrator/portal-opd/<?= $v_informasi['id']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
+                                                        <a href="/administrator/portal-opd/<?= $informasi['id']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
-                                                        <a href="/administrator/portal-opd/artikel-edit/<?= $v_informasi['id']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
+                                                        <a href="/administrator/portal-opd/artikel-edit/<?= $informasi['id']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
                                                             <i class="fa fa-edit"></i>
                                                         </a> &nbsp;
-                                                        <form action="<?= base_url() ?>/administrator/portal-opd/<?= $v_informasi['id']; ?>" method="POST" class="d-inline">
+                                                        <form action="<?= base_url() ?>/administrator/portal-opd/<?= $informasi['id']; ?>" method="POST" class="d-inline">
                                                             <?= csrf_field(); ?>
                                                             <input type="hidden" name="_method" value="DELETE">
                                                             <button type="submit" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Hapus item ini..."><i class="fa fa-trash"></i>

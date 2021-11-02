@@ -120,14 +120,15 @@ class OPDController extends BaseController
 
     public function vBerita()
     {
-        $id = $this->session->id;
+        $opd_hdr_id = $this->session->id;
+        // $opd_hdr_id = 1;
         $tipe_artikel_id = 1;
 
-        $vartikel = $this->db->query("call artikel_view('$id', '$tipe_artikel_id')")->getResultArray();
+        $vartikel = $this->db->query("call artikel_view_adm('$opd_hdr_id', '$tipe_artikel_id')")->getResultArray();
         $data = [
             'v_artikel' => $vartikel,
         ];
-        return view('/administrator/portal-opd/berita', $data);
+        return view('/administrator/portal-opd/berita/v_berita', $data);
     }
 
     public function tambahArtikel()
@@ -219,21 +220,22 @@ class OPDController extends BaseController
 
     public function vInformasi()
     {
-        $id = $this->session->id;
+        // $id = $this->session->id;
+        $opd_hdr_id = 1;
         $tipe_artikel_id = 2;
 
-        $vinformasi = $this->db->query("call artikel_view('$id', '$tipe_artikel_id')")->getResultArray();
+        $vinformasi = $this->db->query("call artikel_view_adm('$opd_hdr_id', '$tipe_artikel_id')")->getResultArray();
         $data = [
             'v_informasi' => $vinformasi,
         ];
-        return view('/administrator/portal-opd/informasi', $data);
+        return view('/administrator/portal-opd/informasi/v_informasi', $data);
     }
     public function vAlbumfoto()
     {
-        $id = $this->session->id;
+        $opd_hdr_id = 1;
         $tipe_artikel_id = 3;
 
-        $albumfoto = $this->db->query("call artikel_view('$id', '$tipe_artikel_id')")->getResultArray();
+        $albumfoto = $this->db->query("call artikel_view_adm('$opd_hdr_id', '$tipe_artikel_id')")->getResultArray();
         $data = [
             'v_albumfoto' => $albumfoto,
         ];

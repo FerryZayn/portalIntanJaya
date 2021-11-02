@@ -47,10 +47,10 @@ $routes->get('/content/(:any)', 'ContentController::detailBerita/$1');
 //Administrator Portal Login_____________________________________________________________________________________________________
 $routes->get('/auth/login', 'AuthController::index');
 
-//Admin Portal dan Hak Akses
+//Hak Akses
 $routes->get('/administrator/index', 'AdminController::index', ['filter' => 'auth']);
 $routes->get('/administrator/hak-akses', 'AdminController::hakAkses', ['filter' => 'auth']);
-$routes->get('jsonakses/(:any)', 'AdminController::jsonhakaksesview/$1/$2', ['filter' => 'auth']);
+$routes->get('ambilakses/(:any)', 'AdminController::settingChecked/$1/$2', ['filter' => 'auth']);
 
 //Admin Portal Master_____________________________________________________________________________________________________________
 $routes->get('/administrator/master/dashboard', 'MasterController::index', ['filter' => 'auth']);
@@ -112,7 +112,7 @@ $routes->get('/administrator/portal-pemda/album-video/(:any)', 'PemdaController:
 
 
 //AdminPortal OPD Berita_____________________________________________________________________________________________________________________________
-$routes->get('/administrator/portal-opd/berita', 'OPDController::vBerita', ['filter' => 'auth']);
+$routes->get('/administrator/portal-opd/berita/v_berita', 'OPDController::vBerita', ['filter' => 'auth']);
 $routes->get('/administrator/portal-opd/artikel-tambah', 'OPDController::tambahArtikel', ['filter' => 'auth']);
 $routes->get('/administrator/portal-opd/artikel-edit/(:segment)', 'OPDController::artikelEdit/$1', ['filter' => 'auth']);
 $routes->delete('/administrator/portal-opd/(:num)', 'OPDController::hapusOpdArtikel/$1', ['filter' => 'auth']);
@@ -120,7 +120,7 @@ $routes->delete('/administrator/portal-opd/(:num)', 'OPDController::hapusOpdArti
 
 
 //AdminPortal OPD Informasi_____________________________________________________________________________________________________________________________
-$routes->get('/administrator/portal-opd/informasi', 'OPDController::vInformasi', ['filter' => 'auth']);
+$routes->get('/administrator/portal-opd/informasi/v_informasi', 'OPDController::vInformasi', ['filter' => 'auth']);
 // $routes->get('/administrator/portal-opd/artikel-tambah', 'OPDController::tambahArtikel', ['filter' => 'auth']);
 // $routes->get('/administrator/portal-opd/artikel-edit/(:segment)', 'OPDController::artikelEdit/$1', ['filter' => 'auth']);
 // $routes->delete('/administrator/portal-opd/(:num)', 'OPDController::hapusOpdArtikel/$1', ['filter' => 'auth']);
@@ -146,7 +146,6 @@ $routes->get('/administrator/portal-opd/(:any)', 'OPDController::opdDetail/$1', 
 
 // Content OPD
 $routes->get('website-opd', 'OPDController::websiteOPD');
-// $routes->get('(:any)', 'OPDController::callOPDname/$1', ['filter' => 'auth']);
 
 
 
