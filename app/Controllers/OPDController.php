@@ -44,7 +44,7 @@ class OPDController extends BaseController
         $data = [
             'v_artikel' => $vartikel,
         ];
-        return view('website-opd', $data);
+        return view('/opd/home', $data);
     }
 
 

@@ -124,7 +124,7 @@ $routes->get('/administrator/portal-opd/data-artikel/(:any)', 'OPDController::de
 
 
 
-// =============================================================== OPD PORTAL ========================================================================// 
+// =========================================== OPD PORTAL ADMIN ==================================================// 
 
 //AdminPortal OPD Informasi_____________________________________________________________________________________________________________________________
 $routes->get('/administrator/portal-opd/informasi/v_informasi', 'OPDController::vInformasi', ['filter' => 'auth']);
@@ -153,9 +153,9 @@ $routes->delete('/administrator/portal-opd/(:num)', 'OPDController::opdHapus/$1'
 $routes->get('/administrator/portal-opd/(:any)', 'OPDController::opdDetail/$1', ['filter' => 'auth']);
 
 
-
+// =========================================== OPD PORTAL CONTENT ==================================================// 
 // Content OPD
-$routes->get('website-opd', 'OPDController::websiteOPD');
+$routes->get('/website-opd/(:any)', 'OPDController::websiteOPD/$1');
 
 
 
