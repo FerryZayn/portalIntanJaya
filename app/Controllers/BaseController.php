@@ -9,6 +9,8 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+use CodeIgniter\Database\BaseBuilder;
+
 /**
  * Class BaseController
  *
@@ -36,7 +38,7 @@ class BaseController extends Controller
 	 *
 	 * @var array
 	 */
-	protected $helpers = [];
+	protected $helpers = ['url', 'form', 'file'];
 
 	/**
 	 * Constructor.
@@ -55,15 +57,23 @@ class BaseController extends Controller
 		//--------------------------------------------------------------------
 		// E.g.: $this->session = \Config\Services::session();
 		session();
+
 		$this->db = \Config\Database::connect();
+
 		$this->session = \config\services::session();
+
 		$this->validation =  \Config\Services::validation();
 
-		// $this->pegawai = new \App\Models\PegawaiModel;
-		// $this->jabatan = new \App\Models\JabatanModel;
-		// $this->opddtl = new \App\Models\OpddtlModel;
-		// $this->master = new \App\Models\MasterModel;
-		// $this->user = new \App\Models\UserModel;
-		// $this->token = new \App\Models\TokenModel;
+		$this->security = \Config\Services::security();
+
+
+
+
+		$this->pegawai = new \App\Models\PegawaiModels;
+		$this->jabatan = new \App\Models\JabatanModels;
+		$this->user = new \App\Models\UserModels;
+		$this->token = new \App\Models\TokenModels;
+
+		$this->procedure = new \App\Models\ProcedureModel;
 	}
 }

@@ -30,6 +30,13 @@ class AdminController extends BaseController
 		];
 		return view('/administrator/hak-akses', $data);
 	}
+	public function hakAksesview()
+	{
+		// $data = [
+		// 	'data' => $this->opdModel->daftarHakakses(),
+		// ];
+		return view('/administrator/view-hak-akses');
+	}
 
 
 	function settingChecked($hah_id)
@@ -39,24 +46,24 @@ class AdminController extends BaseController
 	}
 
 
-	// public function hakAksess($role, $user)
-	// {
-	// 	$query = $this->db->query("CALL hak_akses_view('$role','$user')");
-	// 	$results = $query->getResult();
-	// 	return $results;
-	// }
-	// public function iscrud($user)
-	// {
-	// 	$query = $this->db->query("CALL cek_hak_akses('$user')");
-	// 	$results = $query->getResult();
-	// 	return $results;
-	// }
-	// public function hakakseshdr()
-	// {
-	// 	$query = $this->db->query("CALL hak_akses_hdr_view()");
-	// 	$results = $query->getResult();
-	// 	return $results;
-	// }
+	public function hakAksess($role, $user)
+	{
+		$query = $this->db->query("CALL hak_akses_view('$role','$user')");
+		$results = $query->getResult();
+		return $results;
+	}
+	public function iscrud($user)
+	{
+		$query = $this->db->query("CALL cek_hak_akses('$user')");
+		$results = $query->getResult();
+		return $results;
+	}
+	public function hakakseshdr()
+	{
+		$query = $this->db->query("CALL hak_akses_hdr_view()");
+		$results = $query->getResult();
+		return $results;
+	}
 
 
 	// Hak Akses

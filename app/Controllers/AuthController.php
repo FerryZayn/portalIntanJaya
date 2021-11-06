@@ -34,14 +34,12 @@ class AuthController extends BaseController
 					'required' => 'Email Harus diisi!'
 				]
 			],
-
 			'password' => [
 				'rules' => 'required',
 				'errors' => [
 					'required' => 'Password Harus diisi!'
 				]
 			],
-
 		]);
 
 		$isDataValid = $this->validation->withRequest($this->request)->run();
@@ -52,12 +50,11 @@ class AuthController extends BaseController
 			$ipAddress = $this->get_client_ip();
 			$result = $this->db->query("CALL login('$email','$password','$ipAddress')")->getRow();
 			if ($result->n == 50) {
-
 				$ses_data = [
 					'id'       =>  $result->usr_name,
 					'nama_pegawai' => $result->usr_name2,
-					// 'email'         => $result->email,
-					// 'nama_opd' => $result->opd_n,
+					// 'email' => $result->user_email,
+					// 'nama_opd' => $result->nama_opd,
 					// 'opd_id' => $result->opd_id,
 					'logged_in'     => TRUE
 				];

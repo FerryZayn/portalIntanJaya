@@ -33,6 +33,12 @@
                         <p>Setting Hak Akses</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/administrator/view-hak-akses">
+                        <i class="fas fa-home"></i>
+                        <p>View Hak Akses</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

@@ -67,6 +67,7 @@
                         <p>OPD</p>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#forms">
                         <i class="fas fa-layer-group"></i>
@@ -76,11 +77,18 @@
                         <ul class="nav nav-collapse">
                             <li><a href="/administrator/portal-opd/berita/v_berita"><i class="fas fas fa-angle-right"></i> Berita</a></li>
                             <li><a href="/administrator/portal-opd/informasi/v_informasi"><i class="fas fas fa-angle-right"></i> Informasi</a></li>
-                            <li><a href="/administrator/portal-opd/album-foto"><i class="fas fas fa-angle-right"></i> Album Foto</a></li>
-                            <li><a href="/administrator/portal-opd/album-video"><i class="fas fas fa-angle-right"></i> Album Video</a></li>
-                            <li><a href="/administrator/portal-opd/visi"><i class="fas fas fa-angle-right"></i> Visi</a></li>
-                            <li><a href="/administrator/portal-opd/misi"><i class="fas fas fa-angle-right"></i> Misi</a></li>
-                            <li><a href="/administrator/portal-opd/slide-show"><i class="fas fas fa-angle-right"></i> Slide Show</a></li>
+                            <li><a href="/administrator/portal-opd/foto/v_foto"><i class="fas fas fa-angle-right"></i> Album Foto</a></li>
+                            <li><a href="/administrator/portal-opd/video/v_video"><i class="fas fas fa-angle-right"></i> Album Video</a></li>
+                            <li><a href="/administrator/portal-opd/visi/v_visi"><i class="fas fas fa-angle-right"></i> Visi</a></li>
+                            <li><a href="/administrator/portal-opd/misi/v_misi"><i class="fas fas fa-angle-right"></i> Misi</a></li>
+                            <li><a href="/administrator/portal-opd/slide/v_slide"><i class="fas fas fa-angle-right"></i> Slide Show</a></li>
+                            <?php //foreach ($v_tipeartikel as $ta) : 
+                            ?>
+                            <!-- <li><a href="/administrator/portal-opd/data-artikel/<?php // $ta['id']; 
+                                                                                        ?>"><i class="fas fas fa-angle-right"></i> <?php // $ta['tipe']; 
+                                                                                                                                    ?></a></li> -->
+                            <?php //endforeach; 
+                            ?>
                         </ul>
                     </div>
                 </li>

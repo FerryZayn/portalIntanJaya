@@ -10,7 +10,7 @@ class OPDController extends BaseController
 {
     protected $pemdaModel;
     protected $opdModel;
-    protected $tipertikelModel;
+    protected $tipeArtikelModel;
     public function __construct()
     {
         $this->pemdaModel = new PemdaModel();
@@ -52,7 +52,10 @@ class OPDController extends BaseController
     // Admin Dashboard________________________________________________________________________________________________
     public function indexAdmin()
     {
-        return view('/administrator/portal-opd/dashboard');
+        $data = [
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
+        ];
+        return view('/administrator/portal-opd/dashboard', $data);
     }
 
     //Admin Link OPD________________________________________________________________________________________________
@@ -60,6 +63,7 @@ class OPDController extends BaseController
     {
         $data = [
             'opdtampil' => $this->opdModel->getSemuaOPD(),
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
         ];
         return view('/administrator/portal-opd/v_opd', $data);
     }
@@ -121,15 +125,80 @@ class OPDController extends BaseController
     public function vBerita()
     {
         $opd_hdr_id = $this->session->id;
-        // $opd_hdr_id = 1;
-        $tipe_artikel_id = 1;
-
-        $vartikel = $this->db->query("call artikel_view_adm('$opd_hdr_id', '$tipe_artikel_id')")->getResultArray();
+        $vartikel = $this->db->query("call artikel_view_adm('$opd_hdr_id', '1')")->getResultArray();
         $data = [
             'v_artikel' => $vartikel,
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
         ];
         return view('/administrator/portal-opd/berita/v_berita', $data);
     }
+
+    public function vInformasi()
+    {
+        $opd_hdr_id = $this->session->id;
+        $vartikel = $this->db->query("call artikel_view_adm('$opd_hdr_id', '2')")->getResultArray();
+        $data = [
+            'v_artikel' => $vartikel,
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
+        ];
+        return view('/administrator/portal-opd/informasi/v_informasi', $data);
+    }
+    public function vFoto()
+    {
+        $opd_hdr_id = $this->session->id;
+        $vartikel = $this->db->query("call artikel_view_adm('$opd_hdr_id', '3')")->getResultArray();
+        $data = [
+            'v_artikel' => $vartikel,
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
+        ];
+        return view('/administrator/portal-opd/foto/v_foto', $data);
+    }
+    public function vVideo()
+    {
+        $opd_hdr_id = $this->session->id;
+        $vartikel = $this->db->query("call artikel_view_adm('$opd_hdr_id', '4')")->getResultArray();
+        $data = [
+            'v_artikel' => $vartikel,
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
+        ];
+        return view('/administrator/portal-opd/video/v_video', $data);
+    }
+    public function vVisi()
+    {
+        $opd_hdr_id = $this->session->id;
+        $vartikel = $this->db->query("call artikel_view_adm('$opd_hdr_id', '5')")->getResultArray();
+        $data = [
+            'v_artikel' => $vartikel,
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
+        ];
+        return view('/administrator/portal-opd/visi/v_visi', $data);
+    }
+    public function vMisi()
+    {
+        $opd_hdr_id = $this->session->id;
+        $vartikel = $this->db->query("call artikel_view_adm('$opd_hdr_id', '6')")->getResultArray();
+        $data = [
+            'v_artikel' => $vartikel,
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
+        ];
+        return view('/administrator/portal-opd/misi/v_misi', $data);
+    }
+    public function vSlide()
+    {
+        $opd_hdr_id = $this->session->id;
+        $vartikel = $this->db->query("call artikel_view_adm('$opd_hdr_id', '7')")->getResultArray();
+        $data = [
+            'v_artikel' => $vartikel,
+            'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
+        ];
+        return view('/administrator/portal-opd/slide/v_slide', $data);
+    }
+
+
+
+
+
+
 
     public function tambahArtikel()
     {
@@ -218,18 +287,7 @@ class OPDController extends BaseController
         return redirect()->to('/administrator/portal-opd/dashboard');
     }
 
-    public function vInformasi()
-    {
-        // $id = $this->session->id;
-        $opd_hdr_id = 1;
-        $tipe_artikel_id = 2;
 
-        $vinformasi = $this->db->query("call artikel_view_adm('$opd_hdr_id', '$tipe_artikel_id')")->getResultArray();
-        $data = [
-            'v_informasi' => $vinformasi,
-        ];
-        return view('/administrator/portal-opd/informasi/v_informasi', $data);
-    }
     public function vAlbumfoto()
     {
         $opd_hdr_id = 1;
@@ -239,6 +297,6 @@ class OPDController extends BaseController
         $data = [
             'v_albumfoto' => $albumfoto,
         ];
-        return view('/administrator/portal-opd/album-foto', $data);
+        return view('/administrator/portal-opd/foto', $data);
     }
 }

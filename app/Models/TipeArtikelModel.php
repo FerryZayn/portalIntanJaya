@@ -17,5 +17,11 @@ class TipeArtikelModel extends Model
             return $this->findAll();
         }
         return $this->where(['id' => $id])->first();
+        // return $this->db
+        //     ->table('tipe_artikel')
+        //     // ->where(['is_active' => 1])
+        //     // ->orderBy('RA
+        //     ->get()
+        //     ->getResultArray();
     }
 }

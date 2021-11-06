@@ -43,10 +43,10 @@
                                             <thead>
                                                 <tr>
                                                     <th>MODUL AKSES</th>
-                                                    <th><i class="fa fa-eye"></i></th>
-                                                    <th><i class="fas fa-pencil-alt"></i></th>
-                                                    <th><i class="fa fa-edit"></i></th>
-                                                    <th><i class="fa fa-trash"></i></th>
+                                                    <th><i class="fa fa-eye"></i> View</th>
+                                                    <th><i class="fas fa-pencil-alt"></i> Input</th>
+                                                    <th><i class="fa fa-edit"></i> Edit</th>
+                                                    <th><i class="fa fa-trash"></i> Hapus</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="settings">
@@ -80,29 +80,22 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-
         dataesurat()
-
         $('#tabel');
-
         $('.click-modul').on('click', function() {
             const modul = $(this).data('modul');
-
             $.ajax({
                 type: 'GET',
                 url: '<?php echo base_url() ?>/ambilakses/' + modul,
                 async: true,
                 dataType: 'json',
                 success: function(data) {
-
                     var html = '';
-
                     for (var i = 0; i < data.length; i++) {
                         var is_view = (data[i].is_view == 1) ? "checked" : "";
                         var is_insert = (data[i].is_insert == 1) ? "checked" : "";
                         var is_update = (data[i].is_update == 1) ? "checked" : "";
                         var is_delete = (data[i].is_delete == 1) ? "checked" : "";
-
                         html += '<tr>' +
                             '<td>' + data[i].nama_modul + '</td>' +
                             '<td><input type = "checkbox" class="view' + data[i].id + '" id="' + data[i].id + '"  name="is_view"  value ="' + data[i].is_view + '"  ' + is_view + '></td>' +
@@ -117,7 +110,6 @@
                     crudUpdate(data);
                     crudDelete(data);
                 }
-
             });
         });
 
@@ -128,16 +120,12 @@
                 async: false,
                 dataType: 'json',
                 success: function(data) {
-                    // console.log(data);
                     var html = '';
-
                     for (var i = 0; i < data.length; i++) {
                         var is_view = (data[i].is_view == 1) ? "checked" : "";
                         var is_insert = (data[i].is_insert == 1) ? "checked" : "";
                         var is_update = (data[i].is_update == 1) ? "checked" : "";
                         var is_delete = (data[i].is_delete == 1) ? "checked" : "";
-
-
                         html += '<tr>' +
                             '<td>' + data[i].nama_modul + '</td>' +
                             '<td><input type = "checkbox" class="view' + data[i].id + '" id="' + data[i].id + '"  name="is_view"  value ="' + data[i].is_view + '"  ' + is_view + '></td>' +
@@ -145,27 +133,17 @@
                             '<td><input type = "checkbox" class="update' + data[i].id + '" id="' + data[i].id + '"  name="is_update"  value ="' + data[i].is_update + '"  ' + is_update + '></td>' +
                             '<td><input type = "checkbox" class="delete' + data[i].id + '" id="' + data[i].id + '"  name="is_delete"  value ="' + data[i].is_delete + '"  ' + is_delete + '></td>' +
                             '</tr>';
-
-
                     }
                     $('#settings').html(html);
                     crudView(data);
                     crudInsert(data);
                     crudUpdate(data);
                     crudDelete(data);
-
-
-
                 }
-
             });
         }
-
     });
 </script>
-
-
-
 
 <script>
     function crudView(data) {
@@ -184,15 +162,12 @@
                         'value': value,
                     },
                 });
-
             });
 
         }
     }
 
-
     function crudInsert(data) {
-
         for (let i = 0; i < data.length; i++) {
             $('.insert' + data[i].id).click(function() {
                 var id = $(this).attr('id');
@@ -208,14 +183,11 @@
                         'value': value,
                     },
                 });
-
             });
-
         }
     }
 
     function crudUpdate(data) {
-
         for (let i = 0; i < data.length; i++) {
             $('.update' + data[i].id).click(function() {
                 var id = $(this).attr('id');
@@ -231,14 +203,11 @@
                         'value': value,
                     },
                 });
-
             });
-
         }
     }
 
     function crudDelete(data) {
-
         for (let i = 0; i < data.length; i++) {
             $('.delete' + data[i].id).click(function() {
                 var id = $(this).attr('id');
@@ -254,9 +223,7 @@
                         'value': value,
                     },
                 });
-
             });
-
         }
     }
 </script>

@@ -61,13 +61,22 @@ class OPDModel extends Model
             ->getRow();
     }
 
-
-
-    // Query menampilkan Hak Akses Hdr
     public function hakakseshdr()
     {
         $query = $this->db->query("CALL hak_akses_hdr_view()");
         $results = $query->getResult();
         return $results;
+    }
+
+
+    public function getartikelDetail()
+    {
+        // $opd_hdr_id = 2;
+        // $tipe_artikel_id = 1;
+        // return $this->db
+        //     ->table('artikel')
+        //     ->where(['opd_hdr_id' => $opd_hdr_id, 'tipe_artikel_id' => $tipe_artikel_id])
+        //     ->get()
+        //     ->getRow();
     }
 }
