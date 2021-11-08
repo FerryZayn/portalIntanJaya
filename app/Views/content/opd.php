@@ -33,7 +33,7 @@
 															<p align="left">
 																<?php $i = 1; ?>
 																<?php foreach ($v_contentopd as $opd) : ?>
-																	<a href="<?= base_url(); ?>/website-opd/<?= $opd['kode']; ?>" target="_blank"><?= $i++; ?>. <?= $opd['nama_opd']; ?></a><br />
+																	<a href="<?= base_url(); ?>/website-opd/<?= $opd['id']; ?>" target="_blank"><?= $i++; ?>. <?= $opd['nama_opd']; ?></a><br />
 																<?php endforeach; ?>
 															</p>
 														</div>

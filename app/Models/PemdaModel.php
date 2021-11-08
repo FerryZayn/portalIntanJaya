@@ -96,6 +96,8 @@ class PemdaModel extends Model
             ->orderBy('RAND ()')
             ->get()
             ->getResultArray();
+
+        // ----------------
         // $p_input_id = 1; 
         // $query = $this->db->query("call berita_view_adm($p_input_id)");
         // $results = $query->getResultArray();
@@ -301,7 +303,7 @@ class PemdaModel extends Model
     {
         return $this->db
             ->table('artikel')
-            ->orderBy('RAND ()')
+            ->orderBy('RAND()')
             ->limit(1, 0)
             ->get()
             ->getResultArray();

@@ -19,7 +19,7 @@ class OPDController extends BaseController
         $this->db = \Config\Database::connect();
     }
 
-    // Content
+    // Content___________________________________________________________________________________________________________
     public function index()
     {
         $data = [
@@ -37,12 +37,12 @@ class OPDController extends BaseController
     // Content Website OPD_____________________________________________________________________________________________
     public function websiteOPD()
     {
-        $id = $this->session->id;
-        $tipe_artikel_id = 1;
+        $opd_id = 1;
+        $tipe = 1;
 
-        $vartikel = $this->db->query("call artikel_view('$id', '$tipe_artikel_id')")->getResultArray();
+        $vartikel = $this->db->query("call artikel_view($opd_id, $tipe) ")->getResultArray();
         $data = [
-            'v_artikel' => $vartikel,
+            'v_slide' => $vartikel,
         ];
         return view('/opd/home', $data);
     }

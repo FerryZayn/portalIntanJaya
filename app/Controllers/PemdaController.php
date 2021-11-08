@@ -174,9 +174,12 @@ class PemdaController extends BaseController
     //Berita__________________________________________________________________________________________________________
     public function berita()
     {
+
+        $berita = $this->db->query("CALL berita_view_adm(1)")->getResultArray();
         $data = [
             'title' => 'Master Data Berita',
-            'v_berita' => $this->pemdaModel->tampilBerita(),
+            // 'v_berita' => $this->pemdaModel->tampilBerita(),
+            'v_berita' => $berita,
         ];
         return view('/administrator/portal-pemda/berita/home', $data);
     }

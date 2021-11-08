@@ -9,14 +9,14 @@
                                 <div data-controls="{dot_nav_show:, slider_dot_show:yes, auto_nav_slide:, item_count:3, widget_id:c7ca90f}" class="main-slider">
                                     <div class="swiper-container">
                                         <div class="swiper-wrapper">
-                                            <?php foreach ($v_artikel as $opd) : ?>
+                                            <?php foreach ($v_slide as $ss) : ?>
                                                 <div class="swiper-slide ts-overlay-style featured-post  post-361 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion tag-food">
                                                     <div data-bg="websiteopd/img/1.jpg" class="item item-before rocket-lazyload">
-                                                        <a class="img-link" href="#"><?= $opd['judul']; ?></a>
+                                                        <a class="img-link" href="#"><?= $ss['judul']; ?></a>
                                                         <div class="post-content">
                                                             <a class="post-cat" href="#" style="background-color:#da1793;color:#ffffff">Kategori Berita</a>
                                                             <h3 class="post-title">
-                                                                <a href="#"><?= $opd['judul']; ?></a>
+                                                                <a href="#"><?= $ss['judul']; ?></a>
                                                             </h3>
                                                             <ul class="post-meta-info">
                                                                 <li class="author">

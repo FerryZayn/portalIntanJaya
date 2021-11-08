@@ -136,6 +136,7 @@ class ContentController extends BaseController
     //Tampil Semua Berita______________________________________________________________________________________________________________
     public function semuaBerita()
     {
+        $berita = $this->db->query("call berita_view_portal_pemda()")->getResultArray();
         $paginate = 20;
         $data = [
             'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
@@ -145,7 +146,7 @@ class ContentController extends BaseController
             'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
             'v_costumpost' => $this->pemdaModel->getCostumpost(),
 
-            'v_berita' => $this->pemdaModel->tampilBerita(),
+            'v_berita' => $berita,
             'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             //Pagin
             // 'v_beritaa' => $this->pemdaModel->paginate(2, 'berita'),
