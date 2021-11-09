@@ -58,7 +58,7 @@
                                                     ?>
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <a href="/administrator/portal-pemda/berita/<?php // $berita['slug']; 
+                                                        <a href="/administrator/portal-pemda/berita/<?php // $berita['slug'];  
                                                                                                     ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;

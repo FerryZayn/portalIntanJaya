@@ -39,7 +39,8 @@
                                             <th>No</th>
                                             <th>Judul Berita</th>
                                             <th>Nama Pengarang</th>
-                                            <th>File Gambar</th>
+                                            <th>Status Artikel</th>
+                                            <th>Proses</th>
                                             <th style="width: 10%">Action</th>
                                         </tr>
                                     </thead>
@@ -48,20 +49,27 @@
                                         $i = 1;
                                         foreach ($v_artikel as $artikel) :
                                         ?>
-
                                             <tr>
                                                 <td><?= $i++; ?></td>
                                                 <td><?= $artikel['judul']; ?></td>
                                                 <td><?= $artikel['nama_pengarang']; ?></td>
-                                                <td><?= $artikel['file_gambar']; ?></td>
+                                                <td><?= $artikel['nama_status']; ?></td>
+                                                <td>
+                                                    <a href="/administrator/portal-opd/penarikan-publikasi-artikel/<?= $artikel['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Publikasi penarikan artikel">
+                                                        <i class="fas fa-directions"></i> Publish
+                                                    </a>
+                                                    <a href="/administrator/portal-opd/penarikan-artikel/<?= $artikel['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Publikasi penarikan artikel">
+                                                        <i class="fas fa-directions"></i> Tarik
+                                                    </a>
+                                                </td>
                                                 <td>
                                                     <div class="form-button-action">
                                                         <a href="/administrator/portal-opd/<?= $artikel['id']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
                                                             <i class="fa fa-eye"></i>
-                                                        </a> &nbsp;
+                                                        </a>&nbsp;
                                                         <a href="/administrator/portal-opd/artikel-edit/<?= $artikel['id']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
                                                             <i class="fa fa-edit"></i>
-                                                        </a> &nbsp;
+                                                        </a>&nbsp;
                                                         <form action="<?= base_url() ?>/administrator/portal-opd/<?= $artikel['id']; ?>" method="POST" class="d-inline">
                                                             <?= csrf_field(); ?>
                                                             <input type="hidden" name="_method" value="DELETE">

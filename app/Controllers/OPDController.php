@@ -37,10 +37,10 @@ class OPDController extends BaseController
     // Content Website OPD_____________________________________________________________________________________________
     public function websiteOPD()
     {
-        $opd_id = 1;
+        $opd_id = 2;
         $tipe = 1;
 
-        $vartikel = $this->db->query("call artikel_view($opd_id, $tipe) ")->getResultArray();
+        $vartikel = $this->db->query("call artikel_view('$opd_id', '$tipe') ")->getResultArray();
         $data = [
             'v_slide' => $vartikel,
         ];
@@ -242,9 +242,45 @@ class OPDController extends BaseController
         return view('/administrator/portal-opd/artikel-edit', $data);
     }
 
+    public function artikelPenarikan($id)
+    {
+        $data = [
+            'validation' => \Config\Services::validation(),
+            'artikel_edit' => $this->opdModel->getUpdateArtikel($id),
+            'level_opd' => $this->opdModel->getLevelopd()
+        ];
+        return view('/administrator/portal-opd/penarikan-publikasi-artikel', $data);
+    }
+
+    public function publikasiPenarikanArtikel()
+    {
+        $p_input_id = $this->request->getVar('id');
+        $artikel_id = $this->request->getVar('artikel_id');
+
+        $fileSampul = $this->request->getFile('file_gambar');
+        if ($fileSampul->getError() == 4) {
+            $namaSampul = 'file.png';
+        } else {
+            $namaSampul = $fileSampul->getRandomName();
+            $fileSampul->move('templet/file-upload', $namaSampul);
+        }
+
+        $ba_fl = $namaSampul;
+        $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+        $is_publikasi = $this->request->getVar('is_publikasi');
+        $cttn = $this->request->getVar('cttn');
+
+        $this->db->query("call publikasi_penarikan_artikel('$p_input_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+        session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
+
+        return redirect()->to('/administrator/portal-opd/dashboard');
+    }
+
+
+
     public function updateArtikel()
     {
-
         $fileSampul = $this->request->getFile('file_gambar');
         if ($fileSampul->getError() == 4) {
             $namaSampul = 'default.jpg';

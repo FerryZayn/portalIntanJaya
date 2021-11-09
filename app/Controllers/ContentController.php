@@ -146,8 +146,8 @@ class ContentController extends BaseController
             'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
             'v_costumpost' => $this->pemdaModel->getCostumpost(),
 
-            'v_berita' => $berita,
             'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
+            'v_berita' => $berita,
             //Pagin
             // 'v_beritaa' => $this->pemdaModel->paginate(2, 'berita'),
             'v_beritaa' => $this->pemdaModel->where('tipe_artikel_id', 1)->paginate($paginate, 'berita'),

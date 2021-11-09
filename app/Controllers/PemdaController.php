@@ -67,7 +67,6 @@ class PemdaController extends BaseController
     //Update Artikel___________________________________________________________________________________________________________
     public function updateArtikel()
     {
-
         $fileSampul = $this->request->getFile('file_gambar');
         if ($fileSampul->getError() == 4) {
             $namaSampul = 'default.jpg';
@@ -174,8 +173,8 @@ class PemdaController extends BaseController
     //Berita__________________________________________________________________________________________________________
     public function berita()
     {
-
-        $berita = $this->db->query("CALL berita_view_adm(1)")->getResultArray();
+        $opd_hdr_id = $this->session->id;
+        $berita = $this->db->query("CALL berita_view_adm($opd_hdr_id)")->getResultArray();
         $data = [
             'title' => 'Master Data Berita',
             // 'v_berita' => $this->pemdaModel->tampilBerita(),

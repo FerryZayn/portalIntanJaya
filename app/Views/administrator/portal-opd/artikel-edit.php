@@ -1,4 +1,4 @@
-<?= $this->extend('/layout/pemdatemp/templet') ?>
+<?= $this->extend('/layout/opdtemp/templet') ?>
 <?= $this->section('content') ?>
 <div class="main-panel">
     <div class="content">
@@ -39,7 +39,7 @@
                                             <div class="mb-3">
                                                 <div class="row">
                                                     <div class="col-2">
-                                                        <img src="<?= base_url(); ?>/templet/gambar-berita/<?= $artikel_edit->file_gambar; ?>" class="img-thumbnail img-preview">
+                                                        <img src="<?= base_url(); ?>/templet/img-opd-post/<?= $artikel_edit->file_gambar; ?>" class="img-thumbnail img-preview">
                                                     </div>
                                                     <div class="col-10">
                                                         <div class="mb-3">
@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="modal-footer no-bd">
                                     <button type="submit" class="btn btn-primary" id="displayNotif"><i class="fas fa-save"></i> Simpan Data...</button>
-                                    <a href="/administrator/portal-opd/berita" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
+                                    <a href="/administrator/portal-opd/dashboard" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
                                 </div>
                             </form>
                         </div>

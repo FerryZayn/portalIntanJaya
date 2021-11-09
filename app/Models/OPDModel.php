@@ -14,13 +14,30 @@ class OPDModel extends Model
         'nama_opd', 'alamat_opd', 'kode_pos', 'telepon', 'fax', 'email', 'website', 'level', 'nomor_unit_kerja'
     ];
 
+
+    //COntet OPD per ID
+    public function opdViewsite()
+    {
+        // $builder = $this->db->table('tipe_penerima_pengirim_surat');
+        // $query = $builder->get()->getResult();
+        // return $query;
+
+        // $opd_id = $this->getVar->opd_id;
+
+        // $query = $this->db->query("call artikel_view('$opd_id')");
+        // $results = $query->getResult();
+        // return $results;
+    }
+
+
+
+
     //GET Tampil Semua OPD_______________________________________________________________________________________________
     public function getSemuaOPD()
     {
         return $this->db
             ->table('opd_hdr')
             ->where(['is_active' => 1])
-            // ->orderBy('RA
             ->get()
             ->getResultArray();
     }
@@ -66,17 +83,5 @@ class OPDModel extends Model
         $query = $this->db->query("CALL hak_akses_hdr_view()");
         $results = $query->getResult();
         return $results;
-    }
-
-
-    public function getartikelDetail()
-    {
-        // $opd_hdr_id = 2;
-        // $tipe_artikel_id = 1;
-        // return $this->db
-        //     ->table('artikel')
-        //     ->where(['opd_hdr_id' => $opd_hdr_id, 'tipe_artikel_id' => $tipe_artikel_id])
-        //     ->get()
-        //     ->getRow();
     }
 }

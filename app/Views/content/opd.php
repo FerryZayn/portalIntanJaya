@@ -22,23 +22,17 @@
 								<div class="container">
 									<div class="row">
 										<div class="col-lg-12">
-											<div class="features-content">
-												<div class="row">
-													<div class="col-lg-12">
-														<div class="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
-															<div class="third-number number">
-																<h6>OPD</h6>
-															</div>
-															<h4>ORGANISASI PEMERINTAH DAERAH</h4>
-															<p align="left">
-																<?php $i = 1; ?>
-																<?php foreach ($v_contentopd as $opd) : ?>
-																	<a href="<?= base_url(); ?>/website-opd/<?= $opd['id']; ?>" target="_blank"><?= $i++; ?>. <?= $opd['nama_opd']; ?></a><br />
-																<?php endforeach; ?>
-															</p>
-														</div>
-													</div>
+											<div class="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+												<div class="third-number number">
+													<h6>OPD</h6>
 												</div>
+												<h4>ORGANISASI PEMERINTAH DAERAH</h4>
+												<p style="text-align: left;">
+													<?php $i = 1; ?>
+													<?php foreach ($v_contentopd as $opd) : ?>
+														<a href="<?= base_url(); ?>/organisasi-pemerintah-daerah/<?= $opd['kode']; ?>" target="_blank"><?= $i++; ?>. <?= $opd['nama_opd']; ?></a><br />
+													<?php endforeach; ?>
+												</p>
 											</div>
 										</div>
 									</div>

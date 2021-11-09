@@ -119,6 +119,7 @@ $routes->get('/administrator/portal-pemda/album-video/(:any)', 'PemdaController:
 $routes->get('/administrator/portal-opd/berita/v_berita', 'OPDController::vBerita', ['filter' => 'auth']);
 $routes->get('/administrator/portal-opd/artikel-tambah', 'OPDController::tambahArtikel', ['filter' => 'auth']);
 $routes->get('/administrator/portal-opd/artikel-edit/(:segment)', 'OPDController::artikelEdit/$1', ['filter' => 'auth']);
+$routes->get('/administrator/portal-opd/penarikan-publikasi-artikel/(:segment)', 'OPDController::artikelPenarikan/$1', ['filter' => 'auth']);
 $routes->delete('/administrator/portal-opd/(:num)', 'OPDController::hapusOpdArtikel/$1', ['filter' => 'auth']);
 $routes->get('/administrator/portal-opd/data-artikel/(:any)', 'OPDController::detailArtikel/$1', ['filter' => 'auth']);
 
@@ -155,7 +156,7 @@ $routes->get('/administrator/portal-opd/(:any)', 'OPDController::opdDetail/$1', 
 
 // =========================================== OPD PORTAL CONTENT ==================================================// 
 // Content OPD
-$routes->get('/website-opd/(:any)', 'OPDController::websiteOPD/$1');
+$routes->get('/organisasi-pemerintah-daerah/(:any)', 'OPDController::websiteOPD/$1');
 
 
 
