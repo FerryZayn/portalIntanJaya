@@ -15,7 +15,7 @@ class OPDModel extends Model
     ];
 
 
-    //COntet OPD per ID
+    //Contet OPD per ID
     public function opdViewsite()
     {
         // $builder = $this->db->table('tipe_penerima_pengirim_surat');

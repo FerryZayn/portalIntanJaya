@@ -119,7 +119,12 @@ $routes->get('/administrator/portal-pemda/album-video/(:any)', 'PemdaController:
 $routes->get('/administrator/portal-opd/berita/v_berita', 'OPDController::vBerita', ['filter' => 'auth']);
 $routes->get('/administrator/portal-opd/artikel-tambah', 'OPDController::tambahArtikel', ['filter' => 'auth']);
 $routes->get('/administrator/portal-opd/artikel-edit/(:segment)', 'OPDController::artikelEdit/$1', ['filter' => 'auth']);
-$routes->get('/administrator/portal-opd/penarikan-publikasi-artikel/(:segment)', 'OPDController::artikelPenarikan/$1', ['filter' => 'auth']);
+$routes->get('/administrator/portal-opd/publish/(:segment)', 'OPDController::publishArtikel/$1', ['filter' => 'auth']);
+
+
+$routes->get('/administrator/portal-opd/penarikan-artikel/(:segment)', 'OPDController::artikelPenarikan/$1', ['filter' => 'auth']);
+
+
 $routes->delete('/administrator/portal-opd/(:num)', 'OPDController::hapusOpdArtikel/$1', ['filter' => 'auth']);
 $routes->get('/administrator/portal-opd/data-artikel/(:any)', 'OPDController::detailArtikel/$1', ['filter' => 'auth']);
 

@@ -55,10 +55,10 @@
                                                 <td><?= $artikel['nama_pengarang']; ?></td>
                                                 <td><?= $artikel['nama_status']; ?></td>
                                                 <td>
-                                                    <a href="/administrator/portal-opd/penarikan-publikasi-artikel/<?= $artikel['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Publikasi penarikan artikel">
+                                                    <a href="/administrator/portal-opd/publish/<?= $artikel['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Publish...">
                                                         <i class="fas fa-directions"></i> Publish
                                                     </a>
-                                                    <a href="/administrator/portal-opd/penarikan-artikel/<?= $artikel['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Publikasi penarikan artikel">
+                                                    <a href="/administrator/portal-opd/penarikan-artikel/<?= $artikel['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Penarikan...">
                                                         <i class="fas fa-directions"></i> Tarik
                                                     </a>
                                                 </td>
