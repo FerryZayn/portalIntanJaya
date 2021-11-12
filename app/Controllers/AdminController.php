@@ -45,7 +45,6 @@ class AdminController extends BaseController
 		echo json_encode($data);
 	}
 
-
 	public function hakAksess($role, $user)
 	{
 		$query = $this->db->query("CALL hak_akses_view('$role','$user')");
@@ -65,9 +64,8 @@ class AdminController extends BaseController
 		return $results;
 	}
 
-
 	// Hak Akses
-	public function crudUpdate()
+	public function crudAmbilakses()
 	{
 		$id = $this->request->getVar('id');
 		$name = $this->request->getVar('name');

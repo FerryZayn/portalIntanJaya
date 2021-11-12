@@ -94,8 +94,11 @@
         }
     }
 </script>
+
 <script src="<?= base_url() ?>/admintemp/ckeditor/ckeditor.js"></script>
+
 <script>
     CKEDITOR.replace('deskberita');
 </script>
+
 <?= $this->endSection() ?>

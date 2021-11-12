@@ -232,6 +232,39 @@ class OPDController extends BaseController
         return redirect()->to('/administrator/portal-opd/dashboard');
     }
 
+
+    //Lampiran Artikel___________________________________________________________________________________________________________
+    public function detailArtikel($id)
+    {
+        $data = [
+            'd_artikel' => $this->opdModel->getUpdateArtikel($id),
+        ];
+        return view('/administrator/portal-opd/detail-artikel', $data);
+    }
+    //Simpan Lampiran Artikel___________________________________________________________________________________________________________
+    public function simpanLampiranartikel()
+    {
+        $p_input_id = $this->session->id;
+        $art_id = $this->request->getVar('art_id');
+
+        $fileSampul = $this->request->getFile('file_lam');
+        if ($fileSampul->getError() == 4) {
+            $namaSampul = 'file.png';
+        } else {
+            $namaSampul = $fileSampul->getRandomName();
+            $fileSampul->move('templet/file-upload', $namaSampul);
+        }
+
+        $file_lam = $namaSampul;
+        $path_file_lam = $this->request->getVar('path_file_lam');
+
+        $this->db->query("call lampiran_insert('$p_input_id', '$art_id', '$file_lam', '$path_file_lam')");
+        session()->setFlashdata('info', 'Upload Lampiran Artikel berhasil');
+
+        return redirect()->to('/administrator/portal-opd/dashboard');
+    }
+
+
     public function artikelEdit($id)
     {
         $data = [
@@ -242,7 +275,7 @@ class OPDController extends BaseController
         return view('/administrator/portal-opd/artikel-edit', $data);
     }
 
-    //Publish Artikel
+    //Publish Artikel___________________________________________________________________________________________________________
     public function publishArtikel($id)
     {
         $data = [
@@ -275,7 +308,7 @@ class OPDController extends BaseController
         $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
         session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
 
-        return redirect()->to('/administrator/portal-opd/berita/v_berita');
+        return redirect()->to('/administrator/portal-opd/dashboard');
     }
 
 
@@ -312,9 +345,8 @@ class OPDController extends BaseController
         $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
         session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
 
-        return redirect()->to('/administrator/portal-opd/berita/v_berita');
+        return redirect()->to('/administrator/portal-opd/dashboard');
     }
-
 
 
     public function updateArtikel()

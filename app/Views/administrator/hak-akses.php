@@ -23,13 +23,16 @@
                         </div>
                         <div class="card-body">
 
+
+
+
                             <div class="row">
                                 <div class="col-5 col-md-3">
                                     <div class="nav flex-column nav-pills nav-secondary nav-pills-no-bd nav-pills-icons" id="v-pills-tab-with-icon" role="tablist" aria-orientation="vertical">
                                         <?php foreach ($data as $item) : ?>
                                             <ul class="nav nav-pills flex-column">
                                                 <li class="nav-item click-modul" data-modul="<?= $item->id; ?>">
-                                                    <a class="nav-link bg-danger text-white">
+                                                    <a class="nav-link active bg-info text-white">
                                                         <i class="fas fa-user-lock"></i> <?= $item->nama_hak_akses; ?>
                                                     </a>
                                                 </li>
@@ -38,30 +41,28 @@
                                     </div>
                                 </div>
                                 <div class="col-5 col-md-9">
-                                    <div class="table-responsive">
-                                        <table class="table table-hover table-head-bg-danger mt-4">
-                                            <thead>
-                                                <tr>
-                                                    <th>MODUL AKSES</th>
-                                                    <th><i class="fa fa-eye"></i> View</th>
-                                                    <th><i class="fas fa-pencil-alt"></i> Input</th>
-                                                    <th><i class="fa fa-edit"></i> Edit</th>
-                                                    <th><i class="fa fa-trash"></i> Hapus</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="settings">
+                                    <div class="tab-content" id="v-pills-with-icon-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-home-icons" role="tabpanel" aria-labelledby="v-pills-home-tab-icons">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover table-head-bg-info mt-4">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>MODUL AKSES</th>
+                                                            <th><i class="fa fa-eye"></i> View</th>
+                                                            <th><i class="fas fa-pencil-alt"></i> Input</th>
+                                                            <th><i class="fa fa-edit"></i> Edit</th>
+                                                            <th><i class="fa fa-trash"></i> Hapus</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="CallSettingsHA">
 
-                                            </tbody>
-                                        </table>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
-
                         </div>
                     </div>
                 </div>
@@ -104,7 +105,7 @@
                             '<td><input type = "checkbox" class="delete' + data[i].id + '" id="' + data[i].id + '"  name="is_delete"  value ="' + data[i].is_delete + '"  ' + is_delete + '></td>' +
                             '</tr>';
                     }
-                    $('#settings').html(html);
+                    $('#CallSettingsHA').html(html);
                     crudView(data);
                     crudInsert(data);
                     crudUpdate(data);
@@ -134,7 +135,7 @@
                             '<td><input type = "checkbox" class="delete' + data[i].id + '" id="' + data[i].id + '"  name="is_delete"  value ="' + data[i].is_delete + '"  ' + is_delete + '></td>' +
                             '</tr>';
                     }
-                    $('#settings').html(html);
+                    $('#CallSettingsHA').html(html);
                     crudView(data);
                     crudInsert(data);
                     crudUpdate(data);
@@ -154,7 +155,7 @@
                 var value = $(this).attr('value');
                 $.ajax({
                     type: 'GET',
-                    url: '/AdminController/crudupdate/',
+                    url: '/AdminController/crudAmbilakses/',
                     dataType: 'json',
                     data: {
                         'id': id,
@@ -175,7 +176,7 @@
                 var value = $(this).attr('value');
                 $.ajax({
                     type: 'GET',
-                    url: '/AdminController/crudupdate/',
+                    url: '/AdminController/crudAmbilakses/',
                     dataType: 'json',
                     data: {
                         'id': id,
@@ -195,7 +196,7 @@
                 var value = $(this).attr('value');
                 $.ajax({
                     type: 'GET',
-                    url: '/AdminController/crudupdate/',
+                    url: '/AdminController/crudAmbilakses/',
                     dataType: 'json',
                     data: {
                         'id': id,
@@ -215,7 +216,7 @@
                 var value = $(this).attr('value');
                 $.ajax({
                     type: 'GET',
-                    url: '/AdminController/crudupdate/',
+                    url: '/AdminController/crudAmbilakses/',
                     dataType: 'json',
                     data: {
                         'id': id,

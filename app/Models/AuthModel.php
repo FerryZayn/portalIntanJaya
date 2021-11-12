@@ -14,7 +14,6 @@ class AuthModel extends Model
         'tanggal_lahir', 'golongan_id', 'is_pegawai'
     ];
 
-
     public function getAuth($username = false)
     {
         if ($username == false) {

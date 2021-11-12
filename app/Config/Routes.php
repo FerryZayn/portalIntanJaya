@@ -51,7 +51,7 @@ $routes->get('/auth/login', 'AuthController::index');
 $routes->get('/administrator/index', 'AdminController::index', ['filter' => 'auth']);
 $routes->get('/administrator/hak-akses', 'AdminController::hakAkses', ['filter' => 'auth']);
 $routes->get('/administrator/view-hak-akses', 'AdminController::hakAksesview', ['filter' => 'auth']);
-$routes->get('ambilakses/(:any)', 'AdminController::settingChecked/$1/$2', ['filter' => 'auth']);
+$routes->get('/ambilakses/(:any)', 'AdminController::settingChecked/$1/$2', ['filter' => 'auth']);
 
 //Admin Portal Master_____________________________________________________________________________________________________________
 $routes->get('/administrator/master/dashboard', 'MasterController::index', ['filter' => 'auth']);
@@ -126,8 +126,7 @@ $routes->get('/administrator/portal-opd/penarikan-artikel/(:segment)', 'OPDContr
 
 
 $routes->delete('/administrator/portal-opd/(:num)', 'OPDController::hapusOpdArtikel/$1', ['filter' => 'auth']);
-$routes->get('/administrator/portal-opd/data-artikel/(:any)', 'OPDController::detailArtikel/$1', ['filter' => 'auth']);
-
+$routes->get('/administrator/portal-opd/detail-artikel/(:any)', 'OPDController::detailArtikel/$1', ['filter' => 'auth']);
 
 
 // =========================================== OPD PORTAL ADMIN ==================================================// 

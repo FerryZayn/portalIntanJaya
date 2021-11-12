@@ -75,9 +75,6 @@ class AuthController extends BaseController
 		return redirect()->to('/auth/login');
 	}
 
-
-
-
 	public function logout()
 	{
 		$session = session();
