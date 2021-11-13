@@ -18,37 +18,44 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Form Lampiran Artikel</h4>
+                                <h4 class="card-title">Detail Artikel</h4>
                             </div>
                         </div>
                         <div class="card-body">
-                            <?= $d_artikel->judul; ?><br />
-                            <?= $d_artikel->isi_artikel; ?>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <?= $d_artikel->judul; ?><br />
+                                    <?= $d_artikel->isi_artikel; ?>
 
-                            <form method="POST" action="/OPDController/simpanLampiranartikel/" enctype="multipart/form-data">
-                                <?= csrf_field(); ?>
-                                <input type="hidden" name="_method" value="put">
-                                <input type="text" name="art_id" value="<?= $d_artikel->id; ?>">
-                                <div class="row">
-                                    <div class="col-sm-12">
+                                    <form method="POST" action="/OPDController/simpanLampiranartikel/" enctype="multipart/form-data">
+                                        <?= csrf_field(); ?>
+                                        <input type="hidden" name="_method" value="put">
+                                        <input type="hidden" name="art_id" value="<?= $d_artikel->id; ?>">
+                                        <div class="row">
+                                            <div class="col-sm-12">
 
 
-                                        <div class="mb-3">
-                                            <label for="fileFotoLabel" class="fileFotoLabel fw-bold mb-2">Tambah File Lapiran</label>
-                                            <input type="file" class="form-control" name="file_lam">
+                                                <div class="mb-3">
+                                                    <label for="fileFotoLabel" class="fileFotoLabel fw-bold mb-2">Tambah File Lapiran</label>
+                                                    <input type="file" class="form-control" name="file_lam">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <input type="hidden" name="path_file_lam" class="form-control" value="/templet/file-upload">
+                                                </div>
+
+
+                                            </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <input type="hidden" name="path_file_lam" class="form-control" value="/templet/file-upload">
+                                        <div class="modal-footer no-bd">
+                                            <button type="submit" class="btn btn-primary" id="displayNotif"><i class="fas fa-save"></i> Upload Lampiran...</button>
+                                            <a href="/administrator/portal-opd/berita/v_berita" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
                                         </div>
-
-
-                                    </div>
+                                    </form>
                                 </div>
-                                <div class="modal-footer no-bd">
-                                    <button type="submit" class="btn btn-primary" id="displayNotif"><i class="fas fa-save"></i> Simpan Data...</button>
-                                    <a href="/administrator/portal-opd/berita/v_berita" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
+                                <div class="col-sm-6">
+                                    Tampilkan Lampiran file
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

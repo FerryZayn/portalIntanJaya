@@ -14,7 +14,7 @@
                 <div class="elementor-widget-container">
                     <div class="post-block-item style5 ">
                         <div class="row">
-                            <!-- <div class="col-xl-6 bg-feature-post order-md-1">
+                            <div class="col-xl-6 bg-feature-post order-md-1">
                                 <div data-bg="<?= base_url(); ?>/websiteopd/img/1.jpg" class="item ts-overlay-style rocket-lazyload">
                                     <a href="#" class="img-link">Judul Berita</a>
                                     <div class="post-content">
@@ -30,8 +30,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div> -->
-                            <div class="col-xl-12 order-md-2">
+                            </div>
+                            <div class="col-xl-6 order-md-2">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6">
                                         <div class="post-block-style post-float post-thumb-bg clearfix">
@@ -171,7 +171,37 @@
             <div class="elementor-element elementor-element-9d30f27 elementor-widget elementor-widget-newszone-post-block" data-id="9d30f27" data-element_type="widget" data-widget_type="newszone-post-block.default">
                 <div class="elementor-widget-container">
                     <div class="block-item-post style1">
-
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="post-block-style post-thumb-bg">
+                                    <div class="post-thumb ts-resize post-thumb-full post-thumb-low-padding">
+                                        <a href="#" rel="bookmark" title="Cheap smartphone sensor could help you old food safe eat">
+                                            <span data-bg="<?= base_url(); ?>/websiteopd/img/1.jpg" class="digiqole-sm-bg-img rocket-lazyload"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="post-content feature-contents">
+                                    <a class="post-cat" href="#" style="background-color:#007bff;color:#ffffff">
+                                        Informasi
+                                    </a>
+                                    <h3 class="post-title md"><a href="#" rel="bookmark" title="Cheap smartphone sensor could help you old food safe eat">Judul Informasi</a></h3>
+                                    <div class="post-meta ">
+                                        <span class="post-author">
+                                            <i class="far fa-user"></i>
+                                            <a href="#" title="Posts by digiqole-default" rel="author">User</a>
+                                        </span>
+                                        <span class="post-date">
+                                            <i class="far fa-clock"></i> June 30, 2019
+                                        </span>
+                                    </div>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque corrupti repellat nulla adipisci debitis similique ipsum facilis eos architecto, inventore delectus, asperiores quo reprehenderit ducimus dignissimos, doloremque enim laboriosam quidem.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row post-list post-block-list post-thumb-bg">
                             <div class="col-md-6 col-sm-6">
                                 <div class="post-block-style post-float media">

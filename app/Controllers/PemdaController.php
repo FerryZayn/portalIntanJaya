@@ -107,6 +107,9 @@ class PemdaController extends BaseController
     //Visi Pemda________________________________________________________________________________________________________________
     public function visipemda()
     {
+        // $opd_hdr_id = $this->session->id;
+        // $berita = $this->db->query("CALL berita_view_adm($opd_hdr_id)")->getResultArray();
+
         $data = [
             'v_visi' => $this->pemdaModel->tampilVisi(),
         ];

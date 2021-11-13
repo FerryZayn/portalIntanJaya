@@ -1,27 +1,31 @@
 <div class="newsletter-area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 col-md-5 align-self-center">
+            <div class="col-lg-3 col-md-5 align-self-center">
                 <div class="footer-logo">
                     <a class="logo" href="#">
-                        <img width="220" height="33" class="img-fluid" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20220%2033'%3E%3C/svg%3E" alt="Digiqole" data-lazy-src="<?= base_url(); ?>/websiteopd/img/google.png">
+                        <img width="220" height="33" class="img-fluid" src="<?= base_url(); ?>/websiteopd/img/intanjaya-big.png" alt="Digiqole" data-lazy-src="<?= base_url(); ?>/websiteopd/img/intanjaya-big.png">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-5 col-md-7">
-
+            <div class="col-lg-9 col-md-7">
                 <div class="ts-subscribe">
-                    <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-464" method="post" data-id="464" data-name="footer newsletter">
+                    <!-- <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-464" method="post" data-id="464" data-name="footer newsletter">
                         <div class="mc4wp-form-fields">
                             <div class="footer-newsletter">
-                                <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
                                 <input type="email" name="EMAIL" placeholder="Your email" required />
                                 <input type="submit" value="Subscribe" />
                             </div>
                         </div>
                         <label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1634572611" /><input type="hidden" name="_mc4wp_form_id" value="464" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" />
                         <div class="mc4wp-response"></div>
-                    </form>
+                    </form> -->
+                    <h2 class="text-white">OPD Harus Gunakan Website Resmi</h2>
+                    <p class="text-white text-justify">Organisasi Perangkat Daerah (OPD) di Kabupaten Purbalingga harus menggunakan website resmi. Hal ini sesuai dengan Peraturan Menteri Komunikasi dan Informatika (Menkominfo) Nomor 5 Tahun 2015 tentang Registrasi Nama Domain Instansi Penyelenggara Negara.
+                        “Sesuai dengan pasal 4 (1) instansi wajib mendaftarkan dan menggunakan domain sebagai alamat elektronik resmi instansi,” kata Kepala Bidang Informatika pada Dinas Komunikasi dan Informatika (Dinkominfo), Sigit Dwi Pramono saat ditemui di ruang kerjanya, Senin (20/8).<br />
+                        Website resmi yang dimiliki oleh OPD di Kabupaten Purbalingga menurutnya untuk mengantisipasi gangguan yang terjadi pada website OPD. Selain itu juga untuk menjaga keamanan informasi dan data yang dimiliki OPD yang telah dipublikasikan dalam website OPD.
+                        “Di dunia digital seperti sekarang ini kan banyak sekali hacker (peretas, Red), Pemerintah Daerah (Pemda) kan banyak sekali informasi-informasi atau data-data yang ada yang juga rahasia, biar tidak terganggu maka harus kita antisipasi,” ujar Sigit.
+                    </p>
                 </div>
             </div>
         </div>

@@ -23,7 +23,8 @@
     <!-- Trending -->
 
     <!-- lifestyle & Recent Post -->
-    <?= $this->include('/layoutopd/berita-informasi'); ?>
+    <?php // $this->include('/layoutopd/berita-informasi'); 
+    ?>
 
     <!-- Read Next & Recent Comments -->
 

@@ -241,7 +241,7 @@ class OPDController extends BaseController
         ];
         return view('/administrator/portal-opd/detail-artikel', $data);
     }
-    //Simpan Lampiran Artikel___________________________________________________________________________________________________________
+    //Simpan Lampiran Artikel_____________________________________________________________________________________________________
     public function simpanLampiranartikel()
     {
         $p_input_id = $this->session->id;

@@ -62,27 +62,21 @@
                     <div class="post-list-item widgets">
                         <ul class="nav nav-tabs recen-tab-menu">
                             <li>
-                                <a class=" active show" href="#26ed252-recent" data-toggle="tab">
-                                    <span></span>Berita 1
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#26ed252-popular" data-toggle="tab">
-                                    <span></span>
-                                    Berita 2
+                                <a class="active show" href="#tab-informasi" data-toggle="tab">
+                                    <span></span>Informasi
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#26ed252-tab-comment" data-toggle="tab">
+                                <a href="#tab-berita" data-toggle="tab">
                                     <span></span>
-                                    Berita 3
+                                    Berita
                                 </a>
                             </li>
 
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane active post-tab-list post-thumb-bg" id="26ed252-recent">
+                            <div class="tab-pane active post-tab-list post-thumb-bg" id="tab-informasi">
                                 <div class="post-content media">
                                     <div class="post-thumb post-thumb-radius">
                                         <a href="#">
@@ -91,7 +85,7 @@
                                     </div>
                                     <div class="media-body">
                                         <a class="post-cat only-color" href="#" style="color:#da1793">
-                                            Kategori Berita
+                                            #Informasi
                                         </a>
                                         <h3 class="post-title">
                                             <a href="#">Judul Berita</a>
@@ -111,7 +105,7 @@
 
 
                                         <a class="post-cat only-color" href="#" style="color:#4ca80b">
-                                            Kategori Berita </a>
+                                            #Informasi </a>
 
                                         <h3 class="post-title">
                                             <a href="#">Judul Berita</a>
@@ -131,7 +125,7 @@
 
 
                                         <a class="post-cat only-color" href="#" style="color:#007bff">
-                                            Kategori Berita </a>
+                                            #Informasi </a>
 
                                         <h3 class="post-title">
                                             <a href="#">Judul Berita</a>
@@ -151,7 +145,7 @@
 
 
                                         <a class="post-cat only-color" href="#" style="color:#fc4a00">
-                                            Kategori Berita </a>
+                                            #Informasi </a>
 
                                         <h3 class="post-title">
                                             <a href="#">Judul Berita</a>
@@ -162,94 +156,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane post-tab-list post-thumb-bg" id="26ed252-popular">
-                                <div class="post-content media">
-
-                                    <div class="post-thumb post-thumb-radius">
-                                        <a href="#">
-                                            <span data-bg="<?= base_url(); ?>/websiteopd/img/1.jpg" class="digiqole-sm-bg-img rocket-lazyload"></span></a>
-                                    </div>
-                                    <div class="media-body">
 
 
-                                        <a class="post-cat only-color" href="#" style="color:#da1793">
-                                            Kategori Berita </a>
 
-                                        <h3 class="post-title">
-                                            <a href="#">Judul Berita</a>
-                                        </h3>
-                                        <span class="post-date">
-                                            <i class="far fa-calendar-check"></i>
-                                            <?php echo date("d F, Y"); ?>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="post-content media">
-
-                                    <div class="post-thumb post-thumb-radius">
-                                        <a href="#">
-                                            <span data-bg="<?= base_url(); ?>/websiteopd/img/1.jpg" class="digiqole-sm-bg-img rocket-lazyload"></span></a>
-                                    </div>
-                                    <div class="media-body">
-
-
-                                        <a class="post-cat only-color" href="#" style="color:#4ca80b">
-                                            Kategori Berita </a>
-
-                                        <h3 class="post-title">
-                                            <a href="#">Judul Berita</a>
-                                        </h3>
-                                        <span class="post-date">
-                                            <i class="far fa-calendar-check"></i>
-                                            <?php echo date("d F, Y"); ?>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="post-content media">
-
-                                    <div class="post-thumb post-thumb-radius">
-                                        <a href="#">
-                                            <span data-bg="<?= base_url(); ?>/websiteopd/img/1.jpg" class="digiqole-sm-bg-img rocket-lazyload"></span></a>
-                                    </div>
-                                    <div class="media-body">
-
-
-                                        <a class="post-cat only-color" href="#" style="color:#007bff">
-                                            Kategori Berita </a>
-
-                                        <h3 class="post-title">
-                                            <a href="#">Judul Berita</a>
-                                        </h3>
-                                        <span class="post-date">
-                                            <i class="far fa-calendar-check"></i>
-                                            <?php echo date("d F, Y"); ?>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="post-content media">
-
-                                    <div class="post-thumb post-thumb-radius">
-                                        <a href="#">
-                                            <span data-bg="<?= base_url(); ?>/websiteopd/img/1.jpg" class="digiqole-sm-bg-img rocket-lazyload"></span></a>
-                                    </div>
-                                    <div class="media-body">
-
-
-                                        <a class="post-cat only-color" href="#" style="color:#fc4a00">
-                                            Kategori Berita </a>
-
-                                        <h3 class="post-title">
-                                            <a href="#">Judul Berita</a>
-                                        </h3>
-                                        <span class="post-date">
-                                            <i class="far fa-calendar-check"></i>
-                                            <?php echo date("d F, Y"); ?>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane post-tab-list post-thumb-bg" id="26ed252-tab-comment">
+                            <div class="tab-pane post-tab-list post-thumb-bg" id="tab-berita">
                                 <div class="post-content media">
 
                                     <div class="post-thumb post-thumb-radius">
@@ -261,7 +171,7 @@
 
 
                                         <a class="post-cat only-color" href="#" style="color:#f3670a">
-                                            Kategori Berita </a>
+                                            #Berita </a>
 
                                         <h3 class="post-title">
                                             <a href="#">Judul Berita</a>
@@ -282,7 +192,7 @@
 
 
                                         <a class="post-cat only-color" href="#" style="color:#bc8a61">
-                                            Kategori Berita </a>
+                                            #Berita </a>
 
                                         <h3 class="post-title">
                                             <a href="#">Judul Berita</a>
@@ -303,7 +213,7 @@
 
 
                                         <a class="post-cat only-color" href="#" style="color:#fc4a00">
-                                            Kategori Berita </a>
+                                            #Berita </a>
 
                                         <h3 class="post-title">
                                             <a href="#">Judul Berita</a>
@@ -324,7 +234,7 @@
 
 
                                         <a class="post-cat only-color" href="#" style="color:#fc4a00">
-                                            Kategori Berita </a>
+                                            #Berita </a>
 
                                         <h3 class="post-title">
                                             <a href="#">Judul Berita</a>
