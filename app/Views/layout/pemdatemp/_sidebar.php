@@ -55,8 +55,21 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
+
                 <li class="nav-item">
-                    <a data-toggle="collapse" href="#forms">
+                    <a href="/administrator/portal-pemda/berita/home">
+                        <i class="fas fas fa-book"></i>
+                        <p>Artikel</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/administrator/portal-pemda/pejabat/v_pejabat">
+                        <i class="fas fas fa-user-tie"></i>
+                        <p>Profil Pejabat</p>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="#forms">
                         <i class="fas fa-layer-group"></i>
                         <p>Visi & Misi</p> <span class="caret"></span>
                     </a>
@@ -108,7 +121,7 @@
                         <i class="fab fa-slideshare"></i>
                         <p>Slide Show</p>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

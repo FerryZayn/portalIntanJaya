@@ -179,33 +179,32 @@ class PemdaController extends BaseController
         $opd_hdr_id = $this->session->id;
         $berita = $this->db->query("CALL berita_view_adm($opd_hdr_id)")->getResultArray();
         $data = [
-            'title' => 'Master Data Berita',
+            // 'title' => 'Master Data Berita',
             // 'v_berita' => $this->pemdaModel->tampilBerita(),
             'v_berita' => $berita,
         ];
         return view('/administrator/portal-pemda/berita/home', $data);
     }
 
-    public function detailBerita($slug)
+    public function detailBerita($id)
     {
         $data = [
-            'title' => 'Detail Data Berita',
-            'v_berita' => $this->pemdaModel->getDetailsArtikel($slug),
+            'v_berita' => $this->pemdaModel->getUpdateArtikel($id),
         ];
         if (empty($data['v_berita'])) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException(
-                'Judul Berita ' . $slug . ' tidak ditemukan'
+                'Judul Berita ' . $id . ' tidak ditemukan'
             );
         }
         return view('/administrator/portal-pemda/berita/detail', $data);
     }
 
-    public function editBerita($slug)
+    public function editBerita($id)
     {
         $data = [
             'validation' => \Config\Services::validation(),
             'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
-            'v_berita' => $this->pemdaModel->getUpdateArtikel($slug),
+            'v_berita' => $this->pemdaModel->getUpdateArtikel($id),
         ];
         return view('/administrator/portal-pemda/berita/edit', $data);
     }
@@ -226,9 +225,11 @@ class PemdaController extends BaseController
     //Informasi_______________________________________________________________________________________________________________
     public function informasi()
     {
+        $opd_hdr_id = $this->session->id;
+        $berita = $this->db->query("CALL berita_view_adm($opd_hdr_id)")->getResultArray();
         $data = [
-            'title' => 'Master Data Informasi',
-            'v_informasi' => $this->pemdaModel->tampilInformasi(),
+            'v_informasi' => $berita,
+            // 'v_informasi' => $this->pemdaModel->tampilInformasi(),
         ];
         return view('/administrator/portal-pemda/informasi/home', $data);
     }

@@ -74,7 +74,6 @@ class ContentController extends BaseController
     {
         $data = [
             'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
-            'v_berita' => $this->pemdaModel->getDetailsArtikel($slug),
             'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             'v_beritalain' => $this->pemdaModel->contentBerita(),
             'v_informasilain' => $this->pemdaModel->contentInformasi(),
@@ -89,6 +88,8 @@ class ContentController extends BaseController
 
             'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
             'v_costumpost' => $this->pemdaModel->getCostumpost(),
+
+            'v_berita' => $this->pemdaModel->getDetailsArtikel($slug),
         ];
         return view('/content/berita-detail', $data);
     }

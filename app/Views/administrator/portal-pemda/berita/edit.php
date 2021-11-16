@@ -36,10 +36,11 @@
                                             <div class="mb-3">
                                                 <textarea name="isi_artikel" class="form-control" id="deskberita"><?= $v_berita->isi_artikel; ?></textarea>
                                             </div>
+                                            <img src="<?= base_url(); ?>/<?= $v_berita->path_file_gambar; ?>/<?= $v_berita->file_gambar; ?>">
                                             <div class="mb-3">
                                                 <div class="row">
                                                     <div class="col-2">
-                                                        <img src="<?= base_url(); ?>/templet/gambar-berita/<?= $v_berita->file_gambar; ?>" class="img-thumbnail img-preview">
+                                                        <img src="<?= base_url(); ?>/<?= $v_berita->path_file_gambar; ?>/<?= $v_berita->file_gambar; ?>" class="img-thumbnail img-preview">
                                                     </div>
                                                     <div class="col-10">
                                                         <div class="mb-3">

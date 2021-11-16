@@ -78,11 +78,11 @@ class PemdaModel extends Model
     }
 
     // GET Update Artikel___________________________________________________________________________________________________________
-    public function getUpdateArtikel($slug)
+    public function getUpdateArtikel($id)
     {
         return $this->db
             ->table('artikel')
-            ->where('slug', $slug)
+            ->where('id', $id)
             ->get()
             ->getRow();
     }

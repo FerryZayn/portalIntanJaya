@@ -35,9 +35,12 @@
                                             echo date('d F Y - H:i:s', strtotime($v_berita->created_date));
                                             ?>
                                         </span>
-                                        <span class="text-success pl-3"><?= $v_berita->tipe; ?></span>
-                                        <span class="text-success pl-3"><?= $v_berita->kategori; ?></span>
-                                        <span class="text-success pl-3"><?= $v_berita->nama_status; ?></span>
+                                        <span class="text-success pl-3"><?php // $v_berita->tipe; 
+                                                                        ?></span>
+                                        <span class="text-success pl-3"><?php // $v_berita->kategori; 
+                                                                        ?></span>
+                                        <span class="text-success pl-3"><?php // $v_berita->nama_status; 
+                                                                        ?></span>
                                     </h6>
                                 </div>
                                 <p><?= $v_berita->isi_artikel; ?></p>
