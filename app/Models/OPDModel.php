@@ -37,7 +37,8 @@ class OPDModel extends Model
     {
         return $this->db
             ->table('opd_hdr')
-            ->where(['is_active' => 1])
+            ->join('artikel', 'artikel.opd_hdr_id=opd_hdr.id')
+            // ->where(['is_active' => 1])
             ->get()
             ->getResultArray();
     }

@@ -46,7 +46,7 @@
                                     <tbody>
                                         <?php
                                         $i = 1;
-                                        foreach ($v_albumfoto as $foto) :
+                                        foreach ($v_artikel as $foto) :
                                         ?>
 
                                             <tr>

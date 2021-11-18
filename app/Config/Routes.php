@@ -160,7 +160,7 @@ $routes->get('/administrator/portal-opd/(:any)', 'OPDController::opdDetail/$1', 
 
 // =========================================== OPD PORTAL CONTENT ==================================================// 
 // Content OPD
-$routes->get('/organisasi-pemerintah-daerah/(:any)', 'OPDController::websiteOPD/$1');
+$routes->get('/organisasi-pemerintah-daerah/(:any)', 'OPDController::websiteOPD/$1/$2');
 
 
 

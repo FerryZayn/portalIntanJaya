@@ -30,7 +30,7 @@
 												<p style="text-align: left;">
 													<?php $i = 1; ?>
 													<?php foreach ($v_contentopd as $opd) : ?>
-														<a href="<?= base_url(); ?>/organisasi-pemerintah-daerah/<?= $opd['id']; ?>" target="_blank"><?= $i++; ?>. <?= $opd['nama_opd']; ?></a><br />
+														<a href="<?= base_url(); ?>/organisasi-pemerintah-daerah/<?= $opd['id']; ?>/<?= $opd['tipe_artikel_id']; ?>" target="_blank"><?= $i++; ?>. <?= $opd['nama_opd']; ?></a><br />
 													<?php endforeach; ?>
 												</p>
 											</div>

@@ -30,16 +30,28 @@ class OPDController extends BaseController
             'v_contentmenualbumvideo' => $this->pemdaModel->contentAlbumvideoMenu(),
             'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
             'v_costumpost' => $this->pemdaModel->getCostumpost(),
+
             'v_contentopd' => $this->opdModel->getSemuaOPD(),
         ];
         return view('/content/opd', $data);
     }
+
+
+
+
     // Content Website OPD_____________________________________________________________________________________________
-    public function websiteOPD()
+    public function websiteOPD($opd_id, $tipe)
     {
-        $opd_id = 2;
-        $tipe = 1;
-        $tampil = $this->db->query("call artikel_view('$opd_id', '$tipe')")->getResultArray();
+        // $opd_id = 2;
+        // $tipe = 1;
+
+        // $opd_id = $this->request->getVar('id');
+        $opd_id = $this->request->uri->getSegments(1);
+        $tipe = $this->request->uri->getSegments(2);
+
+        $tampil = $this->db->query("call artikel_view('$opd_id[1]', '$tipe[2]')")->getResultArray();
+
+        // dd($tampil);
 
         $data = [
             'v_slide' => $tampil,
@@ -47,6 +59,43 @@ class OPDController extends BaseController
         return view('/opd/home', $data);
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function tambahOpd()
+    {
+        $pegawai_id = $this->session->id;
+        $nama_opd = $this->request->getVar('opd');
+        $alamat_opd = $this->request->getVar('alamat');
+        $kode_pos = $this->request->getVar('k_pos');
+        $telepon = $this->request->getVar('telepone');
+        $fax = $this->request->getVar('fax');
+        $email = $this->request->getVar('email');
+        $website = $this->request->getVar('website');
+        $kode = $this->request->getVar('kode');
+        $level = $this->request->getVar('level');
+        $nuk = $this->request->getVar('nuk');
+
+        $insert = $this->db->query("CALL opd_insert('$pegawai_id', '$kode','$nama_opd','$alamat_opd','$kode_pos','$telepon','$fax','$email','$website','$level','$nuk')")->getRow();
+
+        if ($insert->n == 81) {
+            session()->setFlashdata('pesan', 'add');
+        } elseif ($insert->n == 80) {
+            session()->setFlashdata('pesan', 'ganda');
+        }
+        return redirect()->to('/administrator/portal-opd/v_opd');
+    }
 
 
     // Admin Dashboard________________________________________________________________________________________________
@@ -91,7 +140,6 @@ class OPDController extends BaseController
     //Update Artikel___________________________________________________________________________________________________________
     public function updateOPD()
     {
-
         $id = $this->request->getVar('id');
         $pegawai_id = $this->session->id;
         $kode = $this->request->getVar('kode');
@@ -109,7 +157,6 @@ class OPDController extends BaseController
 
         $this->db->query("CALL opd_update('$id','$pegawai_id', '$kode','$nama_opd','$alamat_opd','$kode_pos','$telepon','$fax','$email','$website','$level', '$nomor_unit_kerja')");
         session()->setFlashdata('pesan', 'update');
-
 
         return redirect()->to('/administrator/portal-opd/v_opd');
     }
