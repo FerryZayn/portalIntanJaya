@@ -6,7 +6,7 @@
             <div class="page-inner py-5">
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                     <div>
-                        <h2 class="text-white pb-2 fw-bold">BERITA PORTAL</h2>
+                        <h2 class="text-white pb-2 fw-bold">ARTIKEL PORTAL</h2>
                         <h5 class="text-white op-7 mb-2">Kabupaten Intan Jaya...</h5>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Daftar Berita</h4>
+                                <h4 class="card-title">Daftar Misi OPD</h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -39,30 +39,49 @@
                                             <th>No</th>
                                             <th>Judul Berita</th>
                                             <th>Nama Pengarang</th>
-                                            <th>File Gambar</th>
+                                            <th>Status Artikel</th>
+                                            <th>Proses</th>
                                             <th style="width: 10%">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         $i = 1;
-                                        foreach ($v_artikel as $informasi) :
+                                        foreach ($v_artikel as $misi) :
                                         ?>
-
                                             <tr>
                                                 <td><?= $i++; ?></td>
-                                                <td><?= $informasi['judul']; ?></td>
-                                                <td><?= $informasi['nama_pengarang']; ?></td>
-                                                <td><?= $informasi['file_gambar']; ?></td>
+                                                <td><?= $misi['judul']; ?></td>
+                                                <td><?= $misi['nama_pengarang']; ?></td>
+                                                <td><?= $misi['nama_status']; ?></td>
+                                                <td>
+                                                    <?php
+                                                    if ($misi['nama_status'] == "publish") {
+                                                    ?>
+                                                        <a href="/administrator/portal-opd/penarikan-artikel/<?= $misi['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Penarikan...">
+                                                            <i class="fas fa-directions"></i> Tarik
+                                                        </a>
+                                                    <?php
+                                                    } else {
+                                                    ?>
+                                                        <a href="/administrator/portal-opd/publish/<?= $misi['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Publish...">
+                                                            <i class="fas fa-directions"></i> Publish
+                                                        </a>
+                                                    <?php
+                                                    }
+                                                    ?>
+
+
+                                                </td>
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <a href="/administrator/portal-opd/<?= $informasi['id']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
+                                                        <a href="/administrator/portal-opd/detail-artikel/<?= $misi['id']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
                                                             <i class="fa fa-eye"></i>
-                                                        </a> &nbsp;
-                                                        <a href="/administrator/portal-opd/artikel-edit/<?= $informasi['id']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
+                                                        </a>&nbsp;
+                                                        <a href="/administrator/portal-opd/artikel-edit/<?= $misi['id']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
                                                             <i class="fa fa-edit"></i>
-                                                        </a> &nbsp;
-                                                        <form action="<?= base_url() ?>/administrator/portal-opd/<?= $informasi['id']; ?>" method="POST" class="d-inline">
+                                                        </a>&nbsp;
+                                                        <form action="<?= base_url() ?>/administrator/portal-opd/<?= $misi['id']; ?>" method="POST" class="d-inline">
                                                             <?= csrf_field(); ?>
                                                             <input type="hidden" name="_method" value="DELETE">
                                                             <button type="submit" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Hapus item ini..."><i class="fa fa-trash"></i>
@@ -83,8 +102,6 @@
     </div>
     <?= $this->include('/layout/adminportal/_footer');  ?>
 </div>
-
-
 
 <script src="<?= base_url() ?>/admintemp/ckeditor/ckeditor.js"></script>
 <script>

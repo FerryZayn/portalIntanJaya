@@ -55,7 +55,7 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="#">
                         <i class="fas fa-layer-group"></i>
                         <p>Hak Akses</p>
@@ -66,9 +66,9 @@
                         <i class="fas fa-desktop"></i>
                         <p>OPD</p>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                    <a href="#">
+                    <a href="/administrator/master/v_pegawai">
                         <i class="fas fa-th-list"></i>
                         <p>Pegawai</p>
                     </a>

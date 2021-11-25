@@ -43,11 +43,7 @@
                                             <tr>
                                                 <td><?= $i++; ?></td>
                                                 <td><?= $v_opd['kode']; ?></td>
-                                                <td>
-                                                    <a href="<?= $v_opd['website']; ?>" target="_blank">
-                                                        <?= $v_opd['nama_opd']; ?>
-                                                    </a>
-                                                </td>
+                                                <td><?= $v_opd['nama_opd']; ?></td>
                                                 <td><?= $v_opd['alamat_opd']; ?></td>
                                                 <td>
                                                     <div class="form-button-action">
@@ -82,35 +78,111 @@
 
 
 <!-- Modal Tambah Pejabat -->
-<div class="modal fade" id="addPejabat" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header no-bd">
-                <h5 class="modal-title">FORM INPUT OPD</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form method="POST" action="/PejabatController/simpanPejabat" enctype="multipart/form-data">
-                <div class="modal-body">
+<form method="POST" action="/OPDController/tambahOpd" enctype="multipart/form-data">
+    <?= csrf_field(); ?>
+    <div class="modal fade" id="addPejabat" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header no-bd">
+                    <h5 class="modal-title">FORM INPUT OPD</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
 
-                    <div class="row">
-                        <div class="col-6">
-                            Form
+                <div class="form-group">
+                    <label><small>NAMA OPD</small></label>
+                    <input type="text" class="form-control" name="opd" placeholder="Organisasi Perangkat Daerah" required>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label><small>KODE OPD</small></label>
+                            <input type="text" class="form-control" name="kode" placeholder="Kode Instansi" required>
                         </div>
-                        <div class="col-6">
-                            Form
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label><small>NOMOR UNIT KERJA</small></label>
+                            <input type="text" class="form-control" name="nuk" placeholder="Nomor Unit Kerja" required>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label><small>ALAMAT</small></label>
+                    <input type="text" class="form-control" name="alamat" placeholder="Alamat Instansi" required>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label><small>KODE POS</small></label>
+                            <input type="text" class="form-control" name="k_pos" placeholder="Kode Pos" required>
                         </div>
                     </div>
 
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label><small>FAX</small></label>
+                            <input type="text" class="form-control" name="fax" placeholder="Nomor Fax" required>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-footer no-bd">
+
+
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label><small>LEVEL</small></label>
+                            <select name="level" class="form-control" required>
+                                <option value="">-- PILIH LEVEL OPD --</option>
+                                <option value="1">Bupati</option>
+                                <option value="2">Sekretariat</option>
+                                <option value="3">OPD</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label><small>TELEPON</small></label>
+                            <input type="text" class="form-control" name="telepone" placeholder="Telepon Instansi" required>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label><small>EMAIL</small></label>
+                            <input type="email" class="form-control" name="email" placeholder="E-Mail Instansi" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label><small>WEBSITE</small></label>
+                            <input type="text" class="form-control" name="website" placeholder="Website Instansi" required>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
                     <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Simpan Data...</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times-circle"></i> Batalkan...</button>
                 </div>
-            </form>
+
+            </div>
         </div>
     </div>
-</div>
-
+</form>
 <?= $this->endSection() ?>

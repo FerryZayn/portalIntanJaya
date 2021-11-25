@@ -46,6 +46,7 @@ $routes->get('/content/(:any)', 'ContentController::detailBerita/$1');
 
 //Administrator Portal Login_____________________________________________________________________________________________________
 $routes->get('/auth/login', 'AuthController::index');
+$routes->get('/logout', 'AuthController::logout');
 
 //Hak Akses________________________________________________________________________________________________________________________
 $routes->get('/administrator/index', 'AdminController::index', ['filter' => 'auth']);
@@ -55,7 +56,8 @@ $routes->get('/ambilakses/(:any)', 'AdminController::settingChecked/$1/$2', ['fi
 
 //Admin Portal Master_____________________________________________________________________________________________________________
 $routes->get('/administrator/master/dashboard', 'MasterController::index', ['filter' => 'auth']);
-
+$routes->get('/administrator/master/v_pegawai', 'MasterController::pegawaiHome', ['filter' => 'auth']);
+$routes->post('/prosesaddPegawai', 'MasterController::prosesaddPegawai', ['filter' => 'auth']);
 
 // =============================================================== PEMDA PORTAL ========================================================================// 
 

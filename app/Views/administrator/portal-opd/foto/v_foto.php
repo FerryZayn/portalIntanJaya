@@ -6,7 +6,7 @@
             <div class="page-inner py-5">
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                     <div>
-                        <h2 class="text-white pb-2 fw-bold">BERITA PORTAL</h2>
+                        <h2 class="text-white pb-2 fw-bold">ARTIKEL ALBUM FOTO PORTAL</h2>
                         <h5 class="text-white op-7 mb-2">Kabupaten Intan Jaya...</h5>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Daftar Berita</h4>
+                                <h4 class="card-title">Daftar Artikel Album Foto</h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -39,7 +39,8 @@
                                             <th>No</th>
                                             <th>Judul Berita</th>
                                             <th>Nama Pengarang</th>
-                                            <th>File Gambar</th>
+                                            <th>Status Artikel</th>
+                                            <th>Proses</th>
                                             <th style="width: 10%">Action</th>
                                         </tr>
                                     </thead>
@@ -48,20 +49,36 @@
                                         $i = 1;
                                         foreach ($v_artikel as $foto) :
                                         ?>
-
                                             <tr>
                                                 <td><?= $i++; ?></td>
                                                 <td><?= $foto['judul']; ?></td>
                                                 <td><?= $foto['nama_pengarang']; ?></td>
-                                                <td><?= $foto['file_gambar']; ?></td>
+                                                <td><?= $foto['nama_status']; ?></td>
+                                                <td>
+                                                    <?php
+                                                    if ($foto['nama_status'] == "publish") {
+                                                    ?>
+                                                        <a href="/administrator/portal-opd/penarikan-artikel/<?= $foto['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Penarikan...">
+                                                            <i class="fas fa-directions"></i> Tarik
+                                                        </a>
+                                                    <?php
+                                                    } else {
+                                                    ?>
+                                                        <a href="/administrator/portal-opd/publish/<?= $foto['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Publish...">
+                                                            <i class="fas fa-directions"></i> Publish
+                                                        </a>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </td>
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <a href="/administrator/portal-opd/<?= $foto['id']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
+                                                        <a href="/administrator/portal-opd/detail-artikel/<?= $foto['id']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">
                                                             <i class="fa fa-eye"></i>
-                                                        </a> &nbsp;
+                                                        </a>&nbsp;
                                                         <a href="/administrator/portal-opd/artikel-edit/<?= $foto['id']; ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit Task">
                                                             <i class="fa fa-edit"></i>
-                                                        </a> &nbsp;
+                                                        </a>&nbsp;
                                                         <form action="<?= base_url() ?>/administrator/portal-opd/<?= $foto['id']; ?>" method="POST" class="d-inline">
                                                             <?= csrf_field(); ?>
                                                             <input type="hidden" name="_method" value="DELETE">
@@ -83,8 +100,6 @@
     </div>
     <?= $this->include('/layout/adminportal/_footer');  ?>
 </div>
-
-
 
 <script src="<?= base_url() ?>/admintemp/ckeditor/ckeditor.js"></script>
 <script>

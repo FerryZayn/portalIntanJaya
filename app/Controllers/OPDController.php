@@ -42,33 +42,16 @@ class OPDController extends BaseController
     // Content Website OPD_____________________________________________________________________________________________
     public function websiteOPD($opd_id, $tipe)
     {
-        // $opd_id = 2;
-        // $tipe = 1;
-
-        // $opd_id = $this->request->getVar('id');
         $opd_id = $this->request->uri->getSegments(1);
         $tipe = $this->request->uri->getSegments(2);
 
         $tampil = $this->db->query("call artikel_view('$opd_id[1]', '$tipe[2]')")->getResultArray();
-
-        // dd($tampil);
 
         $data = [
             'v_slide' => $tampil,
         ];
         return view('/opd/home', $data);
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -110,8 +93,10 @@ class OPDController extends BaseController
     //Admin Link OPD________________________________________________________________________________________________
     public function vOPD()
     {
+        $tampil = $this->db->query("call opd_view()")->getResultArray();
         $data = [
-            'opdtampil' => $this->opdModel->getSemuaOPD(),
+            // 'opdtampil' => $this->opdModel->getSemuaOPD(),
+            'opdtampil' => $tampil,
             'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
         ];
         return view('/administrator/portal-opd/v_opd', $data);

@@ -15,30 +15,13 @@ class OPDModel extends Model
     ];
 
 
-    //Contet OPD per ID
-    public function opdViewsite()
-    {
-        // $builder = $this->db->table('tipe_penerima_pengirim_surat');
-        // $query = $builder->get()->getResult();
-        // return $query;
-
-        // $opd_id = $this->getVar->opd_id;
-
-        // $query = $this->db->query("call artikel_view('$opd_id')");
-        // $results = $query->getResult();
-        // return $results;
-    }
-
-
-
-
     //GET Tampil Semua OPD_______________________________________________________________________________________________
     public function getSemuaOPD()
     {
         return $this->db
             ->table('opd_hdr')
             ->join('artikel', 'artikel.opd_hdr_id=opd_hdr.id')
-            // ->where(['is_active' => 1])
+            ->join('tipe_artikel', 'tipe_artikel.id=artikel.tipe_artikel_id')
             ->get()
             ->getResultArray();
     }
@@ -52,6 +35,7 @@ class OPDModel extends Model
             ->get()
             ->getRow();
     }
+
     // GET Update OPD___________________________________________________________________________________________________________
     public function getUpdateOPD($id)
     {

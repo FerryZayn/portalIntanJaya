@@ -55,12 +55,21 @@
                                                 <td><?= $artikel['nama_pengarang']; ?></td>
                                                 <td><?= $artikel['nama_status']; ?></td>
                                                 <td>
-                                                    <a href="/administrator/portal-opd/publish/<?= $artikel['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Publish...">
-                                                        <i class="fas fa-directions"></i> Publish
-                                                    </a>
-                                                    <a href="/administrator/portal-opd/penarikan-artikel/<?= $artikel['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Penarikan...">
-                                                        <i class="fas fa-directions"></i> Tarik
-                                                    </a>
+                                                    <?php
+                                                    if ($artikel['nama_status'] == "publish") {
+                                                    ?>
+                                                        <a href="/administrator/portal-opd/penarikan-artikel/<?= $artikel['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Penarikan...">
+                                                            <i class="fas fa-directions"></i> Tarik
+                                                        </a>
+                                                    <?php
+                                                    } else {
+                                                    ?>
+                                                        <a href="/administrator/portal-opd/publish/<?= $artikel['id']; ?>" data-toggle="tooltip" class="btn btn-success btn-sm" data-original-title="Publish...">
+                                                            <i class="fas fa-directions"></i> Publish
+                                                        </a>
+                                                    <?php
+                                                    }
+                                                    ?>
                                                 </td>
                                                 <td>
                                                     <div class="form-button-action">
