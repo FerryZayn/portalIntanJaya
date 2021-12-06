@@ -55,7 +55,7 @@ class AuthController extends BaseController
 					'nama_pegawai' => $result->usr_name2,
 					// 'email' => $result->user_email,
 					// 'nama_opd' => $result->nama_opd,
-					// 'opd_id' => $result->opd_id,
+					'opd_id' => $result->opd_id,
 					'logged_in'     => TRUE
 				];
 				$this->session->set($ses_data);

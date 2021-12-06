@@ -56,8 +56,39 @@ $routes->get('/ambilakses/(:any)', 'AdminController::settingChecked/$1/$2', ['fi
 
 //Admin Portal Master_____________________________________________________________________________________________________________
 $routes->get('/administrator/master/dashboard', 'MasterController::index', ['filter' => 'auth']);
+
 $routes->get('/administrator/master/v_pegawai', 'MasterController::pegawaiHome', ['filter' => 'auth']);
 $routes->post('/prosesaddPegawai', 'MasterController::prosesaddPegawai', ['filter' => 'auth']);
+$routes->delete('/hapuspegawai', 'MasterController::hapusPegawai', ['filter' => 'auth']);
+
+
+$routes->get('/administrator/master/v_bidang', 'MasterController::bidang', ['filter' => 'auth']);
+$routes->post('/addbidang', 'MasterController::addBidang', ['filter' => 'auth']);
+$routes->put('/updatebidang', 'MasterController::updateBidang', ['filter' => 'auth']);
+$routes->delete('/hapusbidang', 'MasterController::hapusBidang', ['filter' => 'auth']);
+
+
+$routes->get('/administrator/master/v_jabatan', 'MasterController::jabatan', ['filter' => 'auth']);
+$routes->post('/addjabatan', 'MasterController::addJabatan', ['filter' => 'auth']);
+$routes->put('/updatejabatan', 'MasterController::updateJabatan', ['filter' => 'auth']);
+$routes->delete('/deletejabatan', 'MasterController::deleteJabatan', ['filter' => 'auth']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // =============================================================== PEMDA PORTAL ========================================================================// 
 

@@ -9,31 +9,9 @@
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
                             <?= session()->get('nama_pegawai'); ?>
-                            <span class="user-level">Administrator</span>
-                            <span class="caret"></span>
+                            <span class="user-level">Master</span>
                         </span>
                     </a>
-                    <div class="clearfix"></div>
-
-                    <div class="collapse in" id="collapseExample">
-                        <ul class="nav">
-                            <li>
-                                <a href="#profile">
-                                    <span class="link-collapse">My Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#edit">
-                                    <span class="link-collapse">Edit Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#settings">
-                                    <span class="link-collapse">Settings</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <ul class="nav nav-primary">
@@ -55,24 +33,26 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a href="#">
-                        <i class="fas fa-layer-group"></i>
-                        <p>Hak Akses</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">
-                        <i class="fas fa-desktop"></i>
-                        <p>OPD</p>
-                    </a>
-                </li> -->
                 <li class="nav-item">
                     <a href="/administrator/master/v_pegawai">
                         <i class="fas fa-th-list"></i>
                         <p>Pegawai</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/administrator/master/v_bidang">
+                        <i class="fas fa-layer-group"></i>
+                        <p>Bidang</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/administrator/master/v_jabatan">
+                        <i class="fas fa-desktop"></i>
+                        <p>Jabatan</p>
+                    </a>
+                </li>
+
                 <!-- 
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#forms">

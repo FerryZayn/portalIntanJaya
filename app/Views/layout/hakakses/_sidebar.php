@@ -9,7 +9,7 @@
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
                             <?= session()->get('nama_pegawai'); ?>
-                            <span class="user-level">Administrator</span>
+                            <span class="user-level">Hak Akses</span>
                         </span>
                     </a>
                 </div>
