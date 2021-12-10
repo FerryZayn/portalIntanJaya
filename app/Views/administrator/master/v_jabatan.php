@@ -23,7 +23,6 @@
                                     <i class="fas fa-plus-circle"></i>
                                     Tambah Jabatan
                                 </button>
-
                             </div>
                         </div>
 

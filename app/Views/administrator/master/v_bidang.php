@@ -23,7 +23,6 @@
                                     <i class="fas fa-plus-circle"></i>
                                     Tambah Bidang
                                 </button>
-
                             </div>
                         </div>
 

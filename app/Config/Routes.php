@@ -59,6 +59,7 @@ $routes->get('/administrator/master/dashboard', 'MasterController::index', ['fil
 
 $routes->get('/administrator/master/v_pegawai', 'MasterController::pegawaiHome', ['filter' => 'auth']);
 $routes->post('/prosesaddPegawai', 'MasterController::prosesaddPegawai', ['filter' => 'auth']);
+$routes->post('/proseseditPegawai', 'MasterController::editPegawai', ['filter' => 'auth']);
 $routes->delete('/hapuspegawai', 'MasterController::hapusPegawai', ['filter' => 'auth']);
 
 
@@ -72,9 +73,6 @@ $routes->get('/administrator/master/v_jabatan', 'MasterController::jabatan', ['f
 $routes->post('/addjabatan', 'MasterController::addJabatan', ['filter' => 'auth']);
 $routes->put('/updatejabatan', 'MasterController::updateJabatan', ['filter' => 'auth']);
 $routes->delete('/deletejabatan', 'MasterController::deleteJabatan', ['filter' => 'auth']);
-
-
-
 
 
 
