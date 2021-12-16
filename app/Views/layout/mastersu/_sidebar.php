@@ -28,31 +28,19 @@
                     <h4 class="text-section">Components</h4>
                 </li>
                 <li class="nav-item active">
-                    <a href="/administrator/master/dashboard">
+                    <a href="/administrator/mastersu/dashboard">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/administrator/master/v_pegawai">
+                    <a href="/administrator/mastersu/v_pegawai">
                         <i class="fas fa-th-list"></i>
                         <p>Pegawai</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/administrator/master/v_bidang">
-                        <i class="fas fa-desktop"></i>
-                        <p>Bidang</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/administrator/master/v_jabatan">
-                        <i class="fas fa-desktop"></i>
-                        <p>Jabatan</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/administrator/master/v_opd">
+                    <a href="/administrator/mastersu/v_opd">
                         <i class="fas fa-layer-group"></i>
                         <p>OPD</p>
                     </a>

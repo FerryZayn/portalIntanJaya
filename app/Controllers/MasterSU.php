@@ -4,74 +4,93 @@ namespace App\Controllers;
 
 use App\Models\ProcedureModel;
 
-class MasterController extends BaseController
+class MasterSU extends BaseController
 {
     public function index()
     {
-        return view('/administrator/master/dashboard');
+        $opd = $this->db->query("call opd_view()")->getResultArray();
+        $data = [
+            'opdtampil' => $opd,
+        ];
+        return view('/administrator/mastersu/dashboard', $data);
     }
 
-    public function pegawaiHome()
+    public function selectJabatan($opd_id)
+    {
+        $jabatan = $this->db->query("CALL jabatan_view_su('$opd_id')")->getResult();
+        return json_encode($jabatan);
+    }
+    public function pegawai()
     {
         $procedure = new ProcedureModel;
-        $user = $this->session->id;
-        $pegawai = $this->db->query("CALL pegawai_view('$user')")->getResultArray();
+        $pegawai = $this->db->query("call pegawai_view_su()")->getResultArray();
+
+        $p_input_id = $this->session->id;
+        $jabatan = $this->db->query("call jabatan_view($p_input_id)")->getResultArray();
+
         $golongan = $this->db->query("select * from golongan_pegawai")->getResult();
-
-
-        // $opd_id = $this->session->opd_id;
-        // $jabatan = $this->db->query("select id, nama_jabatan from jabatan where opd_hdr_id =" . $opd_id)->getResult();
-
-        $opd_hdr_id = $this->session->opd_id;
-        $jabatan = $this->db->query("call jabatan_view('$opd_hdr_id')")->getResult();
-
         $data = [
-            'title' => 'Pegawai Details | e-Surat',
-            'uri' => $this->request->uri->getSegment(1),
-            'get' => $this->session,
-            'v_pegawai' => $pegawai,
+            'tampilpegawai' => $pegawai,
             'jabatan' => $jabatan,
+
             'golongan' => $golongan,
-            'iscrud' => $procedure->iscrud($user),
+            'opdview' => $procedure->selectOpd(),
         ];
-        return view('/administrator/master/v_pegawai', $data);
+        return view('/administrator/mastersu/v_pegawai', $data);
     }
 
-    public function prosesaddPegawai()
-    {
-        $user = $this->session->id;
-        $nama_pegawai = $this->request->getVar('fullname');
-        $nik = $this->request->getVar('nik');
-        $nip = $this->request->getVar('nip');
-        $gender = $this->request->getVar('gender');
-        $nohp = $this->request->getVar('phone');
-        $email = $this->request->getVar('email');
-        $golongan = $this->request->getVar('golongan');
-        $kode = $this->request->getVar('kode');
-        $username = $this->request->getVar('username');
-        $passwd = $this->request->getVar('password');
-        $jabatan_id = $this->request->getVar('jabatan');
-        $tanggal_lahir = $this->request->getVar('tgl_lahir');
 
-        $result = $this->db->query("CALL pegawai_insert($user,'$nama_pegawai','$nik','$nip','$gender','$nohp','$email','$golongan','$kode','$username','$passwd','$jabatan_id','$tanggal_lahir')")->getRow();
+    public function addPegawaisu()
+    {
+        $p_id_input = $this->session->id;
+        $p_nama = $this->request->getVar('p_nama');
+        $p_nik = $this->request->getVar('p_nik');
+        $p_nip = $this->request->getVar('p_nip');
+        $p_kelamin_code = $this->request->getVar('p_kelamin_code');
+        $p_no_hp = $this->request->getVar('p_no_hp');
+        $p_email = $this->request->getVar('p_email');
+        $p_golongan_id = $this->request->getVar('p_golongan_id');
+        $p_kode = $this->request->getVar('p_kode');
+        $p_username = $this->request->getVar('p_username');
+        $p_passwd = $this->request->getVar('p_passwd');
+        $p_jabatan = $this->request->getVar('p_jabatan');
+        $p_tanggal_lahir = $this->request->getVar('p_tanggal_lahir');
+        $opd_id = $this->request->getVar('opd_id');
+        $is_p = $this->request->getVar('is_p');
+
+        $pegawai = $is_p == "on" ? '1' : '0';
+
+
+        $result = $this->db->query("call pegawai_insert_su('$p_id_input', '$p_nama', '$p_nik', '$p_nip', '$p_kelamin_code', '$p_no_hp', '$p_email', '$p_golongan_id', '$p_kode', '$p_username', '$p_passwd', '$p_jabatan', '$p_tanggal_lahir', '$opd_id', '$pegawai')")->getRow();
 
         if ($result->n == 81) {
             session()->setFlashdata('pesan', 'add');
-            return redirect()->to('/administrator/master/v_pegawai');
         } elseif ($result->n == 80) {
-            session()->setFlashdata('pesan', 'update');
-            return redirect()->back()->withInput();
-            // return redirect()->to('/administrator/master/v_pegawai');
+            session()->setFlashdata('pesan', 'ganda');
         } elseif ($result->n == 54) {
             session()->setFlashdata('pesan', '54');
-            return redirect()->back()->withInput();
-            // return redirect()->to('/administrator/master/v_pegawai');
         }
 
-
-        session()->setFlashdata('pesan', 'isvalid');
-        return view('/administrator/master/v_pegawai');
+        // return view('/administrator/mastersu/v_pegawai');
+        // return redirect()->to('/administrator/mastersu/v_pegawai');
+        session()->setFlashdata('info', 'Proses simpan Pegawai OPD berhasil');
+        return redirect()->to('/administrator/mastersu/v_pegawai');
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function editPegawai()
     {
         $id = $this->request->getVar('id');
@@ -96,16 +115,25 @@ class MasterController extends BaseController
 
 
 
-    public function hapusPegawai()
+    public function hapusPegawaisu()
     {
-        $p_id_input = $this->request->getPost('id');
-        $pegawai_id = $this->session->id;
+        $pegawai_id = $this->request->getPost('pegawai_id');
+        $p_id_input = $this->session->id;
+
         $this->db->query("call pegawai_delete('$p_id_input', '$pegawai_id')");
         session()->setFlashdata('pesan', 'delete');
-        return redirect()->to('/administrator/master/v_pegawai');
+        return redirect()->to('/administrator/mastersu/v_pegawai');
     }
 
-    
+
+
+
+
+
+
+
+
+
     public function bidang()
     {
         $pegawai_id = $this->session->id;
@@ -219,5 +247,52 @@ class MasterController extends BaseController
         $this->db->query("CALL jabatan_delete('$id','$user')");
         session()->setFlashdata('pesan', 'delete');
         return redirect()->to('/administrator/master/v_jabatan');
+    }
+
+
+
+
+    public function opd()
+    {
+        $opd = $this->db->query("call opd_view()")->getResultArray();
+
+        $data = [
+            'opdtampil' => $opd,
+        ];
+        return view('/administrator/mastersu/v_opd', $data);
+    }
+    public function tambahOpdsu()
+    {
+        $pegawai_id = $this->session->id;
+        $nama_opd = $this->request->getVar('opd');
+        $alamat_opd = $this->request->getVar('alamat');
+        $kode_pos = $this->request->getVar('k_pos');
+        $telepon = $this->request->getVar('telepone');
+        $fax = $this->request->getVar('fax');
+        $email = $this->request->getVar('email');
+        $website = $this->request->getVar('website');
+        $kode = $this->request->getVar('kode');
+        $level = $this->request->getVar('level');
+        $nuk = $this->request->getVar('nuk');
+
+        $insert = $this->db->query("CALL opd_insert('$pegawai_id', '$kode','$nama_opd','$alamat_opd','$kode_pos','$telepon','$fax','$email','$website','$level','$nuk')")->getRow();
+
+        if ($insert->n == 81) {
+            session()->setFlashdata('pesan', 'add');
+        } elseif ($insert->n == 80) {
+            session()->setFlashdata('pesan', 'ganda');
+        }
+        return redirect()->to('/administrator/mastersu/v_opd');
+    }
+
+    // GET Hapus OPD___________________________________________________________________________________
+    public function opdHapussu()
+    {
+        $opd_hdr_id = $this->request->getPost('opd_hdr_id');
+        $pegawai_id = $this->session->id;
+
+        $this->db->query("call opd_delete('$opd_hdr_id', '$pegawai_id') ");
+        session()->setFlashdata('pesan', 'delete');
+        return redirect()->to('/administrator/mastersu/v_opd');
     }
 }

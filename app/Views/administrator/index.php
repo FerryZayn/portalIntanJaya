@@ -51,7 +51,7 @@
 		</div>
 		<div class="page-inner mt--5">
 			<div class="row">
-				<div class="col-sm-4">
+				<div class="col-sm-3">
 					<div class="card full-height bg-satu">
 						<div class="card-box bg-satu">
 							<div class="inner" style="padding-bottom: 30px;">
@@ -64,11 +64,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-3">
 					<div class="card full-height bg-dua">
 						<div class="card-box bg-dua">
 							<div class="inner" style="padding-bottom: 30px;">
-								<h3> ADMINISTRATOR PORTAL PEMDA </h3>
+								<h3> PORTAL PEMDA </h3>
 							</div>
 							<div class="icon">
 								<i class="fab fa-black-tie" aria-hidden="true"></i>
@@ -77,16 +77,30 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-3">
 					<div class="card full-height bg-tiga">
 						<div class="card-box bg-tiga">
 							<div class="inner" style="padding-bottom: 30px;">
-								<h3> ADMINISTRATOR PORTAL OPD </h3>
+								<h3> PORTAL OPD </h3>
 							</div>
 							<div class="icon">
 								<i class="fa fa-book" aria-hidden="true"></i>
 							</div>
 							<a href="/administrator/portal-opd/dashboard" class="card-box-footer">Masuk <i class="fa fa-arrow-circle-right"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-3">
+					<div class="card full-height bg-tiga">
+						<div class="card-box bg-tiga">
+							<div class="inner" style="padding-bottom: 30px;">
+								<h3> OPD </h3>
+							</div>
+							<div class="icon">
+								<i class="fa fa-book" aria-hidden="true"></i>
+							</div>
+							<a href="/administrator/mastersu/dashboard" class="card-box-footer">Masuk <i class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
 				</div>

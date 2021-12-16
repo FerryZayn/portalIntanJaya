@@ -54,8 +54,13 @@
                                                         </div>
 
                                                         <div class="mb-3">
-                                                            <label for="fileFotoLabel" class="fileFotoLabel">File Foto</label>
-                                                            <input type="file" class="form-control" name="file_gambar" id="file_foto" onchange="previewImg()">
+                                                            <!-- <label for="fileFotoLabel" class="fileFotoLabel">File Foto</label>
+                                                            <input type="file" class="form-control" name="file_gambar" id="file_foto" onchange="previewImg()"> -->
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" name="file_gambar" id="sampul" onchange="previewImg()">
+
+                                                                <label class="custom-file-label" for="file_foto">Pilih Foto</label>
+                                                            </div>
                                                         </div>
                                                         <div class="mb-3">
                                                             <input type="hidden" name="opd_hdr_id" value="<?= session()->get('id'); ?>" class="form-control">
@@ -71,7 +76,7 @@
                                 </div>
                                 <div class="modal-footer no-bd">
                                     <button type="submit" class="btn btn-primary" id="displayNotif"><i class="fas fa-save"></i> Simpan Data...</button>
-                                    <a href="/administrator/portal-pemda/dashboard" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
+                                    <a href="/administrator/portal-opd/dashboard" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
                                 </div>
                             </form>
                         </div>
@@ -85,10 +90,15 @@
 
 <script>
     function previewImg() {
-        const fileFoto = document.querySelector('#file_foto');
+        const sampul = document.querySelector('#sampul');
+        const sampulLabel = document.querySelector('.custom-file-label');
         const imgPreview = document.querySelector('.img-preview');
+
+        sampulLabel.textContent = sampul.files[0].name;
+
         const fileSampul = new FileReader();
-        fileSampul.readAsDataURL(fileFoto.files[0]);
+        fileSampul.readAsDataURL(sampul.files[0]);
+
         fileSampul.onload = function(e) {
             imgPreview.src = e.target.result;
         }

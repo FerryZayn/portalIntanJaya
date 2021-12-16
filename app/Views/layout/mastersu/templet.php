@@ -3,9 +3,12 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>ADMINISTRATOR PORTAL PEMDA</title>
+    <title>MASTER | Portal Kab. Intan Jaya</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="<?= base_url(); ?>/admintemp/img/logo/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="<?= base_url(); ?>/admintemp/img/logo/logo.png" type="image/x-icon" />
+
+    <!-- //Jequery Select  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- Fonts and icons -->
     <script src="<?= base_url(); ?>/admintemp/js/plugin/webfont/webfont.min.js"></script>
@@ -25,7 +28,12 @@
     </script>
 
 
-
+    <script src="<?= base_url() ?>/admintemp/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: '#deskberita'
+        });
+    </script>
 
     <!-- Big Icon Star -->
     <link rel="stylesheet" href="<?= base_url(); ?>/admintemp/css/big-icon.css">
@@ -43,13 +51,20 @@
 
 <body>
 
+
+
+
+
+
+
+
     <div class="wrapper">
         <!-- Header Star -->
-        <?= $this->include('/layout/pemdatemp/_header'); ?>
+        <?= $this->include('/layout/mastersu/_header'); ?>
         <!-- Header End -->
 
         <!-- Sidebar Star -->
-        <?= $this->include('/layout/pemdatemp/_sidebar'); ?>
+        <?= $this->include('/layout/mastersu/_sidebar'); ?>
         <!-- End Sidebar -->
 
         <!-- Content Srat -->
@@ -64,6 +79,7 @@
     <script src="<?= base_url(); ?>/admintemp/js/core/jquery.3.2.1.min.js"></script>
     <script src="<?= base_url(); ?>/admintemp/js/core/popper.min.js"></script>
     <script src="<?= base_url(); ?>/admintemp/js/core/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- jQuery UI -->
     <script src="<?= base_url(); ?>/admintemp/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
@@ -105,6 +121,9 @@
     <!-- Atlantis DEMO methods, don't include it in your project! -->
     <script src="<?= base_url(); ?>/admintemp/js/setting-demo.js"></script>
     <!-- <script src="<?= base_url(); ?>/admintemp/js/demo.js"></script> -->
+
+
+
 
 
     <script>
@@ -154,61 +173,11 @@
             });
         });
     </script>
-
-    <!-- <script>
-        function previewImg() {
-            const fileFoto = document.querySelector('#file_foto');
-            const imgPreview = document.querySelector('.img-preview');
-            const fileSampul = new FileReader();
-            fileSampul.readAsDataURL(fileFoto.files[0]);
-            fileSampul.onload = function(e) {
-                imgPreview.src = e.target.result;
-            }
-        }
-    </script> -->
-    <script>
-        function previewImg() {
-            const sampul = document.querySelector('#sampul');
-            const sampulLabel = document.querySelector('.custom-file-label');
-            const imgPreview = document.querySelector('.img-preview');
-
-            sampulLabel.textContent = sampul.files[0].name;
-
-            const fileSampul = new FileReader();
-            fileSampul.readAsDataURL(sampul.files[0]);
-
-            fileSampul.onload = function(e) {
-                imgPreview.src = e.target.result;
-            }
-        }
-    </script>
-
-    <script>
-        $('#displayNotif').on('click', function() {
-            var placementFrom = $('#notify_placement_from option:selected').val();
-            var placementAlign = $('#notify_placement_align option:selected').val();
-            var state = $('#notify_state option:selected').val();
-            var style = $('#notify_style option:selected').val();
-            var content = {};
-
-            content.message = 'Terima kasih, Artikel anda berhasil diupload ke database...';
-            content.title = 'NOTIFIKASI SISTEM';
-            if (style == "withicon") {
-                content.icon = 'fa fa-bell';
-            } else {
-                content.icon = 'none';
-            }
-            content.url = '#';
-            content.target = '_blank';
-
-            $.notify(content, {
-                type: state,
-                placement: {
-                    from: placementFrom,
-                    align: placementAlign
-                },
-                time: 100,
-                delay: 0,
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('ul li a').click(function() {
+                $('li a').removeClass("active");
+                $(this).addClass("active");
             });
         });
     </script>

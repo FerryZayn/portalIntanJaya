@@ -1,4 +1,4 @@
-<?= $this->extend('/layout/mastertemp/templet') ?>
+<?= $this->extend('/layout/mastersu/templet') ?>
 <?= $this->section('content') ?>
 <div class="main-panel">
     <div class="content">
@@ -46,19 +46,19 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Pegawai</th>
-                                            <th>Golongan</th>
                                             <th>NIP</th>
+                                            <th>Jabatan</th>
                                             <th style="width: 10%">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php $i = 1; ?>
-                                        <?php foreach ($v_pegawai as $peg) : ?>
+                                        <?php foreach ($tampilpegawai as $peg) : ?>
                                             <tr>
                                                 <td><?= $i++; ?></td>
                                                 <td><?= $peg['nama_pegawai']; ?></td>
                                                 <td><?= $peg['nip']; ?></td>
-                                                <td><?= $peg['golongan']; ?></td>
+                                                <td><?= $peg['nama_jabatan']; ?></td>
                                                 <td>
                                                     <div class="form-button-action">
                                                         <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#viewModal<?= $peg['id']; ?>">
@@ -79,14 +79,16 @@
                                                                             <div class="col-sm-3">
                                                                                 Nama Pegawai <br />
                                                                                 Nomor Induk Pegawai<br />
-                                                                                Golongan<br />
-                                                                                Nama Jabatan
+                                                                                Nama Jabatan<br />
+                                                                                Nama Bidang<br />
+                                                                                Nama Sub Bidang
                                                                             </div>
                                                                             <div class="col-sm-9 fw-bold">
                                                                                 : <?= $peg['nama_pegawai']; ?><br />
                                                                                 : <?= $peg['nip']; ?><br />
-                                                                                : <?= $peg['golongan']; ?><br />
-                                                                                : <?= $peg['nama_jabatan']; ?>
+                                                                                : <?= $peg['nama_jabatan']; ?><br />
+                                                                                : <?= $peg['nama_bidang']; ?><br />
+                                                                                : <?= $peg['nama_sub_bidang']; ?>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -158,7 +160,7 @@
                                                                                         <select class="form-control jabatan" name="jabatan">
                                                                                             <option value="">- Pilih Jabatan -</option>
                                                                                             <?php foreach ($jabatan as $value) : ?>
-                                                                                                <option value="<?= $value->id ?>"><?= $value->nama_jabatan; ?></option>
+                                                                                                <option value="<?= $value['id']; ?>"><?= $value['nama_jabatan']; ?></option>
                                                                                             <?php endforeach; ?>
                                                                                         </select>
                                                                                     </div>
@@ -205,7 +207,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <!-- End Edit Pegawai  View-->
+                                                            <!-- End Edit Pegawai -->
                                                         </form>
 
 
@@ -214,10 +216,10 @@
                                                             <i class="fa fa-trash"></i>
                                                         </button>
                                                         <!-- Modal Hapus-->
-                                                        <form action="/hapuspegawai" method="post">
+                                                        <form action="/hapuspegsu" method="post">
                                                             <?= csrf_field(); ?>
                                                             <div class="modal fade" id="hapusModal<?= $peg['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                                <div class="modal-dialog" role="document">
+                                                                <div class="modal-dialog modal-lg" role="document">
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
                                                                             <h5 class="modal-title" id="exampleModalLabel">Ingin hapus data ini?</h5>
@@ -230,20 +232,22 @@
                                                                                 <div class="col-sm-3">
                                                                                     Nama Pegawai <br />
                                                                                     Nomor Induk Pegawai<br />
-                                                                                    Golongan<br />
-                                                                                    Nama Jabatan
+                                                                                    Nama Jabatan<br />
+                                                                                    Nama Bidang<br />
+                                                                                    Nama Sub Bidang
                                                                                 </div>
                                                                                 <div class="col-sm-9 fw-bold">
                                                                                     : <?= $peg['nama_pegawai']; ?><br />
                                                                                     : <?= $peg['nip']; ?><br />
-                                                                                    : <?= $peg['golongan']; ?><br />
-                                                                                    : <?= $peg['nama_jabatan']; ?>
+                                                                                    : <?= $peg['nama_jabatan']; ?><br />
+                                                                                    : <?= $peg['nama_bidang']; ?><br />
+                                                                                    : <?= $peg['nama_sub_bidang']; ?><br />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="modal-footer">
                                                                             <input type="hidden" name="_method" value="DELETE">
-                                                                            <input type="hidden" name="id" class="id" value="<?= $peg['id']; ?>">
+                                                                            <input type="text" name="pegawai_id" class="pegawai_id" value="<?= $peg['id']; ?>">
                                                                             <button type="button" class="btn btn-sm btn-info" data-dismiss="modal">
                                                                                 <i class="fas fa-times"></i> Close
                                                                             </button>
@@ -274,8 +278,8 @@
 </div>
 
 
-<!-- Modal Add Product-->
-<form action="/prosesaddPegawai" method="post">
+<!-- Modal Add Pegawai -->
+<form action="/addPegawaisu" method="post">
     <?= csrf_field(); ?>
     <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -287,84 +291,130 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label for="defaultSelect">Nama Lengkap</label>
-                        <input id="namalengkap" type="text" class="form-control msg <?= session()->getFlashdata('fullname') ? 'is-invalid' : '' ?>" name="fullname" value="<?= old('fullname') ?>">
-                    </div>
+
+
                     <div class="row">
                         <div class="col-md-6 col-lg-6">
                             <div class="form-group">
-                                <label for="defaultSelect">Nomor Induk Pegawai Negeri</label>
-                                <input id="nip" type="text" class="form-control <?= session()->getFlashdata('nip') ? 'is-invalid' : '' ?>" name="nip" value="">
-                            </div>
-                            <div class="form-group">
-                                <label for="defaultSelect">Nomor Induk Kependukukan</label>
-                                <input type="text" class="form-control <?= session()->getFlashdata('nik') ? 'is-invalid' : '' ?>" name="nik" value="<?= old('nik') ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="defaultSelect">Alamat E-Mail</label>
-                                <input id="email" type="email" class="form-control <?= session()->getFlashdata('email') ? 'is-invalid' : '' ?>" name="email" value="<?= old('email') ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="defaultSelect">Jenis Kelain</label>
-                                <select class="form-control <?= session()->getFlashdata('kode') ? 'is-invalid' : '' ?>" name="gender" required>
-                                    <option value="">- Pilih Jenis Kelain -</option>
-                                    <option value="1">Laki-laki</option>
-                                    <option value="2">Perempuan</option>
+                                <label for="">NAMA OPD</label>
+                                <select class="form-control" name="opd_id" id="opd_id" required>
+                                    <option value="">-- PILIH OPD --</option>
+                                    <?php foreach ($opdview as $value) : ?>
+                                        <option value="<?= $value->id; ?>"><?= $value->nama_opd; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="">Tanggal Lahir</label>
-                                <input type="date" class="form-control <?= session()->getFlashdata('tgl_lahir') ? 'is-invalid' : '' ?>" name="tgl_lahir" value="<?= old('tgl_lahir') ?>">
+                                <label for="">JABATAN PEGAWAI NEGRI</label>
+                                <select class="form-control" name="p_jabatan" id="jabatan" required>
+                                    <option value="">-- PILIH JABATAN --</option>
+                                </select>
+                                <?php if (session()->getFlashdata('jabatan')) : ?>
+                                    <small class="text-danger">
+                                        <?= session()->getFlashdata('jabatan') ?>
+                                    </small>
+                                <?php endif; ?>
                             </div>
+
                             <div class="form-group">
-                                <label for="">Nomor Telepon</label>
-                                <input type="text" class="form-control <?= session()->getFlashdata('phone') ? 'is-invalid' : '' ?>" name="phone" value="<?= old('phone') ?>">
+                                <label for="">NAMA LENGKAP</label>
+                                <input id="namalengkap" type="text" class="form-control msg" name="p_nama" required>
 
                             </div>
+
+                            <div class="form-group">
+                                <label for="">NOMOR INDUK PEGAWAI NEGRI</label>
+                                <input id="p_nip" type="text" class="form-control" name="p_nip" required>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">NOMOR INDUK KEPENDUDUKAN</label>
+                                <input type="text" class="form-control" name="p_nik" required>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="">TEMPAT LAHIR</label>
+                                <input type="text" class="form-control <?= session()->getFlashdata('tempat') ? 'is-invalid' : '' ?>" name="tempat" value="<?= old('tempat') ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="">TANGGAL LAHIR</label>
+                                <input type="date" class="form-control" name="p_tanggal_lahir" required>
+                            </div>
+                            <div class="form-group">
+
+                                <label class="selectgroup-item"><label for="">IS PEGAWAI ?</label>
+                                    <input type="checkbox" class="selectgroup-input" id="customSwitch1" name="is_p">
+                                    <span class="selectgroup-button">IS PEGAWAI</span>
+                                </label>
+                            </div>
+
                         </div>
                         <div class="col-md-6 col-lg-6">
                             <div class="form-group">
-                                <label for="defaultSelect">Pilih Jabatan PNS</label>
-                                <select class="form-control <?= session()->getFlashdata('jabatan') ? 'is-invalid' : '' ?>" name="jabatan" required>
-                                    <option value="">- Pilih Jabatan PNS -</option>
-                                    <?php foreach ($jabatan as $jab) : ?>
-                                        <option value="<?= $jab->kode; ?>"><?= $jab->nama_jabatan; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
+                                <label for="">NO TELEPON</label>
+                                <input type="text" class="form-control" name="p_no_hp" required>
+
                             </div>
                             <div class="form-group">
-                                <label for="defaultSelect">Golongan Pegawai Negeri</label>
-                                <select class="form-control <?= session()->getFlashdata('golongan') ? 'is-invalid' : '' ?>" name="golongan" required>
-                                    <option value="">- Pilih Golongan -</option>
-                                    <?php foreach ($golongan as $value) : ?>
-                                        <option value="<?= $value->id ?>"><?= $value->kode; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
+                                <label for="">ALAMAT E-MAIL</label>
+                                <input id="p_email" type="email" class="form-control" name="p_email" required>
                             </div>
                             <div class="form-group">
-                                <label for="defaultSelect">Kode</label>
-                                <input type="text" class="form-control <?= session()->getFlashdata('kode') ? 'is-invalid' : '' ?>" name="kode" value="<?= old('kode') ?>">
+                                <label for="">USERNAME</label>
+                                <input type="text" class="form-control" name="p_username" required>
                             </div>
                             <div class="form-group">
-                                <label for="defaultSelect">Nama Pengguna</label>
-                                <input type="text" class="form-control <?= session()->getFlashdata('username') ? 'is-invalid' : '' ?>" name="username" value="<?= old('username') ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="defaultSelect">Password</label>
-                                <input id="password" type="password" class="form-control pwstrength <?= session()->getFlashdata('password') ? 'is-invalid' : '' ?>" data-indicator="pwindicator" name="password">
+                                <label for="">PASSWORD</label>
+                                <input id="p_passwd" type="password" class="form-control pwstrength" data-indicator="pwindicator" name="p_passwd" required>
+
                                 <div id="pwindicator" class="pwindicator">
                                     <div class="bar"></div>
                                     <div class="label"></div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="defaultSelect">Konfirmasi Password</label>
-                                <input id="password2" type="password" class="form-control <?= session()->getFlashdata('password') ? 'is-invalid' : '' ?>" name="password-confirm">
+                                <label for="">PASSWORD KONFRIMASI</label>
+                                <input id="p_passwd2" type="password" class="form-control" name="p_passwd-confirm" required>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">GOLONGAN</label>
+                                <select class="form-control golongan" name="p_golongan_id" required>
+                                    <option value="">-- PILIH GOLONGAN --</option>
+                                    <?php foreach ($golongan as $value) : ?>
+                                        <option value="<?= $value->id ?>"><?= $value->kode; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">KODE</label>
+                                <select class="form-control" name="p_kode" required>
+                                    <option value="" required>-- PILIH KODE --</option>
+                                    <option value="AAA">AAA</option>
+                                    <option value="BBB">BBB</option>
+                                    <option value="CCC">CCC</option>
+                                    <option value="DDD">DDD</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">JENIS KELAIMIN</label>
+                                <select class="form-control" name="p_kelamin_code" required>
+                                    <option value="" required>-- PILIH GENDER --</option>
+                                    <option value="1">LAKI-LAKI</option>
+                                    <option value="2">PEREMPUAN</option>
+                                </select>
                             </div>
                         </div>
                     </div>
 
+                    <!-- <div class="form-group">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1" name="is_p">
+                            <label class="custom-control-label" for="customSwitch1">IS PEGAWAI !</label>
+                        </div>
+                    </div> -->
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
@@ -374,8 +424,28 @@
         </div>
     </div>
 </form>
-<!-- End Modal Add Product-->
+<!-- End Modal Add Pegawai -->
 
-
+<!-- Star Proses Ambil Jabatan OPD -->
+<script>
+    $("#opd_id").on("change", function() {
+        var value = $("#opd_id option:selected").attr("value");
+        $('#jabatan').html('<option>Mencari Jabatan...</option>');
+        $.ajax({
+            url: "<?php echo site_url('/prosesCariJabatan'); ?>/" + value,
+            type: "GET",
+            async: true,
+            dataType: 'json',
+            success: function(data) {
+                var html = '';
+                $(data).each(function(key, value) {
+                    html += '<option value=' + value.id + '>' + value.nama_jabatan + '</option>';
+                })
+                $('#jabatan').html(html);
+            }
+        });
+    });
+</script>
+<!-- End Proses Ambil Jabatan OPD -->
 
 <?= $this->endSection() ?>

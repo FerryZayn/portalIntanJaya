@@ -54,7 +54,7 @@ class AuthController extends BaseController
 					'id'       =>  $result->usr_name,
 					'nama_pegawai' => $result->usr_name2,
 					// 'email' => $result->user_email,
-					// 'nama_opd' => $result->nama_opd,
+					'opd_n' => $result->opd_n,
 					'opd_id' => $result->opd_id,
 					'logged_in'     => TRUE
 				];

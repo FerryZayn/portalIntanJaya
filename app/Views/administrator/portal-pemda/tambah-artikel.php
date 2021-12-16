@@ -54,8 +54,12 @@
                                                         </div>
 
                                                         <div class="mb-3">
-                                                            <label for="fileFotoLabel" class="fileFotoLabel">File Foto</label>
-                                                            <input type="file" class="form-control" name="file_gambar" id="file_foto" onchange="previewImg()">
+                                                            <!-- <label for="fileFotoLabel" class="fileFotoLabel">File Foto</label>
+                                                            <input type="file" class="form-control" name="file_gambar" id="file_foto" onchange="previewImg()"> -->
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" name="file_gambar" id="sampul" onchange="previewImg()">
+                                                                <label class="custom-file-label" for="file_foto">Pilih Foto</label>
+                                                            </div>
                                                         </div>
                                                         <div class="mb-3">
                                                             <input type="hidden" name="opd_hdr_id" value="<?= session()->get('id'); ?>" class="form-control">

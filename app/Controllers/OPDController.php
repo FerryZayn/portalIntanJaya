@@ -420,6 +420,14 @@ class OPDController extends BaseController
     // GET Hapus OPD________________________________________________________________________________________________
     public function hapusOpdArtikel($id)
     {
+        $artikel = $this->opdModel->find($id);
+
+        if ($artikel['file_gambar'] != 'default.jpg') {
+            unlink('templet/gambar-berita' . $artikel['file_gambar']);
+        }
+
+
+
         $this->opdModel->delete($id);
         session()->setFlashdata('info', 'Data sudah di hapus...');
         return redirect()->to('/administrator/portal-opd/dashboard');

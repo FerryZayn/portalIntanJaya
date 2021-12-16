@@ -64,9 +64,10 @@ $routes->delete('/hapuspegawai', 'MasterController::hapusPegawai', ['filter' => 
 
 
 $routes->get('/administrator/master/v_bidang', 'MasterController::bidang', ['filter' => 'auth']);
-$routes->post('/addbidang', 'MasterController::addBidang', ['filter' => 'auth']);
-$routes->put('/updatebidang', 'MasterController::updateBidang', ['filter' => 'auth']);
-$routes->delete('/hapusbidang', 'MasterController::hapusBidang', ['filter' => 'auth']);
+$routes->get('/administrator/master/v_opd', 'MasterController::opd', ['filter' => 'auth']);
+// $routes->post('/addbidang', 'MasterController::addBidang', ['filter' => 'auth']);
+// $routes->put('/updatebidang', 'MasterController::updateBidang', ['filter' => 'auth']);
+// $routes->delete('/hapusbidang', 'MasterController::hapusBidang', ['filter' => 'auth']);
 
 
 $routes->get('/administrator/master/v_jabatan', 'MasterController::jabatan', ['filter' => 'auth']);
@@ -77,12 +78,28 @@ $routes->delete('/deletejabatan', 'MasterController::deleteJabatan', ['filter' =
 
 
 
+// =============================================================== OPD Master Bidang ========================================================================// 
+$routes->get('/administrator/mastersu/dashboard', 'MasterSU::index', ['filter' => 'auth']);
+
+// $routes->post('/addjabatan', 'MbidangSUController::addJabatan', ['filter' => 'auth']);
+// $routes->put('/updatejabatan', 'MbidangSUController::updateJabatan', ['filter' => 'auth']);
+// $routes->delete('/deletejabatan', 'MbidangSUController::deleteJabatan', ['filter' => 'auth']);
+
+$routes->get('/administrator/mastersu/v_pegawai', 'MasterSU::pegawai', ['filter' => 'auth']);
+$routes->post('/addPegawaisu', 'MasterSU::addPegawaisu', ['filter' => 'auth']);
+$routes->delete('/hapuspegsu', 'MasterSU::hapusPegawaisu', ['filter' => 'auth']);
 
 
 
 
+$routes->get('/administrator/mastersu/v_opd', 'MasterSU::opd', ['filter' => 'auth']);
+$routes->post('/addopdsu', 'MasterSU::tambahOpdsu', ['filter' => 'auth']);
+$routes->delete('/hapusopdsu', 'MasterSU::opdHapussu', ['filter' => 'auth']);
 
 
+
+// ============================================= JSON DATA ======================================================// 
+$routes->get('prosesCariJabatan/(:num)', 'MasterSU::selectJabatan/$1');
 
 
 
