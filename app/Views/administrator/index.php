@@ -90,7 +90,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="col-sm-3">
 					<div class="card full-height bg-tiga">
 						<div class="card-box bg-tiga">
@@ -100,7 +100,7 @@
 							<div class="icon">
 								<i class="fa fa-book" aria-hidden="true"></i>
 							</div>
-							<a href="/administrator/mastersu/dashboard" class="card-box-footer">Masuk <i class="fa fa-arrow-circle-right"></i></a>
+							<a href="/mastersu" class="card-box-footer">Masuk <i class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
 				</div>

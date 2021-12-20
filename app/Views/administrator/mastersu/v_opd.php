@@ -34,6 +34,7 @@
                                             <th>NAMA OPD</th>
                                             <th>ALAMAT</th>
                                             <th>JABATAN</th>
+                                            <th>BIDANG</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
@@ -45,16 +46,76 @@
                                                 <td><?= $v_opd['nama_opd']; ?></td>
                                                 <td><?= $v_opd['alamat_opd']; ?></td>
                                                 <td>
-                                                    <a href="masterjabatan/<?= $v_opd['id']; ?>" class="btn btn-info btn-sm">
+                                                    <a href="/masterjabatan/<?= $v_opd['id']; ?>" class="btn btn-info btn-sm">
                                                         <i class="fa fa-eye"></i>
                                                     </a>
+                                                </td>
+                                                <td>
+                                                    <a href="/masterbidangsu/<?= $v_opd['id']; ?>" class="btn btn-info btn-sm">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
+                                                    <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#inputBidang<?= $v_opd['id']; ?>">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                    <!-- Input Data Bidang Star -->
+                                                    <form action="/addmasterbidang" method="post">
+                                                        <?= csrf_field(); ?>
+                                                        <div class="modal fade" id="inputBidang<?= $v_opd['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header bg-primary">
+                                                                        <h2 class="modal-title fw-bold text-primary" id="exampleModalLabel">
+                                                                            <i class="fas fa-pen"></i> INPUT DATA BIDANG
+                                                                        </h2>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+
+
+                                                                        <div class="col-sm-12">
+                                                                            <div class="form-group">
+                                                                                <label><small>KODE BIDANG</small></label>
+                                                                                <input type="text" class="form-control" name="kd" required>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-12">
+                                                                            <div class="form-group">
+                                                                                <label><small>NAMA BIDANG</small></label>
+                                                                                <input type="text" class="form-control" name="nama_bidang" required>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-12">
+                                                                            <div class="form-group">
+                                                                                <label><small>KATEGORI</small></label>
+                                                                                <select name="tipe_b_id" class="form-control" required>
+                                                                                    <option value="">-- PILIH LEVEL KATEGORI --</option>
+                                                                                    <option value="1">Sekretaris</option>
+                                                                                    <option value="2">Umum</option>
+                                                                                    <option value="100">Lainnya</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i> Simpan</button>
+                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <!-- Input Data Bidang End -->
                                                 </td>
                                                 <td>
                                                     <div class="form-button-action">
                                                         <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#viewModal<?= $v_opd['id']; ?>">
                                                             <i class="fa fa-eye"></i>
                                                         </button>
-                                                        <!-- Modal View-->
+                                                        <!-- Star Modal View-->
                                                         <div class="modal fade" id="viewModal<?= $v_opd['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                             <div class="modal-dialog modal-lg" role="document">
                                                                 <div class="modal-content">

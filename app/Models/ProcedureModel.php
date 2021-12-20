@@ -128,7 +128,7 @@ class ProcedureModel
     public function bidangViewsu($opd_id)
     {
         $query = $this->db->query("CALL bidang_view_su('$opd_id')");
-        $results = $query->getResult();
+        $results = $query->getResultArray();
         return $results;
     }
 

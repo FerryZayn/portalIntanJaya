@@ -79,7 +79,7 @@ $routes->delete('/deletejabatan', 'MasterController::deleteJabatan', ['filter' =
 
 
 // =============================================================== OPD Master Bidang ========================================================================// 
-$routes->get('/administrator/mastersu/dashboard', 'MasterSU::index', ['filter' => 'auth']);
+$routes->get('/mastersu', 'MasterSU::index', ['filter' => 'auth']);
 
 // $routes->post('/addjabatan', 'MbidangSUController::addJabatan', ['filter' => 'auth']);
 // $routes->put('/updatejabatan', 'MbidangSUController::updateJabatan', ['filter' => 'auth']);
@@ -90,17 +90,40 @@ $routes->post('/addPegawaisu', 'MasterSU::addPegawaisu', ['filter' => 'auth']);
 $routes->delete('/hapuspegsu', 'MasterSU::hapusPegawaisu', ['filter' => 'auth']);
 
 
-
-
 $routes->get('/administrator/mastersu/v_opd', 'MasterSU::opd', ['filter' => 'auth']);
 $routes->post('/addopdsu', 'MasterSU::tambahOpdsu', ['filter' => 'auth']);
 $routes->delete('/hapusopdsu', 'MasterSU::opdHapussu', ['filter' => 'auth']);
 
+// Routes Master Jabatan
+$routes->get('/masterjabatan/(:num)', 'MasterSU::masterJabatan/$1', ['filter' => 'auth']);
+// $routes->post('masteraddjabatan', 'Master::masteraddJabatan', ['filter' => 'auth']);
+// $routes->delete('/masterdeljabatan', 'master::masterDeljabatan', ['filter' => 'auth']);
 
 
 // ============================================= JSON DATA ======================================================// 
 $routes->get('prosesCariJabatan/(:num)', 'MasterSU::selectJabatan/$1');
 
+// Routes Master Bidang 
+$routes->get('/masterbidangsu/(:num)', 'MasterSU::masterBidangSU/$1', ['filter' => 'auth']);
+$routes->post('/addmasterbidang', 'MasterSU::addmasterBidang', ['filter' => 'auth']);
+
+$routes->post('/addmasterbidangsu', 'MasterSU::addmasterBidangsu', ['filter' => 'auth']);
+$routes->post('/updatemasterbidangsu', 'MasterSU::updateMasterBidangSU', ['filter' => 'auth']);
+$routes->delete('/delmasterbidang', 'MasterSU::delete', ['filter' => 'auth']);
+
+
+
+// Routes Master Sub Bidang
+$routes->get('/mastersubbidang/(:any)', 'MasterSU::masterSubid/$1/$2', ['filter' => 'auth']);
+$routes->post('/masteraddsubid', 'MasterSU::masteraddSubid', ['filter' => 'auth']);
+$routes->put('/masterupdatesubid', 'MasterSU::masterupdateSubid', ['filter' => 'auth']);
+$routes->delete('/masterdeletesubid', 'MasterSU::masterdeletesubid', ['filter' => 'auth']);
+
+
+// Routes Master Jabatan
+$routes->get('/masterjabatan/(:num)', 'MasterSU::masterJabatan/$1', ['filter' => 'auth']);
+$routes->post('masteraddjabatan', 'MasterSU::masteraddJabatan', ['filter' => 'auth']);
+$routes->delete('/masterdeljabatan', 'MasterSU::masterDeljabatan', ['filter' => 'auth']);
 
 
 

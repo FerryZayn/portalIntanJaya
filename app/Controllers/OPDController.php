@@ -95,7 +95,6 @@ class OPDController extends BaseController
     {
         $tampil = $this->db->query("call opd_view()")->getResultArray();
         $data = [
-            // 'opdtampil' => $this->opdModel->getSemuaOPD(),
             'opdtampil' => $tampil,
             'v_tipeartikel' => $this->tipeArtikelModel->getTipeArtikel(),
         ];

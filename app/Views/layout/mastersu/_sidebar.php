@@ -28,7 +28,7 @@
                     <h4 class="text-section">Components</h4>
                 </li>
                 <li class="nav-item active">
-                    <a href="/administrator/mastersu/dashboard">
+                    <a href="/mastersu">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>
@@ -46,7 +46,7 @@
                     </a>
                 </li>
 
-                
+
 
                 <!-- 
                 <li class="nav-item">
