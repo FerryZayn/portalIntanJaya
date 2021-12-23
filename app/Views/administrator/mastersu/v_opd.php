@@ -40,25 +40,27 @@
                                     </thead>
                                     <tbody>
                                         <?php $i = 1; ?>
+
+
                                         <?php foreach ($opdtampil as $v_opd) : ?>
                                             <tr>
                                                 <td><?= $i++; ?></td>
                                                 <td><?= $v_opd['nama_opd']; ?></td>
                                                 <td><?= $v_opd['alamat_opd']; ?></td>
                                                 <td>
-                                                    <a href="/masterjabatan/<?= $v_opd['id']; ?>" class="btn btn-info btn-sm">
+                                                    <a href="/masterjabatansu/<?= $v_opd['id']; ?>" class="btn btn-primary btn-sm">
                                                         <i class="fa fa-eye"></i>
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <a href="/masterbidangsu/<?= $v_opd['id']; ?>" class="btn btn-info btn-sm">
+                                                    <a href="/masterbidangsu/<?= $v_opd['id']; ?>" class="btn btn-primary btn-sm">
                                                         <i class="fa fa-eye"></i>
                                                     </a>
                                                     <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#inputBidang<?= $v_opd['id']; ?>">
                                                         <i class="fa fa-plus"></i>
                                                     </button>
                                                     <!-- Input Data Bidang Star -->
-                                                    <form action="/addmasterbidang" method="post">
+                                                    <form action="/masterupdatejabatansu" method="post">
                                                         <?= csrf_field(); ?>
                                                         <div class="modal fade" id="inputBidang<?= $v_opd['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                             <div class="modal-dialog" role="document">
@@ -117,7 +119,7 @@
                                                         </button>
                                                         <!-- Star Modal View-->
                                                         <div class="modal fade" id="viewModal<?= $v_opd['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                            <div class="modal-dialog modal-lg" role="document">
+                                                            <div class="modal-dialog" role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
                                                                         <h5 class="modal-title" id="exampleModalLabel">VIEW OPD</h5>
@@ -128,10 +130,9 @@
                                                                     <div class="modal-body">
                                                                         <div class="row">
                                                                             <div class="col-sm-3">
-                                                                                Nama Pegawai <br />
-                                                                                Nomor Induk Pegawai<br />
-                                                                                Golongan<br />
-                                                                                Nama Jabatan
+                                                                                Kode OPD <br />
+                                                                                Nama OPD<br />
+                                                                                Alamat OPD
                                                                             </div>
                                                                             <div class="col-sm-9 fw-bold">
                                                                                 : <?= $v_opd['kode']; ?><br />
@@ -283,9 +284,9 @@
                                                                         <div class="modal-body">
                                                                             <div class="row">
                                                                                 <div class="col-sm-3">
-                                                                                    Nama Pegawai <br />
-                                                                                    Nomor Induk Pegawai<br />
-                                                                                    Golongan
+                                                                                    Kode OPD <br />
+                                                                                    Nama OPD<br />
+                                                                                    Alamat OPD
                                                                                 </div>
                                                                                 <div class="col-sm-9 fw-bold">
                                                                                     : <?= $v_opd['kode']; ?><br />
@@ -296,7 +297,7 @@
                                                                         </div>
                                                                         <div class="modal-footer">
                                                                             <input type="hidden" name="_method" value="DELETE">
-                                                                            <input type="text" name="opd_hdr_id" class="opd_hdr_id" value="<?= $v_opd['id']; ?>">
+                                                                            <input type="hidden" name="opd_hdr_id" class="opd_hdr_id" value="<?= $v_opd['id']; ?>">
                                                                             <button type="button" class="btn btn-sm btn-info" data-dismiss="modal">
                                                                                 <i class="fas fa-times"></i> Close
                                                                             </button>

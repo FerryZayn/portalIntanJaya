@@ -87,6 +87,10 @@ $routes->get('/mastersu', 'MasterSU::index', ['filter' => 'auth']);
 
 $routes->get('/administrator/mastersu/v_pegawai', 'MasterSU::pegawai', ['filter' => 'auth']);
 $routes->post('/addPegawaisu', 'MasterSU::addPegawaisu', ['filter' => 'auth']);
+
+$routes->get('/edit/(:segment)', 'MasterSU::editPegawaisu/$1', ['filter' => 'auth']);
+
+$routes->post('/prosesupdatepegawai', 'MasterSU::prosesUpdatePegawai', ['filter' => 'auth']);
 $routes->delete('/hapuspegsu', 'MasterSU::hapusPegawaisu', ['filter' => 'auth']);
 
 
@@ -120,10 +124,11 @@ $routes->put('/masterupdatesubid', 'MasterSU::masterupdateSubid', ['filter' => '
 $routes->delete('/masterdeletesubid', 'MasterSU::masterdeletesubid', ['filter' => 'auth']);
 
 
-// Routes Master Jabatan
-$routes->get('/masterjabatan/(:num)', 'MasterSU::masterJabatan/$1', ['filter' => 'auth']);
-$routes->post('masteraddjabatan', 'MasterSU::masteraddJabatan', ['filter' => 'auth']);
-$routes->delete('/masterdeljabatan', 'MasterSU::masterDeljabatan', ['filter' => 'auth']);
+// Routes Master Jabatan SU
+$routes->get('/masterjabatansu/(:num)', 'MasterSU::masterJabatansu/$1', ['filter' => 'auth']);
+$routes->post('addmasterjabatansu', 'MasterSU::addmasterJabatansu', ['filter' => 'auth']);
+$routes->put('/masterupdatejabatansu', 'MasterSU::masterupdateJabatansu', ['filter' => 'auth']);
+$routes->delete('/deljabatansu', 'MasterSU::masterDeljabatansu', ['filter' => 'auth']);
 
 
 

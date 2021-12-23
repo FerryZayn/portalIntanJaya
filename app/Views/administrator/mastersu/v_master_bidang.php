@@ -267,7 +267,7 @@
                             <div class="form-group">
                                 <label for="">KATEGORI</label>
                                 <select name="tipe_b_id" class="form-control" required>
-                                    <option value="">PILIH NAMA OPD...</option>
+                                    <option value="">PILIH KATEGORI...</option>
                                     <option value="1">Sekretaris</option>
                                     <option value="2">Umum</option>
                                     <option value="100">Lainnya</option>

@@ -17,10 +17,12 @@
             <div class="row mt--2">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-primary">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Daftar Data Pegawai</h4>
-                                <button class="btn bg-satu text-white fw-bold btn-round ml-auto" data-toggle="modal" data-target="#addModal">
+                                <h4 class="card-title fw-bold text-white">
+                                    <i class="fas fa-list"></i> Daftar Data Pegawai
+                                </h4>
+                                <button class="btn bg-empat text-white fw-bold btn-round ml-auto" data-toggle="modal" data-target="#addModal">
                                     <i class="fas fa-plus-circle"></i>
                                     Tambah Pegawai
                                 </button>
@@ -29,13 +31,13 @@
                         </div>
 
                         <div class="card-body">
-                            <?php if (session()->getFlashdata('info')) : ?>
+                            <?php if (session()->getFlashdata('pesan')) : ?>
                                 <div class="alert alert-success alert-dismissible show fade">
                                     <div class="alert-body">
                                         <button class="close" data-dismiss="alert">
                                             <span>&times;</span>
                                         </button>
-                                        <?= session()->getFlashdata('info') ?>
+                                        <?= session()->getFlashdata('pesan') ?>
                                     </div>
                                 </div>
                             <?php endif; ?>
@@ -53,6 +55,7 @@
                                     </thead>
                                     <tbody>
                                         <?php $i = 1; ?>
+                                        `
                                         <?php foreach ($tampilpegawai as $peg) : ?>
                                             <tr>
                                                 <td><?= $i++; ?></td>
@@ -88,7 +91,7 @@
                                                                                 : <?= $peg['nip']; ?><br />
                                                                                 : <?= $peg['nama_jabatan']; ?><br />
                                                                                 : <?= $peg['nama_bidang']; ?><br />
-                                                                                : <?= $peg['nama_sub_bidang']; ?>
+                                                                                : <?= $peg['nama_sub_bidang']; ?><br />
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -102,113 +105,8 @@
 
 
                                                         &nbsp;
-                                                        <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editModal<?= $peg['id']; ?>">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <!-- Modal Edit Pegawai -->
-                                                        <form action="/proseseditPegawai" method="post">
-                                                            <div class="modal fade" id="editModal<?= $peg['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                                <div class="modal-dialog modal-lg" role="document">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <h2 class="modal-title fw-bold text-primary" id="exampleModalLabel"><i class="fas fa-edit"></i> UPDATE DATA PEGAWAI</h2>
-                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                                <span aria-hidden="true">&times;</span>
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="modal-body">
-                                                                            <div class="form-group">
-                                                                                <label for="defaultSelect">Nama Lengkap</label>
-                                                                                <input id="namalengkap" type="text" class="form-control fullname" name="fullname" value="<?= $peg['nama_pegawai']; ?>">
-                                                                            </div>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6">
-                                                                                    <div class="form-group">
-                                                                                        <label for="defaultSelect">Nomor Induk Pegawai Negeri</label>
-                                                                                        <input id="nip" type="text" class="form-control nip" name="nip" value="<?= $peg['nip']; ?>">
-                                                                                    </div>
+                                                        <a href="/edit/<?= $peg['id']; ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
 
-                                                                                    <div class="form-group">
-                                                                                        <label for="defaultSelect">Nomor Induk Kependukukan</label>
-                                                                                        <input type="text" class="form-control nik" name="nik" value="">
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <label for="defaultSelect">Tanggal Lahir</label>
-                                                                                        <input type="date" class="form-control tgl_lahir" name="tgl_lahir" value="">
-
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <label for="defaultSelect">Nomor Telepon</label>
-                                                                                        <input type="text" class="form-control phone" name="phone" value="">
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <label for="defaultSelect">Jenis Kelamin</label>
-                                                                                        <select class="form-control" name="gender">
-                                                                                            <option value="">- Pilih Jenis Kelamin-</option>
-                                                                                            <option value="1">Laki-laki</option>
-                                                                                            <option value="2">Perempuan</option>
-                                                                                        </select>
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <label for="defaultSelect">Alamat E-Mail</label>
-                                                                                        <input id="email" type="email" class="form-control email" name="email" value="">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6">
-                                                                                    <div class="form-group">
-                                                                                        <label for="defaultSelect">Jabatan Pegawai Negeri</label>
-                                                                                        <select class="form-control jabatan" name="jabatan">
-                                                                                            <option value="">- Pilih Jabatan -</option>
-                                                                                            <?php foreach ($jabatan as $value) : ?>
-                                                                                                <option value="<?= $value['id']; ?>"><?= $value['nama_jabatan']; ?></option>
-                                                                                            <?php endforeach; ?>
-                                                                                        </select>
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <label for="defaultSelect">Golongan Pegawai Negeri</label>
-                                                                                        <select class="form-control golongan" name="golongan">
-                                                                                            <option value="">- Pilih Golongan -</option>
-                                                                                            <?php foreach ($golongan as $value) : ?>
-                                                                                                <option value="<?= $value->id ?>"><?= $value->kode; ?></option>
-                                                                                            <?php endforeach; ?>
-                                                                                        </select>
-                                                                                    </div>
-
-                                                                                    <div class="form-group">
-                                                                                        <label for="defaultSelect">Kode</label>
-                                                                                        <input type="text" class="form-control kode" name="kode" value="">
-                                                                                    </div>
-
-                                                                                    <div class="form-group">
-                                                                                        <label for="defaultSelect">Username</label>
-                                                                                        <input type="text" class="form-control username" name="username" value="">
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <label for="defaultSelect">Password</label>
-                                                                                        <input value="" type="password" class="form-control pwstrength" data-indicator="pwindicator" name="password">
-
-                                                                                        <div id="pwindicator" class="pwindicator">
-                                                                                            <div class="bar"></div>
-                                                                                            <div class="label"></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <label for="defaultSelect">Konfirmasi Password</label>
-                                                                                        <input id="password2" type="password" class="form-control" name="password-confirm">
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i> Update</button>
-                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- End Edit Pegawai -->
-                                                        </form>
 
 
                                                         &nbsp;
@@ -284,8 +182,10 @@
     <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title fw-bold text-primary" id="exampleModalLabel"><i class="fas fa-user-plus"></i> TAMBAH PEGAWAI</h2>
+                <div class="modal-header bg-primary">
+                    <h2 class="modal-title fw-bold text-primary" id="exampleModalLabel">
+                        <i class="fas fa-user-plus"></i> TAMBAH PEGAWAI
+                    </h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -426,8 +326,9 @@
 </form>
 <!-- End Modal Add Pegawai -->
 
-<!-- Star Proses Ambil Jabatan OPD -->
+
 <script>
+    // Star Proses Ambil Jabatan OPD
     $("#opd_id").on("change", function() {
         var value = $("#opd_id option:selected").attr("value");
         $('#jabatan').html('<option>Mencari Jabatan...</option>');
@@ -445,7 +346,8 @@
             }
         });
     });
+    // End Proses Ambil Jabatan OPD
 </script>
-<!-- End Proses Ambil Jabatan OPD -->
+
 
 <?= $this->endSection() ?>

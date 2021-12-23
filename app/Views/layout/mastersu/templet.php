@@ -8,7 +8,8 @@
     <link rel="icon" href="<?= base_url(); ?>/admintemp/img/logo/logo.png" type="image/x-icon" />
 
     <!-- //Jequery Select  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="<?= base_url(); ?>/admintemp/js/jquery.min.js"></script>
 
     <!-- Fonts and icons -->
     <script src="<?= base_url(); ?>/admintemp/js/plugin/webfont/webfont.min.js"></script>
@@ -79,7 +80,9 @@
     <script src="<?= base_url(); ?>/admintemp/js/core/jquery.3.2.1.min.js"></script>
     <script src="<?= base_url(); ?>/admintemp/js/core/popper.min.js"></script>
     <script src="<?= base_url(); ?>/admintemp/js/core/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="<?= base_url(); ?>/admintemp/js/bootstrap.bundle.min.js"></script>
 
     <!-- jQuery UI -->
     <script src="<?= base_url(); ?>/admintemp/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>

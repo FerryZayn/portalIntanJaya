@@ -45,7 +45,6 @@
                                             <th>KODE</th>
                                             <th>NAMA JEBATAN</th>
                                             <th>NAMA BIDANG</th>
-                                            <th>NAMA SUB BIDANG</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -57,7 +56,6 @@
                                                 <td><?= $j_opd['kode']; ?></td>
                                                 <td><?= $j_opd['nama_jabatan']; ?></td>
                                                 <td><?= $j_opd['nama_bidang']; ?></td>
-                                                <td><?= $j_opd['nama_sub_bidang']; ?></td>
                                                 <td>
                                                     <div class="form-button-action">
                                                         <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#viewModal<?= $j_opd['id']; ?>">
@@ -162,9 +160,9 @@
                                                                                         <label for="">NAMA SUB BIDANG</label>
                                                                                         <select name="level" class="form-control" required>
                                                                                             <option value="">PILIH SUB BIDANG...</option>
-                                                                                            <option value="1">Level 1</option>
-                                                                                            <option value="2">Level 2</option>
-                                                                                            <option value="3">Level 3</option>
+                                                                                            <?php foreach ($subbid as $sb) : ?>
+                                                                                                <option value="1"><?= $sb['nama_sub_bidang']; ?></option>
+                                                                                            <?php endforeach; ?>
                                                                                         </select>
                                                                                     </div>
                                                                                 </div>
@@ -201,7 +199,7 @@
                                                             <i class="fa fa-trash"></i>
                                                         </button>
                                                         <!-- Modal Hapus-->
-                                                        <form action="/hapusopdsu" method="post">
+                                                        <form action="/deljabatansu" method="post">
                                                             <?= csrf_field(); ?>
                                                             <div class="modal fade" id="hapusModal<?= $j_opd['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                 <div class="modal-dialog" role="document">
@@ -230,6 +228,10 @@
                                                                         <div class="modal-footer">
                                                                             <input type="hidden" name="_method" value="DELETE">
                                                                             <input type="text" name="opd_hdr_id" class="opd_hdr_id" value="<?= $j_opd['id']; ?>">
+
+                                                                            <input type="text" name="opd_id" value="<?= $j_opd['opd_hdr_id']; ?>">
+
+
                                                                             <button type="button" class="btn btn-sm btn-info" data-dismiss="modal">
                                                                                 <i class="fas fa-times"></i> Close
                                                                             </button>
@@ -285,26 +287,22 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <!-- <label for="">NAMA BIDANG</label> -->
-                                <select name="level" class="form-control" required>
+                                <select name="b_id" class="form-control" required>
                                     <option value="">PILIH NAMA BIDANG...</option>
                                     <?php foreach ($select as $bidang) : ?>
                                         <option value="1"><?= $bidang['nama_bidang']; ?></option>
                                     <?php endforeach; ?>
-                                    <!-- <option value="1">Level 1</option>
-                                    <option value="2">Level 2</option>
-                                    <option value="3">Level 3</option> -->
                                 </select>
                             </div>
                         </div>
 
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <!-- <label for="">SUB BIDANG</label> -->
-                                <select name="level" class="form-control" required>
+                                <select name="sb_id" class="form-control" required>
                                     <option value="">PILIH SUB BIDANG...</option>
-                                    <option value="1">Level 1</option>
-                                    <option value="2">Level 2</option>
-                                    <option value="3">Level 3</option>
+                                    <?php foreach ($subbid as $sb) : ?>
+                                        <option value="1"><?= $sb['nama_sub_bidang']; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
@@ -313,22 +311,22 @@
 
                     <div class="form-group">
                         <label for="">NAMA JABATAN</label>
-                        <input type="text" class="form-control" name="opd" required>
+                        <input type="text" class="form-control" name="nama_j" required>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="">KODE</label>
-                                <input type="text" class="form-control" name="kode" equired>
+                                <input type="text" class="form-control" name="kd" equired>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="">Pilih Level</label>
-                                <select name="level" class="form-control" required>
-                                    <option value="">-- PILIH LEVEL --</option>
+                                <select name="lvl" class="form-control" required>
+                                    <option value="">PILIH LEVEL...</option>
                                     <option value="1">Bupati</option>
-                                    <option value="2">Skretaris</option>
+                                    <option value="2">Sekretaris</option>
                                     <option value="3">OPD</option>
                                 </select>
                             </div>
@@ -336,17 +334,18 @@
                     </div>
                     <div class="form-group">
                         <label for="">Hak Akses</label>
-                        <input type="text" class="form-control" name="alamat" required>
+                        <input type="text" class="form-control" name="hah_id" required>
                     </div>
                     <div class="form-group">
                         <label for="">Catatan</label>
-                        <textarea name="note" class="form-control" required></textarea>
+                        <textarea name="notes" class="form-control" required></textarea>
                     </div>
 
 
 
                 </div>
                 <div class="modal-footer">
+                    <input type="hidden" name="opd_id" value="<?= $j_opd['opd_hdr_id']; ?>">
                     <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Simpan Data...</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times-circle"></i> Batalkan...</button>
                 </div>

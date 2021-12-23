@@ -6,6 +6,15 @@ use App\Models\ProcedureModel;
 
 class MasterSU extends BaseController
 {
+
+    protected $procedureModel;
+    public function __construct()
+    {
+        $this->procedureModel = new ProcedureModel();
+        $this->db = \Config\Database::connect();
+    }
+
+
     public function index()
     {
         $opd = $this->db->query("call opd_view()")->getResultArray();
@@ -20,19 +29,21 @@ class MasterSU extends BaseController
         $jabatan = $this->db->query("CALL jabatan_view_su('$opd_id')")->getResult();
         return json_encode($jabatan);
     }
+
+    //Pegawai SU_____________________________________________________________________________________________________
     public function pegawai()
     {
         $procedure = new ProcedureModel;
         $pegawai = $this->db->query("call pegawai_view_su()")->getResultArray();
-
         $p_input_id = $this->session->id;
         $jabatan = $this->db->query("call jabatan_view($p_input_id)")->getResultArray();
-
         $golongan = $this->db->query("select * from golongan_pegawai")->getResult();
         $data = [
             'tampilpegawai' => $pegawai,
-            'jabatan' => $jabatan,
 
+            // 'tampiledit' => $procedure->pegawaiViewdtl(),
+
+            'jabatan' => $jabatan,
             'golongan' => $golongan,
             'opdview' => $procedure->selectOpd(),
         ];
@@ -78,39 +89,43 @@ class MasterSU extends BaseController
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public function editPegawai()
+    public function editPegawaisu($p_id)
     {
-        $id = $this->request->getVar('id');
-        $user = $this->session->id;
-        $nama_pegawai = $this->request->getVar('fullname');
-        $nik = $this->request->getVar('nik');
-        $nip = $this->request->getVar('nip');
-        $gender = $this->request->getVar('gender');
-        $no_hp = $this->request->getVar('no_telpone');
-        $email = $this->request->getVar('email');
-        $golongan = $this->request->getVar('golongan');
-        $kode = $this->request->getVar('kode');
-        $username = $this->request->getVar('username');
-        $passwd = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
-        $jabatan_id = $this->request->getVar('jabatan');
-        $tanggal_lahir = $this->request->getVar('tgl_lahir');
+        $procedure = new ProcedureModel;
+        $golongan = $this->db->query("select * from golongan_pegawai")->getResult();
+        $data = [
+            'golongan' => $golongan,
+            'tampiledit' => $this->procedureModel->pegawaiViewdtl($p_id),
+            'opdview' => $procedure->selectOpd(),
+        ];
+        return view('/administrator/mastersu/v_pegawai_edit', $data);
+    }
+
+
+    public function prosesUpdatePegawai()
+    {
+        $p_id_input = $this->session->id;
+        $pegawai_id = $this->request->getVar('pegawai_id');
+        $p_nama = $this->request->getVar('p_nama');
+        $p_nik = $this->request->getVar('p_nik');
+        $p_nip = $this->request->getVar('p_nip');
+        $p_kelamin_code = $this->request->getVar('p_kelamin_code');
+        $p_no_hp = $this->request->getVar('p_no_hp');
+        $p_email = $this->request->getVar('p_email');
+        $p_golongan_id = $this->request->getVar('p_golongan_id');
+        $opd_id = $this->request->getVar('opd_id');
+        $tempat_l = $this->request->getVar('tempat_l');
+        $p_jabatan = $this->request->getVar('p_jabatan');
+        $p_tanggal_lahir = $this->request->getVar('p_tanggal_lahir');
         // dd($this->request->getVar());
-        $this->db->query("CALL pegawai_update('$id','$nama_pegawai','$nik','$nip', '$gender','$no_hp','$email','$golongan','$kode','$username','$passwd','$jabatan_id','$tanggal_lahir','$user')");
+
+        $is_p = $this->request->getVar('is_p');
+        $pegawai = $is_p == "on" ? '1' : '0';
+
+        $this->db->query("call pegawai_update_su('$p_id_input', '$p_nama', '$p_nik', '$p_nip', '$p_kelamin_code', '$p_no_hp', '$p_email', '$p_golongan_id', '$p_jabatan', '$p_tanggal_lahir', '$pegawai_id', '$pegawai', '$tempat_l', '$opd_id')");
+
         session()->setFlashdata('pesan', 'suksesedit');
-        return redirect()->to('/administrator/master/v_pegawai');
+        return redirect()->to('/administrator/mastersu/v_pegawai');
     }
 
 
@@ -128,156 +143,7 @@ class MasterSU extends BaseController
 
 
 
-
-
-
-
-
-
-    // public function bidang()
-    // {
-    //     $pegawai_id = $this->session->id;
-    //     $vbidang = $this->db->query("call bidang_view($pegawai_id)")->getResultArray();
-    //     $data = [
-    //         'data' => $vbidang,
-    //     ];
-    //     return view('/administrator/master/v_bidang', $data);
-    // }
-
-
-
-
-
-    public function addmasterBidang()
-    {
-        $pegawai_id = $this->session->id;
-        $kd = $this->request->getVar('kd');
-        $nama_bidang = $this->request->getVar('nama_bidang');
-        $tipe_b_id = $this->request->getVar('tipe_b_id');
-
-        $this->db->query("call bidang_insert('$pegawai_id', '$kd', '$nama_bidang', '$tipe_b_id')");
-        session()->setFlashdata('info', 'Add Bidang berhasil');
-        return redirect()->to('/administrator/mastersu/v_opd');
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public function updateBidang()
-    {
-        $bidang_id = $this->request->getVar('id');
-
-        $pegawai_id = $this->session->id;
-        $kode = $this->request->getVar('kode');
-        $nama_bidang = $this->request->getVar('nama_bidang');
-        $this->db->query("call bidang_update('$bidang_id', '$pegawai_id', '$kode', '$nama_bidang')");
-        session()->setFlashdata('pesan', 'update');
-        return redirect()->to('/administrator/master/v_bidang');
-    }
-
-    public function hapusBidang()
-    {
-        $id = $this->request->getPost('id');
-        $user = $this->session->id;
-        $this->db->query("CALL bidang_delete('$id','$user')");
-        session()->setFlashdata('pesan', 'delete');
-        return redirect()->to('/administrator/master/v_bidang');
-    }
-
-
-    public function jabatan()
-    {
-        $procedure = new ProcedureModel;
-        $user = $this->session->id;
-        $jabatan = $this->db->query("CALL jabatan_view('$user')")->getResult();
-        $hak_akses = $this->db->query("select * from hak_akses_hdr where id != 0")->getResult();
-        $subid = $this->db->query("select id,nama_sub_bidang from sub_bidang")->getResult();
-        $sjabatan = $this->db->query("select * from level_jabatan where id != 0")->getResult();
-
-
-        $data = [
-            'title' => 'Jabatan | e-Surat',
-            'uri' => $this->request->uri->getSegment(1),
-            'get' => $this->session,
-            'data' => $jabatan,
-            'subid' => $subid,
-            'sjabatan' => $sjabatan,
-            'select' => $procedure->bidangView($user),
-            'iscrud' => $procedure->iscrud($user),
-            'hk' => $hak_akses,
-        ];
-        return view('/administrator/master/v_jabatan', $data);
-    }
-    public function addJabatan()
-    {
-        // dd($this->request->getVar());
-        $user = $this->session->id;
-        $bidang = $this->request->getVar('bidang');
-        $subid = $this->request->getVar('subid');
-        $jabatan = $this->request->getVar('jabatan');
-        $kode = $this->request->getVar('kode');
-        $level = $this->request->getVar('level');
-        $akses = $this->request->getVar('hakakses');
-        $notes = $this->request->getVar('notes');
-
-        $result = $this->db->query("CALL jabatan_insert('$user','$kode',$bidang,$subid,'$level','$jabatan','$akses','$notes') ")->getRow();
-        if ($result->n == 81) {
-            session()->setFlashdata('pesan', 'add');
-            return redirect()->to('/administrator/master/v_jabatan');
-        } elseif ($result->n == 80) {
-            session()->setFlashdata('pesan', 'ganda');
-            return redirect()->to('/administrator/master/v_jabatan');
-        }
-    }
-    public function updateJabatan()
-    {
-        $user = $this->session->id;
-        $id = $this->request->getVar('id');
-        $bidang = $this->request->getVar('bidang');
-        $subid = $this->request->getVar('subid');
-        $jabatan = $this->request->getVar('jabatan');
-        $kode = $this->request->getVar('kode');
-        $level = $this->request->getVar('level');
-        $akses = $this->request->getVar('hakakses');
-        $notes = $this->request->getVar('notes');
-
-        $this->db->query("CALL jabatan_update('$user','$kode','$bidang','$subid','$level','$jabatan','$akses','$notes','$id') ");
-
-
-        session()->setFlashdata('pesan', 'update');
-        return redirect()->to('/administrator/master/v_jabatan');
-    }
-    public function deleteJabatan()
-    {
-        $id = $this->request->getPost('id');
-        $user = $this->session->id;
-        $this->db->query("CALL jabatan_delete('$id','$user')");
-        session()->setFlashdata('pesan', 'delete');
-        return redirect()->to('/administrator/master/v_jabatan');
-    }
-
-
-
-
+    //OPD_____________________________________________________________________________________________________
     public function opd()
     {
         $opd = $this->db->query("call opd_view()")->getResultArray();
@@ -313,7 +179,6 @@ class MasterSU extends BaseController
         return redirect()->to('/administrator/mastersu/v_opd');
     }
 
-    // GET Hapus OPD___________________________________________________________________________________
     public function opdHapussu()
     {
         $opd_hdr_id = $this->request->getPost('opd_hdr_id');
@@ -325,27 +190,23 @@ class MasterSU extends BaseController
     }
 
 
-    public function masterJabatan($id)
+
+
+    //Bidang_____________________________________________________________________________________________________
+    public function addmasterBidang()
     {
-        $procedure = new ProcedureModel;
-        $user = $this->session->id;
-        $jabatan = $this->db->query("CALL jabatan_view_su('$id')")->getResultArray();
-
-        // dd($jabatan);
-
-        $bidang = $this->db->query("CALL bidang_view_su('$id')")->getResultArray();
-
-        $data = [
-            'uri' => $this->request->uri->getSegment(1),
-            'get' => $this->session,
-            'data' => $jabatan,
-            'select' => $bidang,
-            'id_opd' => $id,
-            'iscrud' => $procedure->iscrud($user),
-        ];
-        return view('/administrator/mastersu/v_master_jabatan', $data);
+        $pegawai_id = $this->session->id;
+        $kd = $this->request->getVar('kd');
+        $nama_bidang = $this->request->getVar('nama_bidang');
+        $tipe_b_id = $this->request->getVar('tipe_b_id');
+        $this->db->query("call bidang_insert('$pegawai_id', '$kd', '$nama_bidang', '$tipe_b_id')");
+        session()->setFlashdata('info', 'Add Bidang berhasil');
+        return redirect()->to('/administrator/mastersu/v_opd');
     }
 
+
+
+    // Master Bidang SU________________________________________________________________________________________
     public function masterBidangSU($id)
     {
         $procedure = new ProcedureModel;
@@ -407,13 +268,7 @@ class MasterSU extends BaseController
 
 
 
-
-
-
-
-
-
-
+    // Master Sub Bidang SU________________________________________________________________________________________
     public function masterSubid($opd, $bidang)
     {
 
@@ -459,11 +314,7 @@ class MasterSU extends BaseController
         $id_opd = $this->request->getVar('id_opd');
 
         $this->db->query("CALL sub_bidang_update('$user','$kode_sub','$bidang_id','$nama_subid','$id')");
-
-
         session()->setFlashdata('pesan', 'update');
-
-
         return redirect()->to('/mastersubbidang' . '/' . $id_opd . '/' . $bidang_id);
     }
 
@@ -480,39 +331,61 @@ class MasterSU extends BaseController
     }
 
 
-    public function masteraddJabatan()
+
+
+
+    // Master Jabatan SU________________________________________________________________________________________
+    public function masterJabatansu($id)
     {
-        $opd = $this->request->getVar('id_opd');
+        $procedure = new ProcedureModel;
         $user = $this->session->id;
-        $bidang = $this->request->getVar('bidang');
-        $subid = $this->request->getVar('subid');
-        $jabatan = $this->request->getVar('jabatan');
-        $kode = $this->request->getVar('kode');
-        $level = $this->request->getVar('level');
-        $akses = $this->request->getVar('akses');
-        $notes = $this->request->getVar('notes');
+        $jabatan = $this->db->query("CALL jabatan_view_su('$id')")->getResultArray();
+        $bidang = $this->db->query("CALL bidang_view_su('$id')")->getResultArray();
+        $subbidang = $this->db->query("call sub_bidang_view($id)")->getResultArray();
 
-        $this->db->query("CALL jabatan_insert_su('$user','$kode','$bidang','$subid','$level','$jabatan','$akses','$notes','$opd')");
-        session()->setFlashdata('pesan', 'add');
-
-
-        return redirect()->to('masterjabatan/' . $opd);
+        $data = [
+            'uri' => $this->request->uri->getSegment(1),
+            'get' => $this->session,
+            'data' => $jabatan,
+            'select' => $bidang,
+            'subbid' => $subbidang,
+            'id_opd' => $id,
+            'iscrud' => $procedure->iscrud($user),
+        ];
+        return view('/administrator/mastersu/v_master_jabatan', $data);
     }
 
-    public function masterDeljabatan()
-    {
-        $opd = $this->request->getVar('id_opd');
-        $id_jab = $this->request->getVar('id');
-        $user = $this->session->id;
-        $query = $this->db->query("CALL jabatan_delete('$id_jab','$user')")->getRow();
 
-        if ($query->n == 82) {
-            session()->setFlashdata('pesan', 'add');
-            return redirect()->to('masterjabatan/' . $opd);
-        }
-        if ($query->n == 85) {
-            session()->setFlashdata('pesan', '85');
-            return redirect()->to('masterjabatan/' . $opd);
-        }
+    public function addmasterJabatansu()
+    {
+        $pegawai_id = $this->session->id;
+        $kd = $this->request->getVar('kd');
+        $sb_id = $this->request->getVar('sb_id');
+        $b_id = $this->request->getVar('b_id');
+        $lvl = $this->request->getVar('lvl');
+        $nama_j = $this->request->getVar('nama_j');
+        $hah_id = $this->request->getVar('hah_id');
+        $notes = $this->request->getVar('notes');
+
+        $opd_id = $this->request->getVar('opd_id');
+
+        $this->db->query("call jabatan_insert_su('$pegawai_id', '$kd', '$b_id', '$sb_id', '$lvl', '$nama_j', '$hah_id', '$notes', '$opd_id')");
+        session()->setFlashdata('pesan', 'add');
+
+        return redirect()->to('masterjabatansu/' . $opd_id);
+    }
+
+
+    public function masterDeljabatansu()
+    {
+        $j_id = $this->request->getVar('j_id');
+        $pegawai_id = $this->session->id;
+
+        $opd_id = $this->request->getVar('opd_id');
+
+        $this->db->query("call jabatan_delete('$j_id', '$pegawai_id')")->getRow();
+
+        session()->setFlashdata('pesan', 'delete');
+        return redirect()->to('masterjabatansu/' . $opd_id);
     }
 }

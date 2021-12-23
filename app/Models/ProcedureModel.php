@@ -15,7 +15,17 @@ class ProcedureModel
         $this->db = \Config\Database::connect();
     }
 
-    // PROCEDUR VIEW
+
+
+
+    public function pegawaiViewdtl($p_id)
+    {
+        $query = $this->db->query("call pegawai_view_dtl('$p_id')");
+        $results = $query->getRow();
+        return $results;
+    }
+
+
     // Query Procedure untuk menampilkan opd View pada halaman opd
     public function opdView()
     {
@@ -59,54 +69,7 @@ class ProcedureModel
         return json_encode($results);
     }
 
-    // Query Procedure menampikan sifat surat berdasarkan kategori id
-    public function sifatsuratView($kat_id)
-    {
-        $query = $this->db->query("CALL sifat_surat_view('$kat_id')");
-        $results = $query->getResult();
-        return $results;
-    }
 
-    // Query Procedure untuk menampilkan Sifat surat pada select option untuk tingkat keamanan 
-    public function selectAman()
-    {
-        $query = $this->db->query("CALL sifat_surat_view(1)");
-        $results = $query->getResult();
-        return $results;
-    }
-
-    // Query procedure untuk menampilkan Sifat surat pada select option untuk tingkat kecepatan surat
-    public function selectCepat()
-    {
-        $query = $this->db->query("CALL sifat_surat_view(2)");
-        $results = $query->getResult();
-        return $results;
-    }
-
-    public function selectPola()
-    {
-        $query = $this->db->query("CALL pola_klasifikasi_surat_view()");
-        $results = $query->getResult();
-        return $results;
-    }
-
-    // Query mengambil jumlah Total Disposisi masuk pada dashbord 
-    // tdm -> Total disposisi Surat Masuk
-    public function tdm()
-    {
-        $query = $this->db->query("CALL lihat_disposisi_masuk('17')");
-        $results = $query->getNumRows();
-        return $results;
-    }
-
-    // Query mengambil jumlah Total Disposisi masuk pada dashbord 
-    // tdm -> Total disposisi Surat Masuk
-    public function tdk()
-    {
-        $query = $this->db->query("CALL lihat_disposisi_keluar('17')");
-        $results = $query->getNumRows();
-        return $results;
-    }
     // Query untuk menampilkan menu sidebire 
     public function iscrud($user)
     {
@@ -149,19 +112,4 @@ class ProcedureModel
         $results = $query->getResult();
         return $results;
     }
-
-
-
-
-
-    // PROCEDURE INSERT 
-
-    // PROCEDURE DELETE
-
-
-    // PROCEDURE MASTER 
-
-
-
-
 }
