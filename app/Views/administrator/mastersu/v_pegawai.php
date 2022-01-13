@@ -326,7 +326,6 @@
 </form>
 <!-- End Modal Add Pegawai -->
 
-
 <script>
     // Star Proses Ambil Jabatan OPD
     $("#opd_id").on("change", function() {

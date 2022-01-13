@@ -39,10 +39,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php $i = 1; ?>
-
-
-                                        <?php foreach ($opdtampil as $v_opd) : ?>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($opdtampil as $v_opd) :
+                                        ?>
                                             <tr>
                                                 <td><?= $i++; ?></td>
                                                 <td><?= $v_opd['nama_opd']; ?></td>
@@ -114,7 +114,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#viewModal<?= $v_opd['id']; ?>">
+                                                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#viewModal<?= $v_opd['id']; ?>">
                                                             <i class="fa fa-eye"></i>
                                                         </button>
                                                         <!-- Star Modal View-->
@@ -187,10 +187,6 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-
-
-
-
                                                                             <div class="form-group">
                                                                                 <label><small>ALAMAT</small></label>
                                                                                 <input type="text" class="form-control" name="alamat" placeholder="Alamat Instansi" required>
@@ -212,9 +208,6 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-
-
-
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-6">

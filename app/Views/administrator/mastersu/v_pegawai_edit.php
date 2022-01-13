@@ -145,13 +145,6 @@
                                 </div>
 
 
-
-
-
-
-
-
-
                             </div>
                             <div class="card-footer">
                                 <input type="hidden" name="pegawai_id" class="pegawai_id" value="<?= $tampiledit->id; ?>">

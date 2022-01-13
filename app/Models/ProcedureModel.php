@@ -15,9 +15,6 @@ class ProcedureModel
         $this->db = \Config\Database::connect();
     }
 
-
-
-
     public function pegawaiViewdtl($p_id)
     {
         $query = $this->db->query("call pegawai_view_dtl('$p_id')");

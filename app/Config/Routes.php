@@ -131,8 +131,6 @@ $routes->put('/masterupdatejabatansu', 'MasterSU::masterupdateJabatansu', ['filt
 $routes->delete('/deljabatansu', 'MasterSU::masterDeljabatansu', ['filter' => 'auth']);
 
 
-
-
 // =============================================================== PEMDA PORTAL ========================================================================// 
 
 //AdminPortal Pemda________________________________________________________________________________________________________________

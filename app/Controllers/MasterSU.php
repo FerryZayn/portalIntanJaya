@@ -81,9 +81,6 @@ class MasterSU extends BaseController
         } elseif ($result->n == 54) {
             session()->setFlashdata('pesan', '54');
         }
-
-        // return view('/administrator/mastersu/v_pegawai');
-        // return redirect()->to('/administrator/mastersu/v_pegawai');
         session()->setFlashdata('info', 'Proses simpan Pegawai OPD berhasil');
         return redirect()->to('/administrator/mastersu/v_pegawai');
     }
