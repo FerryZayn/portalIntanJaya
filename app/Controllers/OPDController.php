@@ -34,7 +34,7 @@ class OPDController extends BaseController
             'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
             'v_costumpost' => $this->pemdaModel->getCostumpost(),
 
-            'v_contentopd' => $this->opdModel->getSemuaOPD(),
+            'v_contentopd' => $opd, //$this->opdModel->getSemuaOPD(),
         ];
         return view('/content/opd', $data);
     }
