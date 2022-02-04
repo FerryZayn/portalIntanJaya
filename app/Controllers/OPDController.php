@@ -22,6 +22,9 @@ class OPDController extends BaseController
     // Content___________________________________________________________________________________________________________
     public function index()
     {
+
+        $opd = $this->db->query("call opd_view()")->getResultArray();
+
         $data = [
             'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),

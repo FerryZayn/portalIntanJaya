@@ -38,7 +38,7 @@ class PemdaModel extends Model
     {
         return $this->db
             ->table('artikel')
-            ->where(['is_active' => 1])
+            ->where(['status_sistem_id' => 2])
             ->orderBy('RAND ()')
             ->get()
             ->getResultArray();
@@ -48,7 +48,7 @@ class PemdaModel extends Model
     {
         return $this->db
             ->table('artikel')
-            ->where(['is_active' => 1])
+            ->where(['status_sistem_id' => 2])
             ->orderBy('RAND ()')
             ->limit('9')
             ->get()
@@ -58,7 +58,7 @@ class PemdaModel extends Model
     {
         return $this->db
             ->table('artikel')
-            ->where(['is_active' => 1])
+            ->where(['status_sistem_id' => 2])
             ->orderBy('RAND ()')
             ->limit('3')
             ->get()
@@ -88,21 +88,15 @@ class PemdaModel extends Model
     }
 
     //GET Tampil dan Jumlah Berita___________________________________________________________________________________________________
-    public function tampilBerita()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
-            ->orderBy('RAND ()')
-            ->get()
-            ->getResultArray();
-
-        // ----------------
-        // $p_input_id = 1; 
-        // $query = $this->db->query("call berita_view_adm($p_input_id)");
-        // $results = $query->getResultArray();
-        // return $results;
-    }
+    // public function tampilBerita()
+    // {
+    //     return $this->db
+    //         ->table('artikel')
+    //         ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
+    //         ->orderBy('RAND ()')
+    //         ->get()
+    //         ->getResultArray();
+    // }
     public function jumlahBerita()
     {
         return $this->db
@@ -152,15 +146,15 @@ class PemdaModel extends Model
     }
 
     //GET Tampil dan Jumlah Informasi_______________________________________________________________________________________________
-    public function tampilInformasi()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
-            ->orderBy('RAND ()')
-            ->get()
-            ->getResultArray();
-    }
+    // public function tampilInformasi()
+    // {
+    //     return $this->db
+    //         ->table('artikel')
+    //         ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
+    //         ->orderBy('RAND ()')
+    //         ->get()
+    //         ->getResultArray();
+    // }
     public function jumlahInformasi()
     {
         return $this->db
@@ -182,7 +176,7 @@ class PemdaModel extends Model
     {
         return $this->db
             ->table('artikel')
-            ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
+            ->where(['tipe_artikel_id' => 2, 'opd_hdr_id' => 0, 'status_sistem_id' => 2])
             ->orderBy('RAND()')
             ->limit('4')
             ->get()
@@ -190,16 +184,16 @@ class PemdaModel extends Model
     }
 
     //Get Tampil dan jumlah Album Foto________________________________________________________________________________________________
-    public function tampilAlbumfoto()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
-            ->orderBy('RAND ()')
-            // ->limit(2)
-            ->get()
-            ->getResultArray();
-    }
+    // public function tampilAlbumfoto()
+    // {
+    //     return $this->db
+    //         ->table('artikel')
+    //         ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
+    //         ->orderBy('RAND ()')
+    //         // ->limit(2)
+    //         ->get()
+    //         ->getResultArray();
+    // }
     public function jumlahFoto()
     {
         return $this->db
@@ -219,14 +213,14 @@ class PemdaModel extends Model
     }
 
     //Get Tampil dan jumlah Album Video_______________________________________________________________________________________________
-    public function tampilAlbumvideo()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
-            ->get()
-            ->getResultArray();
-    }
+    // public function tampilAlbumvideo()
+    // {
+    //     return $this->db
+    //         ->table('artikel')
+    //         ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
+    //         ->get()
+    //         ->getResultArray();
+    // }
     public function jumlahVideo()
     {
         return $this->db
@@ -280,15 +274,15 @@ class PemdaModel extends Model
     }
 
     //Get Tampil Slide Show______________________________________________________________________________________________________
-    public function tampilSlideshow()
-    {
-        return $this->db
-            ->table('artikel')
-            ->where(['tipe_artikel_id' => 7, 'is_active' => 1])
-            ->orderBy('RAND ()')
-            ->get()
-            ->getResultArray();
-    }
+    // public function tampilSlideshow()
+    // {
+    //     return $this->db
+    //         ->table('artikel')
+    //         ->where(['tipe_artikel_id' => 7, 'opd_hdr_id' => 0, 'status_sistem_id' => 2])
+    //         ->orderBy('RAND ()')
+    //         ->get()
+    //         ->getResultArray();
+    // }
     public function jumlahSlideshow()
     {
         return $this->db

@@ -5,9 +5,7 @@
             <?php if ($pager->hasPrevious()) : ?>
                 <li class="page-item">
                     <a class="page-link" href="<?= $pager->getFirst() ?>" aria-label="<?= lang("Pager.first") ?>">
-                        <span aria-hidden="true"><?= lang(
-                                                        'Pager.first'
-                                                    ) ?></span>
+                        <span aria-hidden="true"><?= lang('Pager.first') ?></span>
                     </a>
                 </li>
                 <li class="page-item">

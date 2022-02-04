@@ -22,6 +22,7 @@ class OPDModel extends Model
             ->table('opd_hdr')
             ->join('artikel', 'artikel.opd_hdr_id=opd_hdr.id')
             ->join('tipe_artikel', 'tipe_artikel.id=artikel.tipe_artikel_id')
+
             ->get()
             ->getResultArray();
     }

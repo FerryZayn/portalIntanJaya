@@ -16,9 +16,9 @@
             <div class="row mt--2">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-primary">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Daftar Pejabat</h4>
+                                <h4 class="card-title fw-bold text-white">DAFTAR OPD INTAN JAYA</h4>
                                 <button class="btn bg-satu text-white fw-bold btn-round ml-auto" data-toggle="modal" data-target="#addPejabat">
                                     <i class="fas fa-plus-circle"></i>
                                     Tambah OPD
@@ -121,8 +121,10 @@
                                                         <div class="modal fade" id="viewModal<?= $v_opd['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                             <div class="modal-dialog" role="document">
                                                                 <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalLabel">VIEW OPD</h5>
+                                                                    <div class="modal-header bg-primary">
+                                                                        <h5 class="modal-title fw-bold" id="exampleModalLabel">
+                                                                            <i class="fa fa-list"></i> VIEW OPD
+                                                                        </h5>
                                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
@@ -162,8 +164,10 @@
                                                             <div class="modal fade" id="editModal<?= $v_opd['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                 <div class="modal-dialog modal-lg" role="document">
                                                                     <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <h2 class="modal-title fw-bold text-primary" id="exampleModalLabel"><i class="fas fa-edit"></i> UPDATE OPD</h2>
+                                                                        <div class="modal-header bg-warning">
+                                                                            <h2 class="modal-title fw-bold text-primary" id="exampleModalLabel">
+                                                                                <i class="fas fa-edit"></i> UPDATE OPD
+                                                                            </h2>
                                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                                 <span aria-hidden="true">&times;</span>
                                                                             </button>
@@ -248,7 +252,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="modal-footer">
-                                                                            <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i> Update</button>
+                                                                            <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i> Update</button>
                                                                             <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                                                                         </div>
                                                                     </div>
@@ -329,7 +333,7 @@
 <form method="POST" action="/addopdsu" enctype="multipart/form-data">
     <?= csrf_field(); ?>
     <div class="modal fade" id="addPejabat" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-primary">
                     <h3 class="modal-title fw-bold"><i class="fas fa-pencil-alt"></i> FORM INPUT OPD</h3>

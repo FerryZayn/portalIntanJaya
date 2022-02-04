@@ -26,10 +26,8 @@
                                     <i class="fas fa-plus-circle"></i>
                                     Tambah Pegawai
                                 </button>
-
                             </div>
                         </div>
-
                         <div class="card-body">
                             <?php if (session()->getFlashdata('pesan')) : ?>
                                 <div class="alert alert-success alert-dismissible show fade">
@@ -41,7 +39,6 @@
                                     </div>
                                 </div>
                             <?php endif; ?>
-
                             <div class="table-responsive">
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
@@ -55,7 +52,6 @@
                                     </thead>
                                     <tbody>
                                         <?php $i = 1; ?>
-                                        `
                                         <?php foreach ($tampilpegawai as $peg) : ?>
                                             <tr>
                                                 <td><?= $i++; ?></td>
@@ -106,7 +102,6 @@
 
                                                         &nbsp;
                                                         <a href="/edit/<?= $peg['id']; ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-
 
 
                                                         &nbsp;
@@ -191,8 +186,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-
-
                     <div class="row">
                         <div class="col-md-6 col-lg-6">
                             <div class="form-group">
@@ -215,23 +208,18 @@
                                     </small>
                                 <?php endif; ?>
                             </div>
-
                             <div class="form-group">
                                 <label for="">NAMA LENGKAP</label>
                                 <input id="namalengkap" type="text" class="form-control msg" name="p_nama" required>
-
                             </div>
-
                             <div class="form-group">
                                 <label for="">NOMOR INDUK PEGAWAI NEGRI</label>
                                 <input id="p_nip" type="text" class="form-control" name="p_nip" required>
 
                             </div>
-
                             <div class="form-group">
                                 <label for="">NOMOR INDUK KEPENDUDUKAN</label>
                                 <input type="text" class="form-control" name="p_nik" required>
-
                             </div>
                             <div class="form-group">
                                 <label for="">TEMPAT LAHIR</label>
@@ -242,7 +230,6 @@
                                 <input type="date" class="form-control" name="p_tanggal_lahir" required>
                             </div>
                             <div class="form-group">
-
                                 <label class="selectgroup-item"><label for="">IS PEGAWAI ?</label>
                                     <input type="checkbox" class="selectgroup-input" id="customSwitch1" name="is_p">
                                     <span class="selectgroup-button">IS PEGAWAI</span>
@@ -254,7 +241,6 @@
                             <div class="form-group">
                                 <label for="">NO TELEPON</label>
                                 <input type="text" class="form-control" name="p_no_hp" required>
-
                             </div>
                             <div class="form-group">
                                 <label for="">ALAMAT E-MAIL</label>
@@ -267,7 +253,6 @@
                             <div class="form-group">
                                 <label for="">PASSWORD</label>
                                 <input id="p_passwd" type="password" class="form-control pwstrength" data-indicator="pwindicator" name="p_passwd" required>
-
                                 <div id="pwindicator" class="pwindicator">
                                     <div class="bar"></div>
                                     <div class="label"></div>
@@ -276,7 +261,6 @@
                             <div class="form-group">
                                 <label for="">PASSWORD KONFRIMASI</label>
                                 <input id="p_passwd2" type="password" class="form-control" name="p_passwd-confirm" required>
-
                             </div>
 
                             <div class="form-group">

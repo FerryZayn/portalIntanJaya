@@ -77,7 +77,8 @@
                                                         $kalimat = $informasi['isi_artikel'];
                                                         $potong_kalimat = substr($kalimat, 0, 50);
                                                         echo $potong_kalimat;
-                                                        ?>
+                                                        ?>...
+
                                                     </h3>
                                                     <div class="card-text small text-muted">
                                                         <time class="news-date">
@@ -91,16 +92,19 @@
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
-                                    <?php
-                                    $tA_informasi = $informasi['tipe_artikel_id'];
-                                    if ($tA_informasi == 2) {
+                                    <?php foreach ($v_informasi as $informasi) :
                                     ?>
-                                        <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi"><i class="fas fa-angle-double-right"></i> Lihat Semua Informasi</a>
-                                    <?php
-                                    } else {
-                                        echo "Maaf, Tidak ada informasi...";
-                                    }
-                                    ?>
+                                        <?php
+                                        $tA_informasi = $informasi['tipe_artikel_id'];
+                                        if ($tA_informasi == 2) {
+                                        ?>
+                                            <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi"><i class="fas fa-angle-double-right"></i> Lihat Semua Informasi</a>
+                                        <?php
+                                        } else {
+                                            echo "Maaf, Tidak ada informasi...";
+                                        }
+                                        ?>
+                                    <?php endforeach; ?>
                                 </article>
 
                             </div>
@@ -145,16 +149,18 @@
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
-                                    <?php
-                                    $tA_berita = $berita['tipe_artikel_id'];
-                                    if ($tA_berita == 1) {
-                                    ?>
-                                        <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-berita"><i class="fas fa-angle-double-right"></i> Lihat Semua Berita</a>
-                                    <?php
-                                    } else {
-                                        echo "Maaf, Tidak ada Berita...";
-                                    }
-                                    ?>
+                                    <?php foreach ($v_berita as $berita) : ?>
+                                        <?php
+                                        $tA_berita = $berita['tipe_artikel_id'];
+                                        if ($tA_berita == 1) {
+                                        ?>
+                                            <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-berita"><i class="fas fa-angle-double-right"></i> Lihat Semua Berita</a>
+                                        <?php
+                                        } else {
+                                            echo "Maaf, Tidak ada Berita...";
+                                        }
+                                        ?>
+                                    <?php endforeach; ?>
                                 </article>
                             </div>
                         </div>

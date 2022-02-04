@@ -30,17 +30,29 @@ class ContentController extends BaseController
     //Halaman Depan Artikel Portal_______________________________________________________________________________________________________________
     public function dashboardPortal()
     {
+
+        // $opd_hdr_id = $this->session->id;
+        $vberita = $this->db->query("call artikel_view('0', '1')")->getResultArray();
+        $vinformasi = $this->db->query("call artikel_view('0', '2')")->getResultArray();
+        $valbumfoto = $this->db->query("call artikel_view('0', '3')")->getResultArray();
+        $valbumvideo = $this->db->query("call artikel_view('0', '4')")->getResultArray();
+        $vslideshow = $this->db->query("call artikel_view('0', '7')")->getResultArray();
+
         $data = [
-            'v_berita' => $this->pemdaModel->tampilBerita(),
-            'v_informasi' => $this->pemdaModel->tampilInformasi(),
+            'v_slideshow' => $vslideshow,
+            'v_berita' => $vberita,
+            'v_informasi' => $vinformasi,
+            'v_albumfoto' => $valbumfoto, //$this->pemdaModel->tampilAlbumfoto(),
+            'v_albumvideo' => $valbumvideo, //$this->pemdaModel->tampilAlbumvideo(),
+
+
+
 
             'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
 
+
             'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
-            'v_slideshow' => $this->pemdaModel->tampilSlideshow(),
-            'v_albumfoto' => $this->pemdaModel->tampilAlbumfoto(),
-            'v_albumvideo' => $this->pemdaModel->tampilAlbumvideo(),
 
             'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
             'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
@@ -72,8 +84,10 @@ class ContentController extends BaseController
     //Tampil Detail Berita dan Informasi______________________________________________________________________________________________
     public function detailBerita($slug)
     {
+        $vberita = $this->db->query("call artikel_view('0', '1')")->getResultArray();
+
         $data = [
-            'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
+            'v_beritarelasi' => $vberita, //$this->pemdaModel->tampilBerita(),
             'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             'v_beritalain' => $this->pemdaModel->contentBerita(),
             'v_informasilain' => $this->pemdaModel->contentInformasi(),
@@ -107,7 +121,7 @@ class ContentController extends BaseController
 
             'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             //Pagin
-            'v_semuaArtikel' => $this->pemdaModel->orderBy('RAND()')->paginate(20, 'artikel'),
+            'v_semuaArtikel' => $this->pemdaModel->where(['status_sistem_id' => 2])->orderBy('RAND()')->paginate(20, 'artikel'),
             'pager' => $this->pemdaModel->pager,
         ];
         return view('/content/semua-artikel', $data);
@@ -116,6 +130,8 @@ class ContentController extends BaseController
     //Tampil Semua Informasi______________________________________________________________________________________________________________
     public function semuaInformasi()
     {
+        $vinformasi = $this->db->query("call artikel_view('0', '2')")->getResultArray();
+
         $paginate = 20;
         $data = [
             'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
@@ -125,10 +141,11 @@ class ContentController extends BaseController
             'v_contentfooterfoto' => $this->pemdaModel->getFotofooter(),
             'v_costumpost' => $this->pemdaModel->getCostumpost(),
 
-            'v_informasi' => $this->pemdaModel->tampilInformasi(),
+            'v_informasi' => $vinformasi,
             'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
             //Pagin
-            'v_informasii' => $this->pemdaModel->where('tipe_artikel_id', 2)->paginate($paginate, 'informasi'),
+            // 'v_informasii' => $this->pemdaModel->where('tipe_artikel_id', 2)->paginate($paginate, 'informasi'),
+            'v_informasii' => $this->pemdaModel->where(['status_sistem_id' => 2, 'tipe_artikel_id' => 2])->orderBy('RAND()')->paginate($paginate, 'informasi'),
             'pager' => $this->pemdaModel->pager,
         ];
         return view('/content/semua-informasi', $data);
@@ -137,8 +154,10 @@ class ContentController extends BaseController
     //Tampil Semua Berita______________________________________________________________________________________________________________
     public function semuaBerita()
     {
-        $berita = $this->db->query("call berita_view_portal_pemda()")->getResultArray();
-        $paginate = 20;
+        // $berita = $this->db->query("call artikel_view('0', '1')")->getResultArray();
+
+
+        // $paginate = 20;
         $data = [
             'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
             'v_contentmenuberita' => $this->pemdaModel->contentBeritaMenu(),
@@ -148,10 +167,11 @@ class ContentController extends BaseController
             'v_costumpost' => $this->pemdaModel->getCostumpost(),
 
             'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
-            'v_berita' => $berita,
+            // 'v_berita' => $berita,
             //Pagin
             // 'v_beritaa' => $this->pemdaModel->paginate(2, 'berita'),
-            'v_beritaa' => $this->pemdaModel->where('tipe_artikel_id', 1)->paginate($paginate, 'berita'),
+            // 'v_beritaa' => $this->pemdaModel->where('tipe_artikel_id', 1)->paginate($paginate, 'berita'),
+            'v_beritaa' => $this->pemdaModel->where(['status_sistem_id' => 2, 'tipe_artikel_id' => 1])->orderBy('RAND()')->paginate(20, 'berita'),
             'pager' => $this->pemdaModel->pager,
         ];
         return view('/content/semua-berita', $data);

@@ -263,8 +263,6 @@ class MasterSU extends BaseController
     }
 
 
-
-
     // Master Sub Bidang SU________________________________________________________________________________________
     public function masterSubid($opd, $bidang)
     {

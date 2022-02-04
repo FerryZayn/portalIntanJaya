@@ -94,7 +94,8 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
-                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi"><i class="fas fa-angle-double-right"></i> Lihat Semua Informasi Publik</a>
+                                <!-- <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi">
+                                    <i class="fas fa-angle-double-right"></i> Lihat Semua Informasi Publik</a> -->
                             </div>
 
 

@@ -26,15 +26,12 @@
                         <img height="410" src="<?= base_url() ?><?= $value['path_file_gambar'] ?>/<?= $value['file_gambar'] ?>" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h2 class="text-white"><?= $value['judul']; ?></h2>
-
-                            <div class="card text-center" style="background-color: rgba(245, 245, 245, 0.2); opacity: 1; border-radius: 20px;">
-                                <div class="card-body text-white">
-
-                                    <?= $value['isi_artikel']; ?>
-
+                            <!-- <div class="card text-center" style="background-color: rgba(245, 245, 245, 0.8); opacity: 1; border-radius: 20px;">
+                                <div class="card-body">
+                                    <?php //= $value['isi_artikel']; 
+                                    ?>
                                 </div>
-                            </div>
-
+                            </div> -->
                         </div>
                     </div>
                 <?php endforeach; ?>
