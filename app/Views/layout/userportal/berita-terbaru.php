@@ -92,19 +92,16 @@
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
-                                    <?php foreach ($v_informasi as $informasi) :
+                                    <?php
+                                    $tA_informasi = $informasi['tipe_artikel_id'];
+                                    if ($tA_informasi == 2) {
                                     ?>
-                                        <?php
-                                        $tA_informasi = $informasi['tipe_artikel_id'];
-                                        if ($tA_informasi == 2) {
-                                        ?>
-                                            <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi"><i class="fas fa-angle-double-right"></i> Lihat Semua Informasi</a>
-                                        <?php
-                                        } else {
-                                            echo "Maaf, Tidak ada informasi...";
-                                        }
-                                        ?>
-                                    <?php endforeach; ?>
+                                        <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi"><i class="fas fa-angle-double-right"></i> Lihat Semua Informasi</a>
+                                    <?php
+                                    } else {
+                                        echo "Maaf, Tidak ada informasi...";
+                                    }
+                                    ?>
                                 </article>
 
                             </div>
@@ -149,18 +146,18 @@
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
-                                    <?php foreach ($v_berita as $berita) : ?>
-                                        <?php
-                                        $tA_berita = $berita['tipe_artikel_id'];
-                                        if ($tA_berita == 1) {
-                                        ?>
-                                            <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-berita"><i class="fas fa-angle-double-right"></i> Lihat Semua Berita</a>
-                                        <?php
-                                        } else {
-                                            echo "Maaf, Tidak ada Berita...";
-                                        }
-                                        ?>
-                                    <?php endforeach; ?>
+
+                                    <?php
+                                    $tA_berita = $berita['tipe_artikel_id'];
+                                    if ($tA_berita == 1) {
+                                    ?>
+                                        <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-berita"><i class="fas fa-angle-double-right"></i> Lihat Semua Berita</a>
+                                    <?php
+                                    } else {
+                                        echo "Maaf, Tidak ada Berita...";
+                                    }
+                                    ?>
+
                                 </article>
                             </div>
                         </div>
