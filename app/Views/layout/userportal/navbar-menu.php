@@ -94,8 +94,8 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
-                                <!-- <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi">
-                                    <i class="fas fa-angle-double-right"></i> Lihat Semua Informasi Publik</a> -->
+                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-informasi">
+                                    <i class="fas fa-angle-double-right"></i> Lihat Semua...</a>
                             </div>
 
 
@@ -126,7 +126,7 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
-                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-berita"><i class="fas fa-angle-double-right"></i> Lihat Semua Berita Publik</a>
+                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-berita"><i class="fas fa-angle-double-right"></i> Lihat Semua...</a>
                             </div>
 
                             <div id="berita-tiga" class="tab-pane" role="tabpanel" aria-labelledby="nav-three3">
@@ -156,7 +156,7 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
-                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-album-foto"><i class="fas fa-angle-double-right"></i> Lihat Semua Album Foto</a>
+                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-album-foto"><i class="fas fa-angle-double-right"></i> Lihat Semua...</a>
                             </div>
 
                             <div id="berita-empat" class="tab-pane" role="tabpanel" aria-labelledby="nav-four3">
@@ -186,7 +186,7 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
-                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-album-video"><i class="fas fa-angle-double-right"></i> Lihat Semua Album Video</a>
+                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>/content/semua-album-video"><i class="fas fa-angle-double-right"></i> Lihat Semua...</a>
                             </div>
                         </div>
                     </div>
@@ -211,7 +211,8 @@
     <!-- <div class="navbar-nav ms-auto d-none d-lg-block">
         <div class="search-box">
             <div class="search-menu no-shadow border-0 py-0">
-                <form class="form-src form-inline" method="get" action="<?= base_url(); ?>" role="search">
+                <form class="form-src form-inline" method="get" action="<?php //= base_url(); 
+                                                                        ?>" role="search">
                     <div class="input-group">
                         <input name="s" class="form-control end-0" type="text" placeholder="Search..." value="">
                         <span class="icones text-body">
