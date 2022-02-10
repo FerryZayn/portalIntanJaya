@@ -85,12 +85,13 @@ class ContentController extends BaseController
     public function detailBerita($slug)
     {
         $vberita = $this->db->query("call artikel_view('0', '1')")->getResultArray();
+        $vinformasi = $this->db->query("call artikel_view('0', '2')")->getResultArray();
 
         $data = [
             'v_beritarelasi' => $vberita, //$this->pemdaModel->tampilBerita(),
             'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
-            'v_beritalain' => $this->pemdaModel->contentBerita(),
-            'v_informasilain' => $this->pemdaModel->contentInformasi(),
+            'v_beritalain' => $vberita, //$this->pemdaModel->contentBerita(),
+            'v_informasilain' => $vinformasi, //$this->pemdaModel->contentInformasi(),
             'v_notif' => $this->pemdaModel->bacaIni(),
             'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
             'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),

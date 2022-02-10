@@ -118,7 +118,7 @@ class PemdaModel extends Model
     {
         return $this->db
             ->table('artikel')
-            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
+            ->where(['tipe_artikel_id' => 1, 'status_sistem_id' => 2, 'is_active' => 1])
             ->orderBy('RAND()')
             ->limit('10')
             ->get()
@@ -128,7 +128,7 @@ class PemdaModel extends Model
     {
         return $this->db
             ->table('artikel')
-            ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
+            ->where(['tipe_artikel_id' => 1, 'status_sistem_id' => 2, 'is_active' => 1])
             ->orderBy('RAND()')
             ->limit('1')
             ->get()
