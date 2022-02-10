@@ -37,6 +37,7 @@
                                                     </div>
                                                 </div>
                                             </article>
+
                                             <div class="actions">
                                                 <a href="<?= base_url() ?>/content/<?= $artikel['slug'] ?>" class="btn">
                                                     <span><i class="fas fa-eye"></i> LIHAT SELENGKAPNYA</span>
