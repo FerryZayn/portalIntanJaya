@@ -180,14 +180,16 @@ class ContentController extends BaseController
     //Tampil Visi Misi______________________________________________________________________________________________________________
     public function visiMisi()
     {
+        $berita = $this->db->query("call artikel_view('0', '1')")->getResultArray();
+        $informasi = $this->db->query("call artikel_view('0', '2')")->getResultArray();
         $data = [
             'v_visi' => $this->pemdaModel->tampilVisi(),
             'v_misi' => $this->pemdaModel->tampilMisi(),
-            'v_beritarelasi' => $this->pemdaModel->tampilBerita(),
-            'v_beritalain' => $this->pemdaModel->contentBerita(),
-            'v_informasilain' => $this->pemdaModel->contentInformasi(),
-            'v_latestpostlist' => $this->pemdaModel->contentLatestpostList(),
-            'v_latestpostbox' => $this->pemdaModel->contentLatestpostBox(),
+            'v_beritarelasi' => $berita, //$this->pemdaModel->tampilBerita(),
+            'v_beritalain' => $berita, //$this->pemdaModel->contentBerita(),
+            'v_informasilain' => $informasi, //$this->pemdaModel->contentInformasi(),
+            'v_latestpostlist' => $berita, //$this->pemdaModel->contentLatestpostList(),
+            'v_latestpostbox' => $berita, //$this->pemdaModel->contentLatestpostBox(),
             'v_artikelheader' => $this->pemdaModel->getSemuaartikel(),
 
             'v_contentmenuinformasi' => $this->pemdaModel->contentInformasiMenu(),
