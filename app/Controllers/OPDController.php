@@ -57,8 +57,6 @@ class OPDController extends BaseController
     }
 
 
-
-
     public function tambahOpd()
     {
         $pegawai_id = $this->session->id;
@@ -229,11 +227,6 @@ class OPDController extends BaseController
     }
 
 
-
-
-
-
-
     public function tambahArtikel()
     {
         $data = [
@@ -242,6 +235,7 @@ class OPDController extends BaseController
         ];
         return view('/administrator/portal-opd/artikel-tambah', $data);
     }
+
     //Insert/Simpan Artikel___________________________________________________________________________________________________________
     public function simpanBerita()
     {
@@ -297,7 +291,6 @@ class OPDController extends BaseController
 
         return redirect()->to('/administrator/portal-opd/dashboard');
     }
-
 
     public function artikelEdit($id)
     {

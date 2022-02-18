@@ -30,29 +30,11 @@
 												<p style="text-align: left;">
 													<?php $i = 1; ?>
 													<?php foreach ($v_contentopd as $opd) : ?>
-														<a href="<?= base_url(); ?>/organisasi-pemerintah-daerah/<?php //= $opd['kode']; 
-																													?><?php //= $opd['tipe']; 
-																														?>" target="_blank">
-															<?= $i++; ?>. <?= $opd['nama_opd']; ?>
+														<a href="https://<?= strtolower($opd['kode']); ?>.intanjayakab.go.id" target="_blank">
+															<?= $i++; ?>.<?= $opd['nama_opd']; ?>
 														</a>
 														<br />
 													<?php endforeach; ?>
-
-
-
-													<?php //foreach ($v_contentopd as $opd) : 
-													?>
-													<a href="<?= base_url(); ?>/organisasi-pemerintah-daerah/<?php //= $opd['kode']; 
-																												?>/<?php //= $opd['tipe']; 
-																													?>" target="_blank">
-														<?= $i++; ?>. <?php //= $opd['nama_opd']; 
-																		?>
-													</a>
-													<br />
-													<?php //endforeach; 
-													?>
-
-
 												</p>
 											</div>
 										</div>
