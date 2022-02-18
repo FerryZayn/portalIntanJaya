@@ -31,7 +31,7 @@
 													<?php $i = 1; ?>
 													<?php foreach ($v_contentopd as $opd) : ?>
 														<a href="https://<?= strtolower($opd['kode']); ?>.intanjayakab.go.id" target="_blank">
-															<?= $i++; ?>.<?= $opd['nama_opd']; ?>
+															<?= $i++; ?>. <?= $opd['nama_opd']; ?>
 														</a>
 														<br />
 													<?php endforeach; ?>
