@@ -183,9 +183,11 @@ class ContentController extends BaseController
     {
         $berita = $this->db->query("call artikel_view('0', '1')")->getResultArray();
         $informasi = $this->db->query("call artikel_view('0', '2')")->getResultArray();
+        $visi = $this->db->query("call artikel_view('0', '5')")->getResultArray();
+        $misi = $this->db->query("call artikel_view('0', '6')")->getResultArray();
         $data = [
-            'v_visi' => $this->pemdaModel->tampilVisi(),
-            'v_misi' => $this->pemdaModel->tampilMisi(),
+            'v_visi' => $visi, //$this->pemdaModel->tampilVisi(),
+            'v_misi' => $misi, //$this->pemdaModel->tampilMisi(),
             'v_beritarelasi' => $berita, //$this->pemdaModel->tampilBerita(),
             'v_beritalain' => $berita, //$this->pemdaModel->contentBerita(),
             'v_informasilain' => $informasi, //$this->pemdaModel->contentInformasi(),

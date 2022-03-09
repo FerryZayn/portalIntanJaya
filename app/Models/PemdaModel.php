@@ -87,16 +87,7 @@ class PemdaModel extends Model
             ->getRow();
     }
 
-    //GET Tampil dan Jumlah Berita___________________________________________________________________________________________________
-    // public function tampilBerita()
-    // {
-    //     return $this->db
-    //         ->table('artikel')
-    //         ->where(['tipe_artikel_id' => 1, 'is_active' => 1])
-    //         ->orderBy('RAND ()')
-    //         ->get()
-    //         ->getResultArray();
-    // }
+
     public function jumlahBerita()
     {
         return $this->db

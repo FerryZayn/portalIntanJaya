@@ -313,30 +313,30 @@ class OPDController extends BaseController
         return view('/administrator/portal-opd/publish', $data);
     }
 
-    public function publikasiPublishArtikel()
-    {
-        $pegawai_id = $this->session->id;
-        $artikel_id = $this->request->getVar('artikel_id');
-        $is_publikasi = 1; //$this->request->getVar('is_publikasi');
+    // public function publikasiPublishArtikel()
+    // {
+    //     $pegawai_id = $this->session->id;
+    //     $artikel_id = $this->request->getVar('artikel_id');
+    //     $is_publikasi = 1; //$this->request->getVar('is_publikasi');
 
-        $fileSampul = $this->request->getFile('ba_fl');
-        if ($fileSampul->getError() == 4) {
-            $namaSampul = 'file.png';
-        } else {
-            $namaSampul = $fileSampul->getRandomName();
-            $fileSampul->move('templet/file-upload', $namaSampul);
-        }
+    //     $fileSampul = $this->request->getFile('ba_fl');
+    //     if ($fileSampul->getError() == 4) {
+    //         $namaSampul = 'file.png';
+    //     } else {
+    //         $namaSampul = $fileSampul->getRandomName();
+    //         $fileSampul->move('templet/file-upload', $namaSampul);
+    //     }
 
-        $ba_fl = $namaSampul;
-        $path_ba_fl = $this->request->getVar('path_ba_fl');
+    //     $ba_fl = $namaSampul;
+    //     $path_ba_fl = $this->request->getVar('path_ba_fl');
 
-        $cttn = null; //$this->request->getVar('cttn');
+    //     $cttn = null; //$this->request->getVar('cttn');
 
-        $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
-        session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
+    //     $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+    //     session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
 
-        return redirect()->to('/administrator/portal-opd/dashboard');
-    }
+    //     return redirect()->to('/administrator/portal-opd/dashboard');
+    // }
 
 
     //Penarikan Artikel
