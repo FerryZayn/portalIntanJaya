@@ -26,8 +26,8 @@
                             <form method="POST" action="/OPDController/updateArtikel/" enctype="multipart/form-data">
                                 <?= csrf_field(); ?>
                                 <input type="hidden" name="_method" value="put">
-                                <input type="text" name="id" value="<?= $artikel_edit->id; ?>">
-                                <input type="text" name="sampulLama" value="<?= $artikel_edit->file_gambar; ?>">
+                                <input type="hidden" name="id" value="<?= $artikel_edit->id; ?>">
+                                <input type="hidden" name="sampulLama" value="<?= $artikel_edit->file_gambar; ?>">
 
                                 <div class="modal-body">
                                     <div class="row">
@@ -62,9 +62,6 @@
                                                             <input type="hidden" name="path_file_gambar" class="form-control" value="/templet/img-opd-post">
                                                         </div>
                                                     </div>
-
-
-
 
                                                 </div>
                                             </div>

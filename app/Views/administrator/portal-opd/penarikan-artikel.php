@@ -44,6 +44,7 @@
                                 <div class="modal-footer no-bd">
                                     <button type="submit" class="btn btn-primary" id="displayNotif"><i class="fas fa-directions"></i> Publish artikel ini...</button>
                                     <a href="/administrator/portal-opd/dashboard" class="btn btn-danger"><i class="fas fa-times-circle"></i> Batalkan...</a>
+                                    <!-- <a href="javascript:window.history.go(-1);">Batalkan...</a> -->
                                 </div>
                             </form>
 

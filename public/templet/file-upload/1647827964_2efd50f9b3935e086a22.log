@@ -1,0 +1,112 @@
+﻿2021-12-14 09:46:47> Program: Starting Squirrel Updater: --createShortcut=Teams.exe -l=StartMenu,Desktop
+2021-12-14 09:46:47> UpdateManager: using rootAppDirectory: C:\Users\fsamb\AppData\Local\Microsoft\Teams
+2021-12-14 09:46:47> ApplyReleasesImpl: About to create shortcuts for Teams.exe, rootAppDir C:\Users\fsamb\AppData\Local\Microsoft\Teams
+2021-12-14 09:46:47> ApplyReleasesImpl: In linkTargetForVersionInfo
+2021-12-14 09:46:47> ApplyReleasesImpl: Creating shortcut for Teams.exe => C:\Users\fsamb\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Microsoft Teams.lnk
+2021-12-14 09:46:47> ApplyReleasesImpl: About to save shortcut: C:\Users\fsamb\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Microsoft Teams.lnk (target C:\Users\fsamb\AppData\Local\Microsoft\Teams\Update.exe, workingDir C:\Users\fsamb\AppData\Local\Microsoft\Teams, args --processStart "Teams.exe", toastActivatorCSLID d1b22d3d-8585-53a6-acb3-0e803c7e8d2a)
+2021-12-14 09:46:47> ApplyReleasesImpl: In linkTargetForVersionInfo
+2021-12-14 09:46:47> ApplyReleasesImpl: Creating shortcut for Teams.exe => C:\Users\fsamb\OneDrive\Desktop\Microsoft Teams.lnk
+2021-12-14 09:46:47> ApplyReleasesImpl: About to save shortcut: C:\Users\fsamb\OneDrive\Desktop\Microsoft Teams.lnk (target C:\Users\fsamb\AppData\Local\Microsoft\Teams\Update.exe, workingDir C:\Users\fsamb\AppData\Local\Microsoft\Teams, args --processStart "Teams.exe", toastActivatorCSLID d1b22d3d-8585-53a6-acb3-0e803c7e8d2a)
+2021-12-14 09:46:47> ApplyReleasesImpl: Examining Pin: File Explorer.lnk
+2021-12-14 09:46:47> ApplyReleasesImpl: Examining Pin: Firefox.lnk
+2021-12-14 10:02:51> Program: Starting Squirrel Updater: --update C:\Users\fsamb\AppData\Roaming\Microsoft\Teams\DownloadedUpdate
+2021-12-14 10:02:51> Program: Starting update, downloading from C:\Users\fsamb\AppData\Roaming\Microsoft\Teams\DownloadedUpdate
+2021-12-14 10:02:51> UpdateManager: using rootAppDirectory: C:\Users\fsamb\AppData\Local\Microsoft\Teams
+2021-12-14 10:02:51> Program: About to update to: C:\Users\fsamb\AppData\Local\Microsoft\Teams
+2021-12-14 10:02:51> CheckForUpdateImpl: Generated new staging user ID: 06c8d246-0e2c-5568-b502-63fac404a01d
+2021-12-14 10:02:51> CheckForUpdateImpl: Reading RELEASES file from C:\Users\fsamb\AppData\Roaming\Microsoft\Teams\DownloadedUpdate
+2021-12-14 10:02:51> ApplyReleasesImpl: No delta packages found. Applying current release package.
+2021-12-14 10:02:51> ApplyReleasesImpl: Writing files to app directory: C:\Users\fsamb\AppData\Local\Microsoft\Teams\stage
+2021-12-14 10:02:57> ApplyReleasesImpl: Squirrel Enabled Apps: [C:\Users\fsamb\AppData\Local\Microsoft\Teams\stage\Teams.exe]
+2021-12-14 10:03:14> ApplyReleasesImpl: Couldn't run Squirrel hook, continuing: C:\Users\fsamb\AppData\Local\Microsoft\Teams\stage\Teams.exe: System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Squirrel.Utility.<>c__DisplayClass12_0.<InvokeProcessAsync>b__0()
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Squirrel.Utility.<InvokeProcessAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Squirrel.UpdateManager.ApplyReleasesImpl.<>c__DisplayClass21_1.<<invokePostInstall>b__2>d.MoveNext()
+2021-12-14 10:03:14> ApplyReleasesImpl: About to RemoveOldShorcuts for Teams.exe, rootAppDir C:\Users\fsamb\AppData\Local\Microsoft\Teams
+2021-12-14 10:03:14> ApplyReleasesImpl: Starting fixPinnedExecutables
+2021-12-14 10:03:14> ApplyReleasesImpl: Examining Pin: File Explorer.lnk
+2021-12-14 10:03:14> ApplyReleasesImpl: Examining Pin: Firefox.lnk
+2021-12-14 10:03:14> ApplyReleasesImpl: Fixing up tray icons
+2021-12-14 10:03:14> ApplyReleasesImpl: Couldn't rewrite shim RegKey, most likely no apps are shimmed: System.NullReferenceException: Object reference not set to an instance of an object.
+   at Squirrel.UpdateManager.ApplyReleasesImpl.<unshimOurselves>b__24_0(RegistryView view)
+2021-12-14 10:03:14> ApplyReleasesImpl: Couldn't rewrite shim RegKey, most likely no apps are shimmed: System.NullReferenceException: Object reference not set to an instance of an object.
+   at Squirrel.UpdateManager.ApplyReleasesImpl.<unshimOurselves>b__24_0(RegistryView view)
+2021-12-14 10:03:14> MeetingAddinInstaller: System.ArgumentException: Cannot delete a subkey tree because the subkey does not exist.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at Microsoft.Win32.RegistryKey.DeleteSubKeyTree(String subkey, Boolean throwOnMissingSubKey)
+   at Microsoft.Win32.RegistryKey.DeleteSubKeyTree(String subkey)
+   at Squirrel.MeetingAddinInstaller.<InstallMeetingAddinAsync>d__15.MoveNext()
+2021-12-14 10:03:14> MeetingAddinInstaller: There is no version.txt. Falling back to getting version from folder name
+2021-12-14 10:03:14> MeetingAddinInstaller: Version: 1.0.21229.2; addinPackageDirectory: 1.0.21229.2
+2021-12-14 10:03:14> MeetingAddinInstaller: .dead exists: False
+2021-12-14 10:03:14> MeetingAddinInstaller: path to .dead: C:\Users\fsamb\AppData\Local\Microsoft\TeamsMeetingAddin\1.0.21229.2\.dead
+2021-12-14 10:03:14> MeetingAddinInstaller: before cleanup unused versions
+2021-12-14 10:03:15> MeetingAddinInstaller: Addin directory exists. Copy was successful
+2021-12-14 10:03:15> MeetingAddinInstaller: Version 1.0.21229.2 of the meeting add-in is now installed
+2021-12-14 10:03:15> PresenceAddinInstaller: Installing Teams Presence addin for Outlook...
+2021-12-14 10:03:15> PresenceAddinInstaller: check if UC TypeLib points to current\resources\assets\tlb\Uc.tlb
+2021-12-14 10:03:15> PresenceAddinInstaller: UC Typelib WIN32 is registered under HKCU and file exists. Registration not needed!
+2021-12-14 10:03:15> PresenceAddinInstaller: UC Typelib WIN64 is registered under HKLM and file exists. Registration not needed!
+2021-12-14 10:03:15> ApplyReleasesImpl: cleanDeadVersions: for original version of 1.4.00.19572 and current version of 1.4.00.31569
+2021-12-14 10:03:15> ApplyReleasesImpl: cleanDeadVersions: exclude original folder stage
+2021-12-14 10:03:15> ApplyReleasesImpl: cleanDeadVersions: exclude current folder stage
+2021-12-14 10:10:27> Program: Starting Squirrel Updater: --quitAndInstall Teams.exe
+2021-12-14 10:10:28> Program: Want to launch 'C:\Users\fsamb\AppData\Local\Microsoft\Teams\current\Teams.exe'
+2021-12-14 10:10:28> Program: About to launch: 'C:\Users\fsamb\AppData\Local\Microsoft\Teams\current\Teams.exe': 
+2021-12-14 19:19:41> Program: Starting Squirrel Updater: --processStart Teams.exe --process-start-args --system-initiated
+2021-12-14 19:19:42> RegistryService: RegKeyExists: HKEY_CURRENT_USER\Software\Policies\Microsoft\Cloud\Office\16.0\Teams does not exist
+2021-12-14 19:19:42> Program: Registry value Software\Policies\Microsoft\Cloud\Office\16.0\Teams\PreventFirstLaunchAfterInstall does not exist
+2021-12-14 19:19:42> RegistryService: RegKeyExists: HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Teams does not exist
+2021-12-14 19:19:42> Program: Registry value Software\Policies\Microsoft\Office\16.0\Teams\PreventFirstLaunchAfterInstall does not exist
+2021-12-14 19:19:42> RegistryService: RegKeyExists: HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Teams does not exist
+2021-12-14 19:19:42> Program: Registry value Software\Microsoft\Office\16.0\Teams\PreventFirstLaunchAfterInstall does not exist
+2021-12-14 19:19:42> Program: Registry flags are not set: proceed with default value NotConfigured
+2021-12-14 19:19:42> RegistryService: RegKeyExists: HKEY_CURRENT_USER\Software\Microsoft\Office\Teams does not have DeadEndV3
+2021-12-14 19:19:42> Program: Registry value Software\Microsoft\Office\Teams\DeadEndV3 does not exist. Return default value: false
+2021-12-14 19:19:42> Program: autoStartGpoPolicy NotConfigured
+2021-12-14 19:19:42> Program: deadEndEncounter False
+2021-12-14 19:19:42> Program: preventAutoStart False
+2021-12-14 19:19:42> RegistryService: TryGetRegKey: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Office\16.0\Teams does not exist
+2021-12-14 19:19:42> Program: Want to launch 'C:\Users\fsamb\AppData\Local\Microsoft\Teams\current\Teams.exe'
+2021-12-14 19:19:42> Program: About to launch: 'C:\Users\fsamb\AppData\Local\Microsoft\Teams\current\Teams.exe': --system-initiated
+2021-12-14 19:36:17> Program: Starting Squirrel Updater: --processStart Teams.exe --process-start-args --system-initiated
+2021-12-14 19:36:17> RegistryService: RegKeyExists: HKEY_CURRENT_USER\Software\Policies\Microsoft\Cloud\Office\16.0\Teams does not exist
+2021-12-14 19:36:17> Program: Registry value Software\Policies\Microsoft\Cloud\Office\16.0\Teams\PreventFirstLaunchAfterInstall does not exist
+2021-12-14 19:36:17> RegistryService: RegKeyExists: HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Teams does not exist
+2021-12-14 19:36:17> Program: Registry value Software\Policies\Microsoft\Office\16.0\Teams\PreventFirstLaunchAfterInstall does not exist
+2021-12-14 19:36:17> RegistryService: RegKeyExists: HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Teams does not exist
+2021-12-14 19:36:17> Program: Registry value Software\Microsoft\Office\16.0\Teams\PreventFirstLaunchAfterInstall does not exist
+2021-12-14 19:36:17> Program: Registry flags are not set: proceed with default value NotConfigured
+2021-12-14 19:36:17> RegistryService: RegKeyExists: HKEY_CURRENT_USER\Software\Microsoft\Office\Teams does not have DeadEndV3
+2021-12-14 19:36:17> Program: Registry value Software\Microsoft\Office\Teams\DeadEndV3 does not exist. Return default value: false
+2021-12-14 19:36:17> Program: autoStartGpoPolicy NotConfigured
+2021-12-14 19:36:17> Program: deadEndEncounter False
+2021-12-14 19:36:17> Program: preventAutoStart False
+2021-12-14 19:36:17> RegistryService: TryGetRegKey: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Office\16.0\Teams does not exist
+2021-12-14 19:36:17> Program: Want to launch 'C:\Users\fsamb\AppData\Local\Microsoft\Teams\current\Teams.exe'
+2021-12-14 19:36:17> Program: About to launch: 'C:\Users\fsamb\AppData\Local\Microsoft\Teams\current\Teams.exe': --system-initiated
+2021-12-15 07:16:18> Program: Starting Squirrel Updater: --processStart Teams.exe --process-start-args --system-initiated
+2021-12-15 07:16:18> RegistryService: RegKeyExists: HKEY_CURRENT_USER\Software\Policies\Microsoft\Cloud\Office\16.0\Teams does not exist
+2021-12-15 07:16:18> Program: Registry value Software\Policies\Microsoft\Cloud\Office\16.0\Teams\PreventFirstLaunchAfterInstall does not exist
+2021-12-15 07:16:18> RegistryService: RegKeyExists: HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Teams does not exist
+2021-12-15 07:16:18> Program: Registry value Software\Policies\Microsoft\Office\16.0\Teams\PreventFirstLaunchAfterInstall does not exist
+2021-12-15 07:16:18> RegistryService: RegKeyExists: HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Teams does not exist
+2021-12-15 07:16:18> Program: Registry value Software\Microsoft\Office\16.0\Teams\PreventFirstLaunchAfterInstall does not exist
+2021-12-15 07:16:18> Program: Registry flags are not set: proceed with default value NotConfigured
+2021-12-15 07:16:18> RegistryService: RegKeyExists: HKEY_CURRENT_USER\Software\Microsoft\Office\Teams does not have DeadEndV3
+2021-12-15 07:16:18> Program: Registry value Software\Microsoft\Office\Teams\DeadEndV3 does not exist. Return default value: false
+2021-12-15 07:16:18> Program: autoStartGpoPolicy NotConfigured
+2021-12-15 07:16:18> Program: deadEndEncounter False
+2021-12-15 07:16:18> Program: preventAutoStart False
+2021-12-15 07:16:18> RegistryService: TryGetRegKey: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Office\16.0\Teams does not exist
+2021-12-15 07:16:18> Program: Want to launch 'C:\Users\fsamb\AppData\Local\Microsoft\Teams\current\Teams.exe'
+2021-12-15 07:16:18> Program: About to launch: 'C:\Users\fsamb\AppData\Local\Microsoft\Teams\current\Teams.exe': --system-initiated

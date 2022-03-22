@@ -313,30 +313,169 @@ class OPDController extends BaseController
         return view('/administrator/portal-opd/publish', $data);
     }
 
-    // public function publikasiPublishArtikel()
-    // {
-    //     $pegawai_id = $this->session->id;
-    //     $artikel_id = $this->request->getVar('artikel_id');
-    //     $is_publikasi = 1; //$this->request->getVar('is_publikasi');
+    public function publikasiPublishArtikel()
+    {
+        // $tipe = 1;
+        $artikel_id = $this->request->getVar('artikel_id');
 
-    //     $fileSampul = $this->request->getFile('ba_fl');
-    //     if ($fileSampul->getError() == 4) {
-    //         $namaSampul = 'file.png';
-    //     } else {
-    //         $namaSampul = $fileSampul->getRandomName();
-    //         $fileSampul->move('templet/file-upload', $namaSampul);
-    //     }
+        if ($artikel_id = 1) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 1; //$this->request->getVar('is_publikasi');
 
-    //     $ba_fl = $namaSampul;
-    //     $path_ba_fl = $this->request->getVar('path_ba_fl');
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
 
-    //     $cttn = null; //$this->request->getVar('cttn');
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
 
-    //     $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
-    //     session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
+            $cttn = null; //$this->request->getVar('cttn');
 
-    //     return redirect()->to('/administrator/portal-opd/dashboard');
-    // }
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/berita/v_berita');
+        } elseif ($artikel_id = 2) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 1; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = null; //$this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/informasi/v_informasi');
+        } elseif ($artikel_id = 3) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 1; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = null; //$this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/foto/v_foto');
+        } elseif ($artikel_id = 4) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 1; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = null; //$this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/video/v_video');
+        } elseif ($artikel_id = 5) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 1; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = null; //$this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/visi/v_visi');
+        } elseif ($artikel_id = 6) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 1; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = null; //$this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/misi/v_misi');
+        } elseif ($artikel_id = 7) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 1; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = null; //$this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/slide/v_slide');
+        } else {
+            return redirect()->to('/administrator/portal-opd/dashboard');
+        }
+    }
 
 
     //Penarikan Artikel
@@ -352,27 +491,166 @@ class OPDController extends BaseController
 
     public function publikasiPenarikanArtikel()
     {
-        $pegawai_id = $this->session->id;
+
         $artikel_id = $this->request->getVar('artikel_id');
-        $is_publikasi = 1; //$this->request->getVar('is_publikasi');
 
-        $fileSampul = $this->request->getFile('ba_fl');
-        if ($fileSampul->getError() == 4) {
-            $namaSampul = 'file.png';
+        if ($artikel_id = 1) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 2; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = $this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/berita/v_berita');
+        } elseif ($artikel_id = 2) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 2; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = $this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/informasi/v_informasi');
+        } elseif ($artikel_id = 3) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 2; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = $this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/foto/v_foto');
+        } elseif ($artikel_id = 4) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 2; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = $this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/video/v_video');
+        } elseif ($artikel_id = 5) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 2; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = $this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/visi/v_visi');
+        } elseif ($artikel_id = 6) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 2; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = $this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/misi/v_misi');
+        } elseif ($artikel_id = 7) {
+            $pegawai_id = $this->session->id;
+            $artikel_id = $this->request->getVar('artikel_id');
+            $is_publikasi = 2; //$this->request->getVar('is_publikasi');
+
+            $fileSampul = $this->request->getFile('ba_fl');
+            if ($fileSampul->getError() == 4) {
+                $namaSampul = 'file.png';
+            } else {
+                $namaSampul = $fileSampul->getRandomName();
+                $fileSampul->move('templet/file-upload', $namaSampul);
+            }
+
+            $ba_fl = $namaSampul;
+            $path_ba_fl = $this->request->getVar('path_ba_fl');
+
+            $cttn = $this->request->getVar('cttn');
+
+            $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
+            session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
+
+            return redirect()->to('/administrator/portal-opd/slide/v_slide');
         } else {
-            $namaSampul = $fileSampul->getRandomName();
-            $fileSampul->move('templet/file-upload', $namaSampul);
+            return redirect()->to('/administrator/portal-opd/dashboard');
         }
-
-        $ba_fl = $namaSampul;
-        $path_ba_fl = $this->request->getVar('path_ba_fl');
-
-        $cttn = $this->request->getVar('cttn');
-
-        $this->db->query("call publikasi_penarikan_artikel('$pegawai_id', '$artikel_id', '$is_publikasi', '$ba_fl', '$path_ba_fl', '$cttn')");
-        session()->setFlashdata('info', 'Penarikan Publikasi Artikel berhasil');
-
-        return redirect()->to('/administrator/portal-opd/dashboard');
     }
 
 
@@ -420,8 +698,6 @@ class OPDController extends BaseController
         if ($artikel['file_gambar'] != 'default.jpg') {
             unlink('templet/gambar-berita' . $artikel['file_gambar']);
         }
-
-
 
         $this->opdModel->delete($id);
         session()->setFlashdata('info', 'Data sudah di hapus...');
