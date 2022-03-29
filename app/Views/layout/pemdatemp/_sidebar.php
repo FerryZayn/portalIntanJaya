@@ -35,38 +35,17 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="/administrator/portal-pemda/berita/home">
-                        <i class="fas fas fa-book"></i>
-                        <p>Artikel</p>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="/administrator/portal-pemda/pejabat/v_pejabat">
                         <i class="fas fas fa-user-tie"></i>
                         <p>Profil Pejabat</p>
                     </a>
                 </li>
                 <!-- <li class="nav-item">
-                    <a href="#forms">
-                        <i class="fas fa-layer-group"></i>
-                        <p>Visi & Misi</p> <span class="caret"></span>
+                    <a href="/administrator/portal-pemda/berita/home">
+                        <i class="fas fas fa-book"></i>
+                        <p>Artikel</p>
                     </a>
-                    <div class="collapse" id="forms">
-                        <ul class="nav nav-collapse">
-                            <li><a href="/administrator/portal-pemda/visi/v_visi"><i class="fas fas fa-angle-right"></i> Visi Pemerintah</a></li>
-                            <li><a href="/administrator/portal-pemda/misi/v_misi"><i class="fas fas fa-angle-right"></i> Misi Pemerintah</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-
-                <li class="nav-item">
-                    <a href="/administrator/portal-pemda/pejabat/v_pejabat">
-                        <i class="fas fas fa-user-tie"></i>
-                        <p>Profil Pejabat</p>
-                    </a>
-                </li>
-
+                </li> -->
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#artikel">
                         <i class="fas fas fa-book"></i>
@@ -79,6 +58,24 @@
                         </ul>
                     </div>
                 </li>
+
+                <li class="nav-item">
+                    <a data-toggle="collapse" href="#visimisi">
+                        <i class="fas fas fa-book"></i>
+                        <p>Visi & Misi</p> <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="visimisi">
+                        <ul class="nav nav-collapse">
+                            <li><a href="/administrator/portal-pemda/visi/v_visi"><i class="fas fas fa-angle-right"></i> Visi Pemerintah</a></li>
+                            <li><a href="/administrator/portal-pemda/misi/v_misi"><i class="fas fas fa-angle-right"></i> Misi Pemerintah</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+
+
+
+
 
 
                 <li class="nav-item">
@@ -99,7 +96,7 @@
                         <i class="fab fa-slideshare"></i>
                         <p>Slide Show</p>
                     </a>
-                </li> -->
+                </li>
             </ul>
         </div>
     </div>

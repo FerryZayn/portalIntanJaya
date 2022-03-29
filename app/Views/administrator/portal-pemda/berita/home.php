@@ -39,7 +39,7 @@
                                             <th>No</th>
                                             <th>Judul Berita</th>
                                             <th>Nama Pengarang</th>
-                                            <th>Isi Artikel</th>
+                                            <th>Proses</th>
                                             <th style="width: 10%">Action</th>
                                         </tr>
                                     </thead>
@@ -51,11 +51,7 @@
                                                 <td><?= $berita['judul']; ?></td>
                                                 <td><?= $berita['nama_pengarang']; ?></td>
                                                 <td>
-                                                    <?php
-                                                    // $kalimat = $berita['isi_artikel'];
-                                                    // $potong_kalimat = substr($kalimat, 0, 120);
-                                                    // echo $potong_kalimat;
-                                                    ?>
+                                                    <a href="#" class="btn btn-success btn-sm">Publish</a>
                                                 <td>
                                                     <div class="form-button-action">
                                                         <a href="/administrator/portal-pemda/berita/<?= $berita['id']; ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail data...">

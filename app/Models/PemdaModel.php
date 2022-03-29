@@ -14,7 +14,7 @@ class PemdaModel extends Model
         'notes', 'opd_hdr_id', 'is_active', 'tipe_artikel_id', 'status_sistem_id'
     ];
 
-    //Pencarian Artikel________________________________________________________________________________________________________
+    //Pencarian Artikel______________________________________________________________________________________________________
     public function search($keyword)
     {
         return $this->db
@@ -176,16 +176,16 @@ class PemdaModel extends Model
     }
 
     //Get Tampil dan jumlah Album Foto________________________________________________________________________________________________
-    // public function tampilAlbumfoto()
-    // {
-    //     return $this->db
-    //         ->table('artikel')
-    //         ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
-    //         ->orderBy('RAND ()')
-    //         // ->limit(2)
-    //         ->get()
-    //         ->getResultArray();
-    // }
+    public function tampilAlbumfoto()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 3, 'is_active' => 1])
+            ->orderBy('RAND ()')
+            // ->limit(2)
+            ->get()
+            ->getResultArray();
+    }
     public function jumlahFoto()
     {
         return $this->db
@@ -206,14 +206,14 @@ class PemdaModel extends Model
     }
 
     //Get Tampil dan jumlah Album Video_______________________________________________________________________________________________
-    // public function tampilAlbumvideo()
-    // {
-    //     return $this->db
-    //         ->table('artikel')
-    //         ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
-    //         ->get()
-    //         ->getResultArray();
-    // }
+    public function tampilAlbumvideo()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 4, 'is_active' => 1])
+            ->get()
+            ->getResultArray();
+    }
     public function jumlahVideo()
     {
         return $this->db
@@ -268,15 +268,15 @@ class PemdaModel extends Model
     }
 
     //Get Tampil Slide Show______________________________________________________________________________________________________
-    // public function tampilSlideshow()
-    // {
-    //     return $this->db
-    //         ->table('artikel')
-    //         ->where(['tipe_artikel_id' => 7, 'opd_hdr_id' => 0, 'status_sistem_id' => 2])
-    //         ->orderBy('RAND ()')
-    //         ->get()
-    //         ->getResultArray();
-    // }
+    public function tampilSlideshow()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 7, 'opd_hdr_id' => 0, 'status_sistem_id' => 2])
+            ->orderBy('RAND ()')
+            ->get()
+            ->getResultArray();
+    }
     public function jumlahSlideshow()
     {
         return $this->db

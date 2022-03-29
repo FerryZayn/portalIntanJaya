@@ -136,6 +136,7 @@
 			</div>
 		</div>
 	</div>
+
 	<?= $this->include('/layout/mastertemp/_footer');  ?>
 </div>
 <?= $this->endSection() ?>
