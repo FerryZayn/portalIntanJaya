@@ -138,15 +138,15 @@ class PemdaModel extends Model
     }
 
     //GET Tampil dan Jumlah Informasi_______________________________________________________________________________________________
-    // public function tampilInformasi()
-    // {
-    //     return $this->db
-    //         ->table('artikel')
-    //         ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
-    //         ->orderBy('RAND ()')
-    //         ->get()
-    //         ->getResultArray();
-    // }
+    public function tampilInformasi()
+    {
+        return $this->db
+            ->table('artikel')
+            ->where(['tipe_artikel_id' => 2, 'is_active' => 1])
+            ->orderBy('RAND ()')
+            ->get()
+            ->getResultArray();
+    }
     public function jumlahInformasi()
     {
         return $this->db
@@ -291,6 +291,7 @@ class PemdaModel extends Model
     {
         return $this->db
             ->table('artikel')
+            ->where(['tipe_artikel_id' => 7, 'is_active' => 1, 'status_sistem_id' => 2])
             ->orderBy('RAND()')
             ->limit(1, 0)
             ->get()

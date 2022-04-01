@@ -64,7 +64,7 @@
 						</div>
 					</div>
 				</div> -->
-				<div class="col-sm-4">
+				<div class="col-sm-6">
 					<div class="card full-height bg-dua">
 						<div class="card-box bg-dua">
 							<div class="inner" style="padding-bottom: 30px;">
@@ -77,7 +77,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-6">
 					<div class="card full-height bg-tiga">
 						<div class="card-box bg-tiga">
 							<div class="inner" style="padding-bottom: 30px;">
@@ -91,7 +91,11 @@
 					</div>
 				</div>
 
-				<div class="col-sm-4">
+
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6">
 					<div class="card full-height bg-tiga">
 						<div class="card-box bg-tiga">
 							<div class="inner" style="padding-bottom: 30px;">
@@ -104,10 +108,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-4">
+				<!-- <div class="col-sm-4">
 					<div class="card full-height bg-empat">
 						<div class="card-box bg-empat">
 							<div class="inner" style="padding-bottom: 30px;">
@@ -132,8 +133,8 @@
 							<a href="/administrator/master/dashboard" class="card-box-footer">Masuk <i class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
-				</div>
-				<div class="col-sm-4">
+				</div> -->
+				<div class="col-sm-6">
 					<div class="card full-height bg-lima">
 						<div class="card-box bg-lima">
 							<div class="inner" style="padding-bottom: 30px;">

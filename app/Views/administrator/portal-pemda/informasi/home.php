@@ -39,7 +39,7 @@
                                             <th>No</th>
                                             <th>Judul Informasi</th>
                                             <th>Nama Pengarang</th>
-                                            <!-- <th>Isi Artikel</th> -->
+                                            <th>Isi Artikel</th>
                                             <th style="width: 10%">Action</th>
                                         </tr>
                                     </thead>
@@ -52,18 +52,18 @@
                                                 <td><?= $informasi['nama_pengarang']; ?></td>
                                                 <td>
                                                     <?php
-                                                    // $kalimat = $informasi['isi_artikel'];
-                                                    // $potong_kalimat = substr($kalimat, 0, 120);
-                                                    // echo $potong_kalimat;
+                                                    $kalimat = $informasi['isi_artikel'];
+                                                    $potong_kalimat = substr($kalimat, 0, 120);
+                                                    echo $potong_kalimat;
                                                     ?>
                                                 </td>
                                                 <td>
                                                     <div class="form-button-action">
-                                                        <a href="/administrator/portal-pemda/informasi/<?php // $informasi['slug']; 
+                                                        <a href="/administrator/portal-pemda/informasi/<?= $informasi['slug'];
                                                                                                         ?>" data-toggle="tooltip" class="btn btn-info btn-sm" data-original-title="Lihat detail item ini...">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
-                                                        <a href="/administrator/portal-pemda/informasi/edit/<?php // $informasi['slug']; 
+                                                        <a href="/administrator/portal-pemda/informasi/edit/<?= $informasi['slug'];
                                                                                                             ?>" data-toggle="tooltip" class="btn btn-warning btn-sm" data-original-title="Edit item ini...">
                                                             <i class="fa fa-edit"></i>
                                                         </a> &nbsp;

@@ -228,8 +228,8 @@ class PemdaController extends BaseController
         $opd_hdr_id = $this->session->id;
         $berita = $this->db->query("CALL berita_view_adm($opd_hdr_id)")->getResultArray();
         $data = [
-            'v_informasi' => $berita,
-            // 'v_informasi' => $this->pemdaModel->tampilInformasi(),
+            // 'v_informasi' => $berita,
+            'v_informasi' => $this->pemdaModel->tampilInformasi(),
         ];
         return view('/administrator/portal-pemda/informasi/home', $data);
     }

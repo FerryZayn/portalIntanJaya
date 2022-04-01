@@ -24,7 +24,7 @@
 							<div class="icon">
 								<i class="fab fa-accusoft" aria-hidden="true"></i>
 							</div>
-							<!-- <a href="/administrator/portal-pemda/berita/home" class="card-box-footer"> Lihat Data Berita <i class="fab fa-accusoft"></i></a> -->
+							<a href="/administrator/portal-pemda/berita/home" class="card-box-footer"> Lihat Data Berita <i class="fab fa-accusoft"></i></a>
 						</div>
 					</div>
 				</div>
@@ -38,7 +38,7 @@
 							<div class="icon">
 								<i class="fab fa-black-tie" aria-hidden="true"></i>
 							</div>
-							<!-- <a href="/administrator/portal-pemda/informasi/home" class="card-box-footer">Lihat Data Informasi <i class="fab fa-black-tie"></i></a> -->
+							<a href="/administrator/portal-pemda/informasi/home" class="card-box-footer">Lihat Data Informasi <i class="fab fa-black-tie"></i></a>
 						</div>
 					</div>
 				</div>
@@ -52,7 +52,7 @@
 							<div class="icon">
 								<i class="fas fa-allergies" aria-hidden="true"></i>
 							</div>
-							<!-- <a href="/administrator/portal-pemda/visi/v_visi" class="card-box-footer">Lihat Data Visi <i class="fas fa-allergies"></i></a> -->
+							<a href="/administrator/portal-pemda/visi/v_visi" class="card-box-footer">Lihat Data Visi <i class="fas fa-allergies"></i></a>
 						</div>
 					</div>
 				</div>
@@ -69,7 +69,7 @@
 							<div class="icon">
 								<i class="fa fa-building" aria-hidden="true"></i>
 							</div>
-							<!-- <a href="/administrator/portal-pemda/album-foto/home" class="card-box-footer">Lihat Data Album Foto <i class="fa fa-building"></i></a> -->
+							<a href="/administrator/portal-pemda/album-foto/home" class="card-box-footer">Lihat Data Album Foto <i class="fa fa-building"></i></a>
 						</div>
 					</div>
 				</div>
@@ -83,7 +83,7 @@
 							<div class="icon">
 								<i class="far fa-envelope" aria-hidden="true"></i>
 							</div>
-							<!-- <a href="/administrator/portal-pemda/album-video/home" class="card-box-footer">Lihat Data Album Video <i class="far fa-envelope"></i></a> -->
+							<a href="/administrator/portal-pemda/album-video/home" class="card-box-footer">Lihat Data Album Video <i class="far fa-envelope"></i></a>
 						</div>
 					</div>
 				</div>
@@ -97,7 +97,7 @@
 							<div class="icon">
 								<i class="fas fa-american-sign-language-interpreting" aria-hidden="true"></i>
 							</div>
-							<!-- <a href="/administrator/portal-pemda/misi/v_misi" class="card-box-footer">Lihat Data Misi <i class="fas fa-american-sign-language-interpreting"></i></a> -->
+							<a href="/administrator/portal-pemda/misi/v_misi" class="card-box-footer">Lihat Data Misi <i class="fas fa-american-sign-language-interpreting"></i></a>
 						</div>
 					</div>
 				</div>
@@ -115,7 +115,7 @@
 							<div class="icon">
 								<i class="fa fa-building" aria-hidden="true"></i>
 							</div>
-							<!-- <a href="/administrator/portal-pemda/pejabat/v_pejabat" class="card-box-footer">Lihat Data Profil Pejabat <i class="fa fa-building"></i></a> -->
+							<a href="/administrator/portal-pemda/pejabat/v_pejabat" class="card-box-footer">Lihat Data Profil Pejabat <i class="fa fa-building"></i></a>
 						</div>
 					</div>
 				</div>
@@ -129,7 +129,7 @@
 							<div class="icon">
 								<i class="far fa-envelope" aria-hidden="true"></i>
 							</div>
-							<!-- <a href="/administrator/portal-pemda/slideshow/home" class="card-box-footer">Lihat Data Slide Show <i class="far fa-envelope"></i></a> -->
+							<a href="/administrator/portal-pemda/slideshow/home" class="card-box-footer">Lihat Data Slide Show <i class="far fa-envelope"></i></a>
 						</div>
 					</div>
 				</div>
